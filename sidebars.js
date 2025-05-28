@@ -74,6 +74,8 @@ const sidebars = {
       type: 'category',
       label: 'Developer Guide',
       items: [
+        'developer/architecture',
+        'developer/modular-node-system',
         'developer/extending-netpad',
         'developer/data-model',
       ],
