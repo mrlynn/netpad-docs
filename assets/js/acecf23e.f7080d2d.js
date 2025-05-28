@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_netpad_io=self.webpackChunkdocs_netpad_io||[]).push([[1903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/blog","blogTitle":"Blog","authorsListPath":"/blog/authors"}')}}]);
