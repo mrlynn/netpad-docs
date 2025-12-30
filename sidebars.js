@@ -66,8 +66,9 @@ const sidebars = {
       label: 'API Reference',
       items: [
         'api/overview',
+        'api/authentication',
         'api/forms',
-        'api/workflows',
+        'api/submissions',
         'api/webhooks',
       ],
     },
@@ -96,6 +97,9 @@ const sidebars = {
       label: 'Development',
       items: [
         'development/contributing',
+        'development/architecture',
+        'development/testing',
+        'development/code-style',
       ],
     },
     {
