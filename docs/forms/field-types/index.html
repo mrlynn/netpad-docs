@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-forms/field-types" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Field Types | NetPad Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.netpad.io/img/logo.png"><meta data-rh="true" name="twitter:image" content="https://docs.netpad.io/img/logo.png"><meta data-rh="true" property="og:url" content="https://docs.netpad.io/docs/forms/field-types"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Field Types | NetPad Documentation"><meta data-rh="true" name="description" content="NetPad supports 30+ field types for collecting various types of data. This guide covers all available field types and their configuration options."><meta data-rh="true" property="og:description" content="NetPad supports 30+ field types for collecting various types of data. This guide covers all available field types and their configuration options."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.netpad.io/docs/forms/field-types"><link data-rh="true" rel="alternate" href="https://docs.netpad.io/docs/forms/field-types" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.netpad.io/docs/forms/field-types" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="NetPad Documentation RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="NetPad Documentation Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e9435b42.css">
+<script src="/assets/js/runtime~main.8f43f748.js" defer="defer"></script>
+<script src="/assets/js/main.81430db0.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();null!==e?t(e):window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):window.matchMedia("(prefers-color-scheme: light)").matches?t("light"):t("dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top navbar--dark"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="NetPad Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="NetPad Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">NetPad</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/getting-started/introduction">Docs</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/mrlynn/netpad-v3" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite" aria-pressed="true"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/getting-started/introduction">Getting Started</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/forms/overview">Forms</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/overview">Forms Overview</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/building-forms">Building Forms</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/forms/field-types">Field Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/validation">Validation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/conditional-logic">Conditional Logic</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/publishing">Publishing Forms</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/analytics">Form Analytics</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/workflows/overview">Workflows</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/data-explorer/overview">Data Explorer</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/platform/organizations">Platform</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/api/overview">API Reference</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/security/overview">Security</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/deployment/overview">Deployment</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/development/contributing">Development</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/guides/adding-images">Guides</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/legal/privacy-policy">Legal</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Forms</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Field Types</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Field Types</h1></header>
+<p>NetPad supports 30+ field types for collecting various types of data. This guide covers all available field types and their configuration options.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="text-fields">Text Fields<a href="#text-fields" class="hash-link" aria-label="Direct link to Text Fields" title="Direct link to Text Fields">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="single-line-text">Single-Line Text<a href="#single-line-text" class="hash-link" aria-label="Direct link to Single-Line Text" title="Direct link to Single-Line Text">​</a></h3>
+<p>Basic text input for short responses.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Min/max length</li>
+<li>Pattern validation (regex)</li>
+<li>Placeholder text</li>
+<li>Default value</li>
+</ul>
+<p><strong>Use Cases</strong>: Names, emails, short answers</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="multi-line-text-textarea">Multi-Line Text (Textarea)<a href="#multi-line-text-textarea" class="hash-link" aria-label="Direct link to Multi-Line Text (Textarea)" title="Direct link to Multi-Line Text (Textarea)">​</a></h3>
+<p>For longer text responses.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Min/max length</li>
+<li>Rows (height)</li>
+<li>Character counter</li>
+<li>Rich text editor (optional)</li>
+</ul>
+<p><strong>Use Cases</strong>: Comments, descriptions, messages</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="number-fields">Number Fields<a href="#number-fields" class="hash-link" aria-label="Direct link to Number Fields" title="Direct link to Number Fields">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="integer">Integer<a href="#integer" class="hash-link" aria-label="Direct link to Integer" title="Direct link to Integer">​</a></h3>
+<p>Whole numbers only.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Min/max value</li>
+<li>Default value</li>
+<li>Step increment</li>
+</ul>
+<p><strong>Use Cases</strong>: Quantities, counts, ratings</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="decimal">Decimal<a href="#decimal" class="hash-link" aria-label="Direct link to Decimal" title="Direct link to Decimal">​</a></h3>
+<p>Numbers with decimal places.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Min/max value</li>
+<li>Decimal places</li>
+<li>Default value</li>
+<li>Step increment</li>
+</ul>
+<p><strong>Use Cases</strong>: Prices, measurements, percentages</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="currency">Currency<a href="#currency" class="hash-link" aria-label="Direct link to Currency" title="Direct link to Currency">​</a></h3>
+<p>Formatted currency input.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Currency symbol</li>
+<li>Min/max value</li>
+<li>Decimal places</li>
+<li>Locale formatting</li>
+</ul>
+<p><strong>Use Cases</strong>: Prices, costs, budgets</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="percentage">Percentage<a href="#percentage" class="hash-link" aria-label="Direct link to Percentage" title="Direct link to Percentage">​</a></h3>
+<p>Percentage values (0-100).</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Min/max percentage</li>
+<li>Default value</li>
+<li>Display format</li>
+</ul>
+<p><strong>Use Cases</strong>: Completion rates, discounts, allocations</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="date--time-fields">Date &amp; Time Fields<a href="#date--time-fields" class="hash-link" aria-label="Direct link to Date &amp; Time Fields" title="Direct link to Date &amp; Time Fields">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="date-picker">Date Picker<a href="#date-picker" class="hash-link" aria-label="Direct link to Date Picker" title="Direct link to Date Picker">​</a></h3>
+<p>Select a date.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Date format</li>
+<li>Min/max date</li>
+<li>Default date</li>
+<li>Calendar style</li>
+</ul>
+<p><strong>Use Cases</strong>: Birth dates, event dates, deadlines</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="time-picker">Time Picker<a href="#time-picker" class="hash-link" aria-label="Direct link to Time Picker" title="Direct link to Time Picker">​</a></h3>
+<p>Select a time.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Time format (12/24 hour)</li>
+<li>Min/max time</li>
+<li>Default time</li>
+<li>Time intervals</li>
+</ul>
+<p><strong>Use Cases</strong>: Meeting times, schedules</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="datetime-picker">DateTime Picker<a href="#datetime-picker" class="hash-link" aria-label="Direct link to DateTime Picker" title="Direct link to DateTime Picker">​</a></h3>
+<p>Select both date and time.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Date and time formats</li>
+<li>Min/max datetime</li>
+<li>Default datetime</li>
+<li>Timezone handling</li>
+</ul>
+<p><strong>Use Cases</strong>: Event start times, deadlines with time</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="choice-fields">Choice Fields<a href="#choice-fields" class="hash-link" aria-label="Direct link to Choice Fields" title="Direct link to Choice Fields">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="radio-buttons">Radio Buttons<a href="#radio-buttons" class="hash-link" aria-label="Direct link to Radio Buttons" title="Direct link to Radio Buttons">​</a></h3>
+<p>Single choice from options.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Options list</li>
+<li>Default selection</li>
+<li>Layout (vertical/horizontal)</li>
+<li>&quot;Other&quot; option</li>
+</ul>
+<p><strong>Use Cases</strong>: Single-choice questions, preferences</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="dropdown-select">Dropdown (Select)<a href="#dropdown-select" class="hash-link" aria-label="Direct link to Dropdown (Select)" title="Direct link to Dropdown (Select)">​</a></h3>
+<p>Single choice from dropdown menu.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Options list</li>
+<li>Default selection</li>
+<li>Searchable</li>
+<li>&quot;Other&quot; option</li>
+</ul>
+<p><strong>Use Cases</strong>: Categories, selections from many options</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="checkboxes">Checkboxes<a href="#checkboxes" class="hash-link" aria-label="Direct link to Checkboxes" title="Direct link to Checkboxes">​</a></h3>
+<p>Multiple selections allowed.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Options list</li>
+<li>Default selections</li>
+<li>Min/max selections</li>
+<li>Layout</li>
+</ul>
+<p><strong>Use Cases</strong>: Multiple selections, interests, features</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="multi-select-dropdown">Multi-Select Dropdown<a href="#multi-select-dropdown" class="hash-link" aria-label="Direct link to Multi-Select Dropdown" title="Direct link to Multi-Select Dropdown">​</a></h3>
+<p>Multiple selections from dropdown.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Options list</li>
+<li>Default selections</li>
+<li>Searchable</li>
+<li>Min/max selections</li>
+</ul>
+<p><strong>Use Cases</strong>: Tags, categories, multiple choices</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="rating-scale">Rating Scale<a href="#rating-scale" class="hash-link" aria-label="Direct link to Rating Scale" title="Direct link to Rating Scale">​</a></h3>
+<p>Star or numeric rating.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Scale (1-5, 1-10, etc.)</li>
+<li>Icon style (stars, hearts, etc.)</li>
+<li>Labels for scale points</li>
+<li>Default rating</li>
+</ul>
+<p><strong>Use Cases</strong>: Product reviews, satisfaction ratings</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="nps-net-promoter-score">NPS (Net Promoter Score)<a href="#nps-net-promoter-score" class="hash-link" aria-label="Direct link to NPS (Net Promoter Score)" title="Direct link to NPS (Net Promoter Score)">​</a></h3>
+<p>Standard NPS question (0-10 scale).</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Question text</li>
+<li>Labels for scale ends</li>
+<li>Default value</li>
+</ul>
+<p><strong>Use Cases</strong>: Customer satisfaction, loyalty measurement</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="matrix">Matrix<a href="#matrix" class="hash-link" aria-label="Direct link to Matrix" title="Direct link to Matrix">​</a></h3>
+<p>Grid of questions with shared options.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Rows (questions)</li>
+<li>Columns (options)</li>
+<li>Required per row</li>
+<li>Layout</li>
+</ul>
+<p><strong>Use Cases</strong>: Surveys, evaluations, comparisons</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="file-fields">File Fields<a href="#file-fields" class="hash-link" aria-label="Direct link to File Fields" title="Direct link to File Fields">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="single-file-upload">Single File Upload<a href="#single-file-upload" class="hash-link" aria-label="Direct link to Single File Upload" title="Direct link to Single File Upload">​</a></h3>
+<p>Upload one file.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Allowed file types</li>
+<li>Max file size</li>
+<li>Storage location</li>
+<li>Preview enabled</li>
+</ul>
+<p><strong>Use Cases</strong>: Documents, images, resumes</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="multiple-file-upload">Multiple File Upload<a href="#multiple-file-upload" class="hash-link" aria-label="Direct link to Multiple File Upload" title="Direct link to Multiple File Upload">​</a></h3>
+<p>Upload multiple files.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Allowed file types</li>
+<li>Max file size per file</li>
+<li>Max number of files</li>
+<li>Total size limit</li>
+</ul>
+<p><strong>Use Cases</strong>: Portfolios, document sets, galleries</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="special-fields">Special Fields<a href="#special-fields" class="hash-link" aria-label="Direct link to Special Fields" title="Direct link to Special Fields">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="signature">Signature<a href="#signature" class="hash-link" aria-label="Direct link to Signature" title="Direct link to Signature">​</a></h3>
+<p>Digital signature capture.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Required</li>
+<li>Background color</li>
+<li>Pen color</li>
+<li>Clear button</li>
+</ul>
+<p><strong>Use Cases</strong>: Agreements, approvals, consent</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="lookup-field">Lookup Field<a href="#lookup-field" class="hash-link" aria-label="Direct link to Lookup Field" title="Direct link to Lookup Field">​</a></h3>
+<p>Reference data from another collection.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Source collection</li>
+<li>Display field</li>
+<li>Search field</li>
+<li>Filter query</li>
+<li>Multiple selection</li>
+</ul>
+<p><strong>Use Cases</strong>: Related records, foreign keys, references</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="computed-field">Computed Field<a href="#computed-field" class="hash-link" aria-label="Direct link to Computed Field" title="Direct link to Computed Field">​</a></h3>
+<p>Formula-based calculated field.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Formula expression</li>
+<li>Field references</li>
+<li>Result type</li>
+<li>Decimal places</li>
+</ul>
+<p><strong>Use Cases</strong>: Totals, calculations, derived values</p>
+<p><strong>Example Formulas</strong>:</p>
+<ul>
+<li><code>field1 + field2</code> - Sum</li>
+<li><code>field1 * field2</code> - Multiply</li>
+<li><code>field1 / field2</code> - Divide</li>
+<li><code>field1 - field2</code> - Subtract</li>
+<li><code>CONCAT(field1, &quot; &quot;, field2)</code> - Concatenate</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="complex-fields">Complex Fields<a href="#complex-fields" class="hash-link" aria-label="Direct link to Complex Fields" title="Direct link to Complex Fields">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="nested-object">Nested Object<a href="#nested-object" class="hash-link" aria-label="Direct link to Nested Object" title="Direct link to Nested Object">​</a></h3>
+<p>Group related fields together.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Child fields</li>
+<li>Collapsible</li>
+<li>Repeatable (array of objects)</li>
+</ul>
+<p><strong>Use Cases</strong>: Addresses, contact info, complex structures</p>
+<p><strong>Example Structure</strong>:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token property">&quot;address&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    </span><span class="token property">&quot;street&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;123 Main St&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    </span><span class="token property">&quot;city&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;New York&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    </span><span class="token property">&quot;zip&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;10001&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="array-field">Array Field<a href="#array-field" class="hash-link" aria-label="Direct link to Array Field" title="Direct link to Array Field">​</a></h3>
+<p>Dynamic list of values.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Item field type</li>
+<li>Min/max items</li>
+<li>Add/remove buttons</li>
+<li>Default items</li>
+</ul>
+<p><strong>Use Cases</strong>: Lists, tags, multiple entries</p>
+<p><strong>Example Structure</strong>:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token property">&quot;tags&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">[</span><span class="token string" style="color:rgb(206, 145, 120)">&quot;tag1&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;tag2&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&quot;tag3&quot;</span><span class="token punctuation" style="color:rgb(212, 212, 212)">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="layout-fields">Layout Fields<a href="#layout-fields" class="hash-link" aria-label="Direct link to Layout Fields" title="Direct link to Layout Fields">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="section-divider">Section Divider<a href="#section-divider" class="hash-link" aria-label="Direct link to Section Divider" title="Direct link to Section Divider">​</a></h3>
+<p>Visual separator and grouping.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Title</li>
+<li>Description</li>
+<li>Collapsible</li>
+<li>Style</li>
+</ul>
+<p><strong>Use Cases</strong>: Organizing long forms, grouping related fields</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="page-break">Page Break<a href="#page-break" class="hash-link" aria-label="Direct link to Page Break" title="Direct link to Page Break">​</a></h3>
+<p>Separate form into multiple pages.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Page title</li>
+<li>Page description</li>
+<li>Progress indicator</li>
+<li>Navigation buttons</li>
+</ul>
+<p><strong>Use Cases</strong>: Multi-step forms, wizards</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="html-content">HTML Content<a href="#html-content" class="hash-link" aria-label="Direct link to HTML Content" title="Direct link to HTML Content">​</a></h3>
+<p>Custom HTML content.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>HTML content</li>
+<li>Styling options</li>
+</ul>
+<p><strong>Use Cases</strong>: Instructions, images, custom content</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="field-properties">Field Properties<a href="#field-properties" class="hash-link" aria-label="Direct link to Field Properties" title="Direct link to Field Properties">​</a></h2>
+<p>All fields share these common properties:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="basic-properties">Basic Properties<a href="#basic-properties" class="hash-link" aria-label="Direct link to Basic Properties" title="Direct link to Basic Properties">​</a></h3>
+<ul>
+<li><strong>Field ID</strong>: Unique identifier (auto-generated, can customize)</li>
+<li><strong>Label</strong>: Display name</li>
+<li><strong>Placeholder</strong>: Hint text</li>
+<li><strong>Help Text</strong>: Additional guidance</li>
+<li><strong>Required</strong>: Must be filled</li>
+<li><strong>Default Value</strong>: Pre-filled value</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="validation-properties">Validation Properties<a href="#validation-properties" class="hash-link" aria-label="Direct link to Validation Properties" title="Direct link to Validation Properties">​</a></h3>
+<ul>
+<li><strong>Min/Max</strong>: Minimum and maximum constraints</li>
+<li><strong>Pattern</strong>: Regex pattern validation</li>
+<li><strong>Custom Validation</strong>: JavaScript expression</li>
+<li><strong>Error Message</strong>: Custom error text</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="display-properties">Display Properties<a href="#display-properties" class="hash-link" aria-label="Direct link to Display Properties" title="Direct link to Display Properties">​</a></h3>
+<ul>
+<li><strong>Width</strong>: Field width (full, half, third, etc.)</li>
+<li><strong>Visibility</strong>: Show/hide conditions</li>
+<li><strong>Read-only</strong>: Display only, no editing</li>
+<li><strong>Hidden</strong>: Hidden from users (for computed fields)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="choosing-the-right-field-type">Choosing the Right Field Type<a href="#choosing-the-right-field-type" class="hash-link" aria-label="Direct link to Choosing the Right Field Type" title="Direct link to Choosing the Right Field Type">​</a></h2>
+<p><strong>Text Input</strong>: Short, free-form text
+<strong>Textarea</strong>: Longer text responses
+<strong>Number</strong>: Numeric values, calculations
+<strong>Date/Time</strong>: Temporal data
+<strong>Choice Fields</strong>: Limited options, selections
+<strong>File Upload</strong>: Documents, images, files
+<strong>Signature</strong>: Legal agreements, approvals
+<strong>Lookup</strong>: Related data from other collections
+<strong>Computed</strong>: Calculated values
+<strong>Nested/Array</strong>: Complex data structures</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="best-practices">Best Practices<a href="#best-practices" class="hash-link" aria-label="Direct link to Best Practices" title="Direct link to Best Practices">​</a></h2>
+<ol>
+<li><strong>Match Field Type to Data</strong>: Use appropriate types for your data</li>
+<li><strong>Provide Defaults</strong>: Pre-fill when possible</li>
+<li><strong>Use Help Text</strong>: Guide users on what to enter</li>
+<li><strong>Validate Appropriately</strong>: Set min/max, patterns, required fields</li>
+<li><strong>Group Related Fields</strong>: Use sections and nested objects</li>
+<li><strong>Keep It Simple</strong>: Don&#x27;t overcomplicate field types</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
+<ul>
+<li><a href="/docs/forms/validation">Validation</a> - Set up validation rules</li>
+<li><a href="/docs/forms/conditional-logic">Conditional Logic</a> - Show/hide fields dynamically</li>
+<li><a href="/docs/forms/building-forms">Building Forms</a> - Learn form building basics</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/mrlynn/netpad-v3/tree/main/docs/docs/forms/field-types.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/forms/building-forms"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Building Forms</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/forms/validation"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Validation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#text-fields" class="table-of-contents__link toc-highlight">Text Fields</a><ul><li><a href="#single-line-text" class="table-of-contents__link toc-highlight">Single-Line Text</a></li><li><a href="#multi-line-text-textarea" class="table-of-contents__link toc-highlight">Multi-Line Text (Textarea)</a></li></ul></li><li><a href="#number-fields" class="table-of-contents__link toc-highlight">Number Fields</a><ul><li><a href="#integer" class="table-of-contents__link toc-highlight">Integer</a></li><li><a href="#decimal" class="table-of-contents__link toc-highlight">Decimal</a></li><li><a href="#currency" class="table-of-contents__link toc-highlight">Currency</a></li><li><a href="#percentage" class="table-of-contents__link toc-highlight">Percentage</a></li></ul></li><li><a href="#date--time-fields" class="table-of-contents__link toc-highlight">Date &amp; Time Fields</a><ul><li><a href="#date-picker" class="table-of-contents__link toc-highlight">Date Picker</a></li><li><a href="#time-picker" class="table-of-contents__link toc-highlight">Time Picker</a></li><li><a href="#datetime-picker" class="table-of-contents__link toc-highlight">DateTime Picker</a></li></ul></li><li><a href="#choice-fields" class="table-of-contents__link toc-highlight">Choice Fields</a><ul><li><a href="#radio-buttons" class="table-of-contents__link toc-highlight">Radio Buttons</a></li><li><a href="#dropdown-select" class="table-of-contents__link toc-highlight">Dropdown (Select)</a></li><li><a href="#checkboxes" class="table-of-contents__link toc-highlight">Checkboxes</a></li><li><a href="#multi-select-dropdown" class="table-of-contents__link toc-highlight">Multi-Select Dropdown</a></li><li><a href="#rating-scale" class="table-of-contents__link toc-highlight">Rating Scale</a></li><li><a href="#nps-net-promoter-score" class="table-of-contents__link toc-highlight">NPS (Net Promoter Score)</a></li><li><a href="#matrix" class="table-of-contents__link toc-highlight">Matrix</a></li></ul></li><li><a href="#file-fields" class="table-of-contents__link toc-highlight">File Fields</a><ul><li><a href="#single-file-upload" class="table-of-contents__link toc-highlight">Single File Upload</a></li><li><a href="#multiple-file-upload" class="table-of-contents__link toc-highlight">Multiple File Upload</a></li></ul></li><li><a href="#special-fields" class="table-of-contents__link toc-highlight">Special Fields</a><ul><li><a href="#signature" class="table-of-contents__link toc-highlight">Signature</a></li><li><a href="#lookup-field" class="table-of-contents__link toc-highlight">Lookup Field</a></li><li><a href="#computed-field" class="table-of-contents__link toc-highlight">Computed Field</a></li></ul></li><li><a href="#complex-fields" class="table-of-contents__link toc-highlight">Complex Fields</a><ul><li><a href="#nested-object" class="table-of-contents__link toc-highlight">Nested Object</a></li><li><a href="#array-field" class="table-of-contents__link toc-highlight">Array Field</a></li></ul></li><li><a href="#layout-fields" class="table-of-contents__link toc-highlight">Layout Fields</a><ul><li><a href="#section-divider" class="table-of-contents__link toc-highlight">Section Divider</a></li><li><a href="#page-break" class="table-of-contents__link toc-highlight">Page Break</a></li><li><a href="#html-content" class="table-of-contents__link toc-highlight">HTML Content</a></li></ul></li><li><a href="#field-properties" class="table-of-contents__link toc-highlight">Field Properties</a><ul><li><a href="#basic-properties" class="table-of-contents__link toc-highlight">Basic Properties</a></li><li><a href="#validation-properties" class="table-of-contents__link toc-highlight">Validation Properties</a></li><li><a href="#display-properties" class="table-of-contents__link toc-highlight">Display Properties</a></li></ul></li><li><a href="#choosing-the-right-field-type" class="table-of-contents__link toc-highlight">Choosing the Right Field Type</a></li><li><a href="#best-practices" class="table-of-contents__link toc-highlight">Best Practices</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/getting-started/introduction">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/forms/overview">Forms</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/workflows/overview">Workflows</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/api/overview">API Reference</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">Issues<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3/discussions" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discussions<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 NetPad. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

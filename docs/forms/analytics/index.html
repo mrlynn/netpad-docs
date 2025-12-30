@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-forms/analytics" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Form Analytics | NetPad Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.netpad.io/img/logo.png"><meta data-rh="true" name="twitter:image" content="https://docs.netpad.io/img/logo.png"><meta data-rh="true" property="og:url" content="https://docs.netpad.io/docs/forms/analytics"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Form Analytics | NetPad Documentation"><meta data-rh="true" name="description" content="NetPad provides comprehensive analytics to help you understand form performance, submission trends, and user behavior."><meta data-rh="true" property="og:description" content="NetPad provides comprehensive analytics to help you understand form performance, submission trends, and user behavior."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.netpad.io/docs/forms/analytics"><link data-rh="true" rel="alternate" href="https://docs.netpad.io/docs/forms/analytics" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.netpad.io/docs/forms/analytics" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="NetPad Documentation RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="NetPad Documentation Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e9435b42.css">
+<script src="/assets/js/runtime~main.8f43f748.js" defer="defer"></script>
+<script src="/assets/js/main.81430db0.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();null!==e?t(e):window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):window.matchMedia("(prefers-color-scheme: light)").matches?t("light"):t("dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top navbar--dark"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="NetPad Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="NetPad Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">NetPad</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/getting-started/introduction">Docs</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/mrlynn/netpad-v3" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite" aria-pressed="true"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/getting-started/introduction">Getting Started</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/forms/overview">Forms</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/overview">Forms Overview</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/building-forms">Building Forms</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/field-types">Field Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/validation">Validation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/conditional-logic">Conditional Logic</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/publishing">Publishing Forms</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/forms/analytics">Form Analytics</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/workflows/overview">Workflows</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/data-explorer/overview">Data Explorer</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/platform/organizations">Platform</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/api/overview">API Reference</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/security/overview">Security</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/deployment/overview">Deployment</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/development/contributing">Development</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/guides/adding-images">Guides</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/legal/privacy-policy">Legal</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Forms</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Form Analytics</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Form Analytics</h1></header>
+<p>NetPad provides comprehensive analytics to help you understand form performance, submission trends, and user behavior.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>Access analytics from the form dashboard:</p>
+<ul>
+<li>Click on any form</li>
+<li>Navigate to &quot;Analytics&quot; tab</li>
+<li>View comprehensive metrics and charts</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="key-metrics">Key Metrics<a href="#key-metrics" class="hash-link" aria-label="Direct link to Key Metrics" title="Direct link to Key Metrics">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="submission-metrics">Submission Metrics<a href="#submission-metrics" class="hash-link" aria-label="Direct link to Submission Metrics" title="Direct link to Submission Metrics">​</a></h3>
+<p><strong>Total Submissions</strong>:</p>
+<ul>
+<li>Total number of form submissions</li>
+<li>Count of all submissions (including incomplete)</li>
+<li>Real-time counter</li>
+</ul>
+<p><strong>Completion Rate</strong>:</p>
+<ul>
+<li>Percentage of started forms that were completed</li>
+<li>Calculated as: (Completed / Started) × 100</li>
+<li>Indicates form usability</li>
+</ul>
+<p><strong>Average Completion Time</strong>:</p>
+<ul>
+<li>Average time to complete form</li>
+<li>Helps identify form complexity</li>
+<li>Useful for optimization</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="time-based-metrics">Time-Based Metrics<a href="#time-based-metrics" class="hash-link" aria-label="Direct link to Time-Based Metrics" title="Direct link to Time-Based Metrics">​</a></h3>
+<p><strong>Submissions Over Time</strong>:</p>
+<ul>
+<li>Chart showing submission trends</li>
+<li>Daily, weekly, or monthly views</li>
+<li>Identify peak submission times</li>
+</ul>
+<p><strong>Submission Rate</strong>:</p>
+<ul>
+<li>Submissions per day/week/month</li>
+<li>Growth trends</li>
+<li>Seasonal patterns</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="field-level-analytics">Field-Level Analytics<a href="#field-level-analytics" class="hash-link" aria-label="Direct link to Field-Level Analytics" title="Direct link to Field-Level Analytics">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="completion-rates">Completion Rates<a href="#completion-rates" class="hash-link" aria-label="Direct link to Completion Rates" title="Direct link to Completion Rates">​</a></h3>
+<p>See which fields are:</p>
+<ul>
+<li><strong>Always Completed</strong>: 100% completion rate</li>
+<li><strong>Frequently Skipped</strong>: Low completion rate</li>
+<li><strong>Conditionally Shown</strong>: Only appear for some users</li>
+</ul>
+<p><strong>Use Cases</strong>:</p>
+<ul>
+<li>Identify confusing or unnecessary fields</li>
+<li>Optimize form length</li>
+<li>Improve user experience</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="response-distribution">Response Distribution<a href="#response-distribution" class="hash-link" aria-label="Direct link to Response Distribution" title="Direct link to Response Distribution">​</a></h3>
+<p>For choice fields (radio, dropdown, checkboxes):</p>
+<ul>
+<li><strong>Distribution Chart</strong>: See answer frequencies</li>
+<li><strong>Most Common Answers</strong>: Top selections</li>
+<li><strong>Response Patterns</strong>: Identify trends</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token plain">Question: &quot;How did you hear about us?&quot;</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">- Google: 45%</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">- Social Media: 30%</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">- Friend: 15%</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">- Other: 10%</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="average-response-time">Average Response Time<a href="#average-response-time" class="hash-link" aria-label="Direct link to Average Response Time" title="Direct link to Average Response Time">​</a></h3>
+<p>Track how long users spend on each field:</p>
+<ul>
+<li><strong>Fast Fields</strong>: Quick to answer</li>
+<li><strong>Slow Fields</strong>: May need clarification</li>
+<li><strong>Optimization Opportunities</strong>: Identify problem areas</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="drop-off-analysis">Drop-off Analysis<a href="#drop-off-analysis" class="hash-link" aria-label="Direct link to Drop-off Analysis" title="Direct link to Drop-off Analysis">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="where-users-leave">Where Users Leave<a href="#where-users-leave" class="hash-link" aria-label="Direct link to Where Users Leave" title="Direct link to Where Users Leave">​</a></h3>
+<p>Identify form abandonment points:</p>
+<ul>
+<li><strong>Page-Level</strong>: Which page do users leave on?</li>
+<li><strong>Field-Level</strong>: Which field causes drop-offs?</li>
+<li><strong>Time-Based</strong>: When do users typically leave?</li>
+</ul>
+<p><strong>Use Cases</strong>:</p>
+<ul>
+<li>Identify problematic sections</li>
+<li>Optimize form flow</li>
+<li>Reduce abandonment</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="drop-off-reasons">Drop-off Reasons<a href="#drop-off-reasons" class="hash-link" aria-label="Direct link to Drop-off Reasons" title="Direct link to Drop-off Reasons">​</a></h3>
+<p>Common reasons for drop-offs:</p>
+<ul>
+<li><strong>Form Too Long</strong>: Users get overwhelmed</li>
+<li><strong>Confusing Fields</strong>: Unclear questions</li>
+<li><strong>Technical Issues</strong>: Form errors or bugs</li>
+<li><strong>Privacy Concerns</strong>: Too much personal info</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="real-time-analytics">Real-Time Analytics<a href="#real-time-analytics" class="hash-link" aria-label="Direct link to Real-Time Analytics" title="Direct link to Real-Time Analytics">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="live-dashboard">Live Dashboard<a href="#live-dashboard" class="hash-link" aria-label="Direct link to Live Dashboard" title="Direct link to Live Dashboard">​</a></h3>
+<p>Monitor form activity in real-time:</p>
+<ul>
+<li><strong>Live Submissions</strong>: See submissions as they happen</li>
+<li><strong>Active Users</strong>: Users currently filling form</li>
+<li><strong>Recent Activity</strong>: Latest submissions and events</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="real-time-counters">Real-Time Counters<a href="#real-time-counters" class="hash-link" aria-label="Direct link to Real-Time Counters" title="Direct link to Real-Time Counters">​</a></h3>
+<ul>
+<li><strong>Today&#x27;s Submissions</strong>: Count for current day</li>
+<li><strong>This Week</strong>: Weekly submission count</li>
+<li><strong>This Month</strong>: Monthly submission count</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="exporting-analytics">Exporting Analytics<a href="#exporting-analytics" class="hash-link" aria-label="Direct link to Exporting Analytics" title="Direct link to Exporting Analytics">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="export-options">Export Options<a href="#export-options" class="hash-link" aria-label="Direct link to Export Options" title="Direct link to Export Options">​</a></h3>
+<ol>
+<li>
+<p><strong>CSV Export</strong>:</p>
+<ul>
+<li>Download submission data as CSV</li>
+<li>Includes all field values</li>
+<li>Compatible with Excel, Google Sheets</li>
+</ul>
+</li>
+<li>
+<p><strong>JSON Export</strong>:</p>
+<ul>
+<li>Download as JSON</li>
+<li>Preserves data structure</li>
+<li>Useful for integrations</li>
+</ul>
+</li>
+<li>
+<p><strong>Report Export</strong>:</p>
+<ul>
+<li>Generate analytics report</li>
+<li>PDF or HTML format</li>
+<li>Includes charts and metrics</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="scheduled-exports">Scheduled Exports<a href="#scheduled-exports" class="hash-link" aria-label="Direct link to Scheduled Exports" title="Direct link to Scheduled Exports">​</a></h3>
+<p>Set up automatic exports:</p>
+<ul>
+<li><strong>Daily</strong>: Receive daily summary</li>
+<li><strong>Weekly</strong>: Weekly report</li>
+<li><strong>Monthly</strong>: Monthly analytics</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="custom-analytics">Custom Analytics<a href="#custom-analytics" class="hash-link" aria-label="Direct link to Custom Analytics" title="Direct link to Custom Analytics">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="custom-metrics">Custom Metrics<a href="#custom-metrics" class="hash-link" aria-label="Direct link to Custom Metrics" title="Direct link to Custom Metrics">​</a></h3>
+<p>Define custom metrics:</p>
+<ul>
+<li><strong>Conversion Rate</strong>: Submissions / Visitors</li>
+<li><strong>Cost Per Submission</strong>: Ad spend / Submissions</li>
+<li><strong>Field Completion Score</strong>: Average completion rate</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="custom-reports">Custom Reports<a href="#custom-reports" class="hash-link" aria-label="Direct link to Custom Reports" title="Direct link to Custom Reports">​</a></h3>
+<p>Create custom reports:</p>
+<ul>
+<li><strong>Date Ranges</strong>: Custom time periods</li>
+<li><strong>Filters</strong>: Filter by field values</li>
+<li><strong>Grouping</strong>: Group by categories</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="using-analytics-for-optimization">Using Analytics for Optimization<a href="#using-analytics-for-optimization" class="hash-link" aria-label="Direct link to Using Analytics for Optimization" title="Direct link to Using Analytics for Optimization">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="identify-issues">Identify Issues<a href="#identify-issues" class="hash-link" aria-label="Direct link to Identify Issues" title="Direct link to Identify Issues">​</a></h3>
+<ol>
+<li>
+<p><strong>Low Completion Rate</strong>:</p>
+<ul>
+<li>Form may be too long</li>
+<li>Fields may be confusing</li>
+<li>Technical issues</li>
+</ul>
+</li>
+<li>
+<p><strong>High Drop-off at Specific Field</strong>:</p>
+<ul>
+<li>Field may be problematic</li>
+<li>Conditional logic issue</li>
+<li>Validation too strict</li>
+</ul>
+</li>
+<li>
+<p><strong>Slow Completion Times</strong>:</p>
+<ul>
+<li>Form too complex</li>
+<li>Too many fields</li>
+<li>Poor mobile experience</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="optimization-strategies">Optimization Strategies<a href="#optimization-strategies" class="hash-link" aria-label="Direct link to Optimization Strategies" title="Direct link to Optimization Strategies">​</a></h3>
+<ol>
+<li>
+<p><strong>Reduce Form Length</strong>:</p>
+<ul>
+<li>Remove unnecessary fields</li>
+<li>Use conditional logic</li>
+<li>Split into multiple pages</li>
+</ul>
+</li>
+<li>
+<p><strong>Improve Field Clarity</strong>:</p>
+<ul>
+<li>Add help text</li>
+<li>Improve labels</li>
+<li>Provide examples</li>
+</ul>
+</li>
+<li>
+<p><strong>Optimize Mobile Experience</strong>:</p>
+<ul>
+<li>Test on mobile devices</li>
+<li>Improve touch targets</li>
+<li>Simplify layout</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="analytics-best-practices">Analytics Best Practices<a href="#analytics-best-practices" class="hash-link" aria-label="Direct link to Analytics Best Practices" title="Direct link to Analytics Best Practices">​</a></h2>
+<ol>
+<li><strong>Monitor Regularly</strong>: Check analytics weekly</li>
+<li><strong>Set Goals</strong>: Define success metrics</li>
+<li><strong>Track Trends</strong>: Watch for changes over time</li>
+<li><strong>A/B Testing</strong>: Test form variations</li>
+<li><strong>User Feedback</strong>: Combine analytics with feedback</li>
+<li><strong>Action on Data</strong>: Make improvements based on insights</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="privacy--compliance">Privacy &amp; Compliance<a href="#privacy--compliance" class="hash-link" aria-label="Direct link to Privacy &amp; Compliance" title="Direct link to Privacy &amp; Compliance">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="data-privacy">Data Privacy<a href="#data-privacy" class="hash-link" aria-label="Direct link to Data Privacy" title="Direct link to Data Privacy">​</a></h3>
+<ul>
+<li>Analytics respect user privacy</li>
+<li>No personally identifiable information in public analytics</li>
+<li>Compliant with GDPR, CCPA</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="data-retention">Data Retention<a href="#data-retention" class="hash-link" aria-label="Direct link to Data Retention" title="Direct link to Data Retention">​</a></h3>
+<ul>
+<li>Analytics data retained per your settings</li>
+<li>Can export and delete data</li>
+<li>Follow data retention policies</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="api-access">API Access<a href="#api-access" class="hash-link" aria-label="Direct link to API Access" title="Direct link to API Access">​</a></h2>
+<p>Access analytics programmatically:</p>
+<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token comment" style="color:rgb(106, 153, 85)">// Get form analytics</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token constant" style="color:rgb(100, 102, 149)">GET</span><span class="token plain"> </span><span class="token operator" style="color:rgb(212, 212, 212)">/</span><span class="token plain">api</span><span class="token operator" style="color:rgb(212, 212, 212)">/</span><span class="token plain">forms</span><span class="token operator" style="color:rgb(212, 212, 212)">/</span><span class="token punctuation" style="color:rgb(212, 212, 212)">[</span><span class="token plain">formId</span><span class="token punctuation" style="color:rgb(212, 212, 212)">]</span><span class="token operator" style="color:rgb(212, 212, 212)">/</span><span class="token plain">analytics</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token comment" style="color:rgb(106, 153, 85)">// Response</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token string-property property">&quot;totalSubmissions&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token number" style="color:rgb(181, 206, 168)">150</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token string-property property">&quot;completionRate&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token number" style="color:rgb(181, 206, 168)">0.85</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token string-property property">&quot;submissionsByDate&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">[</span><span class="token spread operator" style="color:rgb(212, 212, 212)">...</span><span class="token punctuation" style="color:rgb(212, 212, 212)">]</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token string-property property">&quot;fieldAnalytics&quot;</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token spread operator" style="color:rgb(212, 212, 212)">...</span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>See <a href="/docs/api/forms">API Reference</a> for details.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
+<ul>
+<li><a href="/docs/forms/publishing">Publishing</a> - Learn about publishing forms</li>
+<li><a href="/docs/forms/building-forms">Building Forms</a> - Optimize your forms</li>
+<li><a href="/docs/api/forms">API Reference</a> - Access analytics via API</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/mrlynn/netpad-v3/tree/main/docs/docs/forms/analytics.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/forms/publishing"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Publishing Forms</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/workflows/overview"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Workflows Overview</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#key-metrics" class="table-of-contents__link toc-highlight">Key Metrics</a><ul><li><a href="#submission-metrics" class="table-of-contents__link toc-highlight">Submission Metrics</a></li><li><a href="#time-based-metrics" class="table-of-contents__link toc-highlight">Time-Based Metrics</a></li></ul></li><li><a href="#field-level-analytics" class="table-of-contents__link toc-highlight">Field-Level Analytics</a><ul><li><a href="#completion-rates" class="table-of-contents__link toc-highlight">Completion Rates</a></li><li><a href="#response-distribution" class="table-of-contents__link toc-highlight">Response Distribution</a></li><li><a href="#average-response-time" class="table-of-contents__link toc-highlight">Average Response Time</a></li></ul></li><li><a href="#drop-off-analysis" class="table-of-contents__link toc-highlight">Drop-off Analysis</a><ul><li><a href="#where-users-leave" class="table-of-contents__link toc-highlight">Where Users Leave</a></li><li><a href="#drop-off-reasons" class="table-of-contents__link toc-highlight">Drop-off Reasons</a></li></ul></li><li><a href="#real-time-analytics" class="table-of-contents__link toc-highlight">Real-Time Analytics</a><ul><li><a href="#live-dashboard" class="table-of-contents__link toc-highlight">Live Dashboard</a></li><li><a href="#real-time-counters" class="table-of-contents__link toc-highlight">Real-Time Counters</a></li></ul></li><li><a href="#exporting-analytics" class="table-of-contents__link toc-highlight">Exporting Analytics</a><ul><li><a href="#export-options" class="table-of-contents__link toc-highlight">Export Options</a></li><li><a href="#scheduled-exports" class="table-of-contents__link toc-highlight">Scheduled Exports</a></li></ul></li><li><a href="#custom-analytics" class="table-of-contents__link toc-highlight">Custom Analytics</a><ul><li><a href="#custom-metrics" class="table-of-contents__link toc-highlight">Custom Metrics</a></li><li><a href="#custom-reports" class="table-of-contents__link toc-highlight">Custom Reports</a></li></ul></li><li><a href="#using-analytics-for-optimization" class="table-of-contents__link toc-highlight">Using Analytics for Optimization</a><ul><li><a href="#identify-issues" class="table-of-contents__link toc-highlight">Identify Issues</a></li><li><a href="#optimization-strategies" class="table-of-contents__link toc-highlight">Optimization Strategies</a></li></ul></li><li><a href="#analytics-best-practices" class="table-of-contents__link toc-highlight">Analytics Best Practices</a></li><li><a href="#privacy--compliance" class="table-of-contents__link toc-highlight">Privacy &amp; Compliance</a><ul><li><a href="#data-privacy" class="table-of-contents__link toc-highlight">Data Privacy</a></li><li><a href="#data-retention" class="table-of-contents__link toc-highlight">Data Retention</a></li></ul></li><li><a href="#api-access" class="table-of-contents__link toc-highlight">API Access</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/getting-started/introduction">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/forms/overview">Forms</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/workflows/overview">Workflows</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/api/overview">API Reference</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">Issues<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3/discussions" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discussions<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 NetPad. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

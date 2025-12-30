@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-workflows/node-types" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Workflow Node Types | NetPad Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.netpad.io/img/logo.png"><meta data-rh="true" name="twitter:image" content="https://docs.netpad.io/img/logo.png"><meta data-rh="true" property="og:url" content="https://docs.netpad.io/docs/workflows/node-types"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Workflow Node Types | NetPad Documentation"><meta data-rh="true" name="description" content="NetPad workflows are built using various node types. This guide covers all available nodes and their configurations."><meta data-rh="true" property="og:description" content="NetPad workflows are built using various node types. This guide covers all available nodes and their configurations."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.netpad.io/docs/workflows/node-types"><link data-rh="true" rel="alternate" href="https://docs.netpad.io/docs/workflows/node-types" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.netpad.io/docs/workflows/node-types" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="NetPad Documentation RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="NetPad Documentation Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e9435b42.css">
+<script src="/assets/js/runtime~main.8f43f748.js" defer="defer"></script>
+<script src="/assets/js/main.81430db0.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();null!==e?t(e):window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):window.matchMedia("(prefers-color-scheme: light)").matches?t("light"):t("dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top navbar--dark"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="NetPad Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="NetPad Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">NetPad</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/getting-started/introduction">Docs</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/mrlynn/netpad-v3" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite" aria-pressed="true"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/getting-started/introduction">Getting Started</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/forms/overview">Forms</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/workflows/overview">Workflows</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/workflows/overview">Workflows Overview</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/workflows/creating-workflows">Creating Workflows</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/workflows/node-types">Workflow Node Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/workflows/execution">Workflow Execution</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/workflows/templates">Workflow Templates</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/data-explorer/overview">Data Explorer</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/platform/organizations">Platform</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/api/overview">API Reference</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/security/overview">Security</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/deployment/overview">Deployment</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/development/contributing">Development</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/guides/adding-images">Guides</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/legal/privacy-policy">Legal</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Workflows</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Workflow Node Types</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Workflow Node Types</h1></header>
+<p>NetPad workflows are built using various node types. This guide covers all available nodes and their configurations.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="trigger-nodes">Trigger Nodes<a href="#trigger-nodes" class="hash-link" aria-label="Direct link to Trigger Nodes" title="Direct link to Trigger Nodes">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="form-trigger">Form Trigger<a href="#form-trigger" class="hash-link" aria-label="Direct link to Form Trigger" title="Direct link to Form Trigger">​</a></h3>
+<p>Starts workflow when a form is submitted.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Form: Select form to monitor</li>
+<li>Event: Form Submitted, Form Updated</li>
+<li>Filter: Optional condition to filter submissions</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>data</code>: Form submission data</li>
+<li><code>formId</code>: Form identifier</li>
+<li><code>submissionId</code>: Submission identifier</li>
+<li><code>submittedAt</code>: Submission timestamp</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="webhook-trigger">Webhook Trigger<a href="#webhook-trigger" class="hash-link" aria-label="Direct link to Webhook Trigger" title="Direct link to Webhook Trigger">​</a></h3>
+<p>Starts workflow via HTTP POST request.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Webhook URL: Generated automatically</li>
+<li>Authentication: Optional API key</li>
+<li>Method: POST (default)</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>body</code>: Request body</li>
+<li><code>headers</code>: Request headers</li>
+<li><code>query</code>: Query parameters</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="schedule-trigger">Schedule Trigger<a href="#schedule-trigger" class="hash-link" aria-label="Direct link to Schedule Trigger" title="Direct link to Schedule Trigger">​</a></h3>
+<p>Runs workflow on a cron schedule.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Schedule: Cron expression (e.g., <code>0 9 * * *</code> for daily at 9 AM)</li>
+<li>Timezone: Timezone for schedule</li>
+<li>Start Date: Optional start date</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>triggeredAt</code>: Execution timestamp</li>
+<li><code>schedule</code>: Schedule configuration</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="manual-trigger">Manual Trigger<a href="#manual-trigger" class="hash-link" aria-label="Direct link to Manual Trigger" title="Direct link to Manual Trigger">​</a></h3>
+<p>Start workflow manually from UI.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>None required</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>triggeredAt</code>: Execution timestamp</li>
+<li><code>triggeredBy</code>: User who triggered</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="api-trigger">API Trigger<a href="#api-trigger" class="hash-link" aria-label="Direct link to API Trigger" title="Direct link to API Trigger">​</a></h3>
+<p>Start workflow via API call.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>API Key: Authentication key</li>
+<li>Endpoint: API endpoint URL</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>input</code>: API request data</li>
+<li><code>headers</code>: Request headers</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="logic-nodes">Logic Nodes<a href="#logic-nodes" class="hash-link" aria-label="Direct link to Logic Nodes" title="Direct link to Logic Nodes">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="conditional-ifelse">Conditional (If/Else)<a href="#conditional-ifelse" class="hash-link" aria-label="Direct link to Conditional (If/Else)" title="Direct link to Conditional (If/Else)">​</a></h3>
+<p>Route workflow based on condition.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Condition: JavaScript expression</li>
+<li>True Path: Execute if condition true</li>
+<li>False Path: Execute if condition false</li>
+</ul>
+<p><strong>Example Condition</strong>:</p>
+<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token plain">data</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token property-access">status</span><span class="token plain"> </span><span class="token operator" style="color:rgb(212, 212, 212)">===</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&#x27;approved&#x27;</span><span class="token plain"> </span><span class="token operator" style="color:rgb(212, 212, 212)">&amp;&amp;</span><span class="token plain"> data</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token property-access">amount</span><span class="token plain"> </span><span class="token operator" style="color:rgb(212, 212, 212)">&gt;</span><span class="token plain"> </span><span class="token number" style="color:rgb(181, 206, 168)">1000</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="switch">Switch<a href="#switch" class="hash-link" aria-label="Direct link to Switch" title="Direct link to Switch">​</a></h3>
+<p>Multi-branch routing based on value.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Field: Field to evaluate</li>
+<li>Cases: Value-to-path mappings</li>
+<li>Default: Default path</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token plain">Field: data.priority</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">Cases:</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  - &quot;high&quot; → High Priority Path</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  - &quot;medium&quot; → Medium Priority Path</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  - &quot;low&quot; → Low Priority Path</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">Default → Normal Path</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="loop">Loop<a href="#loop" class="hash-link" aria-label="Direct link to Loop" title="Direct link to Loop">​</a></h3>
+<p>Iterate over array.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Array: Array to iterate</li>
+<li>Item Variable: Variable name for current item</li>
+<li>Index Variable: Variable name for index</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>item</code>: Current array item</li>
+<li><code>index</code>: Current index</li>
+<li><code>results</code>: Array of loop results</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="delay">Delay<a href="#delay" class="hash-link" aria-label="Direct link to Delay" title="Direct link to Delay">​</a></h3>
+<p>Wait for specified duration.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Duration: Time to wait (seconds, minutes, hours)</li>
+<li>Or Until: Wait until specific time/date</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="merge">Merge<a href="#merge" class="hash-link" aria-label="Direct link to Merge" title="Direct link to Merge">​</a></h3>
+<p>Combine multiple workflow branches.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Merge Strategy:<!-- -->
+<ul>
+<li>Combine: Merge all inputs</li>
+<li>First: Use first completed branch</li>
+<li>All: Wait for all branches</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="data-nodes">Data Nodes<a href="#data-nodes" class="hash-link" aria-label="Direct link to Data Nodes" title="Direct link to Data Nodes">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="transform">Transform<a href="#transform" class="hash-link" aria-label="Direct link to Transform" title="Direct link to Transform">​</a></h3>
+<p>Modify data structure.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Mapping: Field mappings</li>
+<li>Expressions: JavaScript transformations</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token literal-property property">fullName</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> data</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token property-access">firstName</span><span class="token plain"> </span><span class="token operator" style="color:rgb(212, 212, 212)">+</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&#x27; &#x27;</span><span class="token plain"> </span><span class="token operator" style="color:rgb(212, 212, 212)">+</span><span class="token plain"> data</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token property-access">lastName</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token literal-property property">email</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> data</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token property-access">email</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token method function property-access" style="color:rgb(220, 220, 170)">toLowerCase</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token punctuation" style="color:rgb(212, 212, 212)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  </span><span class="token literal-property property">timestamp</span><span class="token operator" style="color:rgb(212, 212, 212)">:</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(86, 156, 214)">new</span><span class="token plain"> </span><span class="token class-name" style="color:rgb(78, 201, 176)">Date</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token method function property-access" style="color:rgb(220, 220, 170)">toISOString</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="filter">Filter<a href="#filter" class="hash-link" aria-label="Direct link to Filter" title="Direct link to Filter">​</a></h3>
+<p>Remove items based on conditions.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Condition: Filter expression</li>
+<li>Input: Array to filter</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token plain">item</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token property-access">status</span><span class="token plain"> </span><span class="token operator" style="color:rgb(212, 212, 212)">===</span><span class="token plain"> </span><span class="token string" style="color:rgb(206, 145, 120)">&#x27;active&#x27;</span><span class="token plain"> </span><span class="token operator" style="color:rgb(212, 212, 212)">&amp;&amp;</span><span class="token plain"> item</span><span class="token punctuation" style="color:rgb(212, 212, 212)">.</span><span class="token property-access">amount</span><span class="token plain"> </span><span class="token operator" style="color:rgb(212, 212, 212)">&gt;</span><span class="token plain"> </span><span class="token number" style="color:rgb(181, 206, 168)">0</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="aggregate">Aggregate<a href="#aggregate" class="hash-link" aria-label="Direct link to Aggregate" title="Direct link to Aggregate">​</a></h3>
+<p>Group and summarize data.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Group By: Field to group by</li>
+<li>Aggregations: Sum, count, average, etc.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token plain">Group By: category</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">Aggregations:</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  - total: SUM(amount)</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  - count: COUNT()</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">  - average: AVG(price)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="split">Split<a href="#split" class="hash-link" aria-label="Direct link to Split" title="Direct link to Split">​</a></h3>
+<p>Divide data into multiple outputs.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Split Field: Field to split on</li>
+<li>Outputs: Define output paths</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="set-variable">Set Variable<a href="#set-variable" class="hash-link" aria-label="Direct link to Set Variable" title="Direct link to Set Variable">​</a></h3>
+<p>Store value for later use.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Variable Name: Name of variable</li>
+<li>Value: Value to store</li>
+</ul>
+<p><strong>Usage</strong>:</p>
+<ul>
+<li>Reference with <code>{{variableName}}</code></li>
+<li>Available in all subsequent nodes</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="integration-nodes">Integration Nodes<a href="#integration-nodes" class="hash-link" aria-label="Direct link to Integration Nodes" title="Direct link to Integration Nodes">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="http-request">HTTP Request<a href="#http-request" class="hash-link" aria-label="Direct link to HTTP Request" title="Direct link to HTTP Request">​</a></h3>
+<p>Make API calls to external services.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Method: GET, POST, PUT, DELETE, PATCH</li>
+<li>URL: Request URL</li>
+<li>Headers: Request headers</li>
+<li>Body: Request body (for POST/PUT)</li>
+<li>Authentication: Basic, Bearer, API Key</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>status</code>: HTTP status code</li>
+<li><code>headers</code>: Response headers</li>
+<li><code>body</code>: Response body</li>
+<li><code>error</code>: Error if request failed</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mongodb-query">MongoDB Query<a href="#mongodb-query" class="hash-link" aria-label="Direct link to MongoDB Query" title="Direct link to MongoDB Query">​</a></h3>
+<p>Read documents from MongoDB collection.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Connection: MongoDB connection</li>
+<li>Database: Database name</li>
+<li>Collection: Collection name</li>
+<li>Query: MongoDB query filter</li>
+<li>Projection: Fields to return</li>
+<li>Sort: Sort order</li>
+<li>Limit: Max documents</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>documents</code>: Array of documents</li>
+<li><code>count</code>: Number of documents</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mongodb-write">MongoDB Write<a href="#mongodb-write" class="hash-link" aria-label="Direct link to MongoDB Write" title="Direct link to MongoDB Write">​</a></h3>
+<p>Insert, update, or delete documents.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Connection: MongoDB connection</li>
+<li>Database: Database name</li>
+<li>Collection: Collection name</li>
+<li>Operation: Insert, Update, Delete, Upsert</li>
+<li>Data: Document(s) to write</li>
+<li>Filter: Query filter (for update/delete)</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>insertedIds</code>: IDs of inserted documents</li>
+<li><code>modifiedCount</code>: Number of modified documents</li>
+<li><code>deletedCount</code>: Number of deleted documents</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="email-send">Email Send<a href="#email-send" class="hash-link" aria-label="Direct link to Email Send" title="Direct link to Email Send">​</a></h3>
+<p>Send email via SMTP or email service.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>To: Recipient email(s)</li>
+<li>From: Sender email</li>
+<li>Subject: Email subject</li>
+<li>Body: Email body (HTML or text)</li>
+<li>Attachments: Optional file attachments</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>messageId</code>: Email message ID</li>
+<li><code>status</code>: Send status</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="form-prefill">Form Prefill<a href="#form-prefill" class="hash-link" aria-label="Direct link to Form Prefill" title="Direct link to Form Prefill">​</a></h3>
+<p>Generate pre-filled form URL.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Form: Target form</li>
+<li>Data: Pre-fill data</li>
+<li>Expiration: URL expiration (optional)</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>url</code>: Pre-filled form URL</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ai-nodes">AI Nodes<a href="#ai-nodes" class="hash-link" aria-label="Direct link to AI Nodes" title="Direct link to AI Nodes">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ai-prompt">AI Prompt<a href="#ai-prompt" class="hash-link" aria-label="Direct link to AI Prompt" title="Direct link to AI Prompt">​</a></h3>
+<p>Generate text using AI.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Prompt: Text prompt</li>
+<li>Model: AI model to use</li>
+<li>Temperature: Creativity level (0-1)</li>
+<li>Max Tokens: Maximum response length</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>text</code>: Generated text</li>
+<li><code>usage</code>: Token usage information</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ai-classify">AI Classify<a href="#ai-classify" class="hash-link" aria-label="Direct link to AI Classify" title="Direct link to AI Classify">​</a></h3>
+<p>Categorize data with AI.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Text: Text to classify</li>
+<li>Categories: List of categories</li>
+<li>Model: AI model to use</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>category</code>: Assigned category</li>
+<li><code>confidence</code>: Confidence score</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ai-extract">AI Extract<a href="#ai-extract" class="hash-link" aria-label="Direct link to AI Extract" title="Direct link to AI Extract">​</a></h3>
+<p>Extract structured data from text.</p>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Text: Text to extract from</li>
+<li>Schema: Desired output structure</li>
+<li>Model: AI model to use</li>
+</ul>
+<p><strong>Output Data</strong>:</p>
+<ul>
+<li><code>data</code>: Extracted structured data</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="node-configuration-tips">Node Configuration Tips<a href="#node-configuration-tips" class="hash-link" aria-label="Direct link to Node Configuration Tips" title="Direct link to Node Configuration Tips">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="data-mapping">Data Mapping<a href="#data-mapping" class="hash-link" aria-label="Direct link to Data Mapping" title="Direct link to Data Mapping">​</a></h3>
+<ul>
+<li>Use <code>{{fieldName}}</code> to reference data</li>
+<li>Use expressions: <code>{{field1 + field2}}</code></li>
+<li>Access nested: <code>{{data.user.email}}</code></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="error-handling">Error Handling<a href="#error-handling" class="hash-link" aria-label="Direct link to Error Handling" title="Direct link to Error Handling">​</a></h3>
+<ul>
+<li>Configure retry policies</li>
+<li>Set timeout values</li>
+<li>Add error handling nodes</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="performance">Performance<a href="#performance" class="hash-link" aria-label="Direct link to Performance" title="Direct link to Performance">​</a></h3>
+<ul>
+<li>Use parallel execution when possible</li>
+<li>Filter data early</li>
+<li>Limit data size</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
+<ul>
+<li><a href="/docs/workflows/creating-workflows">Creating Workflows</a> - Build your first workflow</li>
+<li><a href="/docs/workflows/execution">Execution</a> - Understand workflow execution</li>
+<li><a href="/docs/workflows/templates">Templates</a> - Use pre-built templates</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/mrlynn/netpad-v3/tree/main/docs/docs/workflows/node-types.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/workflows/creating-workflows"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Creating Workflows</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/workflows/execution"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Workflow Execution</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#trigger-nodes" class="table-of-contents__link toc-highlight">Trigger Nodes</a><ul><li><a href="#form-trigger" class="table-of-contents__link toc-highlight">Form Trigger</a></li><li><a href="#webhook-trigger" class="table-of-contents__link toc-highlight">Webhook Trigger</a></li><li><a href="#schedule-trigger" class="table-of-contents__link toc-highlight">Schedule Trigger</a></li><li><a href="#manual-trigger" class="table-of-contents__link toc-highlight">Manual Trigger</a></li><li><a href="#api-trigger" class="table-of-contents__link toc-highlight">API Trigger</a></li></ul></li><li><a href="#logic-nodes" class="table-of-contents__link toc-highlight">Logic Nodes</a><ul><li><a href="#conditional-ifelse" class="table-of-contents__link toc-highlight">Conditional (If/Else)</a></li><li><a href="#switch" class="table-of-contents__link toc-highlight">Switch</a></li><li><a href="#loop" class="table-of-contents__link toc-highlight">Loop</a></li><li><a href="#delay" class="table-of-contents__link toc-highlight">Delay</a></li><li><a href="#merge" class="table-of-contents__link toc-highlight">Merge</a></li></ul></li><li><a href="#data-nodes" class="table-of-contents__link toc-highlight">Data Nodes</a><ul><li><a href="#transform" class="table-of-contents__link toc-highlight">Transform</a></li><li><a href="#filter" class="table-of-contents__link toc-highlight">Filter</a></li><li><a href="#aggregate" class="table-of-contents__link toc-highlight">Aggregate</a></li><li><a href="#split" class="table-of-contents__link toc-highlight">Split</a></li><li><a href="#set-variable" class="table-of-contents__link toc-highlight">Set Variable</a></li></ul></li><li><a href="#integration-nodes" class="table-of-contents__link toc-highlight">Integration Nodes</a><ul><li><a href="#http-request" class="table-of-contents__link toc-highlight">HTTP Request</a></li><li><a href="#mongodb-query" class="table-of-contents__link toc-highlight">MongoDB Query</a></li><li><a href="#mongodb-write" class="table-of-contents__link toc-highlight">MongoDB Write</a></li><li><a href="#email-send" class="table-of-contents__link toc-highlight">Email Send</a></li><li><a href="#form-prefill" class="table-of-contents__link toc-highlight">Form Prefill</a></li></ul></li><li><a href="#ai-nodes" class="table-of-contents__link toc-highlight">AI Nodes</a><ul><li><a href="#ai-prompt" class="table-of-contents__link toc-highlight">AI Prompt</a></li><li><a href="#ai-classify" class="table-of-contents__link toc-highlight">AI Classify</a></li><li><a href="#ai-extract" class="table-of-contents__link toc-highlight">AI Extract</a></li></ul></li><li><a href="#node-configuration-tips" class="table-of-contents__link toc-highlight">Node Configuration Tips</a><ul><li><a href="#data-mapping" class="table-of-contents__link toc-highlight">Data Mapping</a></li><li><a href="#error-handling" class="table-of-contents__link toc-highlight">Error Handling</a></li><li><a href="#performance" class="table-of-contents__link toc-highlight">Performance</a></li></ul></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/getting-started/introduction">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/forms/overview">Forms</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/workflows/overview">Workflows</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/api/overview">API Reference</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">Issues<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3/discussions" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discussions<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 NetPad. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

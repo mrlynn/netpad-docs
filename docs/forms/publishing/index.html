@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-forms/publishing" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Publishing Forms | NetPad Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.netpad.io/img/logo.png"><meta data-rh="true" name="twitter:image" content="https://docs.netpad.io/img/logo.png"><meta data-rh="true" property="og:url" content="https://docs.netpad.io/docs/forms/publishing"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Publishing Forms | NetPad Documentation"><meta data-rh="true" name="description" content="Once you&#x27;ve built and tested your form, it&#x27;s time to publish it and make it accessible to users."><meta data-rh="true" property="og:description" content="Once you&#x27;ve built and tested your form, it&#x27;s time to publish it and make it accessible to users."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.netpad.io/docs/forms/publishing"><link data-rh="true" rel="alternate" href="https://docs.netpad.io/docs/forms/publishing" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.netpad.io/docs/forms/publishing" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="NetPad Documentation RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="NetPad Documentation Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e9435b42.css">
+<script src="/assets/js/runtime~main.8f43f748.js" defer="defer"></script>
+<script src="/assets/js/main.81430db0.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();null!==e?t(e):window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):window.matchMedia("(prefers-color-scheme: light)").matches?t("light"):t("dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top navbar--dark"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="NetPad Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="NetPad Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">NetPad</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/getting-started/introduction">Docs</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/mrlynn/netpad-v3" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite" aria-pressed="true"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/getting-started/introduction">Getting Started</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/forms/overview">Forms</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/overview">Forms Overview</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/building-forms">Building Forms</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/field-types">Field Types</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/validation">Validation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/conditional-logic">Conditional Logic</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/forms/publishing">Publishing Forms</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/forms/analytics">Form Analytics</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/workflows/overview">Workflows</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/data-explorer/overview">Data Explorer</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/platform/organizations">Platform</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/api/overview">API Reference</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/security/overview">Security</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/deployment/overview">Deployment</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/development/contributing">Development</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/guides/adding-images">Guides</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/legal/privacy-policy">Legal</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Forms</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Publishing Forms</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Publishing Forms</h1></header>
+<p>Once you&#x27;ve built and tested your form, it&#x27;s time to publish it and make it accessible to users.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="publishing-your-form">Publishing Your Form<a href="#publishing-your-form" class="hash-link" aria-label="Direct link to Publishing Your Form" title="Direct link to Publishing Your Form">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="before-publishing">Before Publishing<a href="#before-publishing" class="hash-link" aria-label="Direct link to Before Publishing" title="Direct link to Before Publishing">​</a></h3>
+<ol>
+<li>
+<p><strong>Review Your Form</strong>:</p>
+<ul>
+<li>Test all fields and validation</li>
+<li>Verify conditional logic works</li>
+<li>Check form appearance and layout</li>
+<li>Review form settings</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure Access Control</strong>:</p>
+<ul>
+<li>Decide who can submit (public, authenticated, restricted)</li>
+<li>Set up domain restrictions if needed</li>
+<li>Configure user whitelist if using restricted access</li>
+</ul>
+</li>
+<li>
+<p><strong>Set Up Redirects</strong>:</p>
+<ul>
+<li>Configure thank you message</li>
+<li>Set redirect URL if needed</li>
+<li>Test redirect behavior</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="publishing-steps">Publishing Steps<a href="#publishing-steps" class="hash-link" aria-label="Direct link to Publishing Steps" title="Direct link to Publishing Steps">​</a></h3>
+<ol>
+<li>
+<p><strong>Click &quot;Publish&quot; Button</strong>:</p>
+<ul>
+<li>Located in the top toolbar</li>
+<li>Form status changes from &quot;Draft&quot; to &quot;Published&quot;</li>
+</ul>
+</li>
+<li>
+<p><strong>Get Shareable URL</strong>:</p>
+<ul>
+<li>URL is generated automatically</li>
+<li>Copy URL to share</li>
+<li>URL format: <code>https://yourdomain.com/forms/[formId]</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Verify Publication</strong>:</p>
+<ul>
+<li>Form is now live and accessible</li>
+<li>Test the published form URL</li>
+<li>Verify submissions are being collected</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="form-status">Form Status<a href="#form-status" class="hash-link" aria-label="Direct link to Form Status" title="Direct link to Form Status">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="draft-mode">Draft Mode<a href="#draft-mode" class="hash-link" aria-label="Direct link to Draft Mode" title="Direct link to Draft Mode">​</a></h3>
+<ul>
+<li><strong>Not Accessible</strong>: Form not available publicly</li>
+<li><strong>Editable</strong>: Can make changes freely</li>
+<li><strong>No Submissions</strong>: Cannot receive submissions</li>
+<li><strong>Team Only</strong>: Visible only to you and team members</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="published-mode">Published Mode<a href="#published-mode" class="hash-link" aria-label="Direct link to Published Mode" title="Direct link to Published Mode">​</a></h3>
+<ul>
+<li><strong>Live</strong>: Form accessible via shareable URL</li>
+<li><strong>Collecting Data</strong>: Receiving submissions</li>
+<li><strong>Editable</strong>: Can still edit (changes are versioned)</li>
+<li><strong>Public/Private</strong>: Based on access control settings</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="sharing-your-form">Sharing Your Form<a href="#sharing-your-form" class="hash-link" aria-label="Direct link to Sharing Your Form" title="Direct link to Sharing Your Form">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="shareable-url">Shareable URL<a href="#shareable-url" class="hash-link" aria-label="Direct link to Shareable URL" title="Direct link to Shareable URL">​</a></h3>
+<p>Every published form gets a unique URL:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token plain">https://yourdomain.com/forms/form_abc123</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>Direct link to form</li>
+<li>Can be shared via email, social media, etc.</li>
+<li>Works on any device</li>
+<li>Responsive design</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="embedding-forms">Embedding Forms<a href="#embedding-forms" class="hash-link" aria-label="Direct link to Embedding Forms" title="Direct link to Embedding Forms">​</a></h3>
+<p>Embed forms on your website:</p>
+<ol>
+<li>
+<p><strong>Get Embed Code</strong>:</p>
+<ul>
+<li>Click &quot;Share&quot; button</li>
+<li>Select &quot;Embed&quot; tab</li>
+<li>Copy embed code</li>
+</ul>
+</li>
+<li>
+<p><strong>Iframe Embed</strong>:</p>
+<div class="language-html codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-html codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&lt;</span><span class="token tag" style="color:rgb(78, 201, 176)">iframe</span><span class="token tag" style="color:rgb(78, 201, 176)"> </span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token tag" style="color:rgb(78, 201, 176)">  </span><span class="token tag attr-name" style="color:rgb(156, 220, 254)">src</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(212, 212, 212)">=</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag attr-value" style="color:rgb(206, 145, 120)">https://yourdomain.com/forms/form_abc123</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag" style="color:rgb(78, 201, 176)"> </span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token tag" style="color:rgb(78, 201, 176)">  </span><span class="token tag attr-name" style="color:rgb(156, 220, 254)">width</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(212, 212, 212)">=</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag attr-value" style="color:rgb(206, 145, 120)">100%</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag" style="color:rgb(78, 201, 176)"> </span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token tag" style="color:rgb(78, 201, 176)">  </span><span class="token tag attr-name" style="color:rgb(156, 220, 254)">height</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(212, 212, 212)">=</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag attr-value" style="color:rgb(206, 145, 120)">600</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag" style="color:rgb(78, 201, 176)"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token tag" style="color:rgb(78, 201, 176)">  </span><span class="token tag attr-name" style="color:rgb(156, 220, 254)">frameborder</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(212, 212, 212)">=</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag attr-value" style="color:rgb(206, 145, 120)">0</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&lt;/</span><span class="token tag" style="color:rgb(78, 201, 176)">iframe</span><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+<li>
+<p><strong>JavaScript Embed</strong> (if available):</p>
+<div class="language-html codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-html codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&lt;</span><span class="token tag" style="color:rgb(78, 201, 176)">div</span><span class="token tag" style="color:rgb(78, 201, 176)"> </span><span class="token tag attr-name" style="color:rgb(156, 220, 254)">id</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(212, 212, 212)">=</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag attr-value" style="color:rgb(206, 145, 120)">netpad-form-form_abc123</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&gt;</span><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&lt;/</span><span class="token tag" style="color:rgb(78, 201, 176)">div</span><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain"></span><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&lt;</span><span class="token tag" style="color:rgb(78, 201, 176)">script</span><span class="token tag" style="color:rgb(78, 201, 176)"> </span><span class="token tag attr-name" style="color:rgb(156, 220, 254)">src</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(212, 212, 212)">=</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag attr-value" style="color:rgb(206, 145, 120)">https://yourdomain.com/embed.js</span><span class="token tag attr-value punctuation" style="color:rgb(212, 212, 212)">&quot;</span><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&gt;</span><span class="token script"></span><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&lt;/</span><span class="token tag" style="color:rgb(78, 201, 176)">script</span><span class="token tag punctuation" style="color:rgb(212, 212, 212)">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="url-pre-filling">URL Pre-filling<a href="#url-pre-filling" class="hash-link" aria-label="Direct link to URL Pre-filling" title="Direct link to URL Pre-filling">​</a></h3>
+<p>Pre-populate form fields via URL parameters:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token plain">https://yourdomain.com/forms/form_abc123?name=John&amp;email=john@example.com</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Enable URL pre-fill in form settings</li>
+<li>Map query parameters to field IDs</li>
+<li>Set default values if parameter missing</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="access-control">Access Control<a href="#access-control" class="hash-link" aria-label="Direct link to Access Control" title="Direct link to Access Control">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="public-forms">Public Forms<a href="#public-forms" class="hash-link" aria-label="Direct link to Public Forms" title="Direct link to Public Forms">​</a></h3>
+<p>Anyone with the URL can submit:</p>
+<ul>
+<li>No authentication required</li>
+<li>Accessible to everyone</li>
+<li>Best for: Surveys, contact forms, public registrations</li>
+</ul>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Set access control to &quot;Public&quot;</li>
+<li>No additional setup needed</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="authenticated-forms">Authenticated Forms<a href="#authenticated-forms" class="hash-link" aria-label="Direct link to Authenticated Forms" title="Direct link to Authenticated Forms">​</a></h3>
+<p>Users must sign in to submit:</p>
+<ul>
+<li>Requires NetPad account</li>
+<li>Tracks who submitted</li>
+<li>Best for: Internal forms, member-only content</li>
+</ul>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Set access control to &quot;Authenticated&quot;</li>
+<li>Users will be prompted to sign in</li>
+<li>Submission linked to user account</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="restricted-forms">Restricted Forms<a href="#restricted-forms" class="hash-link" aria-label="Direct link to Restricted Forms" title="Direct link to Restricted Forms">​</a></h3>
+<p>Only specific users/domains can submit:</p>
+<ul>
+<li>Domain whitelist</li>
+<li>User email whitelist</li>
+<li>Best for: Private forms, exclusive access</li>
+</ul>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Set access control to &quot;Restricted&quot;</li>
+<li>Add allowed domains or email addresses</li>
+<li>Unauthorized users see access denied message</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="form-settings">Form Settings<a href="#form-settings" class="hash-link" aria-label="Direct link to Form Settings" title="Direct link to Form Settings">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="general-settings">General Settings<a href="#general-settings" class="hash-link" aria-label="Direct link to General Settings" title="Direct link to General Settings">​</a></h3>
+<ul>
+<li><strong>Form Name</strong>: Display name</li>
+<li><strong>Description</strong>: Shown to users</li>
+<li><strong>Thank You Message</strong>: Message after submission</li>
+<li><strong>Redirect URL</strong>: Where to redirect after submission</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="appearance">Appearance<a href="#appearance" class="hash-link" aria-label="Direct link to Appearance" title="Direct link to Appearance">​</a></h3>
+<ul>
+<li><strong>Theme</strong>: Color scheme</li>
+<li><strong>Logo</strong>: Organization logo</li>
+<li><strong>Background</strong>: Background color or image</li>
+<li><strong>Custom CSS</strong>: Advanced styling (if enabled)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="advanced-settings">Advanced Settings<a href="#advanced-settings" class="hash-link" aria-label="Direct link to Advanced Settings" title="Direct link to Advanced Settings">​</a></h3>
+<ul>
+<li><strong>Bot Protection</strong>: Enable Turnstile CAPTCHA</li>
+<li><strong>Webhooks</strong>: Configure webhook URLs</li>
+<li><strong>Submission Limit</strong>: Max submissions per user/IP</li>
+<li><strong>Auto-Close</strong>: Close form after date/number of submissions</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="version-control">Version Control<a href="#version-control" class="hash-link" aria-label="Direct link to Version Control" title="Direct link to Version Control">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="version-history">Version History<a href="#version-history" class="hash-link" aria-label="Direct link to Version History" title="Direct link to Version History">​</a></h3>
+<p>All form changes are tracked:</p>
+<ul>
+<li>View version history</li>
+<li>See what changed in each version</li>
+<li>Compare versions side-by-side</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="reverting-changes">Reverting Changes<a href="#reverting-changes" class="hash-link" aria-label="Direct link to Reverting Changes" title="Direct link to Reverting Changes">​</a></h3>
+<p>If something goes wrong:</p>
+<ol>
+<li>Go to version history</li>
+<li>Select previous version</li>
+<li>Click &quot;Revert to This Version&quot;</li>
+<li>Form returns to selected version</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="publishing-updates">Publishing Updates<a href="#publishing-updates" class="hash-link" aria-label="Direct link to Publishing Updates" title="Direct link to Publishing Updates">​</a></h3>
+<p>When you edit a published form:</p>
+<ul>
+<li>Changes are saved as new version</li>
+<li>Form remains live during editing</li>
+<li>New version published when you click &quot;Publish&quot;</li>
+<li>Previous version remains in history</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="unpublishing-forms">Unpublishing Forms<a href="#unpublishing-forms" class="hash-link" aria-label="Direct link to Unpublishing Forms" title="Direct link to Unpublishing Forms">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="unpublish-a-form">Unpublish a Form<a href="#unpublish-a-form" class="hash-link" aria-label="Direct link to Unpublish a Form" title="Direct link to Unpublish a Form">​</a></h3>
+<ol>
+<li>
+<p><strong>Click &quot;Unpublish&quot;</strong>:</p>
+<ul>
+<li>Form returns to draft mode</li>
+<li>No longer accessible via URL</li>
+<li>Existing submissions preserved</li>
+</ul>
+</li>
+<li>
+<p><strong>Effects</strong>:</p>
+<ul>
+<li>Form URL returns 404</li>
+<li>No new submissions accepted</li>
+<li>Form still visible in dashboard</li>
+<li>Can republish anytime</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="archiving-forms">Archiving Forms<a href="#archiving-forms" class="hash-link" aria-label="Direct link to Archiving Forms" title="Direct link to Archiving Forms">​</a></h3>
+<p>For forms you no longer need:</p>
+<ol>
+<li>Unpublish the form</li>
+<li>Archive from dashboard</li>
+<li>Form hidden from main list</li>
+<li>Can restore if needed</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="analytics--monitoring">Analytics &amp; Monitoring<a href="#analytics--monitoring" class="hash-link" aria-label="Direct link to Analytics &amp; Monitoring" title="Direct link to Analytics &amp; Monitoring">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="view-submissions">View Submissions<a href="#view-submissions" class="hash-link" aria-label="Direct link to View Submissions" title="Direct link to View Submissions">​</a></h3>
+<ul>
+<li><strong>Dashboard</strong>: See submission count</li>
+<li><strong>Responses Page</strong>: View all submissions</li>
+<li><strong>Export</strong>: Download as JSON or CSV</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="submission-trends">Submission Trends<a href="#submission-trends" class="hash-link" aria-label="Direct link to Submission Trends" title="Direct link to Submission Trends">​</a></h3>
+<ul>
+<li><strong>Chart View</strong>: See submissions over time</li>
+<li><strong>Peak Times</strong>: Identify busy periods</li>
+<li><strong>Completion Rates</strong>: Track form performance</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="field-analytics">Field Analytics<a href="#field-analytics" class="hash-link" aria-label="Direct link to Field Analytics" title="Direct link to Field Analytics">​</a></h3>
+<ul>
+<li><strong>Completion Rates</strong>: See which fields are skipped</li>
+<li><strong>Response Distribution</strong>: View answer patterns</li>
+<li><strong>Average Time</strong>: See how long forms take</li>
+</ul>
+<p>See <a href="/docs/forms/analytics">Analytics</a> for more details.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="best-practices">Best Practices<a href="#best-practices" class="hash-link" aria-label="Direct link to Best Practices" title="Direct link to Best Practices">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="before-publishing-1">Before Publishing<a href="#before-publishing-1" class="hash-link" aria-label="Direct link to Before Publishing" title="Direct link to Before Publishing">​</a></h3>
+<ol>
+<li><strong>Test Thoroughly</strong>: Test all fields, validation, and logic</li>
+<li><strong>Review Settings</strong>: Check access control and appearance</li>
+<li><strong>Set Up Monitoring</strong>: Configure analytics and notifications</li>
+<li><strong>Prepare Support</strong>: Have help documentation ready</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="after-publishing">After Publishing<a href="#after-publishing" class="hash-link" aria-label="Direct link to After Publishing" title="Direct link to After Publishing">​</a></h3>
+<ol>
+<li><strong>Monitor Submissions</strong>: Watch for issues or errors</li>
+<li><strong>Review Analytics</strong>: Track form performance</li>
+<li><strong>Gather Feedback</strong>: Collect user feedback</li>
+<li><strong>Iterate</strong>: Make improvements based on data</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="security">Security<a href="#security" class="hash-link" aria-label="Direct link to Security" title="Direct link to Security">​</a></h3>
+<ol>
+<li><strong>Access Control</strong>: Use appropriate access levels</li>
+<li><strong>Bot Protection</strong>: Enable CAPTCHA for public forms</li>
+<li><strong>Rate Limiting</strong>: Configure submission limits</li>
+<li><strong>Data Privacy</strong>: Follow privacy best practices</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="troubleshooting">Troubleshooting<a href="#troubleshooting" class="hash-link" aria-label="Direct link to Troubleshooting" title="Direct link to Troubleshooting">​</a></h2>
+<p><strong>Form Not Accessible</strong>:</p>
+<ul>
+<li>Verify form is published (not draft)</li>
+<li>Check access control settings</li>
+<li>Verify URL is correct</li>
+</ul>
+<p><strong>Submissions Not Saving</strong>:</p>
+<ul>
+<li>Check MongoDB connection</li>
+<li>Verify collection permissions</li>
+<li>Review error logs</li>
+</ul>
+<p><strong>Embed Not Working</strong>:</p>
+<ul>
+<li>Verify embed code is correct</li>
+<li>Check iframe permissions</li>
+<li>Test in different browsers</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
+<ul>
+<li><a href="/docs/forms/analytics">Analytics</a> - Track form performance</li>
+<li><a href="/docs/forms/building-forms">Building Forms</a> - Learn form building</li>
+<li><a href="/docs/workflows/overview">Workflows</a> - Automate with workflows</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/mrlynn/netpad-v3/tree/main/docs/docs/forms/publishing.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/forms/conditional-logic"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Conditional Logic</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/forms/analytics"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Form Analytics</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#publishing-your-form" class="table-of-contents__link toc-highlight">Publishing Your Form</a><ul><li><a href="#before-publishing" class="table-of-contents__link toc-highlight">Before Publishing</a></li><li><a href="#publishing-steps" class="table-of-contents__link toc-highlight">Publishing Steps</a></li></ul></li><li><a href="#form-status" class="table-of-contents__link toc-highlight">Form Status</a><ul><li><a href="#draft-mode" class="table-of-contents__link toc-highlight">Draft Mode</a></li><li><a href="#published-mode" class="table-of-contents__link toc-highlight">Published Mode</a></li></ul></li><li><a href="#sharing-your-form" class="table-of-contents__link toc-highlight">Sharing Your Form</a><ul><li><a href="#shareable-url" class="table-of-contents__link toc-highlight">Shareable URL</a></li><li><a href="#embedding-forms" class="table-of-contents__link toc-highlight">Embedding Forms</a></li><li><a href="#url-pre-filling" class="table-of-contents__link toc-highlight">URL Pre-filling</a></li></ul></li><li><a href="#access-control" class="table-of-contents__link toc-highlight">Access Control</a><ul><li><a href="#public-forms" class="table-of-contents__link toc-highlight">Public Forms</a></li><li><a href="#authenticated-forms" class="table-of-contents__link toc-highlight">Authenticated Forms</a></li><li><a href="#restricted-forms" class="table-of-contents__link toc-highlight">Restricted Forms</a></li></ul></li><li><a href="#form-settings" class="table-of-contents__link toc-highlight">Form Settings</a><ul><li><a href="#general-settings" class="table-of-contents__link toc-highlight">General Settings</a></li><li><a href="#appearance" class="table-of-contents__link toc-highlight">Appearance</a></li><li><a href="#advanced-settings" class="table-of-contents__link toc-highlight">Advanced Settings</a></li></ul></li><li><a href="#version-control" class="table-of-contents__link toc-highlight">Version Control</a><ul><li><a href="#version-history" class="table-of-contents__link toc-highlight">Version History</a></li><li><a href="#reverting-changes" class="table-of-contents__link toc-highlight">Reverting Changes</a></li><li><a href="#publishing-updates" class="table-of-contents__link toc-highlight">Publishing Updates</a></li></ul></li><li><a href="#unpublishing-forms" class="table-of-contents__link toc-highlight">Unpublishing Forms</a><ul><li><a href="#unpublish-a-form" class="table-of-contents__link toc-highlight">Unpublish a Form</a></li><li><a href="#archiving-forms" class="table-of-contents__link toc-highlight">Archiving Forms</a></li></ul></li><li><a href="#analytics--monitoring" class="table-of-contents__link toc-highlight">Analytics &amp; Monitoring</a><ul><li><a href="#view-submissions" class="table-of-contents__link toc-highlight">View Submissions</a></li><li><a href="#submission-trends" class="table-of-contents__link toc-highlight">Submission Trends</a></li><li><a href="#field-analytics" class="table-of-contents__link toc-highlight">Field Analytics</a></li></ul></li><li><a href="#best-practices" class="table-of-contents__link toc-highlight">Best Practices</a><ul><li><a href="#before-publishing-1" class="table-of-contents__link toc-highlight">Before Publishing</a></li><li><a href="#after-publishing" class="table-of-contents__link toc-highlight">After Publishing</a></li><li><a href="#security" class="table-of-contents__link toc-highlight">Security</a></li></ul></li><li><a href="#troubleshooting" class="table-of-contents__link toc-highlight">Troubleshooting</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/getting-started/introduction">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/forms/overview">Forms</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/workflows/overview">Workflows</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/api/overview">API Reference</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">Issues<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3/discussions" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discussions<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 NetPad. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
