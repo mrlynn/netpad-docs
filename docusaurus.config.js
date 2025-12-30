@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'NetPad',
-  tagline: 'Draw. Collaborate. Integrate.',
+  title: 'NetPad Documentation',
+  tagline: 'MongoDB-connected forms, workflows, and data management—all without code',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -46,7 +46,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/mrlynn/netpad-v3/tree/main/docs/',
+        },
+        blog: {
+          showReadingTime: true,
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/mrlynn/netpad-v3/tree/main/blog/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -60,7 +67,12 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/logo.png',
+      colorMode: {
+        defaultMode: 'dark',
+        respectPrefersColorScheme: true,
+      },
       navbar: {
+        style: 'dark',
         title: 'NetPad',
         logo: {
           alt: 'NetPad Logo',
@@ -73,7 +85,11 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          // Optionally keep the blog link if you have a blog
+          {
+            href: 'https://github.com/mrlynn/netpad-v3',
+            label: 'GitHub',
+            position: 'right',
+          },
         ],
       },
       footer: {
@@ -86,15 +102,52 @@ const config = {
                 label: 'Getting Started',
                 to: '/docs/getting-started/introduction',
               },
+              {
+                label: 'Forms',
+                to: '/docs/forms/overview',
+              },
+              {
+                label: 'Workflows',
+                to: '/docs/workflows/overview',
+              },
+              {
+                label: 'API Reference',
+                to: '/docs/api/overview',
+              },
             ],
           },
-          // Optionally add more links here as needed
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/mrlynn/netpad-v3',
+              },
+              {
+                label: 'Issues',
+                href: 'https://github.com/mrlynn/netpad-v3/issues',
+              },
+              {
+                label: 'Discussions',
+                href: 'https://github.com/mrlynn/netpad-v3/discussions',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
+            ],
+          },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} NetPad. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        darkTheme: prismThemes.vsDark,
       },
     }),
 };

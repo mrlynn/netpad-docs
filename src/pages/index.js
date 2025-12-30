@@ -22,6 +22,12 @@ function HomepageHeader() {
             to="/docs/getting-started/introduction">
             Get Started
           </Link>
+          <Link
+            className="button button--primary button--lg"
+            to="/docs/getting-started/quickstart"
+            style={{marginLeft: '10px'}}>
+            Quick Start
+          </Link>
         </div>
       </div>
     </header>
@@ -32,8 +38,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="NetPad is a comprehensive, open-source platform for creating MongoDB-connected data entry forms, workflows, search interfaces, and data management applications—all without writing code.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

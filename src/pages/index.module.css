@@ -8,12 +8,35 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: #23272f;
+  background: var(--ifm-background-color);
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: var(--ifm-font-color-secondary);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.heroHighlight {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
   }
 }
 
@@ -21,4 +44,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+}
+
+.heroGradient {
+  background: linear-gradient(135deg, #00ED64 0%, #00A651 100%);
+  padding: 6rem 0;
+}
+
+.heroGradient .heroTitle {
+  color: #001E2B;
+}
+
+.heroGradient .heroSubtitle {
+  color: rgba(0, 30, 43, 0.8);
 }

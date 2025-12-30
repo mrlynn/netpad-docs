@@ -1,22 +1,404 @@
+/**
+ * NetPad Color Scheme
+ * Primary Brand Colors:
+ * - MongoDB Bright Green: #00ED64 (Primary accent, CTAs, links, highlights)
+ * - MongoDB Dark Green: #00684A (Secondary accent, light mode primary)
+ * - Dark Navy: #001E2B (Dark background, headers)
+ * - Background Dark: #0a0e14 (Page background dark mode)
+ * - Surface Dark: #141920 (Card/paper background dark mode)
+ */
+
+/* ============================================
+   Light Mode (Default in :root)
+   ============================================ */
 :root {
-  --ifm-color-primary: #4FC3F7;
-  --ifm-color-primary-dark: #42a5d4;
-  --ifm-color-primary-darker: #3996be;
-  --ifm-color-primary-darkest: #2c7693;
-  --ifm-color-primary-light: #6fd4ff;
-  --ifm-color-primary-lighter: #8fe0ff;
-  --ifm-color-primary-lightest: #b3ecff;
-  --ifm-background-color: #ffffff;  /* was #121212 */
-  --ifm-navbar-background-color: #f5f7fa; /* was #121212 */
-  --ifm-footer-background-color: #23272f; /* give the footer a slight dark, but not full black */
+  /* Primary Colors */
+  --ifm-color-primary: #00684A;
+  --ifm-color-primary-dark: #004A33;
+  --ifm-color-primary-darker: #003D2A;
+  --ifm-color-primary-darkest: #002E20;
+  --ifm-color-primary-light: #00966B;
+  --ifm-color-primary-lighter: #00B07E;
+  --ifm-color-primary-lightest: #00ED64;
+
+  /* Background */
+  --ifm-background-color: #f5f7f9;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #001E2B;
+
+  /* Text - DARK text for light backgrounds */
+  --ifm-font-color-base: #1a1a2e;
+  --ifm-font-color-secondary: #5c6370;
+  --ifm-heading-color: #1a1a2e;
+
+  /* Code blocks */
+  --ifm-code-background: #f0f4f8;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(79, 195, 247, 0.07);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 104, 74, 0.1);
+
+  /* Borders */
+  --ifm-hr-border-color: rgba(0, 0, 0, 0.1);
+  --ifm-toc-border-color: rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --ifm-font-family-base: "Inter", -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+  --ifm-font-family-monospace: "SF Mono", "Monaco", "Consolas", "Liberation Mono", monospace;
+  --ifm-heading-font-weight: 700;
+  --ifm-font-weight-bold: 600;
+
+  /* Spacing & Border Radius */
+  --ifm-global-radius: 8px;
+  --ifm-button-border-radius: 8px;
+  --ifm-card-border-radius: 12px;
+  --ifm-code-border-radius: 6px;
+
+  /* Semantic Colors */
+  --ifm-color-success: #00684A;
+  --ifm-color-info: #0288d1;
+  --ifm-color-warning: #ed6c02;
+  --ifm-color-danger: #d32f2f;
 }
 
-/* Keep dark mode dark, but maybe make it softer */
+/* ============================================
+   Dark Mode
+   ============================================ */
 [data-theme='dark'] {
-  --ifm-background-color: #191c20;
-  --ifm-navbar-background-color: #191c20;
-  --ifm-footer-background-color: #23272f;
-  --docusaurus-highlighted-code-line-bg: rgba(79, 195, 247, 0.13);
+  /* Primary Colors */
+  --ifm-color-primary: #00ED64;
+  --ifm-color-primary-dark: #00B84A;
+  --ifm-color-primary-darker: #00684A;
+  --ifm-color-primary-darkest: #004A33;
+  --ifm-color-primary-light: #4DFF9F;
+  --ifm-color-primary-lighter: #7FFFB8;
+  --ifm-color-primary-lightest: #B3FFD6;
+
+  /* Background */
+  --ifm-background-color: #001E2B;
+  --ifm-background-surface-color: #0a0e14;
+  --ifm-navbar-background-color: #001E2B;
+  --ifm-footer-background-color: #001E2B;
+
+  /* Text - LIGHT text for dark backgrounds */
+  --ifm-font-color-base: #e6edf3;
+  --ifm-font-color-secondary: #8b949e;
+  --ifm-heading-color: #e6edf3;
+
+  /* Code blocks */
+  --ifm-code-background: #141920;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 237, 100, 0.1);
+
+  /* Borders */
+  --ifm-hr-border-color: rgba(110, 118, 129, 0.2);
+  --ifm-toc-border-color: rgba(110, 118, 129, 0.2);
+
+  /* Semantic Colors */
+  --ifm-color-success: #00ED64;
+  --ifm-color-info: #58a6ff;
+  --ifm-color-warning: #d29922;
+  --ifm-color-danger: #f85149;
+}
+
+/* ============================================
+   Links
+   ============================================ */
+a {
+  transition: color 0.15s ease;
+}
+
+[data-theme='dark'] a:hover {
+  color: #4DFF9F;
+}
+
+a:hover {
+  color: #00ED64;
+}
+
+/* ============================================
+   Navbar
+   ============================================ */
+.navbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .navbar {
+  border-bottom: 1px solid rgba(110, 118, 129, 0.2);
+}
+
+.navbar__title {
+  font-weight: 700;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--ifm-color-primary);
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.button--primary {
+  background: linear-gradient(135deg, #00ED64 0%, #00A651 100%);
+  border: none;
+  color: #001E2B !important;
+  transition: all 0.15s ease;
+}
+
+.button--primary:hover {
+  background: linear-gradient(135deg, #4DFF9F 0%, #00ED64 100%);
+  transform: translateY(-1px);
+  color: #001E2B !important;
+}
+
+.button--secondary {
+  border: 1px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background: transparent;
+  transition: all 0.15s ease;
+}
+
+[data-theme='dark'] .button--secondary:hover {
+  background: rgba(0, 237, 100, 0.1);
+  border-color: #4DFF9F;
+  color: #4DFF9F;
+}
+
+.button--secondary:hover {
+  background: rgba(0, 104, 74, 0.1);
+  border-color: #00684A;
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--ifm-card-border-radius);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  border-color: rgba(0, 104, 74, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 104, 74, 0.1);
+}
+
+[data-theme='dark'] .card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .card:hover {
+  border-color: rgba(0, 237, 100, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 237, 100, 0.1);
+}
+
+/* ============================================
+   Code Blocks
+   ============================================ */
+pre {
+  background: #f0f4f8 !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--ifm-code-border-radius);
+}
+
+[data-theme='dark'] pre {
+  background: #141920 !important;
+  border: 1px solid rgba(110, 118, 129, 0.2);
+}
+
+code {
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+}
+
+/* ============================================
+   Sidebar
+   ============================================ */
+.menu__link {
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.menu__link:hover {
+  background: rgba(0, 104, 74, 0.1);
+  color: var(--ifm-color-primary);
+}
+
+.menu__link--active {
+  background: rgba(0, 104, 74, 0.15);
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+[data-theme='dark'] .menu__link:hover {
+  background: rgba(0, 237, 100, 0.1);
+}
+
+[data-theme='dark'] .menu__link--active {
+  background: rgba(0, 237, 100, 0.15);
+}
+
+/* ============================================
+   Table of Contents
+   ============================================ */
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+  background: var(--ifm-footer-background-color);
+}
+
+.footer__title {
+  color: #e6edf3;
+}
+
+.footer__link-item {
+  color: #8b949e;
+  transition: color 0.15s ease;
+}
+
+.footer__link-item:hover {
+  color: #00ED64;
+}
+
+/* ============================================
+   Admonitions
+   ============================================ */
+.alert--success {
+  --ifm-alert-background-color: rgba(0, 237, 100, 0.1);
+  --ifm-alert-border-color: #00ED64;
+}
+
+.alert--info {
+  --ifm-alert-background-color: rgba(88, 166, 255, 0.1);
+  --ifm-alert-border-color: #58a6ff;
+}
+
+.alert--warning {
+  --ifm-alert-background-color: rgba(210, 153, 34, 0.1);
+  --ifm-alert-border-color: #d29922;
+}
+
+.alert--danger {
+  --ifm-alert-background-color: rgba(248, 81, 73, 0.1);
+  --ifm-alert-border-color: #f85149;
+}
+
+/* ============================================
+   Hero Gradient (for custom components)
+   ============================================ */
+.hero-gradient {
+  background: linear-gradient(135deg, #00ED64 0%, #00A651 100%);
+}
+
+/* ============================================
+   Scrollbar Styling
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f7f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c8d0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00684A;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: #0a0e14;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #3d444d;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: #00ED64;
+}
+
+/* ============================================
+   Search
+   ============================================ */
+.DocSearch-Button {
+  border-radius: var(--ifm-button-border-radius) !important;
+}
+
+.DocSearch-Button:hover {
+  box-shadow: 0 0 0 2px rgba(0, 237, 100, 0.3);
+}
+
+/* ============================================
+   Pagination
+   ============================================ */
+.pagination-nav__link {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--ifm-global-radius);
+  transition: all 0.15s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: rgba(0, 104, 74, 0.4);
+}
+
+[data-theme='dark'] .pagination-nav__link {
+  border: 1px solid rgba(110, 118, 129, 0.2);
+}
+
+[data-theme='dark'] .pagination-nav__link:hover {
+  border-color: rgba(0, 237, 100, 0.4);
+}
+
+/* ============================================
+   Blog
+   ============================================ */
+.avatar__photo {
+  border: 2px solid var(--ifm-color-primary);
+}
+
+/* ============================================
+   Tabs
+   ============================================ */
+.tabs__item {
+  border-radius: var(--ifm-global-radius) var(--ifm-global-radius) 0 0;
+  transition: all 0.15s ease;
+}
+
+.tabs__item--active {
+  border-bottom-color: var(--ifm-color-primary);
+}
+
+.tabs__item:hover {
+  background: rgba(0, 104, 74, 0.1);
+}
+
+[data-theme='dark'] .tabs__item:hover {
+  background: rgba(0, 237, 100, 0.1);
+}
+
+/* ============================================
+   Hero Section Overrides
+   ============================================ */
+.hero {
+  --ifm-hero-background-color: var(--ifm-background-color);
+  --ifm-hero-text-color: var(--ifm-font-color-base);
+}
+
+.hero__title {
+  color: var(--ifm-font-color-base);
+}
+
+.hero__subtitle {
+  color: var(--ifm-font-color-secondary);
 }
