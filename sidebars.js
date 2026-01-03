@@ -70,6 +70,7 @@ const sidebars = {
         'api/forms',
         'api/submissions',
         'api/webhooks',
+        'api/vercel-integration',
       ],
     },
     {

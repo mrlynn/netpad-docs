@@ -107,6 +107,58 @@ X-Request-Id: req_abc123
 | `RATE_LIMIT_EXCEEDED` | 429 | Too many requests |
 | `INTERNAL_ERROR` | 500 | Server error |
 
+---
+
+## Health Check
+
+Check the health status of the API and its dependencies.
+
+```http
+GET /api/v1/health
+```
+
+**Authentication:** Not required
+
+**Example Request:**
+
+```bash
+curl -X GET "https://your-domain.com/api/v1/health"
+```
+
+**Example Response:**
+
+```json
+{
+  "status": "healthy",
+  "timestamp": "2024-01-20T12:00:00.000Z",
+  "version": "1.0.0",
+  "services": {
+    "api": {
+      "status": "up",
+      "responseTime": 5
+    },
+    "database": {
+      "status": "up",
+      "responseTime": 15
+    }
+  }
+}
+```
+
+**Status Values:**
+
+| Status | HTTP Code | Description |
+|--------|-----------|-------------|
+| `healthy` | 200 | All services operational |
+| `degraded` | 200 | Slow response times (>1s database) |
+| `unhealthy` | 503 | Database or critical service down |
+
+:::note
+This endpoint is designed for monitoring services like Upptime, Datadog, or custom health checks. It does not require authentication and is not rate limited.
+:::
+
+---
+
 ## Permissions
 
 When creating an API key, you can assign the following permissions:
@@ -121,6 +173,108 @@ When creating an API key, you can assign the following permissions:
 | `submissions:delete` | Delete submissions |
 | `analytics:read` | View analytics data |
 | `webhooks:manage` | Configure webhooks |
+
+---
+
+## Code Examples
+
+### JavaScript/Node.js
+
+```javascript
+const API_KEY = 'np_live_your_api_key';
+const BASE_URL = 'https://your-domain.com/api/v1';
+
+// List all forms
+async function listForms() {
+  const response = await fetch(`${BASE_URL}/forms`, {
+    headers: {
+      'Authorization': `Bearer ${API_KEY}`,
+    },
+  });
+  return response.json();
+}
+
+// Submit to a form
+async function submitForm(formId, data) {
+  const response = await fetch(`${BASE_URL}/forms/${formId}/submissions`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ data }),
+  });
+  return response.json();
+}
+
+// Usage
+const forms = await listForms();
+console.log(forms.data);
+
+const result = await submitForm('contact-form', {
+  name: 'API User',
+  email: 'api@example.com',
+});
+console.log(result.data.submissionId);
+```
+
+### Python
+
+```python
+import requests
+
+API_KEY = 'np_live_your_api_key'
+BASE_URL = 'https://your-domain.com/api/v1'
+
+headers = {
+    'Authorization': f'Bearer {API_KEY}',
+    'Content-Type': 'application/json',
+}
+
+# List all forms
+response = requests.get(f'{BASE_URL}/forms', headers=headers)
+forms = response.json()
+print(forms['data'])
+
+# Submit to a form
+submission_data = {
+    'data': {
+        'name': 'API User',
+        'email': 'api@example.com',
+    }
+}
+response = requests.post(
+    f'{BASE_URL}/forms/contact-form/submissions',
+    headers=headers,
+    json=submission_data,
+)
+result = response.json()
+print(result['data']['submissionId'])
+```
+
+### cURL
+
+```bash
+# List forms
+curl -X GET "https://your-domain.com/api/v1/forms" \
+  -H "Authorization: Bearer np_live_your_api_key"
+
+# Get form details
+curl -X GET "https://your-domain.com/api/v1/forms/contact-form" \
+  -H "Authorization: Bearer np_live_your_api_key"
+
+# Submit to form
+curl -X POST "https://your-domain.com/api/v1/forms/contact-form/submissions" \
+  -H "Authorization: Bearer np_live_your_api_key" \
+  -H "Content-Type: application/json" \
+  -d '{"data": {"name": "Test", "email": "test@example.com"}}'
+
+# Get submissions with date filter
+curl -X GET "https://your-domain.com/api/v1/forms/contact-form/submissions?startDate=2024-01-01&endDate=2024-01-31" \
+  -H "Authorization: Bearer np_live_your_api_key"
+```
+
+---
 
 ## API Documentation
 
@@ -168,12 +322,17 @@ You can use this specification with:
 - **Swagger UI**: Host your own documentation instance
 - **API Testing Tools**: Integrate with tools like Insomnia, Thunder Client, etc.
 
+---
+
 ## Endpoints
 
 - [Authentication](./authentication.md) - Auth endpoints
 - [Forms](./forms.md) - Form management
 - [Submissions](./submissions.md) - Form submissions
 - [Webhooks](./webhooks.md) - Webhook events
+- [Vercel Integration](./vercel-integration.md) - Vercel deployment integration
+
+---
 
 ## Webhooks (Coming Soon)
 
@@ -184,6 +343,8 @@ Configure webhooks to receive real-time notifications when events occur:
 - `form.submission.deleted` - Submission deleted
 - `form.published` - Form published
 - `form.unpublished` - Form unpublished
+
+---
 
 ## Support
 
