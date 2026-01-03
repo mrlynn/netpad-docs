@@ -98,6 +98,7 @@ const sidebars = {
       label: 'Development',
       items: [
         'development/contributing',
+        'development/code-of-conduct',
         'development/architecture',
         'development/testing',
         'development/code-style',

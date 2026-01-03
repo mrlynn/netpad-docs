@@ -229,7 +229,7 @@ If you discover a security vulnerability:
 - Be respectful and inclusive
 - Help others when you can
 - Ask questions if you're unsure
-- Follow our [Code of Conduct](CODE_OF_CONDUCT.md)
+- Follow our [Code of Conduct](./code-of-conduct.md)
 
 ## License
 
