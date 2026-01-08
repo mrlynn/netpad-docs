@@ -62,6 +62,31 @@ const config = {
     ],
   ],
 
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        // `hashed` is recommended for long-term caching
+        hashed: true,
+        // For docs-only mode
+        docsRouteBasePath: '/docs',
+        // Language support
+        language: ['en'],
+        // Highlight search terms on target page
+        highlightSearchTermsOnTargetPage: true,
+        // Search bar placeholder
+        searchBarShortcutHint: true,
+        // Index blog posts as well
+        indexBlog: true,
+        // Index docs
+        indexDocs: true,
+        // Index pages
+        indexPages: false,
+      }),
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

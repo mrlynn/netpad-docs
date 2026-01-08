@@ -53,18 +53,6 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Pipeline Builder',
-      items: [
-        'pipeline-builder/overview',
-        'pipeline-builder/aggregation-stages',
-        'pipeline-builder/ai-pipeline-generation',
-        'pipeline-builder/results-viewer',
-        'pipeline-builder/document-editing',
-        'pipeline-builder/sample-documents',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Data Explorer',
       items: [
         'data-explorer/overview',

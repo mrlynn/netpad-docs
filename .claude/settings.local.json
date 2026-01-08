@@ -5,7 +5,9 @@
       "Bash(find:*)",
       "Bash(tree:*)",
       "Bash(for dir in /Users/michael.lynn/code/mermaid/svgeditor/docs/docs.netpad.io/docs/*/)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(ls:*)"
     ]
   }
 }

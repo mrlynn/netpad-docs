@@ -69,7 +69,7 @@ Potential relationships between collections:
 ## Using the ERD
 
 ### Understand Database Structure
-Before building forms or pipelines:
+Before building forms:
 - See all collections at a glance
 - Understand data organization
 - Identify main entities
@@ -86,14 +86,8 @@ Before building forms:
 - Understand field types
 - Plan form field mappings
 
-### Plan Aggregation Pipelines
-Before building pipelines:
-- Identify join paths
-- Understand data structure
-- Plan $lookup stages
-
 :::tip
-The ERD updates automatically when you change databases. Use it as a reference when configuring lookup fields or building aggregation pipelines.
+The ERD updates automatically when you change databases. Use it as a reference when configuring lookup fields in your forms.
 :::
 
 ## ERD Controls
@@ -171,7 +165,7 @@ Export schema as JSON:
 1. **Refresh regularly** - Schema may change
 2. **Note relationships** - Track foreign keys
 3. **Document discoveries** - Note unexpected structures
-4. **Use for planning** - Before building forms/pipelines
+4. **Use for planning** - Before building forms
 5. **Share with team** - Export for documentation
 
 ## Limitations
@@ -190,6 +184,6 @@ MongoDB doesn't enforce relationships:
 
 ## Next Steps
 
-- [Pipeline Builder](../pipeline-builder/overview.md) - Build aggregation pipelines
 - [Form Builder](../forms/form-builder.md) - Create data entry forms
-- [Sample Documents](../pipeline-builder/sample-documents.md) - View collection data
+- [Browsing Data](./browsing-data.md) - Browse collection data
+- [Data Explorer Overview](./overview.md) - Learn more about Data Explorer

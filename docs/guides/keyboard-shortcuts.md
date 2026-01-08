@@ -46,37 +46,6 @@ Speed up your workflow with keyboard shortcuts. NetPad supports shortcuts for co
 | `Ctrl/Cmd + E` | Edit mode |
 | `Ctrl/Cmd + \`` | Toggle panels |
 
-## Pipeline Builder Shortcuts
-
-### Stage Operations
-
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl/Cmd + Enter` | Run pipeline |
-| `Ctrl/Cmd + N` | Add new stage |
-| `Delete` | Delete selected stage |
-| `Ctrl/Cmd + D` | Duplicate stage |
-| `Space` | Toggle stage enabled/disabled |
-
-### Navigation
-
-| Shortcut | Action |
-|----------|--------|
-| `Arrow Up/Down` | Navigate stages |
-| `Arrow Left/Right` | Collapse/expand stage |
-| `Tab` | Next stage |
-| `Shift + Tab` | Previous stage |
-
-## Results Viewer Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| `Arrow Up/Down` | Navigate rows |
-| `Enter` | Open document details |
-| `Escape` | Close details |
-| `Ctrl/Cmd + C` | Copy selected document |
-| `Page Up/Down` | Navigate pages |
-
 ## Text Editing Shortcuts
 
 | Shortcut | Action |
@@ -173,5 +142,5 @@ Access the full shortcut reference anytime:
 ## Next Steps
 
 - [Form Builder](../forms/form-builder.md) - Build forms
-- [Pipeline Builder](../pipeline-builder/overview.md) - Build pipelines
+- [Data Explorer](../data-explorer/overview.md) - Browse your data
 - [Settings](../platform/organizations.md) - Customize preferences

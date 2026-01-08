@@ -157,6 +157,12 @@ a:hover {
   transition: all 0.15s ease;
 }
 
+[data-theme='dark'] .button--secondary {
+  border: 1px solid #00ED64;
+  color: #00ED64;
+  background: transparent;
+}
+
 [data-theme='dark'] .button--secondary:hover {
   background: rgba(0, 237, 100, 0.1);
   border-color: #4DFF9F;
@@ -401,4 +407,16 @@ code {
 
 .hero__subtitle {
   color: var(--ifm-font-color-secondary);
+}
+
+/* Ensure buttons in hero section are properly styled in dark mode */
+[data-theme='dark'] .hero .button--secondary {
+  border-color: #00ED64;
+  color: #00ED64;
+}
+
+[data-theme='dark'] .hero .button--secondary:hover {
+  border-color: #4DFF9F;
+  color: #4DFF9F;
+  background: rgba(0, 237, 100, 0.1);
 }
