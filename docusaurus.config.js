@@ -87,6 +87,31 @@ const config = {
     ],
   ],
 
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+      },
+    },
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -101,7 +126,8 @@ const config = {
         title: 'NetPad',
         logo: {
           alt: 'NetPad Logo',
-          src: 'img/logo.png',
+          src: 'img/logo.png', // Prefer SVG for better quality
+          srcDark: 'img/logo.png', // SVG adapts to theme via CSS
         },
         items: [
           {

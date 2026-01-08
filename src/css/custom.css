@@ -1,31 +1,68 @@
 /**
- * NetPad Color Scheme
- * Primary Brand Colors:
- * - MongoDB Bright Green: #00ED64 (Primary accent, CTAs, links, highlights)
- * - MongoDB Dark Green: #00684A (Secondary accent, light mode primary)
- * - Dark Navy: #001E2B (Dark background, headers)
- * - Background Dark: #0a0e14 (Page background dark mode)
- * - Surface Dark: #141920 (Card/paper background dark mode)
+ * NetPad Brand Standards - CSS Implementation
+ * Version: 1.0
+ * Last Updated: January 2026
+ * 
+ * This file implements the NetPad brand standards for Docusaurus.
+ * All colors, typography, spacing, and effects conform to brand guidelines.
  */
 
 /* ============================================
-   Light Mode (Default in :root)
+   Brand CSS Variables (Light Mode)
    ============================================ */
 :root {
-  /* Primary Colors */
-  --ifm-color-primary: #00684A;
-  --ifm-color-primary-dark: #004A33;
+  /* Core Colors */
+  --netpad-black: #000000;
+  --netpad-white: #FFFFFF;
+  
+  /* Primary Color Palette - Light Mode */
+  --netpad-primary: #00684A;
+  --netpad-primary-light: #00966B;
+  --netpad-primary-dark: #004A33;
+  
+  /* NetPad Accent (Cyan-Green) */
+  --netpad-accent: #00D4AA;
+  --netpad-accent-light: #4DFFE0;
+  --netpad-accent-dark: #00684A;
+  
+  /* Primary Color Palette - Dark Mode (for reference) */
+  --netpad-primary-dark-mode: #00ED64;
+  --netpad-primary-light-dark-mode: #4DFF9F;
+  --netpad-primary-dark-dark-mode: #00B84A;
+  
+  /* Gradients */
+  --netpad-gradient-light: linear-gradient(135deg, #00684A 0%, #00966B 100%);
+  --netpad-gradient-reverse: linear-gradient(135deg, #00D4AA 0%, #00ED64 100%);
+  
+  /* Shadows (Light Mode) */
+  --netpad-shadow-primary: 0 4px 16px rgba(0, 104, 74, 0.15);
+  --netpad-shadow-primary-hover: 0 6px 24px rgba(0, 104, 74, 0.22);
+  --netpad-shadow-subtle: 0 2px 12px rgba(0, 104, 74, 0.08);
+  
+  /* Grid Pattern */
+  --netpad-grid-pattern-light: radial-gradient(circle at 1px 1px, rgba(0, 104, 74, 0.06) 1px, transparent 0);
+  --netpad-grid-size: 24px 24px;
+  
+  /* Border Radius */
+  --netpad-border-radius: 8px;
+  --netpad-border-radius-small: 4px;
+  --netpad-border-radius-medium: 6px;
+  --netpad-border-radius-large: 12px;
+  
+  /* Docusaurus Theme Colors - Light Mode */
+  --ifm-color-primary: var(--netpad-primary);
+  --ifm-color-primary-dark: var(--netpad-primary-dark);
   --ifm-color-primary-darker: #003D2A;
   --ifm-color-primary-darkest: #002E20;
-  --ifm-color-primary-light: #00966B;
+  --ifm-color-primary-light: var(--netpad-primary-light);
   --ifm-color-primary-lighter: #00B07E;
   --ifm-color-primary-lightest: #00ED64;
 
   /* Background */
-  --ifm-background-color: #f5f7f9;
+  --ifm-background-color: #F8FAF9;
   --ifm-background-surface-color: #ffffff;
   --ifm-navbar-background-color: #ffffff;
-  --ifm-footer-background-color: #001E2B;
+  --ifm-footer-background-color: #0B0F14;
 
   /* Text - DARK text for light backgrounds */
   --ifm-font-color-base: #1a1a2e;
@@ -38,46 +75,78 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 104, 74, 0.1);
 
   /* Borders */
-  --ifm-hr-border-color: rgba(0, 0, 0, 0.1);
-  --ifm-toc-border-color: rgba(0, 0, 0, 0.1);
+  --ifm-hr-border-color: rgba(0, 104, 74, 0.1);
+  --ifm-toc-border-color: rgba(0, 104, 74, 0.1);
 
-  /* Typography */
+  /* Typography - Inter Font */
   --ifm-font-family-base: "Inter", -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
   --ifm-font-family-monospace: "SF Mono", "Monaco", "Consolas", "Liberation Mono", monospace;
   --ifm-heading-font-weight: 700;
   --ifm-font-weight-bold: 600;
+  
+  /* Typography Scale */
+  --ifm-h1-font-size: 2.5rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.5rem;
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-h5-font-size: 1.125rem;
+  --ifm-h6-font-size: 1rem;
+  --ifm-font-size-base: 0.9375rem;
+  --ifm-line-height-base: 1.6;
 
   /* Spacing & Border Radius */
-  --ifm-global-radius: 8px;
-  --ifm-button-border-radius: 8px;
-  --ifm-card-border-radius: 12px;
-  --ifm-code-border-radius: 6px;
+  --ifm-global-radius: var(--netpad-border-radius);
+  --ifm-button-border-radius: var(--netpad-border-radius);
+  --ifm-card-border-radius: var(--netpad-border-radius-large);
+  --ifm-code-border-radius: var(--netpad-border-radius-medium);
 
-  /* Semantic Colors */
-  --ifm-color-success: #00684A;
+  /* Semantic Colors - Light Mode */
+  --ifm-color-success: var(--netpad-primary);
   --ifm-color-info: #0288d1;
   --ifm-color-warning: #ed6c02;
   --ifm-color-danger: #d32f2f;
 }
 
 /* ============================================
-   Dark Mode
+   Brand CSS Variables (Dark Mode)
    ============================================ */
 [data-theme='dark'] {
-  /* Primary Colors */
-  --ifm-color-primary: #00ED64;
-  --ifm-color-primary-dark: #00B84A;
+  /* Primary Color Palette - Dark Mode */
+  --netpad-primary: #00ED64;
+  --netpad-primary-light: #4DFF9F;
+  --netpad-primary-dark: #00B84A;
+  
+  /* NetPad Accent (Cyan-Green) */
+  --netpad-accent: #00D4AA;
+  --netpad-accent-light: #4DFFE0;
+  --netpad-accent-dark: #00684A;
+  
+  /* Gradients */
+  --netpad-gradient: linear-gradient(135deg, #00ED64 0%, #00D4AA 100%);
+  --netpad-gradient-reverse: linear-gradient(135deg, #00D4AA 0%, #00ED64 100%);
+  
+  /* Glow Effects (Dark Mode) */
+  --netpad-glow-primary: 0 4px 16px rgba(0, 237, 100, 0.3);
+  --netpad-glow-primary-hover: 0 6px 24px rgba(0, 237, 100, 0.4);
+  --netpad-glow-subtle: 0 0 30px rgba(0, 237, 100, 0.1);
+  
+  /* Grid Pattern */
+  --netpad-grid-pattern-dark: radial-gradient(circle at 1px 1px, rgba(0, 237, 100, 0.03) 1px, transparent 0);
+  
+  /* Docusaurus Theme Colors - Dark Mode */
+  --ifm-color-primary: var(--netpad-primary);
+  --ifm-color-primary-dark: var(--netpad-primary-dark);
   --ifm-color-primary-darker: #00684A;
   --ifm-color-primary-darkest: #004A33;
-  --ifm-color-primary-light: #4DFF9F;
+  --ifm-color-primary-light: var(--netpad-primary-light);
   --ifm-color-primary-lighter: #7FFFB8;
   --ifm-color-primary-lightest: #B3FFD6;
 
   /* Background */
-  --ifm-background-color: #001E2B;
-  --ifm-background-surface-color: #0a0e14;
-  --ifm-navbar-background-color: #001E2B;
-  --ifm-footer-background-color: #001E2B;
+  --ifm-background-color: #0B0F14;
+  --ifm-background-surface-color: #141920;
+  --ifm-navbar-background-color: #0B0F14;
+  --ifm-footer-background-color: #0B0F14;
 
   /* Text - LIGHT text for dark backgrounds */
   --ifm-font-color-base: #e6edf3;
@@ -89,14 +158,51 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 237, 100, 0.1);
 
   /* Borders */
-  --ifm-hr-border-color: rgba(110, 118, 129, 0.2);
-  --ifm-toc-border-color: rgba(110, 118, 129, 0.2);
+  --ifm-hr-border-color: rgba(110, 118, 129, 0.12);
+  --ifm-toc-border-color: rgba(110, 118, 129, 0.12);
 
-  /* Semantic Colors */
-  --ifm-color-success: #00ED64;
+  /* Semantic Colors - Dark Mode */
+  --ifm-color-success: var(--netpad-primary);
   --ifm-color-info: #58a6ff;
   --ifm-color-warning: #d29922;
   --ifm-color-danger: #f85149;
+}
+
+/* ============================================
+   Typography Enhancements
+   ============================================ */
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h4, h5 {
+  font-weight: 600;
+}
+
+h6 {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+body {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+button {
+  text-transform: none;
+  font-weight: 500;
 }
 
 /* ============================================
@@ -107,26 +213,32 @@ a {
 }
 
 [data-theme='dark'] a:hover {
-  color: #4DFF9F;
+  color: var(--netpad-primary-light);
 }
 
 a:hover {
-  color: #00ED64;
+  color: var(--netpad-primary);
 }
 
 /* ============================================
    Navbar
    ============================================ */
 .navbar {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 104, 74, 0.1);
+  transition: all 0.2s ease;
 }
 
 [data-theme='dark'] .navbar {
-  border-bottom: 1px solid rgba(110, 118, 129, 0.2);
+  border-bottom: 1px solid rgba(110, 118, 129, 0.12);
 }
 
 .navbar__title {
-  font-weight: 700;
+  font-weight: 600; /* Semibold for wordmark */
+  letter-spacing: -0.01em;
+}
+
+.navbar__link {
+  transition: all 0.15s ease;
 }
 
 .navbar__link:hover,
@@ -135,66 +247,100 @@ a:hover {
 }
 
 /* ============================================
-   Buttons
+   Buttons - Brand Standards
    ============================================ */
 .button--primary {
-  background: linear-gradient(135deg, #00ED64 0%, #00A651 100%);
+  border-radius: var(--netpad-border-radius);
+  padding: 8px 16px;
+  font-weight: 500;
+  text-transform: none;
   border: none;
-  color: #001E2B !important;
   transition: all 0.15s ease;
+}
+
+/* Contained Button - Light Mode */
+.button--primary {
+  background: var(--netpad-gradient-light);
+  box-shadow: var(--netpad-shadow-primary);
+  color: #fff !important;
 }
 
 .button--primary:hover {
-  background: linear-gradient(135deg, #4DFF9F 0%, #00ED64 100%);
-  transform: translateY(-1px);
-  color: #001E2B !important;
+  transform: translateY(-2px);
+  box-shadow: var(--netpad-shadow-primary-hover);
+  color: #fff !important;
 }
 
+/* Contained Button - Dark Mode */
+[data-theme='dark'] .button--primary {
+  background: var(--netpad-gradient);
+  box-shadow: var(--netpad-glow-primary);
+  color: #000 !important;
+}
+
+[data-theme='dark'] .button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--netpad-glow-primary-hover);
+  color: #000 !important;
+}
+
+/* Outlined Button */
 .button--secondary {
-  border: 1px solid var(--ifm-color-primary);
+  border-radius: var(--netpad-border-radius);
+  border: 1px solid rgba(110, 118, 129, 0.3);
   color: var(--ifm-color-primary);
   background: transparent;
+  padding: 8px 16px;
+  font-weight: 500;
+  text-transform: none;
   transition: all 0.15s ease;
 }
 
+.button--secondary:hover {
+  border-color: rgba(0, 104, 74, 0.5);
+  background-color: rgba(0, 104, 74, 0.04);
+  transform: translateY(-1px);
+}
+
 [data-theme='dark'] .button--secondary {
-  border: 1px solid #00ED64;
-  color: #00ED64;
-  background: transparent;
+  border: 1px solid rgba(110, 118, 129, 0.3);
+  color: var(--netpad-primary);
 }
 
 [data-theme='dark'] .button--secondary:hover {
-  background: rgba(0, 237, 100, 0.1);
-  border-color: #4DFF9F;
-  color: #4DFF9F;
-}
-
-.button--secondary:hover {
-  background: rgba(0, 104, 74, 0.1);
-  border-color: #00684A;
+  border-color: rgba(0, 237, 100, 0.5);
+  background-color: rgba(0, 237, 100, 0.04);
+  transform: translateY(-1px);
 }
 
 /* ============================================
-   Cards
+   Cards & Papers - Brand Standards
    ============================================ */
 .card {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: var(--ifm-card-border-radius);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  border-radius: var(--netpad-border-radius-large);
+  border: 1px solid rgba(0, 104, 74, 0.1);
+  background-image: var(--netpad-grid-pattern-light);
+  background-size: var(--netpad-grid-size);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease;
+  padding: 1.5rem;
 }
 
 .card:hover {
-  border-color: rgba(0, 104, 74, 0.4);
-  box-shadow: 0 4px 20px rgba(0, 104, 74, 0.1);
+  border-color: rgba(0, 104, 74, 0.3);
+  box-shadow: var(--netpad-shadow-primary);
 }
 
 [data-theme='dark'] .card {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(110, 118, 129, 0.12);
+  background-image: var(--netpad-grid-pattern-dark);
+  background-size: var(--netpad-grid-size);
+  box-shadow: inset 0 1px 0 rgba(0, 237, 100, 0.05);
 }
 
 [data-theme='dark'] .card:hover {
-  border-color: rgba(0, 237, 100, 0.4);
-  box-shadow: 0 4px 20px rgba(0, 237, 100, 0.1);
+  border-color: rgba(0, 237, 100, 0.3);
+  box-shadow: var(--netpad-glow-primary);
 }
 
 /* ============================================
@@ -202,26 +348,32 @@ a:hover {
    ============================================ */
 pre {
   background: #f0f4f8 !important;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: var(--ifm-code-border-radius);
+  border: 1px solid rgba(0, 104, 74, 0.1);
+  border-radius: var(--netpad-border-radius-medium);
+  transition: all 0.2s ease;
 }
 
 [data-theme='dark'] pre {
   background: #141920 !important;
-  border: 1px solid rgba(110, 118, 129, 0.2);
+  border: 1px solid rgba(110, 118, 129, 0.12);
 }
 
 code {
-  border-radius: 4px;
+  border-radius: var(--netpad-border-radius-small);
   padding: 0.2em 0.4em;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 /* ============================================
-   Sidebar
+   Sidebar - Menu Items
    ============================================ */
 .menu__link {
-  border-radius: 6px;
+  border-radius: var(--netpad-border-radius-medium);
+  margin: 2px 6px;
+  padding: 8px 12px;
   transition: all 0.15s ease;
+  font-weight: 400;
 }
 
 .menu__link:hover {
@@ -260,6 +412,7 @@ code {
 
 .footer__title {
   color: #e6edf3;
+  font-weight: 600;
 }
 
 .footer__link-item {
@@ -268,15 +421,37 @@ code {
 }
 
 .footer__link-item:hover {
-  color: #00ED64;
+  color: var(--netpad-primary);
+}
+
+[data-theme='light'] .footer__title {
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme='light'] .footer__link-item {
+  color: var(--ifm-font-color-secondary);
+}
+
+[data-theme='light'] .footer__link-item:hover {
+  color: var(--netpad-primary);
 }
 
 /* ============================================
    Admonitions
    ============================================ */
+.alert {
+  border-radius: var(--netpad-border-radius);
+  transition: all 0.2s ease;
+}
+
 .alert--success {
   --ifm-alert-background-color: rgba(0, 237, 100, 0.1);
-  --ifm-alert-border-color: #00ED64;
+  --ifm-alert-border-color: var(--netpad-primary);
+}
+
+[data-theme='light'] .alert--success {
+  --ifm-alert-background-color: rgba(0, 104, 74, 0.1);
+  --ifm-alert-border-color: var(--netpad-primary);
 }
 
 .alert--info {
@@ -284,9 +459,19 @@ code {
   --ifm-alert-border-color: #58a6ff;
 }
 
+[data-theme='light'] .alert--info {
+  --ifm-alert-background-color: rgba(2, 136, 209, 0.1);
+  --ifm-alert-border-color: #0288d1;
+}
+
 .alert--warning {
   --ifm-alert-background-color: rgba(210, 153, 34, 0.1);
   --ifm-alert-border-color: #d29922;
+}
+
+[data-theme='light'] .alert--warning {
+  --ifm-alert-background-color: rgba(237, 108, 2, 0.1);
+  --ifm-alert-border-color: #ed6c02;
 }
 
 .alert--danger {
@@ -294,11 +479,20 @@ code {
   --ifm-alert-border-color: #f85149;
 }
 
+[data-theme='light'] .alert--danger {
+  --ifm-alert-background-color: rgba(211, 47, 47, 0.1);
+  --ifm-alert-border-color: #d32f2f;
+}
+
 /* ============================================
    Hero Gradient (for custom components)
    ============================================ */
 .hero-gradient {
-  background: linear-gradient(135deg, #00ED64 0%, #00A651 100%);
+  background: var(--netpad-gradient-light);
+}
+
+[data-theme='dark'] .hero-gradient {
+  background: var(--netpad-gradient);
 }
 
 /* ============================================
@@ -310,20 +504,21 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f7f9;
+  background: var(--ifm-background-color);
 }
 
 ::-webkit-scrollbar-thumb {
   background: #c1c8d0;
-  border-radius: 4px;
+  border-radius: var(--netpad-border-radius-small);
+  transition: background 0.15s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00684A;
+  background: var(--netpad-primary);
 }
 
 [data-theme='dark'] ::-webkit-scrollbar-track {
-  background: #0a0e14;
+  background: var(--ifm-background-color);
 }
 
 [data-theme='dark'] ::-webkit-scrollbar-thumb {
@@ -331,39 +526,46 @@ code {
 }
 
 [data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
-  background: #00ED64;
+  background: var(--netpad-primary);
 }
 
 /* ============================================
    Search
    ============================================ */
 .DocSearch-Button {
-  border-radius: var(--ifm-button-border-radius) !important;
+  border-radius: var(--netpad-border-radius) !important;
+  transition: all 0.2s ease;
 }
 
 .DocSearch-Button:hover {
-  box-shadow: 0 0 0 2px rgba(0, 237, 100, 0.3);
+  box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+}
+
+[data-theme='light'] .DocSearch-Button:hover {
+  box-shadow: 0 0 0 3px rgba(0, 150, 107, 0.1);
 }
 
 /* ============================================
    Pagination
    ============================================ */
 .pagination-nav__link {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: var(--ifm-global-radius);
+  border: 1px solid rgba(0, 104, 74, 0.1);
+  border-radius: var(--netpad-border-radius);
   transition: all 0.15s ease;
 }
 
 .pagination-nav__link:hover {
-  border-color: rgba(0, 104, 74, 0.4);
+  border-color: rgba(0, 104, 74, 0.3);
+  transform: translateY(-1px);
 }
 
 [data-theme='dark'] .pagination-nav__link {
-  border: 1px solid rgba(110, 118, 129, 0.2);
+  border: 1px solid rgba(110, 118, 129, 0.12);
 }
 
 [data-theme='dark'] .pagination-nav__link:hover {
-  border-color: rgba(0, 237, 100, 0.4);
+  border-color: rgba(0, 237, 100, 0.3);
+  transform: translateY(-1px);
 }
 
 /* ============================================
@@ -371,18 +573,22 @@ code {
    ============================================ */
 .avatar__photo {
   border: 2px solid var(--ifm-color-primary);
+  border-radius: var(--netpad-border-radius);
+  transition: all 0.15s ease;
 }
 
 /* ============================================
    Tabs
    ============================================ */
 .tabs__item {
-  border-radius: var(--ifm-global-radius) var(--ifm-global-radius) 0 0;
+  border-radius: var(--netpad-border-radius) var(--netpad-border-radius) 0 0;
   transition: all 0.15s ease;
+  font-weight: 500;
 }
 
 .tabs__item--active {
   border-bottom-color: var(--ifm-color-primary);
+  font-weight: 600;
 }
 
 .tabs__item:hover {
@@ -403,20 +609,67 @@ code {
 
 .hero__title {
   color: var(--ifm-font-color-base);
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .hero__subtitle {
   color: var(--ifm-font-color-secondary);
 }
 
-/* Ensure buttons in hero section are properly styled in dark mode */
-[data-theme='dark'] .hero .button--secondary {
-  border-color: #00ED64;
-  color: #00ED64;
+/* ============================================
+   Input Fields - Brand Standards
+   ============================================ */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+  border-radius: var(--netpad-border-radius);
+  transition: all 0.2s ease;
+  padding: 8px 12px;
 }
 
-[data-theme='dark'] .hero .button--secondary:hover {
-  border-color: #4DFF9F;
-  color: #4DFF9F;
-  background: rgba(0, 237, 100, 0.1);
+input:focus,
+textarea:focus {
+  border-width: 2px;
+  outline: none;
+}
+
+[data-theme='dark'] input:focus,
+[data-theme='dark'] textarea:focus {
+  border-color: var(--netpad-accent);
+  box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--netpad-primary-light);
+  box-shadow: 0 0 0 3px rgba(0, 150, 107, 0.1);
+}
+
+/* ============================================
+   Dialogs & Modals
+   ============================================ */
+.modal {
+  border-radius: var(--netpad-border-radius-large);
+}
+
+/* ============================================
+   Tooltips
+   ============================================ */
+.tooltip {
+  border-radius: var(--netpad-border-radius-medium);
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* ============================================
+   Chips
+   ============================================ */
+.chip {
+  border-radius: var(--netpad-border-radius-medium);
+  font-weight: 500;
+  padding: 2px 6px;
 }

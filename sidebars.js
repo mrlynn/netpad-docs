@@ -71,6 +71,7 @@ const sidebars = {
         'workflows/node-types',
         'workflows/execution',
         'workflows/templates',
+        'workflows/embedding',
       ],
     },
     {
@@ -143,6 +144,7 @@ const sidebars = {
       label: 'Guides',
       items: [
         'guides/keyboard-shortcuts',
+        'guides/brand-standards',
         'guides/adding-images',
       ],
     },
