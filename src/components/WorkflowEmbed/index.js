@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.css';
 
 // Configuration - change this for production
-const DEFAULT_BASE_URL = 'http://localhost:3000'; // Change to 'https://www.netpad.io' for production
+const DEFAULT_BASE_URL = 'https://netpad.io'; // Change to 'https://www.netpad.io' for production
 
 /**
  * WorkflowEmbed - Embeds a NetPad workflow viewer
