@@ -9,7 +9,7 @@ Here's an embedded workflow viewer:
 <WorkflowEmbed
   workflowSlug="it-helpdesk-router"
   theme="auto"
-  height="500px"
+  height="700px"
 />
 
 :::info Prerequisites for Demo

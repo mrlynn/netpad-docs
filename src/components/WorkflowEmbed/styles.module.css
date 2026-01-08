@@ -5,9 +5,24 @@
   border-radius: var(--netpad-border-radius-large, 12px);
   overflow: hidden;
   background: var(--ifm-background-surface-color);
+  /* Ensure minimum height and proper sizing */
+  min-height: 400px;
+}
+
+.iframeContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: none;
