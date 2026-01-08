@@ -84,13 +84,26 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'AI & Conversational',
+      items: [
+        'ai/overview',
+        'ai/conversational-forms',
+        'ai/templates',
+        'ai/agents',
+        'ai/configuration',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Platform',
       items: [
         'platform/organizations',
+        'platform/projects',
         'platform/authentication',
         'platform/connection-vault',
         'platform/access-control',
         'platform/billing',
+        'platform/pricing',
       ],
     },
     {
@@ -137,6 +150,7 @@ const sidebars = {
       type: 'category',
       label: 'Development',
       items: [
+        'developer/packages',
         'development/contributing',
         'development/code-of-conduct',
         'development/architecture',

@@ -1,15 +1,45 @@
 # Forms Overview
 
-Forms are the core of NetPad. They allow you to collect data from users and store it directly in MongoDB collections. With NetPad's visual form builder, you can create sophisticated data entry forms without writing any code.
+Forms are the core of NetPad. They allow you to collect data from users and store it directly in MongoDB collections. With NetPad's visual form builder, you can create sophisticated data entry forms without writing any code. NetPad supports traditional forms and AI-powered conversational forms.
+
+## Form Types
+
+NetPad supports multiple form types:
+
+| Type | Description | Use Case |
+|------|-------------|----------|
+| **Data Entry** | Standard CRUD forms | Registration, surveys, data input |
+| **Search** | Query/filter existing data | Data lookup, search interfaces |
+| **Both** | Switchable mode | Flexible data management |
+| **Conversational** | AI-powered dialogue | Support tickets, feedback, intake |
 
 ## What Can Forms Do?
 
-- **Collect Data**: Gather information from users through intuitive forms
+- **Collect Data**: Gather information from users through intuitive forms or natural language conversation
 - **Validate Input**: Ensure data quality with built-in validation rules
 - **Conditional Logic**: Show or hide fields based on user responses
 - **Connect to MongoDB**: Automatically sync submissions to your database
 - **Trigger Workflows**: Start automated processes when forms are submitted
 - **Analytics**: Track submissions, completion rates, and field-level insights
+- **AI-Powered**: Use conversational forms for natural language data collection
+
+## Form Modes
+
+Forms can operate in different modes depending on the form type:
+
+### Data Entry Forms
+
+- **Create Mode**: Create new documents
+- **Edit Mode**: Update existing documents
+- **View Mode**: Read-only display
+- **Clone Mode**: Duplicate existing documents
+- **Search Mode**: Query and filter existing data
+
+### Conversational Forms
+
+- **Conversation Mode**: Natural language dialogue
+- **Extraction Mode**: Automatic structured data extraction
+- **Review Mode**: Review extracted data before submission
 
 ## Form Lifecycle
 

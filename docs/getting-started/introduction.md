@@ -34,26 +34,31 @@ NetPad empowers you to build production-ready data collection and management sol
 
 ### AI-Powered Productivity
 
-- Generate complete forms from natural language descriptions
-- Auto-suggest validation rules and conditional logic
-- Smart formula assistance for computed fields
-- In-app AI assistant for guidance
+- **Conversational Forms**: AI-powered natural language data collection
+- **12+ AI Agents**: Form generation, optimization, compliance, translation, and insights
+- **Template Admin System**: Full template management for conversational experiences
+- **Auto-suggestions**: Real-time field suggestions and validation rules
+- **Smart formula assistance**: Help building computed field formulas
 
-## Three Core Pillars
+## Four Core Pillars
 
-NetPad is built around three main capabilities:
+NetPad is built around four main capabilities:
 
 ### 1. Forms
 
-Create beautiful, functional data entry forms with our visual form builder. Support for 30+ field types, conditional logic, validation rules, and seamless MongoDB integration.
+Create beautiful, functional data entry forms with our visual form builder. Support for 30+ field types, conditional logic, validation rules, and seamless MongoDB integration. Includes traditional forms and AI-powered conversational forms.
 
 ### 2. Workflows
 
 Automate processes with our visual workflow editor. Build complex automation workflows using drag-and-drop nodes, triggers, and integrations.
 
-### 3. Data Explorer
+### 3. Data Management
 
-Browse and manage MongoDB collections visually. Import, export, search, and edit your data with an intuitive interface.
+Browse and manage MongoDB collections visually. Import, export, search, and edit your data with an intuitive interface. Secure connection vault with encrypted credentials.
+
+### 4. AI & Conversational Experiences
+
+Transform data collection with AI-powered conversational forms and intelligent automation. Natural language data collection, 12+ AI agents for optimization and insights, and template management system.
 
 ## Quick Start
 
