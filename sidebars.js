@@ -10,6 +10,7 @@ const sidebars = {
       label: 'Getting Started',
       items: [
         'getting-started/introduction',
+        'getting-started/overview',
         'getting-started/installation',
         'getting-started/quick-start',
         'getting-started/configuration',
@@ -21,12 +22,56 @@ const sidebars = {
       label: 'Forms',
       items: [
         'forms/overview',
+        'forms/form-builder',
         'forms/building-forms',
         'forms/field-types',
+        'forms/field-configuration',
         'forms/validation',
         'forms/conditional-logic',
+        'forms/lookup-fields',
+        'forms/computed-fields',
+        'forms/repeater-fields',
+        'forms/form-variables',
+        'forms/form-lifecycle',
+        'forms/multi-page-forms',
+        'forms/form-versioning',
+        'forms/form-library',
+        'forms/document-preview',
         'forms/publishing',
-        'forms/analytics',
+        'forms/code-generation',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Analytics & Responses',
+      items: [
+        'analytics/overview',
+        'analytics/response-management',
+        'analytics/response-export',
+        'analytics/field-analytics',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Pipeline Builder',
+      items: [
+        'pipeline-builder/overview',
+        'pipeline-builder/aggregation-stages',
+        'pipeline-builder/ai-pipeline-generation',
+        'pipeline-builder/results-viewer',
+        'pipeline-builder/document-editing',
+        'pipeline-builder/sample-documents',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Data Explorer',
+      items: [
+        'data-explorer/overview',
+        'data-explorer/browsing-data',
+        'data-explorer/importing-data',
+        'data-explorer/exporting-data',
+        'data-explorer/erd-viewer',
       ],
     },
     {
@@ -42,12 +87,11 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Data Explorer',
+      label: 'Integrations',
       items: [
-        'data-explorer/overview',
-        'data-explorer/browsing-data',
-        'data-explorer/importing-data',
-        'data-explorer/exporting-data',
+        'integrations/overview',
+        'integrations/webhooks',
+        'integrations/email-notifications',
       ],
     },
     {
@@ -95,6 +139,14 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Guides',
+      items: [
+        'guides/keyboard-shortcuts',
+        'guides/adding-images',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Development',
       items: [
         'development/contributing',
@@ -102,13 +154,6 @@ const sidebars = {
         'development/architecture',
         'development/testing',
         'development/code-style',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Guides',
-      items: [
-        'guides/adding-images',
       ],
     },
     {
