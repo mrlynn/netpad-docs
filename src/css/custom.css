@@ -673,3 +673,115 @@ textarea:focus {
   font-weight: 500;
   padding: 2px 6px;
 }
+
+/* ============================================
+   NetPad Logo Watermark
+   ============================================ */
+/* Main content area watermark - applies to all docs pages */
+.main-wrapper::before {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-image: url('/img/netpad-logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.035;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  /* Light mode: black */
+  filter: brightness(0);
+}
+
+/* Dark mode: invert to white */
+[data-theme='dark'] .main-wrapper::before {
+  filter: brightness(0) invert(1);
+}
+
+/* Hero section watermark - slightly larger and more visible */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  background-image: url('/img/netpad-logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  filter: brightness(0);
+}
+
+[data-theme='dark'] .hero::before {
+  filter: brightness(0) invert(1);
+}
+
+/* Docs sidebar watermark (bottom) - subtle accent */
+.theme-doc-sidebar-container::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background-image: url('/img/netpad-logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+  user-select: none;
+  filter: brightness(0);
+}
+
+[data-theme='dark'] .theme-doc-sidebar-container::after {
+  filter: brightness(0) invert(1);
+}
+
+/* Mobile: Reduce size and opacity */
+@media (max-width: 768px) {
+  .main-wrapper::before {
+    width: 150px;
+    height: 150px;
+    opacity: 0.025;
+  }
+
+  .hero::before {
+    width: 200px;
+    height: 200px;
+    opacity: 0.04;
+  }
+
+  .theme-doc-sidebar-container::after {
+    width: 50px;
+    height: 50px;
+    opacity: 0.06;
+  }
+}
+
+/* Hide on very small screens to avoid distraction */
+@media (max-width: 480px) {
+  .main-wrapper::before {
+    display: none;
+  }
+
+  .hero::before {
+    width: 150px;
+    height: 150px;
+    opacity: 0.03;
+  }
+
+  .theme-doc-sidebar-container::after {
+    display: none;
+  }
+}

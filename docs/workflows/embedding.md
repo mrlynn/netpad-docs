@@ -44,7 +44,7 @@ Use the `WorkflowEmbed` component directly in your MDX files:
 | `hideHeader` | boolean | `false` | Hide the header bar |
 | `hideBranding` | boolean | `false` | Hide NetPad branding |
 | `height` | string | `'500px'` | Container height |
-| `baseUrl` | string | `'http://localhost:3000'` | NetPad base URL |
+| `baseUrl` | string | `'https://netpad.io'` | NetPad base URL |
 
 ### Examples
 

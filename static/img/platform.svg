@@ -1,0 +1,86 @@
+<svg
+  width="900"
+  height="900"
+  viewBox="0 0 900 900"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="NetPad control plane for MongoDB document lifecycle"
+>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#0f172a"/>
+
+  <!-- ===== MongoDB Core ===== -->
+  <circle cx="450" cy="450" r="120" fill="#10b981" opacity="0.15"/>
+  <circle cx="450" cy="450" r="90" fill="#10b981"/>
+
+  <text x="450" y="440" text-anchor="middle" fill="#ffffff"
+        font-size="22" font-weight="600" font-family="Inter, system-ui, sans-serif">
+    MongoDB
+  </text>
+
+  <text x="450" y="465" text-anchor="middle" fill="#e5e7eb"
+        font-size="13" font-family="Inter, system-ui, sans-serif">
+    system of record
+  </text>
+
+  <text x="450" y="485" text-anchor="middle" fill="#d1fae5"
+        font-size="11" font-family="Inter, system-ui, sans-serif">
+    documents · collections · queries
+  </text>
+
+  <!-- ===== NetPad Ring ===== -->
+  <circle cx="450" cy="450" r="220"
+          fill="none"
+          stroke="#38bdf8"
+          stroke-width="14"/>
+
+  <!-- NetPad Label -->
+  <text x="450" y="200" text-anchor="middle" fill="#7dd3fc"
+        font-size="18" font-weight="600" font-family="Inter, system-ui, sans-serif">
+    NetPad — operational control plane
+  </text>
+
+  <!-- ===== Lifecycle Labels ===== -->
+
+  <!-- Create -->
+  <text x="450" y="120" text-anchor="middle" fill="#e0f2fe"
+        font-size="14" font-weight="500">Create</text>
+  <text x="450" y="138" text-anchor="middle" fill="#bae6fd"
+        font-size="11">Forms · APIs · AI intake</text>
+
+  <!-- Review -->
+  <text x="675" y="285" text-anchor="start" fill="#e0f2fe"
+        font-size="14" font-weight="500">Review</text>
+  <text x="675" y="303" text-anchor="start" fill="#bae6fd"
+        font-size="11">Ownership · approvals</text>
+
+  <!-- Decide -->
+  <text x="675" y="525" text-anchor="start" fill="#e0f2fe"
+        font-size="14" font-weight="500">Decide</text>
+  <text x="675" y="543" text-anchor="start" fill="#bae6fd"
+        font-size="11">State transitions</text>
+
+  <!-- Act -->
+  <text x="450" y="760" text-anchor="middle" fill="#e0f2fe"
+        font-size="14" font-weight="500">Act</text>
+  <text x="450" y="778" text-anchor="middle" fill="#bae6fd"
+        font-size="11">Automation · integrations</text>
+
+  <!-- Audit -->
+  <text x="225" y="525" text-anchor="end" fill="#e0f2fe"
+        font-size="14" font-weight="500">Audit</text>
+  <text x="225" y="543" text-anchor="end" fill="#bae6fd"
+        font-size="11">Immutable events</text>
+
+  <!-- Evolve -->
+  <text x="225" y="285" text-anchor="end" fill="#e0f2fe"
+        font-size="14" font-weight="500">Evolve</text>
+  <text x="225" y="303" text-anchor="end" fill="#bae6fd"
+        font-size="11">Schemas & workflows</text>
+
+  <!-- ===== Interfaces ===== -->
+  <text x="450" y="40" text-anchor="middle" fill="#94a3b8"
+        font-size="12">Humans · Systems · AI</text>
+
+</svg>

@@ -4,6 +4,7 @@ import MDXComponents from '@theme-original/MDXComponents';
 // Import custom components
 import SpotlightCard from '@site/src/components/SpotlightCard';
 import WorkflowEmbed from '@site/src/components/WorkflowEmbed';
+import NetPadMongoControlPlane from '@site/src/components/NetPadMongoControlPlane';
 
 export default {
   // Re-use the default mapping
@@ -11,4 +12,5 @@ export default {
   // Add custom components
   SpotlightCard,
   WorkflowEmbed,
+  NetPadMongoControlPlane,
 };

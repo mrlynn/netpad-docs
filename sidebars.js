@@ -11,6 +11,7 @@ const sidebars = {
       items: [
         'getting-started/introduction',
         'getting-started/overview',
+        'getting-started/control-plane',
         'getting-started/installation',
         'getting-started/quick-start',
         'getting-started/configuration',
