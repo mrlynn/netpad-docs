@@ -158,6 +158,9 @@ const sidebars = {
       label: 'Development',
       items: [
         'developer/packages',
+        'developer/packages-forms',
+        'developer/packages-workflows',
+        'developer/packages-cli',
         'developer/mcp-server',
         'development/contributing',
         'development/code-of-conduct',

@@ -64,6 +64,10 @@ Customize the AI's personality and behavior:
 
 Here's an example of a conversational form for IT Helpdesk:
 
+![Conversational Form Example - IT Helpdesk](/img/conversational.png)
+
+The AI collects information through natural dialogue and extracts structured data in real-time:
+
 ```
 AI: Hi! I'm here to help you submit an IT support ticket.
     What kind of issue are you experiencing?

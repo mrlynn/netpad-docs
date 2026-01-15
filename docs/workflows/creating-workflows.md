@@ -4,6 +4,8 @@ This guide walks you through creating your first workflow in NetPad's visual wor
 
 ## Creating a New Workflow
 
+![Workflow Example](/img/workflow-example.png)
+
 You can create a workflow in two ways:
 
 ### Method 1: Start from Template (Recommended)

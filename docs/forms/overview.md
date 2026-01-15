@@ -41,6 +41,8 @@ Forms can operate in different modes depending on the form type:
 - **Extraction Mode**: Automatic structured data extraction
 - **Review Mode**: Review extracted data before submission
 
+![Conversational Form Example](/img/conversational.png)
+
 ## Form Lifecycle
 
 ### 1. Draft Mode

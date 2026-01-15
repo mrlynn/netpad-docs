@@ -2,6 +2,10 @@
 
 Create AI-powered conversational forms that collect data through natural language dialogue instead of traditional form fields.
 
+![Conversational Form Example - IT Helpdesk](/img/conversational.png)
+
+*Example: An IT Helpdesk conversational form collecting issue details through natural dialogue. The AI extracts structured data (issue category, urgency level, description) from the conversation in real-time.*
+
 ## Creating a Conversational Form
 
 ### Step 1: Choose Form Type
