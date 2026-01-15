@@ -158,6 +158,7 @@ const sidebars = {
       label: 'Development',
       items: [
         'developer/packages',
+        'developer/mcp-server',
         'development/contributing',
         'development/code-of-conduct',
         'development/architecture',

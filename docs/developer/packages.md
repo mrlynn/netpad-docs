@@ -65,9 +65,11 @@ npm install @netpad/mcp-server
 ```
 
 **Features**:
-- 22 tools for form generation
-- Workflow integration
-- AI-powered development assistance
+- 75 AI-powered tools across 7 categories
+- Form generation and workflow automation
+- Application management and marketplace integration
+- Conversational forms and RAG support
+- Template library (25+ form templates)
 - Model Context Protocol support
 
 ## @netpad/forms
@@ -559,37 +561,55 @@ netpad publish
 
 ## @netpad/mcp-server
 
+The MCP (Model Context Protocol) server provides **75 AI-powered tools** for building NetPad forms, applications, workflows, and data-driven experiences. It integrates with Claude Desktop and Cursor IDE to enable natural language development.
+
 ### Installation
 
 ```bash
-npm install @netpad/mcp-server
+# Using npx (recommended)
+npx @netpad/mcp-server
+
+# Or install globally
+npm install -g @netpad/mcp-server
 ```
 
-### Usage
+### Quick Start
 
-The MCP server provides 22 tools for AI-powered development:
+1. **Configure Claude Desktop** or **Cursor IDE** (see [MCP Server Guide](./mcp-server.md))
+2. **Restart** your AI assistant
+3. **Start building** - Ask Claude to create forms, workflows, or applications
 
-- **Form Generation**: Generate forms from descriptions
-- **Workflow Creation**: Create workflows programmatically
-- **Field Suggestions**: Get field type suggestions
-- **Validation Rules**: Generate validation patterns
-- **Conditional Logic**: Generate conditional rules
-- **And more**: 22 total tools for NetPad development
+### Features
 
-### Integration
+- **75 Tools** across 7 categories:
+  - Form Building (6 tools)
+  - Application Management (7 tools)
+  - Marketplace & npm (8 tools)
+  - Workflow Automation (10 tools)
+  - Conversational & Search Forms (11 tools)
+  - Enhanced Templates (5 tools)
+  - Data Browser (12 tools)
+  - Reference & Helper (16 tools)
 
-Use with MCP-compatible AI assistants:
+- **25+ Form Templates** across 10 categories
+- **5+ Workflow Templates** for common scenarios
+- **4+ Conversational Form Templates**
+- **16 Documentation Resources**
 
-```typescript
-import { createNetPadMCPServer } from '@netpad/mcp-server';
+### Example Usage
 
-const server = createNetPadMCPServer({
-  apiKey: process.env.NETPAD_API_KEY,
-  orgId: process.env.NETPAD_ORG_ID,
-});
+Once configured, you can ask Claude:
 
-// Server provides 22 tools for AI assistants
 ```
+"Create a customer feedback application with an NPS survey form and a workflow 
+that sends thank-you emails and saves responses to MongoDB."
+```
+
+The AI will generate the complete configuration using the available tools.
+
+### Documentation
+
+For complete setup instructions, tool reference, and examples, see the [MCP Server Guide](./mcp-server.md).
 
 ## Resources
 

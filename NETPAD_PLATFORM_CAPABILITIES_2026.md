@@ -757,7 +757,9 @@ npm install @netpad/workflows
 npm install @netpad/mcp-server
 ```
 - MCP (Model Context Protocol) server
-- 22 tools for form generation and workflow integration
+- 75 AI-powered tools across 7 categories
+- Form generation, workflow automation, application management
+- Conversational forms, templates, and data browser tools
 - AI-powered development assistance
 
 **@netpad/cli** (npm):
