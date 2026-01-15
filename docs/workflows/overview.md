@@ -131,10 +131,10 @@ AI-powered operations:
 
 ## Getting Started
 
-1. [Creating Workflows](./creating-workflows.md) - Learn how to build workflows
-2. [Node Types](./node-types.md) - Explore all available nodes
-3. [Execution](./execution.md) - Understand workflow execution
-4. [Templates](./templates.md) - Use pre-built workflow templates
+1. [Templates](./templates.md) - Start with pre-built workflow templates (recommended)
+2. [Creating Workflows](./creating-workflows.md) - Learn how to build workflows from scratch
+3. [Node Types](./node-types.md) - Explore all available nodes
+4. [Execution](./execution.md) - Understand workflow execution
 
 ## Next Steps
 

@@ -70,6 +70,7 @@ For large organizations with custom needs:
 | **Active Workflows** | 1 | 5 | 25 | Unlimited |
 | **Connections** | 1 | 5 | 20 | Unlimited |
 | **AI Generations/Month** | 10 | 100 | 500 | Unlimited |
+| **RAG Features** | ❌ | ❌ | ✅ | ✅ |
 | **Data Retention** | 30 days | 1 year | Unlimited | Unlimited |
 | **Team Members** | 1 | 1 | 10 | Unlimited |
 | **Support** | Community | Email | Priority | Dedicated |
@@ -144,6 +145,21 @@ Total AI agent usage across all agents:
 - **Enterprise**: Unlimited
 
 **Note**: Each AI agent usage counts toward limit.
+
+### RAG Features
+
+Knowledge-Guided Conversational Forms (RAG) requirements:
+
+- **Free**: ❌ Not available
+- **Pro**: ❌ Not available
+- **Team**: ✅ Available (requires M10+ MongoDB Atlas cluster)
+- **Enterprise**: ✅ Available (requires M10+ MongoDB Atlas cluster)
+
+**Feature Gates**: RAG requires both:
+1. **Subscription Tier**: Team or Enterprise plan
+2. **Infrastructure Tier**: M10+ MongoDB Atlas cluster
+
+**Note**: Users must upgrade their Atlas cluster to M10+ separately via MongoDB Atlas Console.
 
 ### Data Retention
 

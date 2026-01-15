@@ -1,15 +1,16 @@
 # AI Agents
 
-NetPad includes 12+ AI agents to help with form building, optimization, data processing, and compliance. These agents use AI to automate tasks and provide intelligent assistance.
+NetPad includes 15+ AI agents to help with form building, optimization, data processing, compliance, and RAG (Retrieval-Augmented Generation). These agents use AI to automate tasks and provide intelligent assistance.
 
 ## Agent Categories
 
-AI agents are organized into four categories:
+AI agents are organized into five categories:
 
 1. **Form Building Agents** - Help create and configure forms
 2. **Form Enhancement Agents** - Improve existing forms
 3. **Data Processing Agents** - Process and analyze data
 4. **Compliance & Quality Agents** - Ensure quality and compliance
+5. **RAG Agents** - Knowledge-guided conversational forms with document grounding
 
 ## Form Building Agents
 
@@ -311,6 +312,63 @@ Output: Generated workflow with:
 - Error handling
 - Testing suggestions
 
+## RAG Agents
+
+### Knowledge-Guided Conversation
+
+**Tier**: Team+  
+**Requirements**: M10+ MongoDB Atlas cluster  
+**Description**: RAG-powered conversational forms with document grounding
+
+**Usage**:
+1. Upload knowledge base documents (PDF, DOCX, TXT)
+2. Enable RAG in conversational form settings
+3. AI uses documents to answer questions
+4. Responses include source citations
+
+**Features**:
+- Document-grounded responses
+- Source citations with traceability
+- Semantic document search
+- Context-aware answers
+- Schema-aware suggestions
+
+### Document Upload for RAG
+
+**Tier**: Team+  
+**Requirements**: M10+ MongoDB Atlas cluster  
+**Description**: Manage knowledge base documents for RAG
+
+**Usage**:
+1. Upload documents to form knowledge base
+2. Add metadata (title, description, tags)
+3. Documents automatically processed and indexed
+4. Select documents for use in forms
+
+**Features**:
+- Multi-format support (PDF, DOCX, TXT)
+- Automatic text extraction
+- Intelligent chunking
+- Embedding generation
+- Vector indexing
+
+### Vector Search
+
+**Tier**: Team+  
+**Requirements**: M10+ MongoDB Atlas cluster  
+**Description**: Semantic document retrieval using MongoDB Atlas Vector Search
+
+**Usage**:
+- Automatically used when RAG is enabled
+- Searches document chunks by semantic similarity
+- Returns most relevant chunks for context
+
+**Features**:
+- Semantic similarity search
+- Relevance scoring
+- Configurable retrieval parameters
+- Fast vector search performance
+
 ## Using AI Agents
 
 ### Accessing Agents
@@ -354,5 +412,6 @@ Some agents can be configured:
 ## Next Steps
 
 - [Conversational Forms](./conversational-forms.md) - Create AI-powered forms
+- [Knowledge-Guided Forms (RAG)](./rag-knowledge-guided.md) - Add document-grounded AI
 - [Template Management](./templates.md) - Use templates
 - [Configuration](./configuration.md) - Configure AI settings

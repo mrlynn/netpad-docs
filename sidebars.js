@@ -24,6 +24,7 @@ const sidebars = {
       items: [
         'forms/overview',
         'forms/form-builder',
+        'forms/template-gallery',
         'forms/building-forms',
         'forms/field-types',
         'forms/field-configuration',
@@ -90,6 +91,7 @@ const sidebars = {
       items: [
         'ai/overview',
         'ai/conversational-forms',
+        'ai/rag-knowledge-guided',
         'ai/templates',
         'ai/agents',
         'ai/configuration',
@@ -100,6 +102,8 @@ const sidebars = {
       label: 'Platform',
       items: [
         'platform/organizations',
+        'platform/applications',
+        'platform/marketplace',
         'platform/projects',
         'platform/authentication',
         'platform/connection-vault',

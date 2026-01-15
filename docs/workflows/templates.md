@@ -1,6 +1,117 @@
 # Workflow Templates
 
-NetPad provides pre-built workflow templates for common use cases. Use templates as starting points for your workflows.
+NetPad provides pre-built workflow templates for common use cases. Use templates as starting points for your workflows. Templates are accessible through the Template Gallery when creating a new workflow.
+
+## Accessing Workflow Templates
+
+The Workflow Template Gallery is available when creating a new workflow:
+
+1. **Navigate to Workflows** - Click "New Workflow" from the dashboard
+2. **Open Template Gallery** - Click the "Templates" tab in the workflow creation dialog
+3. **Browse Templates** - Explore templates by category
+
+:::tip
+The Template Gallery is also accessible from the Empty Workflow State when you first open the Workflow Editor without an existing workflow.
+:::
+
+## Template Categories
+
+Workflow templates are organized into categories:
+
+### Form Processing
+
+Templates for processing form submissions:
+
+- **Form to Email** - Send email notifications when forms are submitted
+- **Form to Database** - Save form submissions to MongoDB collections
+- **Form Validation** - Validate and enrich form data before saving
+- **Submission Routing** - Route submissions based on conditions
+
+### Data Processing
+
+Templates for data operations and synchronization:
+
+- **Scheduled Sync** - Sync data between collections on a schedule
+- **Data Pipeline** - Transform and process data through multiple steps
+- **Bulk Operations** - Perform bulk updates or transformations
+- **Data Cleanup** - Clean and normalize data automatically
+
+### Integrations
+
+Templates for external system integration:
+
+- **Webhook Processor** - Process incoming webhook data
+- **API Monitoring** - Monitor external APIs and trigger actions
+- **Database Sync** - Sync with external databases
+- **Service Integration** - Connect to third-party services
+
+### AI Workflows
+
+Templates leveraging AI capabilities:
+
+- **Text Classification** - Classify text using AI
+- **Data Extraction** - Extract structured data from unstructured text
+- **Content Generation** - Generate content using AI
+- **Sentiment Analysis** - Analyze sentiment of text data
+
+### Logic
+
+Templates for conditional routing and logic:
+
+- **Conditional Routing** - Route data based on conditions
+- **Batch Processing** - Process data in batches
+- **Parallel Execution** - Execute multiple operations in parallel
+- **Error Handling** - Handle errors and retries
+
+## Previewing Workflow Templates
+
+Before using a template, you can preview it to see what it includes:
+
+### Opening Preview
+
+1. **Click Template Card** - Click on any workflow template card
+2. **Preview Dialog Opens** - See detailed template information
+
+### Preview Information
+
+The preview shows:
+
+#### Template Details
+
+- **Name** - Full template name
+- **Description** - Detailed description of use case
+- **Category** - Template category
+- **Icon** - Visual identifier
+
+#### Template Metadata
+
+- **Complexity Level** - Simple, Moderate, or Advanced
+- **Estimated Setup Time** - How long to customize
+- **Node Count** - Number of nodes included
+
+#### Node and Edge List
+
+- **All Nodes** - Complete list of nodes in the template
+- **Node Types** - What type each node is
+- **Node Labels** - How nodes are labeled
+- **Edges** - Connections between nodes
+- **Data Flow** - How data flows through the workflow
+
+### Preview Actions
+
+From the preview dialog, you can:
+
+1. **Use Template** - Apply template as-is and start customizing
+2. **Close** - Return to template gallery
+
+## Using Workflow Templates
+
+### Applying a Template
+
+1. **Click "Use Template"** - In the template preview dialog
+2. **Name Your Workflow** - Enter a name for your workflow
+3. **Workflow Editor Opens** - Template nodes and edges are loaded
+4. **Start Customizing** - Modify nodes, add/remove as needed
 
 ## Available Templates
 
@@ -116,18 +227,15 @@ Multi-step approval process.
 
 ### Selecting a Template
 
-1. **Click "New Workflow"**
-2. **Choose "From Template"**
-3. **Browse Templates**:
-   - Form Processing
-   - Data Synchronization
-   - Integration
-   - Business Automation
-
-4. **Select Template**:
-   - Preview template
+1. **Click "New Workflow"** - From the workflows dashboard
+2. **Open Template Gallery** - Click the "Templates" tab
+3. **Browse Templates** - Filter by category or search
+4. **Preview Template** - Click template card to see details
+5. **Review Template**:
    - See node structure
    - Read description
+   - Check complexity and estimated time
+   - Review nodes and edges list
 
 ### Customizing Templates
 
@@ -168,39 +276,27 @@ Create your own templates:
    - Share with team
    - Use in other workflows
 
-## Template Categories
+## Template Metadata
 
-### Form Processing
+Each workflow template includes metadata to help you choose:
 
-Templates for processing form submissions:
-- Email confirmations
-- Team notifications
-- Data validation
-- Submission routing
+### Complexity Levels
 
-### Data Management
+- **Simple** - Basic workflows with straightforward logic
+- **Moderate** - Workflows with conditional logic or multiple steps
+- **Advanced** - Complex workflows with advanced features
 
-Templates for data operations:
-- Collection syncing
-- Data transformation
-- Bulk operations
-- Data cleanup
+### Estimated Setup Time
 
-### Integration
+- **Quick** - 2-5 minutes to customize
+- **Standard** - 5-10 minutes to customize
+- **Extended** - 10-15 minutes to customize
 
-Templates for external integrations:
-- API connections
-- Webhook handling
-- Database syncing
-- Service integrations
+### Node Count
 
-### Automation
-
-Templates for business automation:
-- Order processing
-- Approval workflows
-- Notification systems
-- Scheduled tasks
+- **Small** - 2-5 nodes
+- **Medium** - 6-10 nodes
+- **Large** - 11+ nodes
 
 ## Creating Custom Templates
 

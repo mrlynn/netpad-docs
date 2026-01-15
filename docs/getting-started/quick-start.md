@@ -10,6 +10,33 @@ Get up and running with NetPad in 5 minutes. This guide will walk you through cr
 
 ## Step 2: Create Your First Form
 
+You can create a form in three ways:
+
+### Option A: Start from Template (Fastest - Recommended)
+
+1. **Navigate to Form Builder**:
+   - Click "New Form" or navigate to `/builder`
+
+2. **Open Template Gallery**:
+   - Click the "Templates" tab
+   - Browse templates by category (Business, Events, Feedback, etc.)
+
+3. **Choose a Template**:
+   - Click a template card to preview
+   - Review fields and details
+   - Click "Use Template" or "Customize"
+
+4. **Configure Form**:
+   - Name your form
+   - Select target MongoDB collection
+   - Customize fields as needed
+
+:::tip
+Templates provide pre-configured forms for common use cases. See the [Template Gallery Guide](../forms/template-gallery.md) for details.
+:::
+
+### Option B: Import from Schema
+
 1. **Navigate to Form Builder**:
    - Click "New Form" or navigate to `/builder`
 
@@ -18,12 +45,26 @@ Get up and running with NetPad in 5 minutes. This guide will walk you through cr
    - Select from saved connections, OR
    - Use auto-provisioned Atlas cluster (if available)
 
-3. **Import Schema (Optional)**:
+3. **Import Schema**:
    - Click "Import from Collection"
    - Select a collection to auto-generate form fields
    - NetPad will create fields based on your MongoDB schema
 
-4. **Add Fields Manually** (if not importing):
+4. **Customize Fields**:
+   - Review and adjust field properties
+   - Add or remove fields as needed
+
+### Option C: Build from Scratch
+
+1. **Navigate to Form Builder**:
+   - Click "New Form" or navigate to `/builder`
+
+2. **Connect to MongoDB**:
+   - Enter a MongoDB connection string, OR
+   - Select from saved connections, OR
+   - Use auto-provisioned Atlas cluster (if available)
+
+3. **Add Fields Manually**:
    - Drag fields from the sidebar
    - Configure field properties (name, type, validation)
    - Add more fields as needed
@@ -75,6 +116,7 @@ Here's a simple example to get you started:
 
 Now that you've created your first form, explore more features:
 
+- [Template Gallery](../forms/template-gallery.md) - Browse more form templates
 - [Form Builder Guide](../forms/building-forms.md) - Learn advanced form building
 - [Field Types](../forms/field-types.md) - Explore all available field types
 - [Workflows](../workflows/overview.md) - Automate processes with workflows

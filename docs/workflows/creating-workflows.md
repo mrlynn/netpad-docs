@@ -4,6 +4,38 @@ This guide walks you through creating your first workflow in NetPad's visual wor
 
 ## Creating a New Workflow
 
+You can create a workflow in two ways:
+
+### Method 1: Start from Template (Recommended)
+
+1. **Navigate to Workflows**:
+   - Click "New Workflow" from dashboard, or
+   - Navigate to `/workflows`
+
+2. **Open Template Gallery**:
+   - Click the "Templates" tab
+   - Browse templates by category or search
+
+3. **Preview Template**:
+   - Click a template card to see details
+   - Review nodes, edges, and metadata
+
+4. **Use Template**:
+   - Click "Use Template" to apply
+   - Name your workflow
+   - Workflow editor opens with template loaded
+
+5. **Customize**:
+   - Modify nodes and connections
+   - Configure node settings
+   - Add or remove nodes as needed
+
+:::tip
+Templates provide pre-configured workflows for common use cases. See the [Workflow Templates](./templates.md) guide for details.
+:::
+
+### Method 2: Start from Scratch
+
 1. **Navigate to Workflows**:
    - Click "New Workflow" from dashboard, or
    - Navigate to `/workflows`
@@ -260,6 +292,6 @@ Multi-branch routing:
 
 ## Next Steps
 
+- [Templates](./templates.md) - Use pre-built workflow templates
 - [Node Types](./node-types.md) - Learn about all node types
 - [Execution](./execution.md) - Understand workflow execution
-- [Templates](./templates.md) - Use pre-built templates

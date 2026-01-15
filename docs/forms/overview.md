@@ -87,6 +87,17 @@ From simple text inputs to complex nested objects, NetPad supports:
 - Computed fields (formula-based calculations)
 - Nested objects and arrays
 
+### Template Gallery
+
+Start quickly with pre-built form templates:
+- **25+ Templates** - Professional templates for common use cases
+- **9 Categories** - Business, Events, Feedback, Support, E-commerce, Healthcare, Finance, Education, Real Estate
+- **Preview Before Use** - See template details and fields before applying
+- **Fully Customizable** - Templates are starting points you can modify
+- **Best Practices** - Templates demonstrate industry standards
+
+See the [Template Gallery Guide](./template-gallery.md) for details.
+
 ### Schema Import
 
 Import existing MongoDB collection schemas to auto-generate forms:
@@ -135,12 +146,13 @@ Send form data to external services when forms are submitted.
 
 ## Getting Started
 
-1. [Building Forms](./building-forms.md) - Learn how to build forms
-2. [Field Types](./field-types.md) - Explore all available fields
-3. [Validation](./validation.md) - Set up validation rules
-4. [Conditional Logic](./conditional-logic.md) - Add dynamic behavior
-5. [Publishing](./publishing.md) - Make your form live
-6. [Analytics](./analytics.md) - Track form performance
+1. [Template Gallery](./template-gallery.md) - Start with pre-built templates (recommended)
+2. [Building Forms](./building-forms.md) - Learn how to build forms from scratch
+3. [Field Types](./field-types.md) - Explore all available fields
+4. [Validation](./validation.md) - Set up validation rules
+5. [Conditional Logic](./conditional-logic.md) - Add dynamic behavior
+6. [Publishing](./publishing.md) - Make your form live
+7. [Analytics](./analytics.md) - Track form performance
 
 ## Use Cases
 

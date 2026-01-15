@@ -37,6 +37,39 @@ npm install @netpad/workflows
 - Status polling utilities
 - Error handling
 
+### @netpad/cli
+
+Command-line tool for managing NetPad applications.
+
+**Installation**:
+```bash
+npm install -g @netpad/cli
+# or
+npx @netpad/cli
+```
+
+**Features**:
+- Install packages from npm registry
+- Search for NetPad packages
+- Create new application packages
+- Authenticate with NetPad API
+- Manage installed applications
+
+### @netpad/mcp-server
+
+MCP (Model Context Protocol) server for NetPad integration.
+
+**Installation**:
+```bash
+npm install @netpad/mcp-server
+```
+
+**Features**:
+- 22 tools for form generation
+- Workflow integration
+- AI-powered development assistance
+- Model Context Protocol support
+
 ## @netpad/forms
 
 ### Installation
@@ -480,11 +513,91 @@ async function processOrder(orderData) {
 }
 ```
 
+## @netpad/cli
+
+### Installation
+
+```bash
+# Global installation
+npm install -g @netpad/cli
+
+# Or use npx
+npx @netpad/cli
+```
+
+### Basic Usage
+
+```bash
+# Authenticate with NetPad
+netpad auth login
+
+# Search for packages
+netpad search customer-portal
+
+# Install a package
+netpad install @netpad/customer-portal
+
+# List installed packages
+netpad list
+
+# Create new application package
+netpad create my-application
+
+# Publish application to npm
+netpad publish
+```
+
+### Commands
+
+- `netpad auth login` - Authenticate with NetPad API
+- `netpad search <query>` - Search for NetPad packages
+- `netpad install <package>` - Install package from npm
+- `netpad list` - List installed applications
+- `netpad create <name>` - Create new application package
+- `netpad publish` - Publish application to npm
+- `netpad version` - Show CLI version
+
+## @netpad/mcp-server
+
+### Installation
+
+```bash
+npm install @netpad/mcp-server
+```
+
+### Usage
+
+The MCP server provides 22 tools for AI-powered development:
+
+- **Form Generation**: Generate forms from descriptions
+- **Workflow Creation**: Create workflows programmatically
+- **Field Suggestions**: Get field type suggestions
+- **Validation Rules**: Generate validation patterns
+- **Conditional Logic**: Generate conditional rules
+- **And more**: 22 total tools for NetPad development
+
+### Integration
+
+Use with MCP-compatible AI assistants:
+
+```typescript
+import { createNetPadMCPServer } from '@netpad/mcp-server';
+
+const server = createNetPadMCPServer({
+  apiKey: process.env.NETPAD_API_KEY,
+  orgId: process.env.NETPAD_ORG_ID,
+});
+
+// Server provides 22 tools for AI assistants
+```
+
 ## Resources
 
 - **NPM Packages**:
-  - [@netpad/forms](https://www.npmjs.com/package/@netpad/forms)
-  - [@netpad/workflows](https://www.npmjs.com/package/@netpad/workflows)
+  - [@netpad/forms](https://www.npmjs.com/package/@netpad/forms) - React form renderer
+  - [@netpad/workflows](https://www.npmjs.com/package/@netpad/workflows) - Workflow API client
+  - [@netpad/cli](https://www.npmjs.com/package/@netpad/cli) - Command-line tool
+  - [@netpad/mcp-server](https://www.npmjs.com/package/@netpad/mcp-server) - MCP server for AI tools
 - **GitHub**: [github.com/mongodb/netpad](https://github.com/mongodb/netpad)
 - **Examples**: `/examples/` directory in repository
 - **API Documentation**: [API Reference](../api/overview.md)

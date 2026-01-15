@@ -157,9 +157,21 @@ You can:
 
 See [Template Management](./templates.md) for details.
 
+## Knowledge-Guided Conversational Forms (RAG)
+
+Enhance conversational forms with document-grounded AI using RAG (Retrieval-Augmented Generation):
+
+- **Document Upload**: Attach PDF, DOCX, or TXT documents
+- **Semantic Search**: Vector search across document content
+- **Source Citations**: Traceable references in AI responses
+- **Context-Aware Answers**: AI uses document content to answer questions
+- **Schema-Aware**: All suggestions respect form validation rules
+
+See [Knowledge-Guided Conversational Forms (RAG)](./rag-knowledge-guided.md) for complete details.
+
 ## AI Agents
 
-NetPad includes 12+ AI agents to help with various tasks:
+NetPad includes 15+ AI agents to help with various tasks:
 
 ### Form Building Agents
 
@@ -190,9 +202,10 @@ See [AI Agents](./agents.md) for complete details.
 ## Getting Started
 
 1. [Create a Conversational Form](./conversational-forms.md) - Build your first conversational form
-2. [Template Management](./templates.md) - Use and customize templates
-3. [AI Agents](./agents.md) - Explore available AI agents
-4. [Configuration](./configuration.md) - Configure AI behavior and limits
+2. [Knowledge-Guided Forms (RAG)](./rag-knowledge-guided.md) - Add document-grounded AI
+3. [Template Management](./templates.md) - Use and customize templates
+4. [AI Agents](./agents.md) - Explore available AI agents
+5. [Configuration](./configuration.md) - Configure AI behavior and limits
 
 ## Next Steps
 

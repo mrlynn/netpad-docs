@@ -23,10 +23,37 @@ Use the Document Preview panel on the right to see how your form data will be st
 
 ## Creating a New Form
 
+You can create a form in three ways:
+
+### Method 1: Start from Template (Recommended)
+
+1. **Navigate to Form Builder** - Click "New Form" from the dashboard or navigate to `/builder`
+2. **Open Template Gallery** - Click the "Templates" tab
+3. **Browse Templates** - Explore templates by category or search
+4. **Preview Template** - Click a template to see details and fields
+5. **Use Template** - Click "Use Template" or "Customize" to apply
+6. **Name Your Form** - Enter a descriptive name
+7. **Select Database and Collection** - Choose your target database and collection
+8. **Customize** - Modify the template to fit your needs
+
+:::tip
+Templates provide pre-configured forms for common use cases. See the [Template Gallery](./template-gallery.md) guide for details.
+:::
+
+### Method 2: Start from Scratch
+
 1. **Navigate to Form Builder** - Click "New Form" from the dashboard or navigate to `/builder`
 2. **Name Your Form** - Enter a descriptive name and add an optional description
 3. **Connect to MongoDB** - Enter a connection string, select from saved connections, or use an auto-provisioned Atlas cluster
 4. **Select Database and Collection** - Choose your target database and collection
+5. **Add Fields** - Start building your form (see [Adding Fields](#adding-fields) below)
+
+### Method 3: Use AI Prompt
+
+1. **Navigate to Form Builder** - Click "New Form" from the dashboard
+2. **Enter AI Prompt** - Describe the form you want to create
+3. **AI Generates Form** - NetPad creates fields based on your description
+4. **Review and Customize** - Adjust the generated form as needed
 
 ## Adding Fields
 
@@ -90,6 +117,7 @@ NetPad automatically saves your work every few seconds. You never lose progress 
 
 ## Next Steps
 
+- [Template Gallery](./template-gallery.md) - Start with pre-built templates
 - [Field Configuration](./field-configuration.md) - Configure field properties
 - [Conditional Logic](./conditional-logic.md) - Add dynamic behavior
 - [Form Publishing](./publishing.md) - Make your form live
