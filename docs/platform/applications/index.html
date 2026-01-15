@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-platform/applications" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Applications | NetPad Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.netpad.io/img/logo.png"><meta data-rh="true" name="twitter:image" content="https://docs.netpad.io/img/logo.png"><meta data-rh="true" property="og:url" content="https://docs.netpad.io/docs/platform/applications"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Applications | NetPad Documentation"><meta data-rh="true" name="description" content="Applications are first-class entities in NetPad that group related forms, workflows, and connections together. They provide organization, versioning, sharing, and access control capabilities."><meta data-rh="true" property="og:description" content="Applications are first-class entities in NetPad that group related forms, workflows, and connections together. They provide organization, versioning, sharing, and access control capabilities."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.netpad.io/docs/platform/applications"><link data-rh="true" rel="alternate" href="https://docs.netpad.io/docs/platform/applications" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.netpad.io/docs/platform/applications" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="NetPad Documentation RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="NetPad Documentation Atom Feed">
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"><link rel="stylesheet" href="/assets/css/styles.8712ada8.css">
+<script src="/assets/js/runtime~main.9ae5efd6.js" defer="defer"></script>
+<script src="/assets/js/main.b84da243.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();null!==e?t(e):window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):window.matchMedia("(prefers-color-scheme: light)").matches?t("light"):t("dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top navbar--dark"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="NetPad Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="NetPad Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">NetPad</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/getting-started/introduction">Docs</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/mrlynn/netpad-v3" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite" aria-pressed="true"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/getting-started/introduction">Getting Started</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/forms/overview">Forms</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/analytics/overview">Analytics &amp; Responses</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/data-explorer/overview">Data Explorer</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/workflows/overview">Workflows</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/integrations/overview">Integrations</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/ai/overview">AI &amp; Conversational</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/platform/organizations">Platform</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/platform/organizations">Organizations</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/platform/applications">Applications</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/platform/marketplace">Application Marketplace</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/platform/projects">Projects</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/platform/authentication">Authentication</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/platform/connection-vault">Connection Vault</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/platform/access-control">Access Control</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/platform/billing">Billing &amp; Subscriptions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/platform/pricing">Pricing &amp; Limits</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/api/overview">API Reference</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/security/overview">Security</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/deployment/overview">Deployment</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/guides/keyboard-shortcuts">Guides</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/developer/packages">Development</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/legal/privacy-policy">Legal</a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Platform</span><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Applications</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Applications</h1></header>
+<p>Applications are first-class entities in NetPad that group related forms, workflows, and connections together. They provide organization, versioning, sharing, and access control capabilities.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-are-applications">What Are Applications?<a href="#what-are-applications" class="hash-link" aria-label="Direct link to What Are Applications?" title="Direct link to What Are Applications?">​</a></h2>
+<p>Applications are containers that organize related resources:</p>
+<ul>
+<li><strong>Forms</strong>: All forms associated with the application</li>
+<li><strong>Workflows</strong>: Automation workflows for the application</li>
+<li><strong>Connections</strong>: Form-to-workflow triggers and integrations</li>
+<li><strong>Releases</strong>: Versioned snapshots with semantic versioning</li>
+<li><strong>Stats</strong>: Application-level metrics</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-use-applications">Why Use Applications?<a href="#why-use-applications" class="hash-link" aria-label="Direct link to Why Use Applications?" title="Direct link to Why Use Applications?">​</a></h2>
+<p>Applications provide several benefits:</p>
+<ul>
+<li><strong>Organization</strong>: Group related forms and workflows logically</li>
+<li><strong>Versioning</strong>: Create releases to snapshot applications at specific versions</li>
+<li><strong>Sharing</strong>: Publish applications to the marketplace</li>
+<li><strong>Export</strong>: Export entire applications as bundles</li>
+<li><strong>Access Control</strong>: Fine-grained permissions at application level</li>
+<li><strong>Insights</strong>: Track application-level statistics</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="creating-applications">Creating Applications<a href="#creating-applications" class="hash-link" aria-label="Direct link to Creating Applications" title="Direct link to Creating Applications">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="step-1-create-new-application">Step 1: Create New Application<a href="#step-1-create-new-application" class="hash-link" aria-label="Direct link to Step 1: Create New Application" title="Direct link to Step 1: Create New Application">​</a></h3>
+<ol>
+<li>Navigate to <strong>Applications</strong> in the sidebar</li>
+<li>Click <strong>&quot;New Application&quot;</strong></li>
+<li>Enter application details:<!-- -->
+<ul>
+<li><strong>Name</strong>: Descriptive name (e.g., &quot;Customer Portal&quot;)</li>
+<li><strong>Description</strong>: What the application does</li>
+<li><strong>Category</strong>: Application category</li>
+<li><strong>Tags</strong>: Searchable tags</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="step-2-add-resources">Step 2: Add Resources<a href="#step-2-add-resources" class="hash-link" aria-label="Direct link to Step 2: Add Resources" title="Direct link to Step 2: Add Resources">​</a></h3>
+<p>Add forms, workflows, and connections to your application:</p>
+<ol>
+<li>
+<p><strong>Add Forms</strong>:</p>
+<ul>
+<li>Click <strong>&quot;Add Form&quot;</strong> in application</li>
+<li>Select existing forms or create new ones</li>
+<li>Forms are linked to the application</li>
+</ul>
+</li>
+<li>
+<p><strong>Add Workflows</strong>:</p>
+<ul>
+<li>Click <strong>&quot;Add Workflow&quot;</strong></li>
+<li>Select existing workflows or create new ones</li>
+<li>Workflows are linked to the application</li>
+</ul>
+</li>
+<li>
+<p><strong>Add Connections</strong>:</p>
+<ul>
+<li>Configure form-to-workflow triggers</li>
+<li>Set up integrations</li>
+<li>Define data flows</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="application-structure">Application Structure<a href="#application-structure" class="hash-link" aria-label="Direct link to Application Structure" title="Direct link to Application Structure">​</a></h2>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token plain">Application: Customer Portal</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">├── Forms</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">│   ├── Contact Form</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">│   ├── Support Ticket Form</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">│   └── Feedback Form</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">├── Workflows</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">│   ├── Email Notification Workflow</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">│   └── Ticket Routing Workflow</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">├── Connections</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">│   ├── Contact → Email Notification</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">│   └── Support Ticket → Ticket Routing</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">└── Releases</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    ├── v1.0.0 (Initial release)</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    ├── v1.1.0 (Added feedback form)</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">    └── v2.0.0 (Major update)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="application-releases">Application Releases<a href="#application-releases" class="hash-link" aria-label="Direct link to Application Releases" title="Direct link to Application Releases">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="creating-releases">Creating Releases<a href="#creating-releases" class="hash-link" aria-label="Direct link to Creating Releases" title="Direct link to Creating Releases">​</a></h3>
+<p>Releases are versioned snapshots of your application:</p>
+<ol>
+<li>
+<p><strong>Prepare Application</strong>:</p>
+<ul>
+<li>Ensure all forms and workflows are configured</li>
+<li>Test everything works correctly</li>
+<li>Document changes</li>
+</ul>
+</li>
+<li>
+<p><strong>Create Release</strong>:</p>
+<ul>
+<li>Click <strong>&quot;Create Release&quot;</strong> in application</li>
+<li>Enter version number (semantic versioning: X.Y.Z)</li>
+<li>Add changelog notes</li>
+<li>Click <strong>&quot;Create Release&quot;</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Release Snapshot</strong>:</p>
+<ul>
+<li>Forms, workflows, and connections are snapshotted</li>
+<li>Release is immutable</li>
+<li>Can be restored or exported</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="semantic-versioning">Semantic Versioning<a href="#semantic-versioning" class="hash-link" aria-label="Direct link to Semantic Versioning" title="Direct link to Semantic Versioning">​</a></h3>
+<p>Releases use semantic versioning (Major.Minor.Patch):</p>
+<ul>
+<li><strong>Major (X.0.0)</strong>: Breaking changes</li>
+<li><strong>Minor (0.X.0)</strong>: New features, backward compatible</li>
+<li><strong>Patch (0.0.X)</strong>: Bug fixes, backward compatible</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token plain">v1.0.0 - Initial release</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">v1.1.0 - Added feedback form (new feature)</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">v1.1.1 - Fixed email notification bug (patch)</span><br></span><span class="token-line" style="color:#9CDCFE"><span class="token plain">v2.0.0 - Redesigned forms (breaking changes)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="release-features">Release Features<a href="#release-features" class="hash-link" aria-label="Direct link to Release Features" title="Direct link to Release Features">​</a></h3>
+<ul>
+<li><strong>Immutable Snapshots</strong>: Releases cannot be modified</li>
+<li><strong>Changelog Tracking</strong>: Document what changed</li>
+<li><strong>Manifest Generation</strong>: Automatic manifest for marketplace</li>
+<li><strong>Version Suggestion</strong>: AI suggests next version based on changes</li>
+<li><strong>Export</strong>: Export releases as bundles</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="application-permissions-rbac">Application Permissions (RBAC)<a href="#application-permissions-rbac" class="hash-link" aria-label="Direct link to Application Permissions (RBAC)" title="Direct link to Application Permissions (RBAC)">​</a></h2>
+<p>Applications have fine-grained access control separate from organization roles.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="permission-roles">Permission Roles<a href="#permission-roles" class="hash-link" aria-label="Direct link to Permission Roles" title="Direct link to Permission Roles">​</a></h3>
+<table><thead><tr><th>Role</th><th>Capabilities</th></tr></thead><tbody><tr><td><strong>Owner</strong></td><td>Full control: edit, manage permissions, create releases, delete</td></tr><tr><td><strong>Editor</strong></td><td>Edit application, create releases, cannot manage permissions</td></tr><tr><td><strong>Analyst</strong></td><td>View application, analyze data, read-only access</td></tr><tr><td><strong>Viewer</strong></td><td>Read-only access to application and its resources</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="access-modes">Access Modes<a href="#access-modes" class="hash-link" aria-label="Direct link to Access Modes" title="Direct link to Access Modes">​</a></h3>
+<p>Applications can be set to:</p>
+<ul>
+<li><strong>org_members</strong>: All organization members have access (based on org role)</li>
+<li><strong>explicit</strong>: Permission-based access (requires explicit permission grants)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="managing-permissions">Managing Permissions<a href="#managing-permissions" class="hash-link" aria-label="Direct link to Managing Permissions" title="Direct link to Managing Permissions">​</a></h3>
+<ol>
+<li>
+<p><strong>Open Application</strong>: Navigate to application detail view</p>
+</li>
+<li>
+<p><strong>Permissions Tab</strong>: Click <strong>&quot;Permissions&quot;</strong> tab</p>
+</li>
+<li>
+<p><strong>Grant Permissions</strong>:</p>
+<ul>
+<li>Click <strong>&quot;Add Permission&quot;</strong></li>
+<li>Select user from organization members</li>
+<li>Choose role (Editor, Analyst, Viewer)</li>
+<li>Click <strong>&quot;Grant&quot;</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Update Permissions</strong>:</p>
+<ul>
+<li>Click edit on existing permission</li>
+<li>Change role</li>
+<li>Save changes</li>
+</ul>
+</li>
+<li>
+<p><strong>Revoke Permissions</strong>:</p>
+<ul>
+<li>Click delete on permission</li>
+<li>Confirm removal</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="contract-integration">Contract Integration<a href="#contract-integration" class="hash-link" aria-label="Direct link to Contract Integration" title="Direct link to Contract Integration">​</a></h3>
+<p>Active contracts restrict editing:</p>
+<ul>
+<li><strong>Owners</strong>: Always have full access</li>
+<li><strong>Explicit Permissions</strong>: Users with explicit permissions can edit</li>
+<li><strong>Others</strong>: Read-only access when contract is active</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="application-contracts--protection">Application Contracts &amp; Protection<a href="#application-contracts--protection" class="hash-link" aria-label="Direct link to Application Contracts &amp; Protection" title="Direct link to Application Contracts &amp; Protection">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="contract-definition">Contract Definition<a href="#contract-definition" class="hash-link" aria-label="Direct link to Contract Definition" title="Direct link to Contract Definition">​</a></h3>
+<p>Define public API surface for your application:</p>
+<ul>
+<li><strong>Inputs</strong>: What data the application accepts</li>
+<li><strong>Outputs</strong>: What data the application produces</li>
+<li><strong>Side Effects</strong>: External actions (emails, webhooks, etc.)</li>
+<li><strong>Events</strong>: Events the application emits</li>
+<li><strong>Behaviors</strong>: How the application behaves</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="contract-lifecycle">Contract Lifecycle<a href="#contract-lifecycle" class="hash-link" aria-label="Direct link to Contract Lifecycle" title="Direct link to Contract Lifecycle">​</a></h3>
+<p>Contracts have lifecycle states:</p>
+<ul>
+<li><strong>Draft</strong>: Being defined, not enforced</li>
+<li><strong>Active</strong>: Enforced, breaking changes require major version bump</li>
+<li><strong>Deprecated</strong>: Still active but being phased out</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="breaking-change-detection">Breaking Change Detection<a href="#breaking-change-detection" class="hash-link" aria-label="Direct link to Breaking Change Detection" title="Direct link to Breaking Change Detection">​</a></h3>
+<p>When creating a release:</p>
+<ol>
+<li><strong>Contract Comparison</strong>: Compare current contract with previous release</li>
+<li><strong>Change Detection</strong>: Identify breaking vs non-breaking changes</li>
+<li><strong>Version Validation</strong>: Require major version bump for breaking changes</li>
+<li><strong>Migration Guides</strong>: Auto-generate migration instructions</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="component-protection">Component Protection<a href="#component-protection" class="hash-link" aria-label="Direct link to Component Protection" title="Direct link to Component Protection">​</a></h3>
+<p>Lock forms and workflows to prevent accidental modifications:</p>
+<ul>
+<li><strong>Protection Indicators</strong>: Visual lock status in editors</li>
+<li><strong>Editable Fields</strong>: Explicit fields that can be modified</li>
+<li><strong>Protected Fields</strong>: Fields locked by contract</li>
+<li><strong>Unlock Process</strong>: Owners can unlock for updates</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="application-marketplace">Application Marketplace<a href="#application-marketplace" class="hash-link" aria-label="Direct link to Application Marketplace" title="Direct link to Application Marketplace">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="publishing-applications">Publishing Applications<a href="#publishing-applications" class="hash-link" aria-label="Direct link to Publishing Applications" title="Direct link to Publishing Applications">​</a></h3>
+<p>Share your applications with the community:</p>
+<ol>
+<li>
+<p><strong>Prepare Application</strong>:</p>
+<ul>
+<li>Create release</li>
+<li>Add marketplace metadata</li>
+<li>Write description</li>
+<li>Add screenshots</li>
+</ul>
+</li>
+<li>
+<p><strong>Submit to Marketplace</strong>:</p>
+<ul>
+<li>Click <strong>&quot;Publish to Marketplace&quot;</strong></li>
+<li>Fill out marketplace form</li>
+<li>Submit for review</li>
+</ul>
+</li>
+<li>
+<p><strong>Admin Review</strong>:</p>
+<ul>
+<li>Platform admins review submission</li>
+<li>Approve or reject with feedback</li>
+<li>Official designation for verified apps</li>
+</ul>
+</li>
+<li>
+<p><strong>Published</strong>:</p>
+<ul>
+<li>Application appears in marketplace</li>
+<li>Others can discover and import</li>
+<li>You can manage from &quot;My Applications&quot;</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="my-applications">My Applications<a href="#my-applications" class="hash-link" aria-label="Direct link to My Applications" title="Direct link to My Applications">​</a></h3>
+<p>Manage your published applications:</p>
+<ul>
+<li><strong>View Published</strong>: See all your published applications</li>
+<li><strong>Edit Listing</strong>: Update marketplace listing</li>
+<li><strong>Unpublish</strong>: Remove from marketplace</li>
+<li><strong>Delete</strong>: Delete application (requires confirmation)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="importing-applications">Importing Applications<a href="#importing-applications" class="hash-link" aria-label="Direct link to Importing Applications" title="Direct link to Importing Applications">​</a></h3>
+<p>Import applications from the marketplace:</p>
+<ol>
+<li><strong>Browse Marketplace</strong>: Find applications by category, tags, or search</li>
+<li><strong>Preview Application</strong>: View details, screenshots, requirements</li>
+<li><strong>Import</strong>: Click <strong>&quot;Import&quot;</strong> to add to your project</li>
+<li><strong>Configure</strong>: Set up connections and customize as needed</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="official-vs-community">Official vs Community<a href="#official-vs-community" class="hash-link" aria-label="Direct link to Official vs Community" title="Direct link to Official vs Community">​</a></h3>
+<ul>
+<li><strong>Official</strong>: NetPad-verified applications (<code>@netpad/</code> scope)</li>
+<li><strong>Community</strong>: User-created applications (various scopes)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="npm-package-integration">npm Package Integration<a href="#npm-package-integration" class="hash-link" aria-label="Direct link to npm Package Integration" title="Direct link to npm Package Integration">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="publishing-to-npm">Publishing to npm<a href="#publishing-to-npm" class="hash-link" aria-label="Direct link to Publishing to npm" title="Direct link to Publishing to npm">​</a></h3>
+<p>Applications can be published as npm packages:</p>
+<ol>
+<li><strong>Generate Package</strong>: Create npm-ready package from application</li>
+<li><strong>Package Structure</strong>: Automatic package.json with NetPad metadata</li>
+<li><strong>Bundle Export</strong>: Complete application bundle included</li>
+<li><strong>Publish</strong>: Publish to npm registry</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="installing-from-npm">Installing from npm<a href="#installing-from-npm" class="hash-link" aria-label="Direct link to Installing from npm" title="Direct link to Installing from npm">​</a></h3>
+<p>Install applications directly from npm:</p>
+<ol>
+<li><strong>Search npm</strong>: Find NetPad packages by keywords</li>
+<li><strong>Install</strong>: Use npm install or NetPad CLI</li>
+<li><strong>Dependency Resolution</strong>: Automatic dependency installation</li>
+<li><strong>Version Support</strong>: Install specific versions or ranges</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="npm-registry-sync">npm Registry Sync<a href="#npm-registry-sync" class="hash-link" aria-label="Direct link to npm Registry Sync" title="Direct link to npm Registry Sync">​</a></h3>
+<ul>
+<li><strong>Automatic Discovery</strong>: NetPad discovers packages on npm</li>
+<li><strong>Background Sync</strong>: Keeps marketplace up-to-date</li>
+<li><strong>Manual Sync</strong>: Trigger sync via API</li>
+<li><strong>Status Tracking</strong>: Monitor sync status and errors</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="application-analytics">Application Analytics<a href="#application-analytics" class="hash-link" aria-label="Direct link to Application Analytics" title="Direct link to Application Analytics">​</a></h2>
+<p>Track application-level metrics:</p>
+<ul>
+<li><strong>Forms Count</strong>: Number of forms in application</li>
+<li><strong>Workflows Count</strong>: Number of workflows</li>
+<li><strong>Connections Count</strong>: Number of connections</li>
+<li><strong>Submissions</strong>: Total form submissions</li>
+<li><strong>Workflow Executions</strong>: Total workflow runs</li>
+<li><strong>Release History</strong>: All releases and versions</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="best-practices">Best Practices<a href="#best-practices" class="hash-link" aria-label="Direct link to Best Practices" title="Direct link to Best Practices">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="organization">Organization<a href="#organization" class="hash-link" aria-label="Direct link to Organization" title="Direct link to Organization">​</a></h3>
+<ol>
+<li><strong>Logical Grouping</strong>: Group related forms and workflows</li>
+<li><strong>Clear Naming</strong>: Use descriptive application names</li>
+<li><strong>Good Descriptions</strong>: Explain what the application does</li>
+<li><strong>Consistent Structure</strong>: Follow consistent patterns</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="versioning">Versioning<a href="#versioning" class="hash-link" aria-label="Direct link to Versioning" title="Direct link to Versioning">​</a></h3>
+<ol>
+<li><strong>Semantic Versioning</strong>: Follow X.Y.Z format</li>
+<li><strong>Clear Changelogs</strong>: Document all changes</li>
+<li><strong>Test Before Release</strong>: Ensure everything works</li>
+<li><strong>Major Versions</strong>: Use for breaking changes</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="permissions">Permissions<a href="#permissions" class="hash-link" aria-label="Direct link to Permissions" title="Direct link to Permissions">​</a></h3>
+<ol>
+<li><strong>Principle of Least Privilege</strong>: Grant minimum necessary permissions</li>
+<li><strong>Regular Review</strong>: Review permissions periodically</li>
+<li><strong>Document Access</strong>: Document who has access and why</li>
+<li><strong>Contract Protection</strong>: Use contracts to protect critical applications</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="marketplace">Marketplace<a href="#marketplace" class="hash-link" aria-label="Direct link to Marketplace" title="Direct link to Marketplace">​</a></h3>
+<ol>
+<li><strong>Complete Metadata</strong>: Fill out all marketplace fields</li>
+<li><strong>Good Screenshots</strong>: Show application in action</li>
+<li><strong>Clear Documentation</strong>: Explain how to use</li>
+<li><strong>Maintain</strong>: Keep applications updated</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
+<ul>
+<li><a href="/docs/platform/marketplace">Application Marketplace</a> - Discover and share applications</li>
+<li><a href="/docs/platform/projects">Projects</a> - Organize applications in projects</li>
+<li><a href="/docs/platform/organizations">Organizations</a> - Manage organization resources</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/mrlynn/netpad-v3/tree/main/docs/docs/platform/applications.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/platform/organizations"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Organizations</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/platform/marketplace"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Application Marketplace</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#what-are-applications" class="table-of-contents__link toc-highlight">What Are Applications?</a></li><li><a href="#why-use-applications" class="table-of-contents__link toc-highlight">Why Use Applications?</a></li><li><a href="#creating-applications" class="table-of-contents__link toc-highlight">Creating Applications</a><ul><li><a href="#step-1-create-new-application" class="table-of-contents__link toc-highlight">Step 1: Create New Application</a></li><li><a href="#step-2-add-resources" class="table-of-contents__link toc-highlight">Step 2: Add Resources</a></li></ul></li><li><a href="#application-structure" class="table-of-contents__link toc-highlight">Application Structure</a></li><li><a href="#application-releases" class="table-of-contents__link toc-highlight">Application Releases</a><ul><li><a href="#creating-releases" class="table-of-contents__link toc-highlight">Creating Releases</a></li><li><a href="#semantic-versioning" class="table-of-contents__link toc-highlight">Semantic Versioning</a></li><li><a href="#release-features" class="table-of-contents__link toc-highlight">Release Features</a></li></ul></li><li><a href="#application-permissions-rbac" class="table-of-contents__link toc-highlight">Application Permissions (RBAC)</a><ul><li><a href="#permission-roles" class="table-of-contents__link toc-highlight">Permission Roles</a></li><li><a href="#access-modes" class="table-of-contents__link toc-highlight">Access Modes</a></li><li><a href="#managing-permissions" class="table-of-contents__link toc-highlight">Managing Permissions</a></li><li><a href="#contract-integration" class="table-of-contents__link toc-highlight">Contract Integration</a></li></ul></li><li><a href="#application-contracts--protection" class="table-of-contents__link toc-highlight">Application Contracts &amp; Protection</a><ul><li><a href="#contract-definition" class="table-of-contents__link toc-highlight">Contract Definition</a></li><li><a href="#contract-lifecycle" class="table-of-contents__link toc-highlight">Contract Lifecycle</a></li><li><a href="#breaking-change-detection" class="table-of-contents__link toc-highlight">Breaking Change Detection</a></li><li><a href="#component-protection" class="table-of-contents__link toc-highlight">Component Protection</a></li></ul></li><li><a href="#application-marketplace" class="table-of-contents__link toc-highlight">Application Marketplace</a><ul><li><a href="#publishing-applications" class="table-of-contents__link toc-highlight">Publishing Applications</a></li><li><a href="#my-applications" class="table-of-contents__link toc-highlight">My Applications</a></li><li><a href="#importing-applications" class="table-of-contents__link toc-highlight">Importing Applications</a></li><li><a href="#official-vs-community" class="table-of-contents__link toc-highlight">Official vs Community</a></li></ul></li><li><a href="#npm-package-integration" class="table-of-contents__link toc-highlight">npm Package Integration</a><ul><li><a href="#publishing-to-npm" class="table-of-contents__link toc-highlight">Publishing to npm</a></li><li><a href="#installing-from-npm" class="table-of-contents__link toc-highlight">Installing from npm</a></li><li><a href="#npm-registry-sync" class="table-of-contents__link toc-highlight">npm Registry Sync</a></li></ul></li><li><a href="#application-analytics" class="table-of-contents__link toc-highlight">Application Analytics</a></li><li><a href="#best-practices" class="table-of-contents__link toc-highlight">Best Practices</a><ul><li><a href="#organization" class="table-of-contents__link toc-highlight">Organization</a></li><li><a href="#versioning" class="table-of-contents__link toc-highlight">Versioning</a></li><li><a href="#permissions" class="table-of-contents__link toc-highlight">Permissions</a></li><li><a href="#marketplace" class="table-of-contents__link toc-highlight">Marketplace</a></li></ul></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/getting-started/introduction">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/forms/overview">Forms</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/workflows/overview">Workflows</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/api/overview">API Reference</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">Issues<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://github.com/mrlynn/netpad-v3/discussions" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discussions<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 NetPad. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
