@@ -92,13 +92,24 @@ From simple text inputs to complex nested objects, NetPad supports:
 ### Template Gallery
 
 Start quickly with pre-built form templates:
-- **25+ Templates** - Professional templates for common use cases
-- **9 Categories** - Business, Events, Feedback, Support, E-commerce, Healthcare, Finance, Education, Real Estate
+- **25+ Form Templates** - Professional templates for common use cases
+- **11 Workflow Templates** - Pre-built automation patterns
+- **10 Categories** - Business, Events, Feedback, Support, E-commerce, Healthcare, Finance, Education, Real Estate, Search Forms
+- **Search Form Templates** - Customer Search, Order Search, Support Ticket Search
 - **Preview Before Use** - See template details and fields before applying
 - **Fully Customizable** - Templates are starting points you can modify
 - **Best Practices** - Templates demonstrate industry standards
 
 See the [Template Gallery Guide](./template-gallery.md) for details.
+
+### Search Forms
+
+Search forms allow querying and filtering existing data:
+- **Multiple Operators** - Equals, contains, between, in, regex, and more
+- **Smart Dropdowns** - Auto-populate from distinct database values
+- **Result Display** - Table, cards, or list layouts
+- **Pagination** - Navigate large result sets
+- **Result Actions** - View, edit, delete, export
 
 ### Schema Import
 
@@ -139,12 +150,27 @@ Integrate Cloudflare Turnstile CAPTCHA to prevent spam submissions.
 
 Send form data to external services when forms are submitted.
 
-### Customization
+### Form Theming & Branding
 
-- Custom themes (colors, backgrounds, branding)
+Customize the look and feel of your forms:
+- **Header Styles** - Color, gradient, or image with overlay
+- **Color Schemes** - Primary, secondary, error, success colors
+- **Preset Themes** - Professional, Creative, Minimal, Bold, Nature, Tech
+- **Custom CSS** - Full styling control for advanced users
+- **Dark Mode** - Built-in dark mode support
+- **Logo & Branding** - Company logo, favicon, custom fonts
 - Custom redirect URLs after submission
 - URL pre-fill (auto-populate from query parameters)
 - Embeddable forms (iframe or JavaScript)
+
+### Multi-Page Forms
+
+Organize complex forms into steps:
+- **Step-Based Progression** - Guide users through sections
+- **Progress Styles** - Dots, numbers, progress bar, or tabs
+- **Page-Level Validation** - Validate each page before proceeding
+- **Navigation Controls** - Back, next, and jump to page
+- **Completion Tracking** - Track progress through the form
 
 ## Getting Started
 

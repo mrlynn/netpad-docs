@@ -1,6 +1,26 @@
 # API Overview
 
-The NetPad API provides programmatic access to your forms and submissions. Use it to integrate NetPad with your applications, automate workflows, or build custom dashboards.
+The NetPad API provides programmatic access to your forms, submissions, applications, workflows, and more. With **165+ endpoints** across major categories, you can fully integrate NetPad with your applications, automate workflows, or build custom dashboards.
+
+## API Categories
+
+| Category | Endpoints | Description |
+|----------|-----------|-------------|
+| **/api/forms** | 40+ | Form CRUD, submissions, analytics |
+| **/api/workflows** | 15+ | Workflow management, execution |
+| **/api/organizations** | 30+ | Org management, vault, templates |
+| **/api/projects** | 8 | Project management, bundles |
+| **/api/applications** | 10+ | Application management, releases |
+| **/api/marketplace** | 12+ | Marketplace browsing, publishing, management |
+| **/api/marketplace/npm** | 3+ | npm package search, install, sync |
+| **/api/mongodb** | 10+ | Database operations |
+| **/api/deployments** | 5+ | Deployment management |
+| **/api/ai** | 12+ | AI agents and generation |
+| **/api/rag** | 5+ | RAG document management, retrieval |
+| **/api/integrations** | 8+ | Integration credentials |
+| **/api/auth** | 10+ | Authentication flows |
+| **/api/billing** | 4 | Subscription management |
+| **/api/v1** | 5+ | Public API (external apps) |
 
 ## Base URL
 
@@ -326,15 +346,52 @@ You can use this specification with:
 
 ## Endpoints
 
+### Core Endpoints
 - [Authentication](./authentication.md) - Auth endpoints
 - [Forms](./forms.md) - Form management
 - [Submissions](./submissions.md) - Form submissions
 - [Webhooks](./webhooks.md) - Webhook events
+- [Workflows](./workflows.md) - Workflow execution
+
+### Platform Endpoints
+- [Applications](/api/applications) - Application CRUD, releases, permissions
+- [Marketplace](/api/marketplace) - Browse, publish, install applications
+- [npm Integration](/api/marketplace/npm) - npm package management
 - [Vercel Integration](./vercel-integration.md) - Vercel deployment integration
+
+### AI & RAG Endpoints
+- **POST** `/api/ai/generate` - Generate content using AI
+- **POST** `/api/rag/documents` - Upload documents for RAG
+- **GET** `/api/rag/documents` - List RAG documents
+- **POST** `/api/rag/retrieve` - Retrieve relevant chunks
+- **DELETE** `/api/rag/documents/:id` - Delete RAG document
+
+### npm Package Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| **GET** | `/api/marketplace/npm/search` | Search npm for NetPad packages |
+| **POST** | `/api/marketplace/npm/install` | Install package from npm |
+| **GET** | `/api/marketplace/npm/sync` | Get sync status |
+| **POST** | `/api/marketplace/npm/sync` | Trigger manual sync |
+
+**Example: Search npm packages**
+```bash
+curl -X GET "https://your-domain.com/api/marketplace/npm/search?query=customer-portal" \
+  -H "Authorization: Bearer np_live_your_api_key"
+```
+
+**Example: Install from npm**
+```bash
+curl -X POST "https://your-domain.com/api/marketplace/npm/install" \
+  -H "Authorization: Bearer np_live_your_api_key" \
+  -H "Content-Type: application/json" \
+  -d '{"packageName": "@netpad/customer-portal", "version": "latest"}'
+```
 
 ---
 
-## Webhooks (Coming Soon)
+## Webhooks
 
 Configure webhooks to receive real-time notifications when events occur:
 

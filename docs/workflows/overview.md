@@ -102,6 +102,28 @@ AI-powered operations:
 - **Preserved**: Configuration maintained
 - **Resumable**: Can activate anytime
 
+## Workflow Limits by Tier
+
+Workflow usage is limited by subscription tier:
+
+| Tier | Executions/Month | Active Workflows |
+|------|------------------|------------------|
+| **Free** | 50 | 1 |
+| **Pro** | 500 | 5 |
+| **Team** | 5,000 | 25 |
+| **Enterprise** | Unlimited | Unlimited |
+
+## Execution Engine
+
+The workflow execution engine provides:
+
+- **Async Processing** - Queue-based execution system
+- **Retry Logic** - Configurable policies with exponential backoff
+- **Error Handling** - Stop, continue, or rollback strategies
+- **Timeout Management** - Per-node and workflow-level timeouts
+- **Execution Modes** - Sequential, parallel, or auto-detected
+- **Job Queue** - MongoDB-based with priority support
+
 ## Use Cases
 
 ### Form Processing

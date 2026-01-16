@@ -1,6 +1,14 @@
 # MCP Server (@netpad/mcp-server)
 
-The `@netpad/mcp-server` package (v2.0.0) is a comprehensive Model Context Protocol (MCP) server that integrates with AI assistants like Claude Desktop and Cursor IDE. It provides **75 AI-powered tools** across **7 categories** for building forms, applications, workflows, conversational experiences, and MongoDB integrations.
+The `@netpad/mcp-server` package (v2.2.0) is a comprehensive Model Context Protocol (MCP) server that integrates with AI assistants like Claude Desktop and Cursor IDE. It provides **75 AI-powered tools** across **7 categories** for building forms, applications, workflows, conversational experiences, and MongoDB integrations.
+
+## What's New in v2.2.0
+
+- **Validated TypeScript Output**: All code-generating tools return self-contained TypeScript with inline types
+- **Consolidated Reference Tools**: New `get_reference` and `browse_templates` tools replace multiple specialized tools
+- **Auto-Validation & Fix**: Automatic TypeScript validation with auto-fix for common errors
+- **No SDK Imports**: Generated code runs standalone without requiring @netpad/* SDK imports
+- **60+ Skip Patterns**: Runtime types (fetch, React, Node.js, DOM) are automatically handled
 
 ## What is the MCP Server?
 
@@ -138,9 +146,48 @@ MongoDB queries, aggregations, schema analysis:
 - **`generate_schema_analysis`** - Analyze collection schemas
 - **Additional tools** for data exploration
 
-### 8. Reference & Helper (16 tools)
+### 8. Consolidated Reference Tools (New in v2.2.0)
 
-Documentation, best practices, debugging:
+Two new consolidated tools provide unified access to reference data:
+
+#### `get_reference` Tool
+
+Unified access to all reference documentation:
+
+- **Field Types**: All 30+ field type definitions and configurations
+- **Operators**: Search operators by field type
+- **Formula Functions**: Computed field formula functions
+- **Validation**: Validation patterns and rules
+- **Themes**: Theme configurations and presets
+- **Documentation**: Feature documentation and guides
+
+**Usage**:
+```
+"Get reference for field types"
+"Show me available search operators for date fields"
+"What formula functions are available for computed fields?"
+```
+
+#### `browse_templates` Tool
+
+Browse all 40+ templates with filtering:
+
+- **Form Templates**: 24 templates across 10 categories
+- **Application Templates**: Pre-built application bundles
+- **Workflow Templates**: 5 automation workflow templates
+- **Conversational Templates**: 4 AI-powered form templates
+- **Query Templates**: MongoDB query templates
+
+**Usage**:
+```
+"Show me healthcare form templates"
+"List all conversational form templates"
+"Browse workflow templates"
+```
+
+### 9. Legacy Reference & Helper (16 tools)
+
+Documentation, best practices, debugging (these are being consolidated into the new tools above):
 
 - **`get_documentation`** - Access NetPad documentation
 - **`get_best_practices`** - Get best practices for specific features
@@ -292,8 +339,43 @@ Pre-configured conversational forms:
 - **GitHub**: [github.com/mongodb/netpad](https://github.com/mongodb/netpad)
 - **MCP Documentation**: [Model Context Protocol](https://modelcontextprotocol.io)
 
+## Validated TypeScript Output
+
+A key feature of v2.2.0 is that all code-generating tools produce validated, self-contained TypeScript:
+
+### What This Means
+
+1. **Self-Contained Code**: Generated code includes all necessary type definitions inline
+2. **No SDK Imports**: You don't need to install @netpad/forms or other packages to run the generated code
+3. **Auto-Validation**: TypeScript is validated at generation time
+4. **Auto-Fix**: Common errors (missing semicolons, type annotations) are automatically fixed
+5. **Runtime Type Skipping**: 60+ runtime types (fetch, React, Node.js, DOM) are handled automatically
+
+### Running Generated Code
+
+Generated TypeScript can be run directly:
+
+```bash
+# Save the generated code to a file
+cat > my-form.ts << 'EOF'
+// Generated code from MCP server
+...
+EOF
+
+# Run directly with npx tsx
+npx tsx my-form.ts
+```
+
 ## Version
 
-Current version: **2.0.0**
+Current version: **2.2.0**
 
 The MCP server is actively maintained and updated with new tools and capabilities. Check the npm package page for the latest version and changelog.
+
+### Version History
+
+| Version | Changes |
+|---------|---------|
+| **2.2.0** | Validated TypeScript output, consolidated tools (`get_reference`, `browse_templates`), auto-fix, 60+ skip patterns |
+| **2.1.0** | Additional templates, improved error handling |
+| **2.0.0** | 75 tools across 7 categories, comprehensive MCP implementation |

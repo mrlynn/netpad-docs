@@ -1,12 +1,12 @@
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
+mrlynn:
+  name: Michael Lynn
+  title: Principal Staff Developer Advocate @ MongoDB
   url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
+  image_url: https://github.com/mrlynn.png
   page: true
   socials:
-    x: yangshunz
-    github: yangshun
+    x: mlynn
+    github: mrlynn
 
 slorber:
   name: Sébastien Lorber

@@ -16,10 +16,12 @@ See [Vercel Deployment](./vercel.md) for details.
 
 ### Self-Hosted
 
-Full control over deployment:
+Full control over deployment with RAG for all tiers:
 - **Your Infrastructure**: Deploy on your servers
 - **Custom Configuration**: Full control
 - **Data Residency**: Keep data on-premises
+- **RAG for All Tiers**: Use Atlas Local for RAG without M10+ upgrade
+- **Cost Optimization**: No mandatory paid cluster for advanced features
 
 See [Self-Hosted Deployment](./self-hosted.md) for details.
 
@@ -51,6 +53,8 @@ All deployments require:
 - Need on-premises deployment
 - Have existing infrastructure
 - Need custom configuration
+- Want RAG features without M10+ cluster upgrade
+- Need cost-effective deployment with all features
 
 **Choose Docker if**:
 - Using container orchestration

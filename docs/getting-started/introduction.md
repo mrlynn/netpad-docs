@@ -2,7 +2,7 @@
 
 Welcome to **NetPad** — a comprehensive, open-source platform for building MongoDB-connected applications that combine data collection, workflow automation, and AI-powered experiences—all without writing code.
 
-![Form Builder Landing Page](/img/docs/platform/landingpage.jpg)
+<DocImage src="/img/docs/platform/landingpage.jpg" alt="Form Builder Landing Page" caption="NetPad Form Builder Landing Page" />
 
 ## What is NetPad?
 

@@ -7,7 +7,10 @@
       "Bash(for dir in /Users/michael.lynn/code/mermaid/svgeditor/docs/docs.netpad.io/docs/*/)",
       "Bash(npm run build:*)",
       "Bash(npm install:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm run swizzle:*)",
+      "Bash(npx docusaurus:*)",
+      "Bash(wc:*)"
     ]
   }
 }

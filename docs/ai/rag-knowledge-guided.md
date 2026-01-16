@@ -249,27 +249,54 @@ Click citations to see full details:
 
 ## Requirements
 
-### Subscription Tier
+RAG features have different requirements depending on your deployment mode.
 
-RAG features require:
+### Cloud Deployment (netpad.io)
 
-- **Team** or **Enterprise** subscription
-- **Free** and **Pro** tiers do not have access
+For the hosted NetPad platform:
 
-### Infrastructure Requirements
+| Requirement | Details |
+|-------------|---------|
+| **Subscription** | Team or Enterprise plan |
+| **Infrastructure** | MongoDB Atlas M10+ cluster |
+| **Vector Search** | Atlas Vector Search (included with M10+) |
+| **Embeddings** | OpenAI API key required |
 
-RAG requires MongoDB Atlas M10+ cluster:
+### Self-Hosted Deployment
 
-- **Vector Search**: Requires M10+ cluster tier
-- **Atlas Vector Search**: Must be enabled on cluster
-- **Vector Index**: Automatically created for document collections
+For self-hosted NetPad instances:
+
+| Requirement | Details |
+|-------------|---------|
+| **Subscription** | Any tier (Free, Pro, Team, Enterprise) |
+| **Infrastructure** | MongoDB Atlas Local (Docker) |
+| **Vector Search** | Included with Atlas Local |
+| **Embeddings** | OpenAI API key required |
+
+**Self-Hosted RAG Setup**:
+
+```bash
+# Option 1: Atlas CLI
+atlas deployments setup local --type local
+
+# Option 2: Docker
+docker run -d -p 27017:27017 mongodb/mongodb-atlas-local
+```
+
+Set the deployment mode in your environment:
+
+```bash
+NETPAD_DEPLOYMENT_MODE=self-hosted
+```
+
+This enables RAG features for **all subscription tiers** without requiring an M10 cluster upgrade.
 
 ### API Keys
 
 Required API keys:
 
-- **OpenAI API Key**: For generating embeddings
-- **MongoDB Atlas**: For Vector Search (included with cluster)
+- **OpenAI API Key**: For generating embeddings (text-embedding-3-small)
+- **MongoDB Atlas**: For Vector Search (included with cluster or Atlas Local)
 
 ### Document Storage
 
@@ -281,19 +308,29 @@ Documents are stored in:
 
 ## Feature Gates
 
-RAG features are gated by two tiers:
+RAG features use a two-tier gating system that varies by deployment mode:
+
+### Cloud Mode (netpad.io)
 
 1. **Subscription Tier**: Team or Enterprise plan required
 2. **Infrastructure Tier**: M10+ MongoDB Atlas cluster required
 
-Both requirements must be met to use RAG features.
+Both requirements must be met to use RAG features in cloud mode.
+
+### Self-Hosted Mode
+
+1. **Subscription Tier**: Any tier (including Free)
+2. **Infrastructure Tier**: Atlas Local (Docker) or any MongoDB with Vector Search support
+
+Self-hosted mode removes subscription restrictions for RAG features.
 
 ### Checking Requirements
 
 The form builder will show:
 
 - **Subscription Status**: Current subscription tier
-- **Cluster Status**: Current Atlas cluster tier
+- **Cluster Status**: Current Atlas cluster tier (or LOCAL for Atlas Local)
+- **Deployment Mode**: Cloud or Self-Hosted
 - **Feature Availability**: Whether RAG is available
 - **Upgrade Prompts**: How to enable RAG if not available
 

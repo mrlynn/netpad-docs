@@ -27,6 +27,7 @@ Since the December 2024 capabilities document, NetPad has undergone significant 
 - **Template Admin System**: Full template management for conversational experiences
 - **Projects**: Environment-based organization (dev, staging, prod)
 - **Deployment Platform**: One-click deployment to Vercel with auto-provisioned databases
+- **Self-Hosted Deployment Mode**: Run NetPad privately with Atlas Local for RAG without M10 upgrade
 - **Enhanced AI Features**: 15+ AI agents for optimization, compliance, translation, insights, and RAG
 - **Vector Search Integration**: MongoDB Atlas Vector Search for semantic document retrieval
 - **Feature Gates**: Two-tier access control (subscription + infrastructure requirements)
@@ -40,8 +41,6 @@ Since the December 2024 capabilities document, NetPad has undergone significant 
 - **npm Package Integration**: Publish and install applications from npm registry
 - **npm Registry Sync**: Automatic discovery and syncing of NetPad packages
 - **165+ API Endpoints**: Comprehensive programmatic access
-- **npm Package Integration**: Publish and install applications from npm registry
-- **npm Registry Sync**: Automatic discovery and syncing of NetPad packages
 
 ---
 
@@ -452,10 +451,15 @@ interface RAGConfig {
 - Confidence scores per citation
 
 **Requirements**:
-- **Subscription**: Team or Enterprise plan
-- **Infrastructure**: MongoDB Atlas M10+ cluster (required for Vector Search)
-- **Documents**: Stored in Vercel Blob with private access
-- **Embeddings**: OpenAI API key required
+- **Cloud Deployment (netpad.io)**:
+  - Subscription: Team or Enterprise plan
+  - Infrastructure: MongoDB Atlas M10+ cluster (required for Vector Search)
+- **Self-Hosted Deployment**:
+  - Subscription: Any tier (Free, Pro, Team, Enterprise)
+  - Infrastructure: Atlas Local (Docker) - no M10 upgrade needed
+- **Common Requirements**:
+  - Documents: Stored in Vercel Blob with private access
+  - Embeddings: OpenAI API key required
 
 **Example Flow**:
 ```
@@ -756,11 +760,25 @@ npm install @netpad/workflows
 ```bash
 npm install @netpad/mcp-server
 ```
-- MCP (Model Context Protocol) server
-- 75 AI-powered tools across 7 categories
-- Form generation, workflow automation, application management
-- Conversational forms, templates, and data browser tools
-- AI-powered development assistance
+- MCP (Model Context Protocol) server for AI-assisted NetPad development
+- **Version 2.2.0** with validated TypeScript output and consolidated tools
+- **75 tools** across 7 categories:
+  - Form Building (6 tools): Generate forms, fields, conditional logic, computed fields
+  - Application Management (7 tools): Create applications, contracts, releases
+  - Marketplace & npm (8 tools): Publish, search, install applications
+  - Workflow Automation (10 tools): Build workflows with 25+ node types
+  - Conversational & Search Forms (11 tools): AI-powered data collection, RAG, search interfaces
+  - Enhanced Templates (5 tools): Access 25+ form templates across 10 categories
+  - Data Browser (12 tools): MongoDB connection management, queries, aggregations
+- **New consolidated tools (v2.2.0)**:
+  - `get_reference` - Unified access to field types, operators, formula functions, validation, themes, and documentation
+  - `browse_templates` - Browse all 40+ templates (forms, applications, workflows, conversational, queries) with filtering
+- **Validated TypeScript output**: All code-generating tools return self-contained TypeScript with inline types, auto-validation, and auto-fix
+- **16 resources** for documentation and reference data
+- **24 form templates** (business, events, feedback, support, healthcare, etc.)
+- **4 conversational form templates** (IT helpdesk, customer feedback, lead qualification, patient intake)
+- **5 workflow templates** (form-to-email, form-to-database, lead qualification, etc.)
+- Compatible with Claude Desktop, Cursor, and other MCP-compatible clients
 
 **@netpad/cli** (npm):
 ```bash
@@ -912,16 +930,36 @@ All platform actions are logged:
 | **Active Workflows** | 1 | 5 | 25 | Unlimited |
 | **Connections** | 1 | 5 | 20 | Unlimited |
 | **AI Generations/mo** | 10 | 100 | 500 | Unlimited |
-| **RAG Features** | ❌ | ❌ | ✅ | ✅ |
+| **RAG Features (Cloud)** | ❌ | ❌ | ✅ | ✅ |
+| **RAG Features (Self-Hosted)** | ✅ | ✅ | ✅ | ✅ |
 | **Data Retention** | 30 days | 1 year | Unlimited | Unlimited |
 | **Team Members** | 1 | 1 | 10 | Unlimited |
 | **Support** | Community | Email | Priority | Dedicated |
+
+### Deployment Modes
+
+NetPad supports two deployment modes with different feature availability:
+
+| Mode | RAG Availability | Cluster Requirement | Use Case |
+|------|------------------|---------------------|----------|
+| **Cloud** (`NETPAD_DEPLOYMENT_MODE=cloud`) | Team/Enterprise only | M10+ Atlas cluster | Production SaaS at netpad.io |
+| **Self-Hosted** (`NETPAD_DEPLOYMENT_MODE=self-hosted`) | All tiers | Atlas Local (Docker) | Private instances, development |
+
+**Self-Hosted RAG Setup**:
+```bash
+# Option 1: Atlas CLI
+atlas deployments setup local --type local
+
+# Option 2: Docker
+docker run -d -p 27017:27017 mongodb/mongodb-atlas-local
+```
 
 ### Atlas Cluster Provisioning
 
 - **Free Tier**: M0 cluster auto-provisioned
 - **Paid Tiers**: Bring your own cluster or upgrade
-- **RAG Features**: Require M10+ cluster for Vector Search (Team/Enterprise only)
+- **RAG Features (Cloud)**: Require M10+ cluster for Vector Search (Team/Enterprise only)
+- **RAG Features (Self-Hosted)**: Use Atlas Local (Docker) - available to all tiers
 
 ---
 
@@ -953,7 +991,8 @@ Authentication:
 
 Infrastructure:
 ├── MongoDB Atlas API
-├── MongoDB Atlas Vector Search (M10+ required for RAG)
+├── MongoDB Atlas Vector Search (M10+ for cloud, Atlas Local for self-hosted)
+├── MongoDB Atlas Local (Docker) - self-hosted RAG support
 ├── Vercel (hosting/deployment)
 ├── Vercel Blob (files, RAG documents)
 └── SendGrid / Resend (email)
@@ -1028,7 +1067,9 @@ Infrastructure:
 | Feature Gates | ✅ Complete | Two-tier gating (subscription + cluster) |
 | Integration Tests | ✅ Complete | 41 tests passing |
 
-**Known Limitation**: Users must upgrade Atlas cluster to M10+ separately via MongoDB Atlas Console. See [RAG Pricing Strategy](./RAG_PRICING_ABSTRACTION_STRATEGY.md) for proposed solutions.
+**Known Limitation (Cloud Mode)**: Users must upgrade Atlas cluster to M10+ separately via MongoDB Atlas Console.
+
+**Self-Hosted Solution**: Users can run Atlas Local (Docker) to use RAG features without M10 upgrade. Set `NETPAD_DEPLOYMENT_MODE=self-hosted` in environment.
 
 ### npm Package Integration - Phase 8 In Progress
 
@@ -1078,11 +1119,40 @@ Infrastructure:
 
 **Implementation Status**: ✅ All Steps Complete (Database Schema, Capabilities, Service, APIs, UI, Contract Integration, Migration).
 
+### Self-Hosted Deployment Mode - Phase 11 Complete
+
+| Component | Status | Description |
+|-----------|--------|-------------|
+| Deployment Mode Detection | ✅ Complete | `NETPAD_DEPLOYMENT_MODE` environment variable (cloud/self-hosted) |
+| LOCAL Cluster Tier | ✅ Complete | Added LOCAL to ClusterInstanceSize type for Atlas Local |
+| Cluster Check Updates | ✅ Complete | Mode-aware tier checks, LOCAL tier support in self-hosted mode |
+| Feature Gating Updates | ✅ Complete | RAG features available to all tiers in self-hosted mode |
+| Billing/Features API | ✅ Complete | Returns adjusted features based on deployment mode |
+| DatabaseProvisioning Type | ✅ Complete | Added 'atlas-local' provisioning option |
+| Environment Documentation | ✅ Complete | .env.example updated with deployment mode instructions |
+
+**Implementation Status**: ✅ All Steps Complete.
+
+**Key Files Modified**:
+- `src/lib/platform/clusterChecks.ts` - Deployment mode detection, tier checks
+- `src/types/platform.ts` - `getTierFeaturesForDeployment()`, RAG_FEATURES constant
+- `src/lib/atlas/types.ts` - LOCAL cluster tier
+- `src/types/deployment.ts` - 'atlas-local' provisioning type
+- `src/app/api/billing/features/route.ts` - Mode-aware feature access
+- `.env.example` - Deployment mode documentation
+
 ---
 
 ## Changelog (Since Dec 2024)
 
 ### Added
+- **@netpad/mcp-server v2.2.0** - Major update with validated TypeScript output and consolidated tools:
+  - `get_reference` tool consolidates 6 reference tools (field types, operators, functions, validation, themes, docs)
+  - `browse_templates` tool consolidates 11 template tools (forms, apps, workflows, conversational, queries)
+  - Validated TypeScript output with inline types - no @netpad/* SDK imports required
+  - Auto-fix for common TypeScript errors (missing semicolons, type annotations)
+  - 60+ skip patterns for runtime types (fetch, React, Node.js, DOM)
+  - Self-contained code runs directly with `npx tsx`
 - **Template Gallery** - 25+ form templates and 11 workflow templates across multiple categories
 - **Search Form Templates** - Pre-built search form templates (Customer Search, Order Search, Support Ticket Search)
 - Conversational Forms with AI-powered data collection
@@ -1092,6 +1162,12 @@ Infrastructure:
 - **Source Citations** - Traceable references in AI responses
 - Template Admin system for conversational form templates
 - Projects feature for environment-based organization
+- **Self-Hosted Deployment Mode** - Run NetPad privately with Atlas Local for RAG features
+  - `NETPAD_DEPLOYMENT_MODE` environment variable (cloud/self-hosted)
+  - RAG features available to ALL subscription tiers in self-hosted mode
+  - Uses MongoDB Atlas Local (Docker) for Vector Search - no M10 upgrade required
+  - LOCAL cluster tier type for Atlas Local deployments
+  - 'atlas-local' database provisioning option
 - **Applications-First Model** - Applications as first-class entities grouping forms, workflows, and connections
 - **Application Releases** - Versioned snapshots with semantic versioning (X.Y.Z format)
 - **Application Permissions (RBAC)** - Fine-grained access control at application level
@@ -1123,10 +1199,14 @@ Infrastructure:
 - RBAC with granular permissions
 
 ### In Progress
-- RAG pricing abstraction strategy (decouple from Atlas cluster tiers)
 - End-to-end RAG testing with production documents
+
+### Resolved
+- **RAG pricing abstraction strategy** - Resolved via self-hosted deployment mode
+  - Self-hosted users can now use Atlas Local (Docker) for RAG without M10 upgrade
+  - Cloud users still require Team/Enterprise + M10 for production SLA
 
 ---
 
-*Last Updated: January 15, 2026*
-*Version: 4.6.0*
+*Last Updated: January 16, 2026*
+*Version: 4.8.0*

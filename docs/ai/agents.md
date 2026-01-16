@@ -314,10 +314,17 @@ Output: Generated workflow with:
 
 ## RAG Agents
 
+RAG (Retrieval-Augmented Generation) agents enable document-grounded conversational forms. Requirements vary by deployment mode:
+
+| Deployment Mode | Subscription Required | Infrastructure Required |
+|-----------------|----------------------|------------------------|
+| **Cloud** (netpad.io) | Team or Enterprise | M10+ Atlas cluster |
+| **Self-Hosted** | Any tier (including Free) | Atlas Local (Docker) |
+
 ### Knowledge-Guided Conversation
 
-**Tier**: Team+  
-**Requirements**: M10+ MongoDB Atlas cluster  
+**Tier**: Team+ (Cloud) / Any (Self-Hosted)
+**Requirements**: M10+ Atlas cluster (Cloud) or Atlas Local (Self-Hosted)
 **Description**: RAG-powered conversational forms with document grounding
 
 **Usage**:
@@ -335,8 +342,8 @@ Output: Generated workflow with:
 
 ### Document Upload for RAG
 
-**Tier**: Team+  
-**Requirements**: M10+ MongoDB Atlas cluster  
+**Tier**: Team+ (Cloud) / Any (Self-Hosted)
+**Requirements**: M10+ Atlas cluster (Cloud) or Atlas Local (Self-Hosted)
 **Description**: Manage knowledge base documents for RAG
 
 **Usage**:
@@ -346,16 +353,16 @@ Output: Generated workflow with:
 4. Select documents for use in forms
 
 **Features**:
-- Multi-format support (PDF, DOCX, TXT)
+- Multi-format support (PDF, DOCX, TXT up to 5MB)
 - Automatic text extraction
-- Intelligent chunking
-- Embedding generation
-- Vector indexing
+- Intelligent sentence-aware chunking
+- OpenAI embeddings (text-embedding-3-small)
+- MongoDB Atlas Vector Search indexing
 
 ### Vector Search
 
-**Tier**: Team+  
-**Requirements**: M10+ MongoDB Atlas cluster  
+**Tier**: Team+ (Cloud) / Any (Self-Hosted)
+**Requirements**: M10+ Atlas cluster (Cloud) or Atlas Local (Self-Hosted)
 **Description**: Semantic document retrieval using MongoDB Atlas Vector Search
 
 **Usage**:
@@ -366,7 +373,7 @@ Output: Generated workflow with:
 **Features**:
 - Semantic similarity search
 - Relevance scoring
-- Configurable retrieval parameters
+- Configurable retrieval parameters (maxChunks, minScore, retrievalThreshold)
 - Fast vector search performance
 
 ## Using AI Agents

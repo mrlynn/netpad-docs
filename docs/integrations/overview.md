@@ -4,6 +4,20 @@ Connect NetPad to external services and automate your workflows. Send data to ot
 
 ## Available Integrations
 
+### Native Integrations
+
+NetPad provides built-in integration support for:
+
+| Integration | Capabilities |
+|-------------|--------------|
+| **Google Sheets** | Read/write spreadsheet data |
+| **Google Drive** | File access and storage |
+| **Google Calendar** | Event creation |
+| **Slack** | Notifications and messages |
+| **MongoDB Atlas** | Cluster management |
+| **Email (SMTP)** | Form notifications |
+| **Webhooks** | Custom HTTP integrations |
+
 ### Built-in Integrations
 
 #### Webhooks
@@ -19,6 +33,34 @@ Automatic email on submission:
 - Respondent confirmations
 - HTML templates
 - [Learn more →](./email-notifications.md)
+
+#### Google Sheets
+Sync form data to spreadsheets:
+- Automatic row creation on submission
+- Column mapping to form fields
+- Two-way sync support
+- Template-based formatting
+
+#### Google Drive
+Store form uploads in Drive:
+- Automatic file organization
+- Folder-based structure
+- Shared access management
+- Direct links to uploaded files
+
+#### Slack
+Send notifications to channels:
+- Submission alerts
+- Custom message formatting
+- Channel selection
+- Mention support
+
+#### MongoDB Atlas
+Direct database operations:
+- Connection vault integration
+- Secure credential management
+- Cluster monitoring
+- Database user management
 
 #### Vercel Integration
 Deploy and host forms on Vercel:
@@ -157,6 +199,33 @@ Secure webhooks:
 - Signature verification
 - IP allowlisting
 - HTTPS required
+
+## Integration Credential Management
+
+NetPad provides secure credential management for all integrations:
+
+### Credential Features
+
+- **OAuth2 Token Management** - Automatic token refresh for OAuth-based integrations
+- **API Key Storage** - Encrypted storage using AES-256-GCM
+- **Service Account Credentials** - Support for service account JSON keys
+- **Usage Tracking** - Monitor credential usage across integrations
+- **Organization-Scoped Access** - Credentials shared within organization
+
+### Managing Credentials
+
+1. Navigate to **Settings** > **Integrations**
+2. Click **"Add Credential"** for the desired service
+3. Follow the OAuth flow or enter API credentials
+4. Credentials are encrypted and stored securely
+5. Use credentials across forms and workflows
+
+### Credential Security
+
+- Credentials encrypted at rest (AES-256-GCM)
+- OAuth tokens automatically refreshed before expiration
+- Revoke access anytime from Settings
+- Audit logs track credential usage
 
 ## Best Practices
 
