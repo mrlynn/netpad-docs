@@ -354,9 +354,9 @@ You can use this specification with:
 - [Workflows](./workflows.md) - Workflow execution
 
 ### Platform Endpoints
-- [Applications](/api/applications) - Application CRUD, releases, permissions
-- [Marketplace](/api/marketplace) - Browse, publish, install applications
-- [npm Integration](/api/marketplace/npm) - npm package management
+- [Applications](./applications.md) - Application CRUD, releases, permissions
+- [Marketplace](./marketplace.md) - Browse, publish, install applications
+- [npm Integration](./marketplace-npm.md) - npm package management
 - [Vercel Integration](./vercel-integration.md) - Vercel deployment integration
 
 ### AI & RAG Endpoints
