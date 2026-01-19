@@ -2,6 +2,8 @@
 
 Workflows allow you to automate processes and integrate NetPad with external systems. Build complex automation workflows using a visual drag-and-drop interface—no code required.
 
+<DocImage src="/img/workflow-example.png" />
+
 ![Workflow Example](/img/workflow-example.png)
 
 

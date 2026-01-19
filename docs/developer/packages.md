@@ -50,6 +50,22 @@ Command-line tool for managing NetPad applications.
 
 **[📖 Full Documentation →](./packages-cli.md)**
 
+### @netpad/templates
+
+Production-ready form templates with encryption support.
+
+**Use when**: You want to use pre-built form templates programmatically or create custom templates.
+
+**Key Features**:
+- 100+ production-ready templates
+- 15 template categories
+- Field-level encryption support
+- Compliance frameworks (HIPAA, PCI-DSS, GDPR, SOC2, CCPA, FERPA)
+- TypeScript support
+- Tree-shakeable imports
+
+**[📖 Full Documentation →](./packages-templates.md)**
+
 ### @netpad/mcp-server
 
 MCP (Model Context Protocol) server for NetPad integration.
@@ -71,6 +87,7 @@ MCP (Model Context Protocol) server for NetPad integration.
 |---------|------|----------|---------------|
 | **@netpad/forms** | React Library | Embed forms in React apps | [Forms Package →](./packages-forms.md) |
 | **@netpad/workflows** | TypeScript Client | Trigger workflows programmatically | [Workflows Package →](./packages-workflows.md) |
+| **@netpad/templates** | Template Library | Pre-built templates with encryption | [Templates Package →](./packages-templates.md) |
 | **@netpad/cli** | CLI Tool | Manage packages and applications | [CLI Package →](./packages-cli.md) |
 | **@netpad/mcp-server** | MCP Server | AI-powered development assistance | [MCP Server →](./mcp-server.md) |
 
@@ -84,6 +101,9 @@ npm install @netpad/forms
 
 # Workflows package
 npm install @netpad/workflows
+
+# Templates package
+npm install @netpad/templates
 
 # CLI (global)
 npm install -g @netpad/cli
@@ -157,6 +177,7 @@ Use `@netpad/mcp-server` with Claude Desktop or Cursor IDE:
 
 - [Forms Package](./packages-forms.md) - Embed forms in React applications
 - [Workflows Package](./packages-workflows.md) - Trigger workflows programmatically
+- [Templates Package](./packages-templates.md) - Pre-built templates with encryption
 - [CLI Package](./packages-cli.md) - Manage applications from terminal
 - [MCP Server](./mcp-server.md) - AI-powered development tools
 - [API Reference](../api/overview.md) - Complete API documentation

@@ -2,6 +2,8 @@
 
 NetPad provides pre-built workflow templates for common use cases. Use templates as starting points for your workflows. Templates are accessible through the Template Gallery when creating a new workflow.
 
+<DocImage src="/img/templates.png" />
+
 ## Accessing Workflow Templates
 
 The Workflow Template Gallery is available when creating a new workflow:

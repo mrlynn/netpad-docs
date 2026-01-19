@@ -35,13 +35,18 @@ Forms can operate in different modes depending on the form type:
 - **Clone Mode**: Duplicate existing documents
 - **Search Mode**: Query and filter existing data
 
+
+<DocImage src="/img/form-example.png" alt="Form Example" caption="Form Example" />
+
+
 ### Conversational Forms
 
 - **Conversation Mode**: Natural language dialogue
 - **Extraction Mode**: Automatic structured data extraction
 - **Review Mode**: Review extracted data before submission
 
-![Conversational Form Example](/img/conversational.png)
+<DocImage src="/img/conversational.png" alt="Conversational Form" caption="Conversational Form" />
+
 
 ## Form Lifecycle
 

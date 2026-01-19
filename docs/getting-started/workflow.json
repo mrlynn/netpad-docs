@@ -1,0 +1,50 @@
+{
+    "name": "Feedback Notification",
+    "slug": "feedback-notification",
+    "description": "Send email notification when customer feedback is submitted",
+    "canvas": {
+      "nodes": [
+        {
+          "id": "trigger_1",
+          "type": "form-trigger",
+          "label": "Form Submission",
+          "position": { "x": 100, "y": 200 },
+          "config": {
+            "formId": "",
+            "formSlug": "customer-feedback"
+          },
+          "enabled": true
+        },
+        {
+          "id": "email_1",
+          "type": "email-send",
+          "label": "Send Notification",
+          "position": { "x": 400, "y": 200 },
+          "config": {
+            "to": "your-email@yourcompany.com",
+            "subject": "New Feedback: {{trigger.form_data.rating}} rating from {{trigger.form_data.name}}",
+            "body": "<p>You received new customer feedback!</p><hr/><p><strong>From:</strong> {{trigger.form_data.name}} ({{trigger.form_data.email}})</p><p><strong>Rating:</strong> {{trigger.form_data.rating}}</p><p><strong>Would recommend:</strong> {{trigger.form_data.recommend}}</p><hr/><p><strong>Their feedback:</strong></p><p>{{trigger.form_data.feedback}}</p>{{#if trigger.form_data.improvement_feedback}}<hr/><p><strong>What could be better:</strong></p><p>{{trigger.form_data.improvement_feedback}}</p>{{/if}}"
+          },
+          "enabled": true
+        }
+      ],
+      "edges": [
+        {
+          "id": "edge_1",
+          "source": "trigger_1",
+          "sourceHandle": "form_data",
+          "target": "email_1",
+          "targetHandle": "data"
+        }
+      ]
+    },
+    "settings": {
+      "executionMode": "auto",
+      "maxExecutionTime": 300000,
+      "retryPolicy": {
+        "maxRetries": 3,
+        "backoffMultiplier": 2,
+        "initialDelayMs": 1000
+      }
+    }
+  }

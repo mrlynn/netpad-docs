@@ -324,13 +324,27 @@ Each template includes metadata to help you choose:
 
 ## Encryption and Compliance
 
+NetPad templates support MongoDB Queryable Encryption for protecting sensitive data. Templates in healthcare, finance, and HR categories include pre-configured encryption settings.
+
+### Supported Compliance Frameworks
+
+| Framework | Description | Use Case |
+|-----------|-------------|----------|
+| **HIPAA** | Health Insurance Portability and Accountability Act | Healthcare data (PHI) |
+| **PCI-DSS** | Payment Card Industry Data Security Standard | Payment/financial data |
+| **GDPR** | General Data Protection Regulation | EU personal data |
+| **SOC2** | Service Organization Control 2 | Security audits |
+| **CCPA** | California Consumer Privacy Act | California residents' data |
+| **FERPA** | Family Educational Rights and Privacy Act | Student records |
+
 ### Healthcare Templates
 
 Healthcare templates are designed with:
 
-- **Encryption Support** - Fields can be encrypted at rest
+- **Encryption Support** - Fields can be encrypted at rest using MongoDB Queryable Encryption
 - **HIPAA Considerations** - Designed for healthcare compliance
 - **Sensitive Data Handling** - Proper handling of PHI (Protected Health Information)
+- **Pre-configured Fields** - SSN, DOB, Insurance, Medical Conditions marked for encryption
 
 ### Finance Templates
 
@@ -339,10 +353,37 @@ Finance templates include:
 - **Encryption Support** - Fields can be encrypted at rest
 - **PCI Considerations** - Designed for payment information
 - **Financial Data Protection** - Secure handling of financial data
+- **Pre-configured Fields** - Bank accounts, credit card numbers marked for encryption
+
+### HR & Recruitment Templates
+
+HR templates include:
+
+- **Encryption Support** - Employee sensitive data protection
+- **Compliance Ready** - GDPR, CCPA, PCI-DSS, SOC2
+- **Pre-configured Fields** - SSN, DOB, bank routing/account numbers marked for encryption
 
 :::important
-Encryption must be configured separately. Templates indicate encryption support, but you must enable encryption in your form settings.
+Encryption must be configured separately. Templates indicate encryption support, but you must enable encryption in your form settings and configure a KMS provider. See [Encryption Documentation](../security/encryption.md) for setup instructions.
 :::
+
+### Using Templates Programmatically
+
+For developers, the `@netpad/templates` package provides programmatic access to all 100+ templates with full TypeScript support:
+
+```typescript
+import { getTemplateById, healthcareWellnessTemplates } from '@netpad/templates';
+
+// Get a specific template
+const patientIntake = getTemplateById('patient-intake');
+
+// View encrypted fields
+const encryptedFields = patientIntake.fieldConfigs.filter(
+  field => field.encryption?.enabled
+);
+```
+
+See [@netpad/templates Package](../developer/packages-templates.md) for full API documentation.
 
 ## Workflow: Creating a Form from Template
 
@@ -431,6 +472,8 @@ Here's a complete workflow for creating a form from a template:
 - [Field Configuration](./field-configuration.md) - Configure field properties
 - [Validation](./validation.md) - Set up validation rules
 - [Publishing](./publishing.md) - Make your form live
+- [Encryption](../security/encryption.md) - Field-level encryption setup
+- [@netpad/templates Package](../developer/packages-templates.md) - Programmatic template access
 
 ## Next Steps
 

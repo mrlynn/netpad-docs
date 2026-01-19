@@ -160,6 +160,7 @@ const sidebars = {
         'developer/packages',
         'developer/packages-forms',
         'developer/packages-workflows',
+        'developer/packages-templates',
         'developer/packages-cli',
         'developer/mcp-server',
         'development/contributing',
