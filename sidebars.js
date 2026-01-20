@@ -172,6 +172,16 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'QA Testing',
+      items: [
+        'qa-testing/overview',
+        'qa-testing/netpad-qa-framework',
+        'qa-testing/netpad-qa-quick-reference',
+        'qa-testing/netpad-bug-report-template',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Legal',
       items: [
         'legal/privacy-policy',
