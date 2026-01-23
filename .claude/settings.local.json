@@ -10,7 +10,8 @@
       "Bash(ls:*)",
       "Bash(npm run swizzle:*)",
       "Bash(npx docusaurus:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(mkdir:*)"
     ]
   }
 }

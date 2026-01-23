@@ -607,6 +607,7 @@ Response:
 
 ## Next Steps
 
+- [Example: Demo Node Extension](./example-demo-node) - **Start here!** Simple, beginner-friendly walkthrough
 - [Building Extensions](./building-extensions) - Complete extension guide
 - [Extension API Reference](./api-reference) - Full API documentation
 - [Example: Collaborate Extension](./example-collaborate) - Production example

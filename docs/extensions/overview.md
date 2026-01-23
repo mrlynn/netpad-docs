@@ -58,6 +58,16 @@ Community collaboration features:
 - **Submissions** - Collaboration application system
 - **UI Components** - Pre-built React components
 
+### @netpad/demo-node
+
+A beginner-friendly demonstration extension:
+
+- **Log Message Node** - A simple workflow node for debugging
+- **Extensively Commented** - Learn by reading the source code
+- **Template Ready** - Copy and modify for your own extensions
+
+See [Example: Demo Node Extension](./example-demo-node) for a complete walkthrough.
+
 ## Extension Architecture
 
 Extensions follow a clear architectural pattern:
@@ -127,8 +137,13 @@ Ready to build your own extension? See the following guides:
 
 - [Extension Architecture](./architecture) - Deep dive into extension internals
 - [Building Extensions](./building-extensions) - Step-by-step tutorial
+- [Workflow Node Extensions](./workflow-nodes) - Creating custom workflow nodes
 - [API Reference](./api-reference) - Complete API documentation
-- [Example: Collaborate Extension](./example-collaborate) - Real-world walkthrough
+
+### Examples
+
+- [Example: Demo Node Extension](./example-demo-node) - **Start here!** Beginner-friendly walkthrough
+- [Example: Collaborate Extension](./example-collaborate) - Production-ready example
 
 ## Extension Loading
 
@@ -171,6 +186,8 @@ if (isFeatureAvailable('custom:collaborate')) {
 
 ## Next Steps
 
+- [Example: Demo Node Extension](./example-demo-node) - **Best starting point** for beginners
 - [Extension Architecture](./architecture) - Understand how extensions work internally
 - [Building Extensions](./building-extensions) - Create your first extension
+- [Workflow Node Extensions](./workflow-nodes) - Add custom workflow nodes
 - [API Reference](./api-reference) - Complete API documentation

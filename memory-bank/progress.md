@@ -45,6 +45,17 @@ The NetPad documentation site is actively maintained and comprehensively documen
 - [x] CopyPageButton (copy page URL functionality)
 - [x] Chatbot component (exists, may need completion)
 
+**January 2026 Collaborators Section:**
+- [x] Created new `docs/collaborators/` section with 6 documents:
+  - `index.md` - Overview with project vision, capabilities, and collaboration tracks
+  - `getting-started.md` - Local dev setup, environment variables, first PR workflow
+  - `architecture-overview.md` - System design, four pillars, key patterns, directory structure
+  - `current-priorities.md` - Active sprint work, strategic work, good first issues
+  - `contribution-guide.md` - Code style, PR expectations, review process, testing
+  - `faq.md` - Common questions about collaboration, project, access, and process
+- [x] Added Collaborators category to sidebar with link to index as landing page
+- [x] Build verified successful
+
 **January 2026 In-App Help System Documentation:**
 - [x] Created new `docs/guides/in-app-help.md` with comprehensive help system documentation:
   - Keyboard shortcuts (`Cmd/Ctrl + /`, `F1`, `Cmd/Ctrl + Shift + ?`)
@@ -155,6 +166,7 @@ The NetPad documentation site is actively maintained and comprehensively documen
 | Deployment | ✅ Complete | Vercel, self-hosted, Docker guides |
 | Developer | ✅ Complete | Packages, MCP server, architecture, contributing |
 | Security | ✅ Complete | Overview, encryption, access control, best practices |
+| **Collaborators** | ✅ **NEW** | Overview, getting started, architecture, priorities, contribution guide, FAQ |
 
 ### Key Files Reference
 
