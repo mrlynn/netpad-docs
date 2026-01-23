@@ -519,8 +519,8 @@ Now that you've built your first form, try these:
 ### Explore more
 
 - [Add Slack notifications](../workflows/templates.md) - Connect to Slack for real-time alerts
-- [Build a multi-page form](../forms/multi-page.md) - Organize complex forms into steps
-- [Use @netpad/forms package](../developer/forms.md) - Embed forms in your React app
+- [Build a multi-page form](../forms/multi-page-forms.md) - Organize complex forms into steps
+- [Use @netpad/forms package](../api/forms.md) - Embed forms in your React app
 - [AI-assisted building with MCP](../developer/mcp-server.md) - Use Claude to build forms
 
 ---

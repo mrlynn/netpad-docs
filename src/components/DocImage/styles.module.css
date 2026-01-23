@@ -14,6 +14,41 @@
   transition: all 0.2s ease;
 }
 
+/* Glossy glass reflection overlay - hard edge from upper left */
+.imageWrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.08) 15%,
+    rgba(255, 255, 255, 0) 30%
+  );
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* Inner highlight for extra gloss - hard edge */
+.imageWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.04) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+
 .imageWrapper:hover {
   box-shadow: var(--netpad-shadow-primary, 0 4px 16px rgba(0, 104, 74, 0.15));
   border-color: rgba(0, 104, 74, 0.2);
@@ -50,6 +85,7 @@
   justify-content: center;
   opacity: 0;
   transition: opacity 0.2s ease;
+  z-index: 2;
 }
 
 .imageWrapper:hover .overlay {

@@ -247,6 +247,11 @@ Generated code follows best practices for each framework. Customize the generate
 - **Learning** - See framework patterns
 - **Documentation** - Reference implementations
 - **Integration** - Embed in existing apps
+- **Standalone deployment** - Export complete apps for independent hosting
+
+:::tip Standalone Mode
+For complete standalone applications with conversational forms and full functionality, see [Deployment Modes](../deployment-modes.md#mode-3-standalone-exported-apps). Standalone mode gives you a complete Next.js application that runs independently from NetPad.
+:::
 
 ## Next Steps
 

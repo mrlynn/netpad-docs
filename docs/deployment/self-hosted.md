@@ -2,6 +2,10 @@
 
 Deploy NetPad on your own infrastructure for full control and access to all features including RAG (Knowledge-Guided Conversational Forms) without requiring an M10+ Atlas cluster upgrade.
 
+:::tip Deployment Modes
+Self-Hosted is one of three deployment modes NetPad supports. See [Deployment Modes](../deployment-modes.md) for a complete comparison of Cloud, Self-Hosted, and Standalone options.
+:::
+
 ## Why Self-Host?
 
 Self-hosted deployment provides several advantages:

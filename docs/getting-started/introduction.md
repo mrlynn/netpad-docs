@@ -115,11 +115,34 @@ You can:
 - **Import from marketplace**: Install pre-built applications
 - **Build from scratch**: Create custom applications with forms and workflows
 
+## Getting Help
+
+NetPad includes a comprehensive, context-aware help system accessible from anywhere:
+
+- Press **`Cmd + /`** (Mac) or **`Ctrl + /`** (Windows/Linux) to open help search
+- The help system automatically shows topics relevant to your current page
+- Browse 100+ help topics covering all platform features
+- Look for **`?`** icons near complex features for context-sensitive help
+
+See [In-App Help](../guides/in-app-help.md) for more details on using the help system.
+
+## Choose Your Deployment
+
+NetPad supports three deployment modes:
+
+- **Cloud (netpad.io)** - Fully managed SaaS, zero infrastructure to manage
+- **Self-Hosted** - Run on your infrastructure with full data control
+- **Standalone** - Export apps to run completely independently
+
+See [Deployment Modes](../deployment-modes.md) to choose the right option for your needs.
+
 ## Next Steps
 
 - [Installation Guide](./installation.md) - Set up NetPad
 - [Configuration](./configuration.md) - Configure your environment
+- [Deployment Modes](../deployment-modes.md) - Choose your deployment option
 - [Applications Guide](../platform/applications.md) - Learn about building applications
 - [Form Builder Guide](../forms/overview.md) - Learn about forms
 - [Workflow Guide](../workflows/overview.md) - Learn about workflows
 - [Marketplace](../platform/marketplace.md) - Discover and share applications
+- [In-App Help](../guides/in-app-help.md) - Using the help system

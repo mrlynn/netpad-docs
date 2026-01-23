@@ -19,6 +19,11 @@ const sidebars = {
       ],
     },
     {
+      type: 'doc',
+      id: 'deployment-modes',
+      label: 'Deployment Modes',
+    },
+    {
       type: 'category',
       label: 'Forms',
       items: [
@@ -104,6 +109,7 @@ const sidebars = {
         'platform/organizations',
         'platform/applications',
         'platform/marketplace',
+        'platform/publishing-packages',
         'platform/projects',
         'platform/authentication',
         'platform/connection-vault',
@@ -148,9 +154,22 @@ const sidebars = {
       type: 'category',
       label: 'Guides',
       items: [
+        'guides/in-app-help',
         'guides/keyboard-shortcuts',
         'guides/brand-standards',
         'guides/adding-images',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Extensions',
+      items: [
+        'extensions/overview',
+        'extensions/architecture',
+        'extensions/building-extensions',
+        'extensions/workflow-nodes',
+        'extensions/api-reference',
+        'extensions/example-collaborate',
       ],
     },
     {

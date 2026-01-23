@@ -2,10 +2,16 @@
 
 Speed up your workflow with keyboard shortcuts. NetPad supports shortcuts for common actions throughout the application.
 
-## General Shortcuts
+## Global Shortcuts
+
+These shortcuts work from anywhere in the application.
 
 | Shortcut | Action |
 |----------|--------|
+| `Ctrl/Cmd + /` | **Open Help Search** (context-aware) |
+| `F1` | Open Help Search (alternative) |
+| `Ctrl/Cmd + Shift + ?` | Open Help Search (alternative) |
+| `Ctrl/Cmd + K` | Quick search / Command palette |
 | `Ctrl/Cmd + S` | Save |
 | `Ctrl/Cmd + Z` | Undo |
 | `Ctrl/Cmd + Shift + Z` | Redo |
@@ -15,6 +21,10 @@ Speed up your workflow with keyboard shortcuts. NetPad supports shortcuts for co
 | `Ctrl/Cmd + A` | Select All |
 | `Escape` | Cancel / Close Modal |
 | `Enter` | Confirm / Submit |
+
+:::tip Getting Help
+Press `Cmd + /` (Mac) or `Ctrl + /` (Windows/Linux) from anywhere to open the context-aware help search. The help system automatically shows topics relevant to your current page.
+:::
 
 ## Form Builder Shortcuts
 
@@ -120,12 +130,20 @@ If a shortcut conflicts with an existing one:
 - Check what's available in current view
 - Modal shortcuts override base shortcuts
 
-## Shortcut Reference
+## Help System Shortcuts
 
-Access the full shortcut reference anytime:
-- Press `?` or `Ctrl/Cmd + /`
-- Opens shortcut overlay
-- Shows all available shortcuts for current context
+Access the in-app help system:
+
+| Shortcut | Action |
+|----------|--------|
+| `Ctrl/Cmd + /` | Open help search |
+| `F1` | Open help search |
+| `Ctrl/Cmd + Shift + ?` | Open help search |
+| `↑` / `↓` | Navigate help results |
+| `Enter` | Select help topic |
+| `Escape` | Close help dialog |
+
+The help system is context-aware—it automatically highlights topics relevant to your current page. See [In-App Help](./in-app-help.md) for more details.
 
 ## Accessibility
 
@@ -141,6 +159,7 @@ Access the full shortcut reference anytime:
 
 ## Next Steps
 
+- [In-App Help](./in-app-help.md) - Context-aware help system
 - [Form Builder](../forms/form-builder.md) - Build forms
 - [Data Explorer](../data-explorer/overview.md) - Browse your data
 - [Settings](../platform/organizations.md) - Customize preferences

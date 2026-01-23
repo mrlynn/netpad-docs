@@ -249,7 +249,7 @@ Click citations to see full details:
 
 ## Requirements
 
-RAG features have different requirements depending on your deployment mode.
+RAG features have different requirements depending on your deployment mode. See [Deployment Modes](../deployment-modes.md) for a complete comparison of Cloud vs Self-Hosted deployment.
 
 ### Cloud Deployment (netpad.io)
 

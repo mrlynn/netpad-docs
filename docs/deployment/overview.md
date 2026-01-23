@@ -2,6 +2,10 @@
 
 NetPad can be deployed to various platforms. Choose the deployment method that best fits your needs.
 
+:::info Deployment Modes vs Deployment Methods
+This page covers **deployment methods** (where and how to deploy). For understanding the three **deployment modes** (Cloud, Self-Hosted, Standalone) and their differences in features, data storage, and use cases, see [Deployment Modes](../deployment-modes.md).
+:::
+
 ## Deployment Options
 
 ### Vercel (Recommended)

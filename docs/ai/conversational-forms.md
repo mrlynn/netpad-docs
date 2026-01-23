@@ -123,6 +123,14 @@ Set up where to store the extracted data:
 - **Collection**: Target collection
 - **Document Structure**: How to structure the saved document
 
+:::note Transcript Storage by Deployment Mode
+Conversation transcripts are stored differently depending on your deployment mode:
+- **Cloud/Self-Hosted**: Transcripts stored at `_formMetadata.conversational`
+- **Standalone**: Transcripts stored at root level `conversational`
+
+See [Deployment Modes](../deployment-modes.md#data-architecture) for complete document structure details.
+:::
+
 ## Form Configuration
 
 ### Objective

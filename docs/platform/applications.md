@@ -19,9 +19,13 @@ Applications provide several benefits:
 - **Organization**: Group related forms and workflows logically
 - **Versioning**: Create releases to snapshot applications at specific versions
 - **Sharing**: Publish applications to the marketplace
-- **Export**: Export entire applications as bundles
+- **Export**: Export entire applications as bundles or as standalone apps
 - **Access Control**: Fine-grained permissions at application level
 - **Insights**: Track application-level statistics
+
+:::tip Standalone Export
+Applications can be exported as **Standalone** apps that run completely independently from NetPad. This is the "escape hatch" for true ownership of your applications. See [Deployment Modes](../deployment-modes.md#mode-3-standalone-exported-apps) to learn more.
+:::
 
 ## Creating Applications
 

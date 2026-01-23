@@ -6,7 +6,7 @@
 
 > **Document Status**: Current State
 > **Last Updated**: January 2026
-> **Version**: 4.0.0
+> **Version**: 4.10.0
 
 ---
 
@@ -711,6 +711,68 @@ Organize work by environment or initiative:
 - Vercel (primary, fully integrated)
 - Netlify, Railway, Self-hosted (framework support)
 
+### In-App Help System
+
+**Purpose**: Comprehensive, context-aware help system accessible from anywhere in the platform to guide users through features and answer questions.
+
+**Core Features**:
+- **100+ Help Topics** covering all platform features
+- **Context-Aware Search** - Automatically detects current page/feature and highlights relevant help topics
+- **Global Access** - Available via `CMD+/` (Mac) or `CTRL+/` (Windows/Linux) keyboard shortcut
+- **Multiple Entry Points** - Help button in navbar, context-sensitive help buttons, and keyboard shortcuts
+- **Smart Search** - Keyword-based search with relevance scoring and context boosting
+
+**Help Access Methods**:
+- **Keyboard Shortcut**: `CMD+/` or `CTRL+/` - Opens help search from anywhere
+- **Alternative Shortcuts**: `F1` key or `CMD+Shift+?`
+- **Global Help Button** - Always visible in upper-right navbar (next to marketplace icon)
+- **Context-Sensitive Help Buttons** - Subtle `?` icons near complex features
+- **Inline Help Icons** - Tiny help icons within labels and descriptions
+
+**Context-Aware Intelligence**:
+- **Automatic Context Detection** - System detects current route/feature (Form Builder, Workflows, Marketplace, etc.)
+- **Relevant Topic Boosting** - Context-relevant help topics are automatically boosted in search results
+- **Visual Indicators** - Context-relevant topics highlighted with green border and background
+- **Context Chip** - Shows "Relevant to: [Feature Name]" when no search query is entered
+- **Smart Ranking** - Even without typing, most relevant topics appear first based on current page
+
+**Help Content Organization**:
+- **Categories**: Form Builder, Workflows, MongoDB, Templates, Conversational Forms, Projects, Organizations, Connections, Deployment, Admin
+- **Related Topics** - Each topic links to related help content
+- **Keywords** - Topics tagged with searchable keywords for better discoverability
+- **Admin Topics** - Platform admin-only help topics for advanced features
+
+**Context-Sensitive Help Components**:
+- **ContextHelpButton** - Reusable help button component for complex features
+  - Two variants: `subtle` (low opacity, becomes visible on hover) and `visible` (more prominent)
+  - Can open specific help topics or general help search
+  - Customizable placement, size, and styling
+- **InlineHelpIcon** - Tiny inline help icon for use within text/labels
+  - Very subtle (0.3 opacity) until hovered
+  - Perfect for inline help within labels or descriptions
+
+**Search Capabilities**:
+- **Keyword Matching** - Searches titles, descriptions, and keywords
+- **Relevance Scoring** - Exact matches, title matches, and keyword matches scored differently
+- **Context Boosting** - Topics matching current page context receive score boosts
+- **Category Filtering** - Results organized by category with color-coded icons
+- **Keyboard Navigation** - Arrow keys to navigate, Enter to select, Escape to close
+
+**Help Topics Coverage**:
+- Getting started guides
+- Feature-specific documentation (Form Builder, Workflows, etc.)
+- Configuration guides (MongoDB connections, themes, etc.)
+- Troubleshooting and FAQs
+- Deployment guides (Cloud, Self-Hosted, Standalone)
+- API documentation
+- Template usage guides
+- Best practices and patterns
+
+**Future Enhancements** (Planned):
+- **Semantic Search** - Vector search using embeddings for better intent understanding
+- **Hybrid Search** - Combine keyword + semantic search for optimal results
+- **User Content Search** - Optional separate tab for searching user's forms/workflows/apps (via `CMD+K` command palette)
+
 ---
 
 ## Integration Ecosystem
@@ -938,12 +1000,19 @@ All platform actions are logged:
 
 ### Deployment Modes
 
-NetPad supports two deployment modes with different feature availability:
+NetPad supports three deployment modes with different feature availability:
 
 | Mode | RAG Availability | Cluster Requirement | Use Case |
 |------|------------------|---------------------|----------|
 | **Cloud** (`NETPAD_DEPLOYMENT_MODE=cloud`) | Team/Enterprise only | M10+ Atlas cluster | Production SaaS at netpad.io |
 | **Self-Hosted** (`NETPAD_DEPLOYMENT_MODE=self-hosted`) | All tiers | Atlas Local (Docker) | Private instances, development |
+| **Standalone** (`STANDALONE_MODE=true`) | User provides OpenAI key | User's MongoDB | Exported apps running independently |
+
+**Deployment Mode Visibility (User Menu)**:
+- Users can see their current deployment mode via a badge in the user dropdown menu
+- "Cloud" (blue) or "Self-Hosted" (orange) badge displayed next to user info
+- "Hosting & Deployment" menu item links to comprehensive help documentation
+- Environment variable: `NEXT_PUBLIC_NETPAD_DEPLOYMENT_MODE` exposes mode to client components
 
 **Self-Hosted RAG Setup**:
 ```bash
@@ -953,6 +1022,12 @@ atlas deployments setup local --type local
 # Option 2: Docker
 docker run -d -p 27017:27017 mongodb/mongodb-atlas-local
 ```
+
+**Standalone Apps**:
+- Exported from Cloud/Self-Hosted NetPad
+- No Platform DB - writes directly to user's MongoDB
+- Conversation transcripts stored at `conversational` (root level) instead of `_formMetadata.conversational`
+- User responsible for OpenAI API key and MongoDB connection
 
 ### Atlas Cluster Provisioning
 
@@ -1044,7 +1119,7 @@ Infrastructure:
   - [@netpad/cli](https://www.npmjs.com/package/@netpad/cli) - Command-line tool
   - [@netpad/mcp-server](https://www.npmjs.com/package/@netpad/mcp-server) - MCP server for AI tools
 - **Examples**: `/examples/` directory in repository
-- **In-App Help**: Press `Cmd/Ctrl + /` to search help topics
+- **In-App Help**: Press `Cmd/Ctrl + /` to search help topics (context-aware, 100+ topics)
 
 ---
 
@@ -1168,6 +1243,16 @@ Infrastructure:
   - Uses MongoDB Atlas Local (Docker) for Vector Search - no M10 upgrade required
   - LOCAL cluster tier type for Atlas Local deployments
   - 'atlas-local' database provisioning option
+- **Deployment Mode Visibility** - Users can see and understand their hosting configuration
+  - `DeploymentModeBadge` component shows "Cloud" or "Self-Hosted" in user menu
+  - "Hosting & Deployment" menu item links to comprehensive help documentation
+  - `NEXT_PUBLIC_NETPAD_DEPLOYMENT_MODE` env var for client-side detection
+  - New `deployment-modes` help topic explaining all three modes (Cloud, Self-Hosted, Standalone)
+  - Updated `deployment-vercel` and `self-hosted-rag` help topics with cross-references
+- **Standalone App Conversation Transcripts** - Full transcript storage in exported apps
+  - Conversation data stored at `conversational` (root level) in standalone apps
+  - Admin UI displays conversation stats, topics, and full transcript
+  - Different storage path from Cloud/Self-Hosted (`_formMetadata.conversational`)
 - **Applications-First Model** - Applications as first-class entities grouping forms, workflows, and connections
 - **Application Releases** - Versioned snapshots with semantic versioning (X.Y.Z format)
 - **Application Permissions (RBAC)** - Fine-grained access control at application level
@@ -1180,6 +1265,11 @@ Infrastructure:
 - **Package Import API** - Install applications from npm with dependency resolution
 - **Package Structure Utilities** - Generate and validate npm package structures
 - **@netpad/cli Published** - Command-line tool available on npm (`npm install -g @netpad/cli`)
+- **In-App Help System** - Context-aware help with 100+ topics, global access via `CMD+/`, and context-sensitive help buttons
+  - Automatic context detection from current route/feature
+  - Smart topic boosting and highlighting based on user's current page
+  - Global help button in navbar for discoverability
+  - ContextHelpButton and InlineHelpIcon components for feature-specific help
 - Deployment platform with Vercel integration
 - 15+ AI agents (optimization, compliance, translation, insights, RAG)
 - Smart dropdowns with distinct value population
@@ -1208,5 +1298,5 @@ Infrastructure:
 
 ---
 
-*Last Updated: January 16, 2026*
-*Version: 4.8.0*
+*Last Updated: January 22, 2026*
+*Version: 4.10.0*
