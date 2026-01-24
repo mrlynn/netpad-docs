@@ -1,0 +1,28 @@
+{
+  "id": "simple-notification",
+  "name": "Simple Notification Workflow",
+  "description": "A minimal workflow that sends an email when a form is submitted",
+  "nodes": [
+    {
+      "id": "start",
+      "type": "form_trigger",
+      "position": { "x": 0, "y": 0 },
+      "data": {
+        "label": "Contact Form",
+        "config": { "formName": "Contact Us" }
+      }
+    },
+    {
+      "id": "send-email",
+      "type": "email_send",
+      "position": { "x": 0, "y": 150 },
+      "data": {
+        "label": "Send Confirmation",
+        "config": { "to": "{{email}}", "subject": "Thanks for contacting us!" }
+      }
+    }
+  ],
+  "edges": [
+    { "id": "e1", "source": "start", "target": "send-email" }
+  ]
+}
