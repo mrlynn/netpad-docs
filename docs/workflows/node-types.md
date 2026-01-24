@@ -2,6 +2,31 @@
 
 NetPad workflows are built using various node types. This guide covers all available nodes and their configurations.
 
+<WorkflowViewer
+  title="Node Type Categories"
+  description="NetPad provides 29 node types across 6 categories: Triggers, Logic, Data, Actions, AI, and Utility."
+  height={300}
+  minimap={false}
+  layoutDirection="LR"
+  workflow={{
+    nodes: [
+      { id: 't1', type: 'form_trigger', data: { label: 'Triggers' } },
+      { id: 'l1', type: 'filter', data: { label: 'Logic' } },
+      { id: 'd1', type: 'mongo_query', data: { label: 'Data' } },
+      { id: 'a1', type: 'email_send', data: { label: 'Actions' } },
+      { id: 'ai1', type: 'llm_generate', data: { label: 'AI' } },
+      { id: 'u1', type: 'note', data: { label: 'Utility' } }
+    ],
+    edges: [
+      { id: 'e1', source: 't1', target: 'l1' },
+      { id: 'e2', source: 'l1', target: 'd1' },
+      { id: 'e3', source: 'd1', target: 'a1' },
+      { id: 'e4', source: 'a1', target: 'ai1' },
+      { id: 'e5', source: 'ai1', target: 'u1' }
+    ]
+  }}
+/>
+
 ## Trigger Nodes
 
 ### Form Trigger
@@ -70,6 +95,32 @@ Start workflow via API call.
 - `headers`: Request headers
 
 ## Logic Nodes
+
+Logic nodes control the flow of your workflow based on conditions and data.
+
+<WorkflowViewer
+  title="Logic Node Examples"
+  description="Filter, Switch, Loop, and Delay nodes control workflow routing and timing."
+  height={320}
+  minimap={false}
+  workflow={{
+    nodes: [
+      { id: 'trigger', type: 'webhook_trigger', data: { label: 'Incoming Data' } },
+      { id: 'filter', type: 'filter', data: { label: 'Priority High?', config: { condition: 'priority === "high"' } } },
+      { id: 'delay', type: 'delay', data: { label: 'Wait 5 min' } },
+      { id: 'loop', type: 'loop', data: { label: 'Process Items' } },
+      { id: 'action1', type: 'email_send', data: { label: 'Urgent Alert' } },
+      { id: 'action2', type: 'slack_send', data: { label: 'Normal Queue' } }
+    ],
+    edges: [
+      { id: 'e1', source: 'trigger', target: 'filter' },
+      { id: 'e2', source: 'filter', target: 'action1', sourceHandle: 'yes', data: { label: 'Yes' } },
+      { id: 'e3', source: 'filter', target: 'delay', sourceHandle: 'no', data: { label: 'No' } },
+      { id: 'e4', source: 'delay', target: 'loop' },
+      { id: 'e5', source: 'loop', target: 'action2', sourceHandle: 'loop' }
+    ]
+  }}
+/>
 
 ### Conditional (If/Else)
 
@@ -286,6 +337,32 @@ Generate pre-filled form URL.
 - `url`: Pre-filled form URL
 
 ## AI Nodes
+
+AI nodes leverage large language models to generate, classify, extract, and summarize content.
+
+<WorkflowViewer
+  title="AI-Powered Content Processing"
+  description="Use AI to classify incoming content, extract data, and generate responses."
+  height={350}
+  minimap={false}
+  workflow={{
+    nodes: [
+      { id: 'trigger', type: 'form_trigger', data: { label: 'Customer Feedback' } },
+      { id: 'classify', type: 'llm_classify', data: { label: 'Classify Sentiment', config: { categories: ['positive', 'negative', 'neutral'] } } },
+      { id: 'extract', type: 'llm_extract', data: { label: 'Extract Topics' } },
+      { id: 'summarize', type: 'llm_summarize', data: { label: 'Summarize' } },
+      { id: 'generate', type: 'llm_generate', data: { label: 'Draft Response' } },
+      { id: 'save', type: 'mongo_insert', data: { label: 'Save Analysis' } }
+    ],
+    edges: [
+      { id: 'e1', source: 'trigger', target: 'classify' },
+      { id: 'e2', source: 'classify', target: 'extract' },
+      { id: 'e3', source: 'extract', target: 'summarize' },
+      { id: 'e4', source: 'summarize', target: 'generate' },
+      { id: 'e5', source: 'generate', target: 'save' }
+    ]
+  }}
+/>
 
 ### AI Prompt
 

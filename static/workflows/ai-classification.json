@@ -1,0 +1,71 @@
+{
+  "id": "ai-classification",
+  "name": "AI Content Classification",
+  "description": "Uses AI to classify incoming content and route to appropriate handlers",
+  "nodes": [
+    {
+      "id": "webhook-1",
+      "type": "webhook_trigger",
+      "position": { "x": 300, "y": 0 },
+      "data": {
+        "label": "Incoming Content",
+        "config": { "method": "POST", "path": "/api/classify" }
+      }
+    },
+    {
+      "id": "llm-classify",
+      "type": "llm_classify",
+      "position": { "x": 300, "y": 150 },
+      "data": {
+        "label": "Classify Content",
+        "config": {
+          "model": "gpt-4",
+          "categories": ["urgent", "feedback", "question", "spam"]
+        }
+      }
+    },
+    {
+      "id": "filter-spam",
+      "type": "filter",
+      "position": { "x": 300, "y": 300 },
+      "data": {
+        "label": "Is Spam?",
+        "config": { "condition": "classification !== 'spam'" }
+      }
+    },
+    {
+      "id": "slack-urgent",
+      "type": "slack_send",
+      "position": { "x": 100, "y": 450 },
+      "data": {
+        "label": "Alert #urgent",
+        "config": { "channel": "#urgent-alerts" }
+      }
+    },
+    {
+      "id": "db-store",
+      "type": "mongo_insert",
+      "position": { "x": 300, "y": 450 },
+      "data": {
+        "label": "Store Content",
+        "config": { "collection": "classified_content" }
+      }
+    },
+    {
+      "id": "note-spam",
+      "type": "note",
+      "position": { "x": 500, "y": 450 },
+      "data": {
+        "label": "Spam Discarded",
+        "description": "Spam content is logged but not processed"
+      }
+    }
+  ],
+  "edges": [
+    { "id": "e1", "source": "webhook-1", "target": "llm-classify" },
+    { "id": "e2", "source": "llm-classify", "target": "filter-spam" },
+    { "id": "e3", "source": "filter-spam", "target": "slack-urgent", "sourceHandle": "yes", "data": { "label": "Not Spam" } },
+    { "id": "e4", "source": "filter-spam", "target": "note-spam", "sourceHandle": "no", "data": { "label": "Spam" } },
+    { "id": "e5", "source": "slack-urgent", "target": "db-store" }
+  ]
+}

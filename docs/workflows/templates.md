@@ -123,9 +123,20 @@ From the preview dialog, you can:
 
 Send confirmation email after form submission.
 
-**Nodes**:
-- Form Trigger
-- Email Send
+<WorkflowViewer
+  height={250}
+  minimap={false}
+  layoutDirection="LR"
+  workflow={{
+    nodes: [
+      { id: 't', type: 'form_trigger', data: { label: 'Form Submitted' } },
+      { id: 'e', type: 'email_send', data: { label: 'Send Confirmation' } }
+    ],
+    edges: [
+      { id: 'e1', source: 't', target: 'e' }
+    ]
+  }}
+/>
 
 **Configuration**:
 - Form: Your form
@@ -137,26 +148,51 @@ Send confirmation email after form submission.
 
 Notify team members of new form submissions.
 
-**Nodes**:
-- Form Trigger
-- Email Send (to team)
+<WorkflowViewer
+  height={250}
+  minimap={false}
+  layoutDirection="LR"
+  workflow={{
+    nodes: [
+      { id: 't', type: 'form_trigger', data: { label: 'Form Submitted' } },
+      { id: 'e', type: 'email_send', data: { label: 'Notify Team' } },
+      { id: 's', type: 'slack_send', data: { label: 'Post to Slack' } }
+    ],
+    edges: [
+      { id: 'e1', source: 't', target: 'e' },
+      { id: 'e2', source: 't', target: 's' }
+    ]
+  }}
+/>
 
 **Configuration**:
 - Form: Your form
 - Email To: Team email addresses
-- Email Subject: "New form submission"
-- Email Body: Submission details
+- Slack Channel: Team channel
 
 #### Data Validation
 
 Validate and enrich form data before saving.
 
-**Nodes**:
-- Form Trigger
-- Transform (validate data)
-- Conditional (check validation)
-- MongoDB Write (save if valid)
-- Email Send (notify if invalid)
+<WorkflowViewer
+  height={320}
+  minimap={false}
+  workflow={{
+    nodes: [
+      { id: 't', type: 'form_trigger', data: { label: 'Form Submitted' } },
+      { id: 'v', type: 'transform', data: { label: 'Validate Data' } },
+      { id: 'c', type: 'filter', data: { label: 'Is Valid?' } },
+      { id: 's', type: 'mongo_insert', data: { label: 'Save to DB' } },
+      { id: 'e', type: 'email_send', data: { label: 'Notify Error' } }
+    ],
+    edges: [
+      { id: 'e1', source: 't', target: 'v' },
+      { id: 'e2', source: 'v', target: 'c' },
+      { id: 'e3', source: 'c', target: 's', sourceHandle: 'yes', data: { label: 'Valid' } },
+      { id: 'e4', source: 'c', target: 'e', sourceHandle: 'no', data: { label: 'Invalid' } }
+    ]
+  }}
+/>
 
 ### Data Synchronization Templates
 
@@ -206,24 +242,58 @@ Send API data to form submission.
 
 Process orders from form submissions.
 
-**Nodes**:
-- Form Trigger (order form)
-- Conditional (check inventory)
-- MongoDB Write (create order)
-- Email Send (confirmation)
-- HTTP Request (notify fulfillment)
+<WorkflowViewer
+  height={380}
+  minimap={false}
+  workflow={{
+    nodes: [
+      { id: 't', type: 'form_trigger', data: { label: 'Order Submitted' } },
+      { id: 'q', type: 'mongo_query', data: { label: 'Check Inventory' } },
+      { id: 'c', type: 'filter', data: { label: 'In Stock?' } },
+      { id: 'w', type: 'mongo_insert', data: { label: 'Create Order' } },
+      { id: 'e', type: 'email_send', data: { label: 'Confirmation' } },
+      { id: 'h', type: 'http_request', data: { label: 'Notify Fulfillment' } },
+      { id: 'n', type: 'email_send', data: { label: 'Out of Stock Notice' } }
+    ],
+    edges: [
+      { id: 'e1', source: 't', target: 'q' },
+      { id: 'e2', source: 'q', target: 'c' },
+      { id: 'e3', source: 'c', target: 'w', sourceHandle: 'yes' },
+      { id: 'e4', source: 'w', target: 'e' },
+      { id: 'e5', source: 'e', target: 'h' },
+      { id: 'e6', source: 'c', target: 'n', sourceHandle: 'no' }
+    ]
+  }}
+/>
 
 #### Approval Workflow
 
 Multi-step approval process.
 
-**Nodes**:
-- Form Trigger (request)
-- Conditional (routing logic)
-- Email Send (notify approver)
-- Delay (wait for approval)
-- Conditional (approved/rejected)
-- Email Send (notify requester)
+<WorkflowViewer
+  height={380}
+  minimap={false}
+  workflow={{
+    nodes: [
+      { id: 't', type: 'form_trigger', data: { label: 'Request Submitted' } },
+      { id: 'e1', type: 'email_send', data: { label: 'Notify Approver' } },
+      { id: 'd', type: 'delay', data: { label: 'Wait for Response' } },
+      { id: 'c', type: 'filter', data: { label: 'Approved?' } },
+      { id: 'a', type: 'email_send', data: { label: 'Approval Notice' } },
+      { id: 'r', type: 'email_send', data: { label: 'Rejection Notice' } },
+      { id: 's', type: 'mongo_update', data: { label: 'Update Status' } }
+    ],
+    edges: [
+      { id: 'e1', source: 't', target: 'e1' },
+      { id: 'e2', source: 'e1', target: 'd' },
+      { id: 'e3', source: 'd', target: 'c' },
+      { id: 'e4', source: 'c', target: 'a', sourceHandle: 'yes' },
+      { id: 'e5', source: 'c', target: 'r', sourceHandle: 'no' },
+      { id: 'e6', source: 'a', target: 's' },
+      { id: 'e7', source: 'r', target: 's' }
+    ]
+  }}
+/>
 
 ## Using Templates
 

@@ -108,6 +108,24 @@ Map data between nodes:
 
 Let's build a workflow that sends an email when a form is submitted:
 
+<WorkflowViewer
+  title="Form Submission Workflow"
+  description="Sends a confirmation email and saves the submission to MongoDB."
+  height={350}
+  minimap={false}
+  workflow={{
+    nodes: [
+      { id: 'trigger', type: 'form_trigger', data: { label: 'Form Submitted', config: { formName: 'Contact Form' } } },
+      { id: 'email', type: 'email_send', data: { label: 'Send Confirmation', config: { to: '{{trigger.data.email}}' } } },
+      { id: 'save', type: 'mongo_insert', data: { label: 'Save to MongoDB', config: { collection: 'submissions' } } }
+    ],
+    edges: [
+      { id: 'e1', source: 'trigger', target: 'email' },
+      { id: 'e2', source: 'email', target: 'save' }
+    ]
+  }}
+/>
+
 ### Step 1: Add Form Trigger
 
 1. Drag "Form Trigger" node
@@ -126,7 +144,7 @@ Let's build a workflow that sends an email when a form is submitted:
 ### Step 3: Add MongoDB Write
 
 1. Drag "MongoDB Write" node
-2. Connect from Form Trigger
+2. Connect from Email node
 3. Configure:
    - Collection: `submissions`
    - Operation: Insert
@@ -218,6 +236,26 @@ Store values for use across workflow:
 
 Route workflow based on conditions:
 
+<WorkflowViewer
+  title="If/Else Branching"
+  description="Routes data based on approval status - approved items go one path, rejected items go another."
+  height={350}
+  minimap={false}
+  workflow={{
+    nodes: [
+      { id: 'trigger', type: 'form_trigger', data: { label: 'Request Submitted' } },
+      { id: 'filter', type: 'filter', data: { label: 'Is Approved?', config: { condition: 'status === "approved"' } } },
+      { id: 'approve', type: 'email_send', data: { label: 'Send Approval' } },
+      { id: 'reject', type: 'email_send', data: { label: 'Send Rejection' } }
+    ],
+    edges: [
+      { id: 'e1', source: 'trigger', target: 'filter' },
+      { id: 'e2', source: 'filter', target: 'approve', sourceHandle: 'yes', data: { label: 'Yes' } },
+      { id: 'e3', source: 'filter', target: 'reject', sourceHandle: 'no', data: { label: 'No' } }
+    ]
+  }}
+/>
+
 1. **Add If/Else Node**:
    - Drag "If/Else" node
    - Configure condition
@@ -234,6 +272,28 @@ Route workflow based on conditions:
 ### Switch Node
 
 Multi-branch routing:
+
+<WorkflowViewer
+  title="Switch Multi-Branch"
+  description="Routes to different handlers based on the request type value."
+  height={350}
+  minimap={false}
+  workflow={{
+    nodes: [
+      { id: 'trigger', type: 'webhook_trigger', data: { label: 'API Request' } },
+      { id: 'switch', type: 'switch', data: { label: 'Request Type', config: { cases: ['Create', 'Update', 'Delete'] } } },
+      { id: 'create', type: 'mongo_insert', data: { label: 'Create Record' } },
+      { id: 'update', type: 'mongo_update', data: { label: 'Update Record' } },
+      { id: 'delete', type: 'mongo_delete', data: { label: 'Delete Record' } }
+    ],
+    edges: [
+      { id: 'e1', source: 'trigger', target: 'switch' },
+      { id: 'e2', source: 'switch', target: 'create', sourceHandle: 'case_0' },
+      { id: 'e3', source: 'switch', target: 'update', sourceHandle: 'case_1' },
+      { id: 'e4', source: 'switch', target: 'delete', sourceHandle: 'case_2' }
+    ]
+  }}
+/>
 
 1. **Add Switch Node**:
    - Drag "Switch" node

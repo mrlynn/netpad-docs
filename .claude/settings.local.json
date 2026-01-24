@@ -11,7 +11,9 @@
       "Bash(npm run swizzle:*)",
       "Bash(npx docusaurus:*)",
       "Bash(wc:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(cat:*)",
+      "Bash(node -e:*)"
     ]
   }
 }

@@ -7,9 +7,27 @@ Understanding how workflows execute, monitoring execution, and troubleshooting i
 ### Sequential Execution
 
 Nodes execute one at a time, in order:
-- Node 1 completes → Node 2 starts
-- Data flows sequentially
-- Simple and predictable
+
+<WorkflowViewer
+  title="Sequential Execution"
+  description="Each node waits for the previous to complete before starting."
+  height={280}
+  minimap={false}
+  layoutDirection="LR"
+  workflow={{
+    nodes: [
+      { id: 't', type: 'form_trigger', data: { label: '1. Trigger' } },
+      { id: 'v', type: 'transform', data: { label: '2. Transform' } },
+      { id: 's', type: 'mongo_insert', data: { label: '3. Save' } },
+      { id: 'e', type: 'email_send', data: { label: '4. Notify' } }
+    ],
+    edges: [
+      { id: 'e1', source: 't', target: 'v' },
+      { id: 'e2', source: 'v', target: 's' },
+      { id: 'e3', source: 's', target: 'e' }
+    ]
+  }}
+/>
 
 **Use When**:
 - Nodes depend on previous results
@@ -19,9 +37,32 @@ Nodes execute one at a time, in order:
 ### Parallel Execution
 
 Independent nodes execute simultaneously:
-- Multiple nodes run at once
-- Faster overall execution
-- More complex data flow
+
+<WorkflowViewer
+  title="Parallel Execution"
+  description="Independent branches run at the same time, then merge results."
+  height={350}
+  minimap={false}
+  workflow={{
+    nodes: [
+      { id: 't', type: 'webhook_trigger', data: { label: 'Trigger' } },
+      { id: 'p', type: 'parallel', data: { label: 'Split' } },
+      { id: 'e', type: 'email_send', data: { label: 'Send Email' } },
+      { id: 's', type: 'slack_send', data: { label: 'Post Slack' } },
+      { id: 'd', type: 'mongo_insert', data: { label: 'Save to DB' } },
+      { id: 'm', type: 'merge', data: { label: 'Merge Results' } }
+    ],
+    edges: [
+      { id: 'e1', source: 't', target: 'p' },
+      { id: 'e2', source: 'p', target: 'e' },
+      { id: 'e3', source: 'p', target: 's' },
+      { id: 'e4', source: 'p', target: 'd' },
+      { id: 'e5', source: 'e', target: 'm' },
+      { id: 'e6', source: 's', target: 'm' },
+      { id: 'e7', source: 'd', target: 'm' }
+    ]
+  }}
+/>
 
 **Use When**:
 - Nodes are independent
@@ -131,6 +172,31 @@ Execution manually cancelled:
 - Partial results may be available
 
 ## Error Handling
+
+<WorkflowViewer
+  title="Error Handling Pattern"
+  description="Workflows can include dedicated error handling paths to gracefully manage failures."
+  height={350}
+  minimap={false}
+  workflow={{
+    nodes: [
+      { id: 't', type: 'webhook_trigger', data: { label: 'API Request' } },
+      { id: 'h', type: 'http_request', data: { label: 'Call External API' } },
+      { id: 'c', type: 'filter', data: { label: 'Success?' } },
+      { id: 's', type: 'mongo_insert', data: { label: 'Save Result' } },
+      { id: 'r', type: 'delay', data: { label: 'Wait & Retry' } },
+      { id: 'e', type: 'email_send', data: { label: 'Alert on Failure' } }
+    ],
+    edges: [
+      { id: 'e1', source: 't', target: 'h' },
+      { id: 'e2', source: 'h', target: 'c' },
+      { id: 'e3', source: 'c', target: 's', sourceHandle: 'yes', data: { label: 'OK' } },
+      { id: 'e4', source: 'c', target: 'r', sourceHandle: 'no', data: { label: 'Error' } },
+      { id: 'e5', source: 'r', target: 'h' },
+      { id: 'e6', source: 'r', target: 'e' }
+    ]
+  }}
+/>
 
 ### Node Errors
 

@@ -4,6 +4,7 @@ import MDXComponents from '@theme-original/MDXComponents';
 // Import custom components
 import SpotlightCard from '@site/src/components/SpotlightCard';
 import WorkflowEmbed from '@site/src/components/WorkflowEmbed';
+import WorkflowViewer from '@site/src/components/WorkflowViewer';
 import NetPadMongoControlPlane from '@site/src/components/NetPadMongoControlPlane';
 import DocImage from '@site/src/components/DocImage';
 import { FormPreview } from '@site/src/components/FormPreview';
@@ -14,7 +15,8 @@ export default {
   ...MDXComponents,
   // Add custom components
   SpotlightCard,
-  WorkflowEmbed,
+  WorkflowEmbed,    // iframe-based embedding (legacy)
+  WorkflowViewer,   // native React component (recommended)
   NetPadMongoControlPlane,
   DocImage,
   FormPreview,

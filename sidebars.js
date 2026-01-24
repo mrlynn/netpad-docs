@@ -25,6 +25,19 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: '🖼️ Templates',
+      link: {
+        type: 'doc',
+        id: 'templates/index',
+      },
+      items: [
+        { type: 'doc', id: 'templates/gallery', label: '🎨 Template Gallery' },
+        { type: 'doc', id: 'templates/using-templates', label: '📥 Using Templates' },
+        { type: 'doc', id: 'templates/customizing', label: '✏️ Customizing' },
+      ],
+    },
+    {
+      type: 'category',
       label: '📝 Forms',
       items: [
         { type: 'doc', id: 'forms/overview', label: '📖 Overview' },

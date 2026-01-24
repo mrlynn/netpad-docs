@@ -1,0 +1,77 @@
+{
+  "id": "ticket-router",
+  "name": "Support Ticket Router",
+  "description": "Automatically routes support tickets to the appropriate team based on category",
+  "nodes": [
+    {
+      "id": "trigger-1",
+      "type": "form_trigger",
+      "position": { "x": 250, "y": 0 },
+      "data": {
+        "label": "New Ticket",
+        "config": { "formName": "Support Ticket Form" }
+      }
+    },
+    {
+      "id": "switch-1",
+      "type": "switch",
+      "position": { "x": 250, "y": 150 },
+      "data": {
+        "label": "Route by Category",
+        "config": {
+          "field": "category",
+          "cases": [
+            { "value": "billing", "label": "Billing" },
+            { "value": "technical", "label": "Technical" },
+            { "value": "general", "label": "General" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "email-billing",
+      "type": "email_send",
+      "position": { "x": 0, "y": 350 },
+      "data": {
+        "label": "Notify Billing Team",
+        "config": { "to": "billing@example.com" }
+      }
+    },
+    {
+      "id": "email-tech",
+      "type": "email_send",
+      "position": { "x": 250, "y": 350 },
+      "data": {
+        "label": "Notify Tech Team",
+        "config": { "to": "tech@example.com" }
+      }
+    },
+    {
+      "id": "email-support",
+      "type": "email_send",
+      "position": { "x": 500, "y": 350 },
+      "data": {
+        "label": "Notify Support Team",
+        "config": { "to": "support@example.com" }
+      }
+    },
+    {
+      "id": "db-save",
+      "type": "mongo_insert",
+      "position": { "x": 250, "y": 500 },
+      "data": {
+        "label": "Save to Database",
+        "config": { "collection": "tickets" }
+      }
+    }
+  ],
+  "edges": [
+    { "id": "e1", "source": "trigger-1", "target": "switch-1" },
+    { "id": "e2", "source": "switch-1", "target": "email-billing", "sourceHandle": "case_0", "data": { "label": "Billing" } },
+    { "id": "e3", "source": "switch-1", "target": "email-tech", "sourceHandle": "case_1", "data": { "label": "Technical" } },
+    { "id": "e4", "source": "switch-1", "target": "email-support", "sourceHandle": "case_2", "data": { "label": "General" } },
+    { "id": "e5", "source": "email-billing", "target": "db-save" },
+    { "id": "e6", "source": "email-tech", "target": "db-save" },
+    { "id": "e7", "source": "email-support", "target": "db-save" }
+  ]
+}

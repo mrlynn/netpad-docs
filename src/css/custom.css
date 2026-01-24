@@ -2,10 +2,13 @@
  * NetPad Brand Standards - CSS Implementation
  * Version: 1.0
  * Last Updated: January 2026
- * 
+ *
  * This file implements the NetPad brand standards for Docusaurus.
  * All colors, typography, spacing, and effects conform to brand guidelines.
  */
+
+/* Workflow Renderer Styles */
+@import '@netpad/workflow-renderer/styles.css';
 
 /* ============================================
    Brand CSS Variables (Light Mode)

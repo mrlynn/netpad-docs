@@ -2,23 +2,91 @@
 
 NetPad supports embedding workflows in external sites for documentation, tutorials, and sharing workflow designs. Workflows can be embedded in **read-only viewer mode** for visualization.
 
-## Live Demo
+## Embedding Methods
 
-Here's an embedded workflow viewer:
+There are two ways to embed workflows:
+
+| Method | Use Case | Requirements |
+|--------|----------|--------------|
+| **WorkflowViewer** | Static workflow definitions in docs | Workflow JSON definition |
+| **WorkflowEmbed** | Live workflows from NetPad | Running NetPad instance |
+
+## Method 1: WorkflowViewer (Recommended for Docs)
+
+Use `WorkflowViewer` to render workflow definitions directly in your documentation. No external dependencies required.
+
+<WorkflowViewer
+  title="IT Helpdesk Router"
+  description="Routes support tickets to the appropriate team based on category."
+  height={400}
+  minimap={false}
+  workflow={{
+    nodes: [
+      { id: 't', type: 'form_trigger', data: { label: 'New Ticket' } },
+      { id: 's', type: 'switch', data: { label: 'Route by Category', config: { cases: ['Hardware', 'Software', 'Network'] } } },
+      { id: 'h', type: 'email_send', data: { label: 'Hardware Team' } },
+      { id: 'sw', type: 'email_send', data: { label: 'Software Team' } },
+      { id: 'n', type: 'email_send', data: { label: 'Network Team' } },
+      { id: 'd', type: 'mongo_insert', data: { label: 'Log Ticket' } }
+    ],
+    edges: [
+      { id: 'e1', source: 't', target: 's' },
+      { id: 'e2', source: 's', target: 'h', sourceHandle: 'case_0' },
+      { id: 'e3', source: 's', target: 'sw', sourceHandle: 'case_1' },
+      { id: 'e4', source: 's', target: 'n', sourceHandle: 'case_2' },
+      { id: 'e5', source: 'h', target: 'd' },
+      { id: 'e6', source: 'sw', target: 'd' },
+      { id: 'e7', source: 'n', target: 'd' }
+    ]
+  }}
+/>
+
+### WorkflowViewer Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `workflow` | object | required | Workflow definition (nodes & edges) |
+| `height` | number/string | `500` | Viewer height |
+| `title` | string | - | Title above viewer |
+| `description` | string | - | Description text |
+| `minimap` | boolean | `true` | Show minimap |
+| `controls` | boolean | `true` | Show zoom controls |
+| `layoutDirection` | string | `'TB'` | `'TB'`, `'BT'`, `'LR'`, `'RL'` |
+| `autoLayout` | boolean | `true` | Auto-position nodes |
+
+### Usage
+
+```mdx
+<WorkflowViewer
+  title="My Workflow"
+  height={400}
+  workflow={{
+    nodes: [
+      { id: '1', type: 'form_trigger', data: { label: 'Start' } },
+      { id: '2', type: 'email_send', data: { label: 'Notify' } }
+    ],
+    edges: [
+      { id: 'e1', source: '1', target: '2' }
+    ]
+  }}
+/>
+```
+
+## Method 2: WorkflowEmbed (Live Workflows)
+
+Use `WorkflowEmbed` to embed live workflows from a running NetPad instance.
 
 <WorkflowEmbed
   workflowSlug="it-helpdesk-router"
   theme="auto"
-  height="700px"
+  height="500px"
 />
 
-:::info Prerequisites for Demo
-For this demo to work, you need:
-1. NetPad running locally at `http://localhost:3000`
-2. A workflow with slug `it-helpdesk-router`
-3. **"Allow public viewing"** enabled in the workflow's Embed settings
-
-If you see "Workflow not found", ensure these requirements are met.
+:::info Prerequisites
+For WorkflowEmbed to work, you need:
+1. NetPad running at the configured baseUrl
+2. A workflow with the specified slug
+3. **"Allow public viewing"** enabled in workflow Embed settings
 :::
 
 

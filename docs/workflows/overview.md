@@ -2,9 +2,57 @@
 
 Workflows allow you to automate processes and integrate NetPad with external systems. Build complex automation workflows using a visual drag-and-drop interface—no code required.
 
-<DocImage src="/img/workflow-example.png" />
-
-![Workflow Example](/img/workflow-example.png)
+<WorkflowViewer
+  title="Example: Support Ticket Router"
+  description="This workflow automatically routes incoming support tickets to the appropriate team based on the ticket category."
+  height={450}
+  workflow={{
+    id: 'ticket-router',
+    name: 'Support Ticket Router',
+    minimap: false,
+    nodes: [
+      {
+        id: 'trigger-1',
+        type: 'form_trigger',
+        data: { label: 'New Ticket', config: { formName: 'Support Form' } }
+      },
+      {
+        id: 'switch-1',
+        type: 'switch',
+        data: { label: 'Route by Category', config: { cases: ['Billing', 'Technical', 'General'] } }
+      },
+      {
+        id: 'email-billing',
+        type: 'email_send',
+        data: { label: 'Notify Billing' }
+      },
+      {
+        id: 'email-tech',
+        type: 'email_send',
+        data: { label: 'Notify Tech Team' }
+      },
+      {
+        id: 'email-support',
+        type: 'email_send',
+        data: { label: 'Notify Support' }
+      },
+      {
+        id: 'db-save',
+        type: 'mongo_insert',
+        data: { label: 'Save to Database', config: { collection: 'tickets' } }
+      }
+    ],
+    edges: [
+      { id: 'e1', source: 'trigger-1', target: 'switch-1' },
+      { id: 'e2', source: 'switch-1', target: 'email-billing', sourceHandle: 'case_0' },
+      { id: 'e3', source: 'switch-1', target: 'email-tech', sourceHandle: 'case_1' },
+      { id: 'e4', source: 'switch-1', target: 'email-support', sourceHandle: 'case_2' },
+      { id: 'e5', source: 'email-billing', target: 'db-save' },
+      { id: 'e6', source: 'email-tech', target: 'db-save' },
+      { id: 'e7', source: 'email-support', target: 'db-save' }
+    ]
+  }}
+/>
 
 
 ## What Are Workflows?
