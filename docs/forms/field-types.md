@@ -2,11 +2,31 @@
 
 NetPad supports 30+ field types for collecting various types of data. This guide covers all available field types and their configuration options.
 
+:::tip Live Previews
+Each field type below includes an interactive preview. Try filling in the fields, triggering validation, and click "Config" to see the underlying configuration.
+:::
+
 ## Text Fields
 
 ### Single-Line Text
 
 Basic text input for short responses.
+
+<FormPreview
+  fields={[
+    {
+      type: 'short_text',
+      path: 'name',
+      label: 'Full Name',
+      required: true,
+      placeholder: 'Enter your full name',
+      helpText: 'First and last name',
+      validation: { minLength: 2, maxLength: 100 }
+    }
+  ]}
+  settings={{ showSubmitButton: false }}
+  hint="Try entering a single character to see validation"
+/>
 
 **Configuration**:
 - Min/max length
@@ -19,6 +39,22 @@ Basic text input for short responses.
 ### Multi-Line Text (Textarea)
 
 For longer text responses.
+
+<FormPreview
+  fields={[
+    {
+      type: 'long_text',
+      path: 'description',
+      label: 'Description',
+      required: true,
+      placeholder: 'Enter a detailed description...',
+      rows: 4,
+      validation: { maxLength: 500 }
+    }
+  ]}
+  settings={{ showSubmitButton: false }}
+  hint="Multi-line text field with 4 rows"
+/>
 
 **Configuration**:
 - Min/max length
@@ -34,6 +70,24 @@ For longer text responses.
 
 Whole numbers only.
 
+<FormPreview
+  fields={[
+    {
+      type: 'number',
+      path: 'quantity',
+      label: 'Quantity',
+      required: true,
+      placeholder: 'Enter quantity',
+      min: 1,
+      max: 100,
+      step: 1,
+      defaultValue: 1
+    }
+  ]}
+  settings={{ showSubmitButton: false }}
+  hint="Number field with min 1, max 100, step 1"
+/>
+
 **Configuration**:
 - Min/max value
 - Default value
@@ -44,6 +98,23 @@ Whole numbers only.
 ### Decimal
 
 Numbers with decimal places.
+
+<FormPreview
+  fields={[
+    {
+      type: 'number',
+      path: 'price',
+      label: 'Unit Price',
+      required: true,
+      placeholder: '0.00',
+      min: 0,
+      step: 0.01,
+      defaultValue: 29.99
+    }
+  ]}
+  settings={{ showSubmitButton: false }}
+  hint="Decimal field with step 0.01 for precise values"
+/>
 
 **Configuration**:
 - Min/max value
@@ -81,6 +152,20 @@ Percentage values (0-100).
 ### Date Picker
 
 Select a date.
+
+<FormPreview
+  fields={[
+    {
+      type: 'date',
+      path: 'eventDate',
+      label: 'Event Date',
+      required: true,
+      helpText: 'Select the date for your event'
+    }
+  ]}
+  settings={{ showSubmitButton: false }}
+  hint="Date picker using native browser input"
+/>
 
 **Configuration**:
 - Date format
@@ -120,6 +205,26 @@ Select both date and time.
 
 Single choice from options.
 
+<FormPreview
+  fields={[
+    {
+      type: 'radio',
+      path: 'priority',
+      label: 'Priority Level',
+      required: true,
+      options: [
+        { label: 'Low', value: 'low' },
+        { label: 'Medium', value: 'medium' },
+        { label: 'High', value: 'high' },
+        { label: 'Critical', value: 'critical' }
+      ],
+      helpText: 'Select the priority level for this request'
+    }
+  ]}
+  settings={{ showSubmitButton: false }}
+  hint="Radio buttons for single selection"
+/>
+
 **Configuration**:
 - Options list
 - Default selection
@@ -132,6 +237,28 @@ Single choice from options.
 
 Single choice from dropdown menu.
 
+<FormPreview
+  fields={[
+    {
+      type: 'dropdown',
+      path: 'department',
+      label: 'Department',
+      required: true,
+      options: [
+        { label: 'Engineering', value: 'engineering' },
+        { label: 'Design', value: 'design' },
+        { label: 'Marketing', value: 'marketing' },
+        { label: 'Sales', value: 'sales' },
+        { label: 'Human Resources', value: 'hr' },
+        { label: 'Finance', value: 'finance' }
+      ],
+      helpText: 'Select your department'
+    }
+  ]}
+  settings={{ showSubmitButton: false }}
+  hint="Dropdown for selecting from many options"
+/>
+
 **Configuration**:
 - Options list
 - Default selection
@@ -143,6 +270,26 @@ Single choice from dropdown menu.
 ### Checkboxes
 
 Multiple selections allowed.
+
+<FormPreview
+  fields={[
+    {
+      type: 'checkbox',
+      path: 'interests',
+      label: 'Areas of Interest',
+      required: true,
+      options: [
+        { label: 'Product Updates', value: 'products' },
+        { label: 'Industry News', value: 'news' },
+        { label: 'Tutorials & Guides', value: 'tutorials' },
+        { label: 'Events & Webinars', value: 'events' }
+      ],
+      helpText: 'Select all that apply'
+    }
+  ]}
+  settings={{ showSubmitButton: false }}
+  hint="Checkboxes for multiple selections"
+/>
 
 **Configuration**:
 - Options list
@@ -398,6 +545,70 @@ All fields share these common properties:
 4. **Validate Appropriately**: Set min/max, patterns, required fields
 5. **Group Related Fields**: Use sections and nested objects
 6. **Keep It Simple**: Don't overcomplicate field types
+
+## Complete Example: Contact Form
+
+Here's a complete example combining multiple field types into a functional contact form:
+
+<FormPreview
+  fields={[
+    {
+      type: 'short_text',
+      path: 'fullName',
+      label: 'Full Name',
+      required: true,
+      placeholder: 'John Smith',
+      validation: { minLength: 2 }
+    },
+    {
+      type: 'email',
+      path: 'email',
+      label: 'Email Address',
+      required: true,
+      placeholder: 'john@example.com'
+    },
+    {
+      type: 'phone',
+      path: 'phone',
+      label: 'Phone Number',
+      placeholder: '(555) 123-4567',
+      helpText: 'Optional - we\'ll only call if needed'
+    },
+    {
+      type: 'dropdown',
+      path: 'subject',
+      label: 'Subject',
+      required: true,
+      options: [
+        { label: 'General Inquiry', value: 'general' },
+        { label: 'Technical Support', value: 'support' },
+        { label: 'Sales Question', value: 'sales' },
+        { label: 'Partnership', value: 'partnership' }
+      ]
+    },
+    {
+      type: 'long_text',
+      path: 'message',
+      label: 'Message',
+      required: true,
+      placeholder: 'How can we help you?',
+      rows: 4,
+      validation: { minLength: 10 }
+    },
+    {
+      type: 'toggle',
+      path: 'newsletter',
+      label: 'Subscribe to our newsletter',
+      defaultValue: false
+    }
+  ]}
+  settings={{
+    submitButtonText: 'Send Message',
+    showSubmitButton: true
+  }}
+  showViewportSwitcher={true}
+  hint="Complete contact form with validation - try switching viewports to see responsive behavior"
+/>
 
 ## Next Steps
 

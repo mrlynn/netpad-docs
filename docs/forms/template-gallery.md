@@ -475,6 +475,12 @@ Here's a complete workflow for creating a form from a template:
 - [Encryption](../security/encryption.md) - Field-level encryption setup
 - [@netpad/templates Package](../developer/packages-templates.md) - Programmatic template access
 
+## Browse Templates
+
+Explore our complete library of form templates below. Click on any template to view its fields and configuration, or click "Try on NetPad" to use it in your project.
+
+<TemplateBrowser />
+
 ## Next Steps
 
 Ready to create a form from a template?
