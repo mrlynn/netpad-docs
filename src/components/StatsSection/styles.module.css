@@ -1,0 +1,147 @@
+/* Stats Section */
+
+.statsSection {
+  padding: 4rem 0;
+  background: var(--ifm-background-surface-color);
+  position: relative;
+}
+
+.statsSection::before,
+.statsSection::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 237, 100, 0.2),
+    transparent
+  );
+}
+
+.statsSection::before {
+  top: 0;
+}
+
+.statsSection::after {
+  bottom: 0;
+}
+
+[data-theme='light'] .statsSection::before,
+[data-theme='light'] .statsSection::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 104, 74, 0.15),
+    transparent
+  );
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.counterValue {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00ED64 0%, #00D4AA 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+[data-theme='light'] .counterValue {
+  background: linear-gradient(135deg, #00684A 0%, #00966B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.statLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  margin-top: 0.5rem;
+}
+
+.statDescription {
+  font-size: 0.8125rem;
+  color: var(--ifm-font-color-secondary);
+  margin-top: 0.25rem;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 996px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .statsSection {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .counterValue {
+    font-size: 2.25rem;
+  }
+
+  .statLabel {
+    font-size: 0.875rem;
+  }
+
+  .statDescription {
+    font-size: 0.75rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .statCard {
+    animation: none;
+    opacity: 1;
+  }
+}

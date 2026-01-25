@@ -2,8 +2,6 @@
 
 ## What We're Working On Now
 
-This is a living document that tracks what we're actively working on and where help is most valuable.
-
 ---
 
 ## Priority Tiers
@@ -13,7 +11,7 @@ We organize work into three tiers with distinct timelines:
 | Tier | Focus | Timeframe |
 |------|-------|-----------|
 | **Tier 1** | Active sprint work | Now |
-| **Tier 2** | Strategic foundation | Q1 2026 |
+| **Tier 2** | Strategic foundation | Q1 2025 |
 | **Tier 3** | Important but not urgent | Ongoing |
 
 ---
@@ -101,11 +99,11 @@ These are the initiatives we're actively working on right now.
 
 ---
 
-## Tier 2: Strategic Foundation (Q1 2026)
+## Tier 2: Strategic Foundation (Q1 2025)
 
 ### @netpad/templates NPM Package
 
-**Target:** February 2026
+**Target:** February 1, 2025 (announcement)
 
 **Goal:** Extract template library into standalone NPM package for:
 - Use by AI assistants (via MCP)
@@ -251,6 +249,16 @@ These are the initiatives we're actively working on right now.
 
 ---
 
+## Upcoming Milestones
+
+| Date | Milestone | Preparation Needed |
+|------|-----------|-------------------|
+| **Feb 1, 2025** | @netpad/templates announcement | Package ready, waitlist active |
+| **Feb 2025** | Documentation site launch | Content complete, reviewed |
+| **Q1 2025** | First paying customers | Pricing finalized, onboarding ready |
+
+---
+
 ## Questions to Consider
 
 As you're ramping up, think about:
@@ -264,7 +272,7 @@ As you're ramping up, think about:
 
 ## Next Steps
 
-1. Read [Getting Started](./getting-started.md) to get set up
+1. Read [04-contribution-guide.md](./04-contribution-guide.md) to get set up
 2. Explore the product at [netpad.io](https://www.netpad.io)
 3. Pick an area from this document
 4. Reach out to discuss your interests

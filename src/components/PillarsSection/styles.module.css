@@ -1,0 +1,205 @@
+/* Pillars Section */
+
+.pillarsSection {
+  padding: 5rem 0;
+  background: var(--ifm-background-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+  font-size: 1.0625rem;
+  color: var(--ifm-font-color-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Grid layout */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Card link wrapper */
+.pillarLink {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+}
+
+.pillarLink:hover {
+  text-decoration: none;
+}
+
+/* Card styling */
+.pillarCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+}
+
+.highlighted {
+  border-color: rgba(0, 237, 100, 0.25);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 237, 100, 0.03) 0%,
+    transparent 100%
+  );
+}
+
+[data-theme='light'] .highlighted {
+  border-color: rgba(0, 104, 74, 0.2);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 104, 74, 0.02) 0%,
+    transparent 100%
+  );
+}
+
+/* Icon wrapper */
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 237, 100, 0.1);
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+[data-theme='light'] .iconWrapper {
+  background: rgba(0, 104, 74, 0.08);
+}
+
+.pillarLink:hover .iconWrapper {
+  background: rgba(0, 237, 100, 0.15);
+  transform: scale(1.05);
+}
+
+[data-theme='light'] .pillarLink:hover .iconWrapper {
+  background: rgba(0, 104, 74, 0.12);
+}
+
+.pillarIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--netpad-primary, #00ED64);
+}
+
+[data-theme='light'] .pillarIcon {
+  color: var(--netpad-primary, #00684A);
+}
+
+/* Title */
+.pillarTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 0.5rem;
+}
+
+/* Description */
+.pillarDescription {
+  font-size: 0.875rem;
+  color: var(--ifm-font-color-secondary);
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Learn more link */
+.learnMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--netpad-primary, #00ED64);
+  transition: all 0.2s ease;
+}
+
+[data-theme='light'] .learnMore {
+  color: var(--netpad-primary, #00684A);
+}
+
+.pillarLink:hover .learnMore {
+  gap: 0.5rem;
+}
+
+.arrowIcon {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.pillarLink:hover .arrowIcon {
+  transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 996px) {
+  .pillarsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .pillarsSection {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pillarCard {
+    padding: 1.25rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .iconWrapper,
+  .arrowIcon {
+    transition: none;
+  }
+
+  .pillarLink:hover .iconWrapper {
+    transform: none;
+  }
+
+  .pillarLink:hover .arrowIcon {
+    transform: none;
+  }
+}

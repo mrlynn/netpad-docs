@@ -20,6 +20,7 @@ NetPad supports multiple form types:
 - **Conditional Logic**: Show or hide fields based on user responses
 - **Connect to MongoDB**: Automatically sync submissions to your database
 - **Trigger Workflows**: Start automated processes when forms are submitted
+- **Form Reactions**: Real-time field updates triggered by user interactions with workflow-powered logic
 - **Analytics**: Track submissions, completion rates, and field-level insights
 - **AI-Powered**: Use conversational forms for natural language data collection
 
@@ -177,6 +178,17 @@ Organize complex forms into steps:
 - **Navigation Controls** - Back, next, and jump to page
 - **Completion Tracking** - Track progress through the form
 
+### Form Reactions
+
+Real-time field updates triggered by user interactions:
+- **Field Event Triggers** - Respond to blur, change, focus events
+- **Workflow Integration** - Execute workflows when fields change
+- **Auto-fill Fields** - Update multiple fields from workflow results
+- **API Lookups** - Fetch external data and populate form fields
+- **AI Processing** - Classify or extract data and update fields
+
+See the [Form Reactions Guide](./reactions.md) for details.
+
 ## Getting Started
 
 1. [Template Gallery](./template-gallery.md) - Start with pre-built templates (recommended)
@@ -184,8 +196,9 @@ Organize complex forms into steps:
 3. [Field Types](./field-types.md) - Explore all available fields
 4. [Validation](./validation.md) - Set up validation rules
 5. [Conditional Logic](./conditional-logic.md) - Add dynamic behavior
-6. [Publishing](./publishing.md) - Make your form live
-7. [Analytics](./analytics.md) - Track form performance
+6. [Form Reactions](./reactions.md) - Real-time field updates via workflows
+7. [Publishing](./publishing.md) - Make your form live
+8. [Analytics](./analytics.md) - Track form performance
 
 ## Use Cases
 

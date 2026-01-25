@@ -1,8 +1,6 @@
-# Architecture Overview
+# NetPad Architecture
 
 ## Technical Overview for Engineers
-
-This document provides a technical overview of NetPad's architecture, key patterns, and where things live in the codebase.
 
 ---
 
@@ -21,39 +19,6 @@ This document provides a technical overview of NetPad's architecture, key patter
 | **Workflow Editor** | ReactFlow | Visual DAG editor |
 
 ---
-
-## High-Level Architecture
-
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           NetPad Platform                                │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                          │
-│  ┌───────────────┐  ┌───────────────┐  ┌───────────────┐  ┌──────────┐ │
-│  │    Forms      │  │   Workflows   │  │ Data Mgmt     │  │    AI    │ │
-│  │               │  │               │  │               │  │          │ │
-│  │ • Builder     │  │ • Visual      │  │ • Browser     │  │ • Conv.  │ │
-│  │ • WYSIWYG     │  │   Editor      │  │ • Connection  │  │   Forms  │ │
-│  │ • 30+ Fields  │  │ • 25+ Nodes   │  │   Vault       │  │ • 15+    │ │
-│  │ • Converstnl  │  │ • Triggers    │  │ • Import/     │  │   Agents │ │
-│  │ • Analytics   │  │ • Execution   │  │   Export      │  │ • RAG    │ │
-│  │               │  │   Engine      │  │               │  │          │ │
-│  └───────────────┘  └───────────────┘  └───────────────┘  └──────────┘ │
-│          │                  │                  │                │       │
-│          └──────────────────┴──────────────────┴────────────────┘       │
-│                                      │                                   │
-│  ┌─────────────────────────────────────────────────────────────────────┐│
-│  │                    Platform Services                                 ││
-│  │  Organizations │ Projects │ Auth │ Billing │ Permissions │ API      ││
-│  └─────────────────────────────────────────────────────────────────────┘│
-│                                      │                                   │
-│  ┌─────────────────────────────────────────────────────────────────────┐│
-│  │                     MongoDB Integration                              ││
-│  │              Atlas • Self-hosted • Atlas Data API                    ││
-│  └─────────────────────────────────────────────────────────────────────┘│
-│                                                                          │
-└─────────────────────────────────────────────────────────────────────────┘
-```
 
 ## Repository Structure
 
@@ -82,7 +47,7 @@ netpad-3/
 │   └── types/                # TypeScript definitions
 │
 ├── packages/                  # NPM packages (@netpad/*)
-│   ├── templates/            # @netpad/templates
+│   ├── templates/            # @netpad/templates (Feb 1 launch)
 │   ├── mcp-server/           # MCP tools for AI assistants
 │   └── cli/                  # CLI package (active)
 │
@@ -120,7 +85,7 @@ src/lib/platform/
 ```
 src/components/WorkflowEditor/  # Visual workflow builder
 ├── Canvas/                    # ReactFlow canvas
-├── NodePalette/              # Node type picker
+├── NodePalette/              # Node type picker  
 ├── NodeConfig/               # Node property editor
 └── ExecutionViewer/          # Run history display
 
@@ -166,8 +131,6 @@ src/components/ConversationalForm/
 - Provider priority: Ollama → OpenAI → OpenRouter
 - RAG uses MongoDB Atlas Vector Search
 - Conversational forms extract structured data from natural language
-
----
 
 ---
 
@@ -230,8 +193,6 @@ onAddTemplate(fields);  // Adds all at once
 // - Latest aggregation features
 // - Performance improvements
 ```
-
----
 
 ---
 
@@ -397,7 +358,7 @@ type FieldType =
 
 | Package | Status | Description |
 |---------|--------|-------------|
-| `@netpad/templates` | Active | 100+ form/workflow templates |
+| `@netpad/templates` | Extracting (Feb 1) | 100+ form/workflow templates |
 | `@netpad/mcp-server` | Active | MCP tools for AI assistants |
 | `@netpad/cli` | Active | Command-line interface |
 
@@ -628,11 +589,11 @@ Key indexes for common queries:
 
 ## Next Steps
 
-1. Review [Getting Started](./getting-started.md) for setup instructions
+1. Review [04-contribution-guide.md](./04-contribution-guide.md) for setup instructions
 2. Explore the codebase with this architecture in mind
 3. Pick an area that interests you
 4. Ask questions—the codebase is large but navigable
 
 ---
 
-*Architecture questions? Open a GitHub discussion.*
+*Architecture questions? Ask Michael or open a discussion.*

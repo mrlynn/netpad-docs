@@ -1,38 +1,9 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import Heading from '@theme/Heading';
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/getting-started/introduction">
-            Get Started
-          </Link>
-          <Link
-            className="button button--primary button--lg"
-            to="/docs/getting-started/quickstart"
-            style={{marginLeft: '10px'}}>
-            Quick Start
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+import HeroSection from '@site/src/components/HeroSection';
+import PillarsSection from '@site/src/components/PillarsSection';
+import AIShowcase from '@site/src/components/AIShowcase';
+import StatsSection from '@site/src/components/StatsSection';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -40,9 +11,11 @@ export default function Home() {
     <Layout
       title={`${siteConfig.title}`}
       description="NetPad is a comprehensive, open-source platform for creating MongoDB-connected data entry forms, workflows, search interfaces, and data management applications—all without writing code.">
-      <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <HeroSection />
+        <PillarsSection />
+        <AIShowcase />
+        <StatsSection />
       </main>
     </Layout>
   );

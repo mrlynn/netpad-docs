@@ -1,33 +1,6 @@
-# NetPad Collaborator Onboarding
+# NetPad Overview
 
-## Welcome to NetPad
-
-This package contains everything you need to get up to speed on NetPad—what we're building, where we're at, and how you can contribute.
-
----
-
-## Quick Start by Track
-
-### Full-Stack Engineering Track
-
-1. Read this overview (5 min)
-2. Read [Architecture Overview](./architecture-overview.md) (15 min)
-3. Follow setup in [Getting Started](./getting-started.md) (30 min)
-4. Pick an issue and start contributing
-
-### Product & Design Track
-
-1. Read this overview (5 min)
-2. Read [Product Context](./product-context.md) (10 min)
-3. Explore the live product at [netpad.io](https://www.netpad.io)
-4. Review [Current Priorities](./current-priorities.md) for UX focus areas
-
-### Integrations & Ecosystem Track
-
-1. Read this overview (5 min)
-2. Read [Architecture Overview](./architecture-overview.md) sections on MCP and packages (10 min)
-3. Review the `@netpad/*` packages structure
-4. Explore integration opportunities
+## Build MongoDB Apps in Minutes, Not Months
 
 ---
 
@@ -131,21 +104,21 @@ This is a **real product** with substantial functionality:
 
 ### What's Working
 
-- Visual form builder (WYSIWYG)
-- Conversational forms with AI
-- Visual workflow editor (ReactFlow)
-- MongoDB Atlas integration
-- Template gallery
-- Application export/import
-- Marketplace infrastructure
-- RAG support for knowledge-grounded conversations
+- ✅ Visual form builder (WYSIWYG)
+- ✅ Conversational forms with AI
+- ✅ Visual workflow editor (ReactFlow)
+- ✅ MongoDB Atlas integration
+- ✅ Template gallery
+- ✅ Application export/import
+- ✅ Marketplace infrastructure
+- ✅ RAG support for knowledge-grounded conversations
 
 ### Current Focus
 
-- Cloud platform UX improvements
-- @netpad/templates NPM package
-- Testing infrastructure expansion
-- Documentation overhaul
+- 🔄 Cloud platform UX improvements
+- 🔄 @netpad/templates NPM package (Feb 1 launch)
+- 🔄 Testing infrastructure expansion
+- 🔄 Documentation overhaul
 
 ---
 
@@ -155,7 +128,7 @@ This is a **real product** with substantial functionality:
 
 **Company size**: 50-500 employees
 
-**Priority verticals**:
+**Priority verticals**: 
 - **Finance** (expense reports, approvals, compliance)
 - **Healthcare** (patient intake, medical history, appointments)
 
@@ -247,49 +220,13 @@ Time commitment is flexible. What matters is momentum, not hours logged.
 
 ---
 
-## Get Started
+## Next Steps
 
-Ready to dive in? Here's where to go next:
-
-| Document | Description | Start Here If... |
-|----------|-------------|------------------|
-| [Getting Started](./getting-started.md) | Local dev setup, environment variables, first PR | You're ready to write code |
-| [Architecture Overview](./architecture-overview.md) | Technical stack, system design, key patterns | You're an engineer ready to dive in |
-| [Current Priorities](./current-priorities.md) | What we're working on now, where help is needed | You want to start contributing |
-| [Contribution Guide](./contribution-guide.md) | How to set up, code standards, PR process | You're ready to submit a PR |
-| [Product Context](./product-context.md) | Users, use cases, competitive positioning | You're interested in product/design |
-| [FAQ](./faq.md) | Common questions across all tracks | You have questions |
+1. **Explore the product**: [netpad.io/templates](https://www.netpad.io/templates)
+2. **Read the architecture**: [02-architecture.md](./02-architecture.md)
+3. **See current work**: [03-current-priorities.md](./03-current-priorities.md)
+4. **Get set up**: [04-contribution-guide.md](./04-contribution-guide.md)
 
 ---
 
-## Links
-
-| Resource | URL |
-|----------|-----|
-| **Live Product** | [netpad.io](https://www.netpad.io) |
-| **Template Gallery** | [netpad.io/templates](https://www.netpad.io/templates) |
-| **Documentation** | [docs.netpad.io](https://docs.netpad.io) |
-| **GitHub Repository** | [github.com/netpad-io/netpad](https://github.com/netpad-io/netpad) |
-
----
-
-## What We Value
-
-- **Ship over perfect**: Working software beats perfect plans
-- **Builders building**: We're hands-on, not just planning
-- **Clear communication**: Document decisions, share context
-- **Ownership**: Take initiative, own your work
-- **Kindness**: We're building something together
-
----
-
-## Communication
-
-- **Async-first**: We work asynchronously across time zones
-- **Updates**: Share progress in GitHub issues/PRs
-- **Questions**: Don't hesitate to ask—no question is too basic
-- **Feedback**: Your fresh perspective is valuable
-
----
-
-*Ready to dive in? Start with [Getting Started](./getting-started.md).*
+*Questions? Reach out to Michael directly.*

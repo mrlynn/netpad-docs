@@ -58,6 +58,7 @@ const sidebars = {
         { type: 'doc', id: 'forms/form-library', label: '📚 Form Library' },
         { type: 'doc', id: 'forms/document-preview', label: '👁️ Document Preview' },
         { type: 'doc', id: 'forms/publishing', label: '🚀 Publishing' },
+        { type: 'doc', id: 'forms/reactions', label: '⚡ Form Reactions' },
         { type: 'doc', id: 'forms/code-generation', label: '💻 Code Generation' },
       ],
     },
@@ -129,6 +130,7 @@ const sidebars = {
         { type: 'doc', id: 'platform/access-control', label: '👥 Access Control' },
         { type: 'doc', id: 'platform/billing', label: '💳 Billing' },
         { type: 'doc', id: 'platform/pricing', label: '💰 Pricing' },
+        { type: 'doc', id: 'platform/referrals', label: '🤝 Referral Program' },
       ],
     },
     {
@@ -224,6 +226,7 @@ const sidebars = {
         { type: 'doc', id: 'collaborators/architecture-overview', label: '🏗️ Architecture Overview' },
         { type: 'doc', id: 'collaborators/current-priorities', label: '🎯 Current Priorities' },
         { type: 'doc', id: 'collaborators/contribution-guide', label: '📝 Contribution Guide' },
+        { type: 'doc', id: 'collaborators/product-context', label: '🎨 Product Context' },
         { type: 'doc', id: 'collaborators/faq', label: '❓ FAQ' },
       ],
     },

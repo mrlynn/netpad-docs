@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <title>NetPad micro-mark with AI sparkles</title>
+  <desc>Micro-mark robot face with antenna and sparkles, themeable via currentColor.</desc>
+
+  <!--
+    Color tokens:
+    - Ink uses currentColor
+    - Paper uses --np-paper (defaults to white)
+    Usage:
+      Light:  color:#000; --np-paper:#fff;
+      Dark:   color:#fff; --np-paper:#000;
+  -->
+
+  <g id="np-root">
+    <!-- Sparkles -->
+    <g id="np-sparkles" fill="currentColor" opacity="0.95">
+      <!-- 4-point star -->
+      <path d="M96 104 L108 124 L128 136 L108 148 L96 168 L84 148 L64 136 L84 124 Z"/>
+      <path d="M402 120 L412 136 L430 146 L412 156 L402 174 L392 156 L374 146 L392 136 Z"/>
+      <path d="M420 260 L432 280 L454 292 L432 304 L420 326 L408 304 L386 292 L408 280 Z"/>
+      <path d="M86 250 L96 266 L114 276 L96 286 L86 304 L76 286 L58 276 L76 266 Z"/>
+      <path d="M150 70 L158 84 L174 92 L158 100 L150 116 L142 100 L126 92 L142 84 Z"/>
+      <path d="M350 64 L358 78 L374 86 L358 94 L350 110 L342 94 L326 86 L342 78 Z"/>
+    </g>
+
+    <!-- Antenna -->
+    <g id="np-antenna">
+      <rect x="246" y="40" width="20" height="72" rx="10" fill="currentColor"/>
+      <circle cx="256" cy="36" r="28" fill="currentColor"/>
+    </g>
+
+    <!-- Outer mark silhouette -->
+    <g id="np-mark">
+      <!-- Head block -->
+      <rect x="72" y="96" width="368" height="268" rx="84" fill="currentColor"/>
+      <!-- Bottom point -->
+      <path d="M176 356 H336 L256 444 Z" fill="currentColor"/>
+    </g>
+
+    <!-- Inner face panel -->
+    <g id="np-face">
+      <rect x="108" y="132" width="296" height="196" rx="64" fill="var(--np-paper, #ffffff)"/>
+      <circle cx="204" cy="230" r="34" fill="currentColor"/>
+      <circle cx="308" cy="230" r="34" fill="currentColor"/>
+    </g>
+  </g>
+</svg>

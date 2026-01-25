@@ -1,8 +1,6 @@
-# Getting Started
+# Contribution Guide
 
 ## Getting Started with NetPad Development
-
-This guide walks you through setting up your local development environment and making your first contribution to NetPad.
 
 ---
 
@@ -216,7 +214,7 @@ import type { FieldConfig } from '@/types';
 
 ---
 
-## First Contribution Workflow
+## Making Changes
 
 ### Branch Naming
 
@@ -303,14 +301,71 @@ npm run test:watch
 npm run test:e2e
 ```
 
+### Writing Tests
+
+```typescript
+// Example test
+describe('FormBuilder', () => {
+  it('should add a new field', async () => {
+    // Arrange
+    const form = createTestForm();
+    
+    // Act
+    const result = await addField(form, newField);
+    
+    // Assert
+    expect(result.fields).toHaveLength(form.fields.length + 1);
+  });
+});
+```
+
+### Test Coverage Goals
+
+| Area | Current | Target |
+|------|---------|--------|
+| Backend | 80%+ | Maintain |
+| Components | Growing | 70%+ |
+| E2E | 22 cases | Expand |
+
+---
+
+## Common Tasks
+
+### Adding a New Form Field Type
+
+1. Add to `FieldType` union in `src/types/form.ts`
+2. Create renderer component in `src/components/FormBuilder/Fields/`
+3. Add to field palette in `FieldPalette.tsx`
+4. Add validation logic if needed
+5. Update MCP field type reference
+6. Add tests
+7. Update documentation
+
+### Adding a New API Endpoint
+
+1. Create route file in `src/app/api/`
+2. Follow existing patterns for auth/validation
+3. Add TypeScript types
+4. Add tests
+5. Document the endpoint
+
+### Fixing a Bug
+
+1. Reproduce the bug locally
+2. Write a failing test (if possible)
+3. Fix the issue
+4. Verify test passes
+5. Check for related issues
+6. Submit PR with clear description
+
 ---
 
 ## Getting Help
 
 ### Documentation
 
-- **Architecture**: [Architecture Overview](./architecture-overview.md)
-- **Priorities**: [Current Priorities](./current-priorities.md)
+- **Architecture**: [02-architecture.md](./02-architecture.md)
+- **Priorities**: [03-current-priorities.md](./03-current-priorities.md)
 - **External docs**: [docs.netpad.io](https://docs.netpad.io)
 
 ### Communication
@@ -374,7 +429,7 @@ console.log('[API /forms]', { method: req.method, body: req.body });
 ### How to Find Issues
 
 1. Check GitHub Issues labeled `good-first-issue`
-2. Look at [Current Priorities](./current-priorities.md)
+2. Look at [03-current-priorities.md](./03-current-priorities.md)
 3. Ask what's needed
 
 ---
@@ -395,4 +450,4 @@ console.log('[API /forms]', { method: req.method, body: req.body });
 
 Don't hesitate to ask. No question is too basic. We'd rather help you succeed than have you struggle silently.
 
-Welcome to NetPad!
+Welcome to NetPad! 🎉
