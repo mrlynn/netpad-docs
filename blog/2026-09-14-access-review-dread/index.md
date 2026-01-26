@@ -4,10 +4,10 @@ slug: access-review-dread
 title: "The Auditor Is Coming: Are Your Access Reviews Ready?"
 authors: [mrlynn]
 tags: [netpad, devlife, compliance, security]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Access Review Dread](./comic.png)
+![Access Review Dread](./comic.webp)
 
 ## The Pain Is Real
 

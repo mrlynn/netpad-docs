@@ -4,10 +4,10 @@ slug: test-environment-lie
 title: "'It's Just Test Data' Famous Last Words Before a Production Incident"
 authors: [mrlynn]
 tags: [netpad, devlife, devops]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Test Environment Lie](./comic.png)
+![The Test Environment Lie](./comic.webp)
 
 ## The Pain Is Real
 

@@ -4,10 +4,10 @@ slug: conditional-workflow-chaos
 title: "Workflow Branching: When Your If-Else Becomes a Choose-Your-Own-Adventure"
 authors: [mrlynn]
 tags: [netpad, devlife, workflows, automation]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Conditional Workflow Chaos](./comic.png)
+![Conditional Workflow Chaos](./comic.webp)
 
 ## The Pain Is Real
 

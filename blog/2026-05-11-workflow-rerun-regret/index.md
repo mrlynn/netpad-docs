@@ -4,10 +4,10 @@ slug: workflow-rerun-regret
 title: "Reprocessing Data: The Button Nobody Wants to Press"
 authors: [mrlynn]
 tags: [netpad, devlife, workflows, automation]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Workflow Rerun Regret](./comic.png)
+![Workflow Rerun Regret](./comic.webp)
 
 ## The Pain Is Real
 

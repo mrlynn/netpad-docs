@@ -4,10 +4,10 @@ slug: webhook-roulette
 title: "Stop Playing Webhook Roulette: Delivery Should Be Guaranteed"
 authors: [mrlynn]
 tags: [netpad, devlife, workflows, automation]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Webhook Roulette](./comic.png)
+![Webhook Roulette](./comic.webp)
 
 ## The Pain Is Real
 

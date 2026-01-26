@@ -4,10 +4,10 @@ slug: onboarding-wall
 title: "First Impressions Matter: Why Onboarding Can Make or Break Your Platform"
 authors: [mrlynn]
 tags: [netpad, devlife, ux]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Onboarding Wall](./comic.png)
+![The Onboarding Wall](./comic.webp)
 
 ## The Pain Is Real
 

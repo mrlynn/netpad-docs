@@ -4,10 +4,10 @@ slug: file-upload-doom
 title: "File Uploads Don't Have to Feel Like 1999"
 authors: [mrlynn]
 tags: [netpad, devlife, forms, data]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![File Upload Doom](./comic.png)
+![File Upload Doom](./comic.webp)
 
 ## The Pain Is Real
 

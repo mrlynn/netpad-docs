@@ -4,10 +4,10 @@ slug: brittle-integration
 title: "Why Your Integration Shouldn't Be a House of Cards"
 authors: [mrlynn]
 tags: [netpad, devlife, workflows, automation]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Brittle Integration](./comic.png)
+![The Brittle Integration](./comic.webp)
 
 ## The Pain Is Real
 

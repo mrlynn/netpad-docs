@@ -4,10 +4,10 @@ slug: import-nightmare
 title: "Importing Data: Why 'Just Upload the CSV' Is Never That Simple"
 authors: [mrlynn]
 tags: [netpad, devlife, data]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Import Nightmare](./comic.png)
+![The Import Nightmare](./comic.webp)
 
 ## The Pain Is Real
 

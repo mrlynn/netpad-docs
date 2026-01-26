@@ -4,10 +4,10 @@ slug: app-sprawl
 title: "App Sprawl: When Your Tools Need Their Own Project Manager"
 authors: [mrlynn]
 tags: [netpad, devlife, workflows]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![App Sprawl](./comic.png)
+![App Sprawl](./comic.webp)
 
 ## The Pain Is Real
 

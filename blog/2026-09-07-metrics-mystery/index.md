@@ -4,10 +4,10 @@ slug: metrics-mystery
 title: "You Have Data. Do You Have Insight?"
 authors: [mrlynn]
 tags: [netpad, devlife, data]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Metrics Mystery](./comic.png)
+![Metrics Mystery](./comic.webp)
 
 ## The Pain Is Real
 

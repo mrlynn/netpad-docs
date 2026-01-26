@@ -4,10 +4,10 @@ slug: date-picker-curse
 title: "Timezones: The Bug That Has Caused More Production Incidents Than Any Other"
 authors: [mrlynn]
 tags: [netpad, devlife, forms, data]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Date Picker Curse](./comic.png)
+![Date Picker Curse](./comic.webp)
 
 ## The Pain Is Real
 

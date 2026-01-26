@@ -4,10 +4,10 @@ slug: audit-trail-anxiety
 title: "If You Can't Explain Who Changed What, You Have a Compliance Problem"
 authors: [mrlynn]
 tags: [netpad, devlife, compliance, security]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Audit Trail Anxiety](./comic.png)
+![Audit Trail Anxiety](./comic.webp)
 
 ## The Pain Is Real
 

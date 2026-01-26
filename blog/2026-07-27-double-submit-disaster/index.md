@@ -4,10 +4,10 @@ slug: double-submit-disaster
 title: "Why Your Form Has 47 Duplicate Submissions (And How to Stop It)"
 authors: [mrlynn]
 tags: [netpad, devlife, forms, ux]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Double Submit Disaster](./comic.png)
+![Double Submit Disaster](./comic.webp)
 
 ## The Pain Is Real
 

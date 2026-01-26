@@ -4,10 +4,10 @@ slug: reaction-roulette
 title: "Form Reactions: Turning 'Something Happened' into 'The Right Thing Happened'"
 authors: [mrlynn]
 tags: [netpad, devlife, forms, workflows]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Reaction Roulette](./comic.png)
+![Reaction Roulette](./comic.webp)
 
 ## The Pain Is Real
 

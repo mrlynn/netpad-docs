@@ -4,10 +4,10 @@ slug: pagination-rage
 title: "Pagination: The UX That Time Forgot"
 authors: [mrlynn]
 tags: [netpad, devlife, data, ux]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Pagination Rage](./comic.png)
+![Pagination Rage](./comic.webp)
 
 ## The Pain Is Real
 

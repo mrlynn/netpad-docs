@@ -4,10 +4,10 @@ slug: form-boss-fight
 title: "Why Building Forms from Scratch is a Boss Fight You Don't Need to Win"
 authors: [mrlynn]
 tags: [netpad, devlife, forms]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Form Boss Fight](./comic.png)
+![The Form Boss Fight](./comic.webp)
 
 ## The Pain Is Real
 

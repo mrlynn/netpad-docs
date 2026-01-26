@@ -4,10 +4,10 @@ slug: infinite-loop-panic
 title: "The Day Our Workflow Decided to Run Forever"
 authors: [mrlynn]
 tags: [netpad, devlife, workflows, automation]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Infinite Loop Panic](./comic.png)
+![Infinite Loop Panic](./comic.webp)
 
 ## The Pain Is Real
 

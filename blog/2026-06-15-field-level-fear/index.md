@@ -4,10 +4,10 @@ slug: field-level-fear
 title: "Not All Fields Are Created Equal: When Field-Level Encryption Makes Sense"
 authors: [mrlynn]
 tags: [netpad, devlife, security, compliance]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Field-Level Fear](./comic.png)
+![Field-Level Fear](./comic.webp)
 
 ## The Pain Is Real
 

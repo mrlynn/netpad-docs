@@ -4,10 +4,10 @@ slug: reporting-regret
 title: "Stop Building Reports in Spreadsheets"
 authors: [mrlynn]
 tags: [netpad, devlife, data]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Reporting Regret](./comic.png)
+![Reporting Regret](./comic.webp)
 
 ## The Pain Is Real
 

@@ -4,10 +4,10 @@ slug: lost-submission
 title: "'I Definitely Submitted That Form' - Famous Last Words"
 authors: [mrlynn]
 tags: [netpad, devlife, forms, data]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Lost Submission](./comic.png)
+![The Lost Submission](./comic.webp)
 
 ## The Pain Is Real
 

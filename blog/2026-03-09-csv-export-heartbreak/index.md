@@ -4,10 +4,10 @@ slug: csv-export-heartbreak
 title: "Why Is Exporting Data Still So Hard in 2026?"
 authors: [mrlynn]
 tags: [netpad, devlife, data]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![CSV Export Heartbreak](./comic.png)
+![CSV Export Heartbreak](./comic.webp)
 
 ## The Pain Is Real
 

@@ -4,10 +4,10 @@ slug: calm-ending
 title: "What Development Feels Like When Your Tools Actually Work"
 authors: [mrlynn]
 tags: [netpad, devlife, forms, workflows]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Calm Ending](./comic.png)
+![The Calm Ending](./comic.webp)
 
 ## The Journey We've Taken
 

@@ -4,10 +4,10 @@ slug: rewrite-temptation
 title: "The Big Rewrite: A Horror Story in Five Acts"
 authors: [mrlynn]
 tags: [netpad, devlife, devops]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Rewrite Temptation](./comic.png)
+![The Rewrite Temptation](./comic.webp)
 
 ## The Pain Is Real
 

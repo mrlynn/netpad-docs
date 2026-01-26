@@ -4,10 +4,10 @@ slug: rollback-prayer
 title: "The Art of the Rollback: Because Every Deploy Is a Bet"
 authors: [mrlynn]
 tags: [netpad, devlife, devops]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Rollback Prayer](./comic.png)
+![The Rollback Prayer](./comic.webp)
 
 ## The Pain Is Real
 

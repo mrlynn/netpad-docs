@@ -4,10 +4,10 @@ slug: agent-overload
 title: "When Your AI Helpers Start Arguing: Orchestrating Multiple Agents"
 authors: [mrlynn]
 tags: [netpad, devlife, ai]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Agent Overload](./comic.png)
+![Agent Overload](./comic.webp)
 
 ## The Pain Is Real
 

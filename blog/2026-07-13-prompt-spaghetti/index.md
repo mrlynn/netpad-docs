@@ -4,10 +4,10 @@ slug: prompt-spaghetti
 title: "Prompt Engineering Shouldn't Mean Prompt Archaeology"
 authors: [mrlynn]
 tags: [netpad, devlife, ai, workflows]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Prompt Spaghetti](./comic.png)
+![Prompt Spaghetti](./comic.webp)
 
 ## The Pain Is Real
 

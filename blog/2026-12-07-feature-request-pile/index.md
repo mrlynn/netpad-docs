@@ -4,10 +4,10 @@ slug: feature-request-pile
 title: "When 'Can You Just Add...' Shouldn't Mean 'Start a New Sprint'"
 authors: [mrlynn]
 tags: [netpad, devlife, forms]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Feature Request Pile](./comic.png)
+![The Feature Request Pile](./comic.webp)
 
 ## The Pain Is Real
 

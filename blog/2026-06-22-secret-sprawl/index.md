@@ -4,10 +4,10 @@ slug: secret-sprawl
 title: "Where Are Your API Keys Right Now? Be Honest."
 authors: [mrlynn]
 tags: [netpad, devlife, security, devops]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Secret Sprawl](./comic.png)
+![Secret Sprawl](./comic.webp)
 
 ## The Pain Is Real
 

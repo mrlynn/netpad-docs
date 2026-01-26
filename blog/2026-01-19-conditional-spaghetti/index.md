@@ -4,10 +4,10 @@ slug: conditional-spaghetti
 title: "Conditional Logic Shouldn't Require a PhD in Spaghetti Architecture"
 authors: [mrlynn]
 tags: [netpad, devlife, forms, ux]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Conditional Spaghetti](./comic.png)
+![Conditional Spaghetti](./comic.webp)
 
 ## The Pain Is Real
 

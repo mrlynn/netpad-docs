@@ -4,10 +4,10 @@ slug: scheduled-job-surprise
 title: "Scheduled Jobs: Because '* * * * *' Is Not Self-Documenting"
 authors: [mrlynn]
 tags: [netpad, devlife, workflows, devops]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Scheduled Job Surprise](./comic.png)
+![Scheduled Job Surprise](./comic.webp)
 
 ## The Pain Is Real
 

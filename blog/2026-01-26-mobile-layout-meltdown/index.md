@@ -4,10 +4,10 @@ slug: mobile-layout-meltdown
 title: "60% of Form Submissions Happen on Mobile. Is Your Form Ready?"
 authors: [mrlynn]
 tags: [netpad, devlife, forms, ux]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Mobile Layout Meltdown](./comic.png)
+![Mobile Layout Meltdown](./comic.webp)
 
 ## The Pain Is Real
 

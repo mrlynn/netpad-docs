@@ -4,10 +4,10 @@ slug: signature-pad-sadness
 title: "Digital Signatures That Don't Look Like They Were Drawn During an Earthquake"
 authors: [mrlynn]
 tags: [netpad, devlife, forms, compliance]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Signature Pad Sadness](./comic.png)
+![Signature Pad Sadness](./comic.webp)
 
 ## The Pain Is Real
 

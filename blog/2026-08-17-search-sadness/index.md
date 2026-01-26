@@ -4,10 +4,10 @@ slug: search-sadness
 title: "Ctrl+F Isn't a Data Strategy: Real Search for Form Submissions"
 authors: [mrlynn]
 tags: [netpad, devlife, data]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Search Sadness](./comic.png)
+![Search Sadness](./comic.webp)
 
 ## The Pain Is Real
 

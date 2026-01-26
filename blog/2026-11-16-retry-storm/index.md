@@ -4,10 +4,10 @@ slug: retry-storm
 title: "Exponential Backoff: Because Hammering a Failed Service Is Not a Strategy"
 authors: [mrlynn]
 tags: [netpad, devlife, workflows, devops]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Retry Storm](./comic.png)
+![The Retry Storm](./comic.webp)
 
 ## The Pain Is Real
 

@@ -4,10 +4,10 @@ slug: manual-backfill
 title: "Backfilling Data: Because Sometimes You Need to Reprocess the Past"
 authors: [mrlynn]
 tags: [netpad, devlife, data, workflows]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Manual Backfill](./comic.png)
+![The Manual Backfill](./comic.webp)
 
 ## The Pain Is Real
 

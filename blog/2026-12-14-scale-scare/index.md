@@ -4,10 +4,10 @@ slug: scale-scare
 title: "Scaling Anxiety: Why Going Viral Shouldn't Mean Going Down"
 authors: [mrlynn]
 tags: [netpad, devlife, devops, mongodb]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Scale Scare](./comic.png)
+![The Scale Scare](./comic.webp)
 
 ## The Pain Is Real
 

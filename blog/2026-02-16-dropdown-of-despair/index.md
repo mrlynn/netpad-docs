@@ -4,10 +4,10 @@ slug: dropdown-of-despair
 title: "Your Users Shouldn't Need a Pickaxe to Find Their Country"
 authors: [mrlynn]
 tags: [netpad, devlife, forms, ux]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Dropdown of Despair](./comic.png)
+![Dropdown of Despair](./comic.webp)
 
 ## The Pain Is Real
 

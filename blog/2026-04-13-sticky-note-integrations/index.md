@@ -4,10 +4,10 @@ slug: sticky-note-integrations
 title: "Your Integration Strategy Shouldn't Depend on Sticky Notes"
 authors: [mrlynn]
 tags: [netpad, devlife, workflows, automation]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Sticky Note Integrations](./comic.png)
+![Sticky Note Integrations](./comic.webp)
 
 ## The Pain Is Real
 

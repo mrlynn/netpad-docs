@@ -4,10 +4,10 @@ slug: staging-ghost
 title: "The Ghost in Production: Why Staging Should Mirror Reality"
 authors: [mrlynn]
 tags: [netpad, devlife, devops]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Staging Ghost](./comic.png)
+![The Staging Ghost](./comic.webp)
 
 ## The Pain Is Real
 

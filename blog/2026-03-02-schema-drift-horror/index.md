@@ -4,10 +4,10 @@ slug: schema-drift-horror
 title: "Schema Drift: The Silent Killer of Data Quality"
 authors: [mrlynn]
 tags: [netpad, devlife, data, mongodb]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Schema Drift Horror](./comic.png)
+![Schema Drift Horror](./comic.webp)
 
 ## The Pain Is Real
 

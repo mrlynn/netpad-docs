@@ -4,10 +4,10 @@ slug: permissions-maze
 title: "RBAC Doesn't Have to Feel Like a Maze"
 authors: [mrlynn]
 tags: [netpad, devlife, security]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Permissions Maze](./comic.png)
+![Permissions Maze](./comic.webp)
 
 ## The Pain Is Real
 

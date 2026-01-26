@@ -4,10 +4,10 @@ slug: mapping-madness
 title: "Field Mapping: The Hidden Complexity in Every Integration"
 authors: [mrlynn]
 tags: [netpad, devlife, data, workflows]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Mapping Madness](./comic.png)
+![Mapping Madness](./comic.webp)
 
 ## The Pain Is Real
 

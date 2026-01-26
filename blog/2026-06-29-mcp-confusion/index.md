@@ -4,10 +4,10 @@ slug: mcp-confusion
 title: "MCP: The Protocol That Makes AI Tools Actually Work Together"
 authors: [mrlynn]
 tags: [netpad, devlife, ai]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![MCP Confusion](./comic.png)
+![MCP Confusion](./comic.webp)
 
 ## The Pain Is Real
 

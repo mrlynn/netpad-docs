@@ -4,10 +4,10 @@ slug: migration-monster
 title: "Modernizing Legacy Data Without Losing Your Mind"
 authors: [mrlynn]
 tags: [netpad, devlife, data, mongodb]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Migration Monster](./comic.png)
+![The Migration Monster](./comic.webp)
 
 ## The Pain Is Real
 

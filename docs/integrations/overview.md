@@ -29,6 +29,13 @@ Import existing Google Forms into NetPad:
 - Preserves validation and structure
 - [Learn more →](./google-forms-import.md)
 
+#### Google Workspace Add-on
+Import forms directly from Google Drive:
+- Install from Google Workspace Marketplace
+- Browse and export forms from the sidebar
+- Works in Google Drive and Google Forms
+- [Learn more →](./google-forms.md)
+
 #### Webhooks
 Send HTTP requests when forms are submitted:
 - Any URL endpoint
@@ -263,7 +270,8 @@ NetPad provides secure credential management for all integrations:
 
 ## Next Steps
 
-- [Google Forms Import](./google-forms-import.md) - Import from Google Forms
+- [Google Forms Import](./google-forms-import.md) - Import from Google Forms in NetPad
+- [Google Forms Add-on](./google-forms.md) - Import from Google Drive sidebar
 - [Webhooks](./webhooks.md) - HTTP integrations
 - [Email Notifications](./email-notifications.md) - Email automation
 - [API Reference](../api/overview.md) - API documentation

@@ -4,10 +4,10 @@ slug: permission-request-email
 title: "Access Requests Shouldn't Require an Email Thread"
 authors: [mrlynn]
 tags: [netpad, devlife, security]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Permission Request Email](./comic.png)
+![The Permission Request Email](./comic.webp)
 
 ## The Pain Is Real
 

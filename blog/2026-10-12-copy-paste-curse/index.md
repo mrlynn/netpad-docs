@@ -4,10 +4,10 @@ slug: copy-paste-curse
 title: "If You're Copying Forms, You're Doing It Wrong"
 authors: [mrlynn]
 tags: [netpad, devlife, forms]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Copy-Paste Curse](./comic.png)
+![The Copy-Paste Curse](./comic.webp)
 
 ## The Pain Is Real
 

@@ -4,10 +4,10 @@ slug: hotfix-scramble
 title: "When Production Is on Fire: Streamlining Hotfix Workflows"
 authors: [mrlynn]
 tags: [netpad, devlife, devops]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Hotfix Scramble](./comic.png)
+![The Hotfix Scramble](./comic.webp)
 
 ## The Pain Is Real
 

@@ -4,10 +4,10 @@ slug: compliance-scare
 title: "Compliance Isn't Optional: Building Systems That Pass Inspection"
 authors: [mrlynn]
 tags: [netpad, devlife, compliance, security]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![The Compliance Scare](./comic.png)
+![The Compliance Scare](./comic.webp)
 
 ## The Pain Is Real
 

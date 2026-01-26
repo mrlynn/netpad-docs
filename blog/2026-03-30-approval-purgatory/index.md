@@ -4,10 +4,10 @@ slug: approval-purgatory
 title: "Your Approval Process Shouldn't Move Slower Than Bureaucracy"
 authors: [mrlynn]
 tags: [netpad, devlife, workflows, automation]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Approval Purgatory](./comic.png)
+![Approval Purgatory](./comic.webp)
 
 ## The Pain Is Real
 

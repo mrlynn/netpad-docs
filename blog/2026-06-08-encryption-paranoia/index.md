@@ -4,10 +4,10 @@ slug: encryption-paranoia
 title: "Encryption at Rest: Why 'We Think It's Encrypted' Isn't Enough"
 authors: [mrlynn]
 tags: [netpad, devlife, security]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Encryption Paranoia](./comic.png)
+![Encryption Paranoia](./comic.webp)
 
 ## The Pain Is Real
 

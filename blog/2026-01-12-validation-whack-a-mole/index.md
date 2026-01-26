@@ -4,10 +4,10 @@ slug: validation-whack-a-mole
 title: "Stop Writing Regex: Modern Form Validation Should Be Declarative"
 authors: [mrlynn]
 tags: [netpad, devlife, forms, validation]
-image: ./comic.png
+image: ./comic.webp
 ---
 
-![Validation Whack-a-Mole](./comic.png)
+![Validation Whack-a-Mole](./comic.webp)
 
 ## The Pain Is Real
 
