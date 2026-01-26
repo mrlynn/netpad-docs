@@ -100,6 +100,7 @@ const sidebars = {
       label: '🔗 Integrations',
       items: [
         { type: 'doc', id: 'integrations/overview', label: '📖 Overview' },
+        { type: 'doc', id: 'integrations/google-forms-import', label: '📥 Google Forms Import' },
         { type: 'doc', id: 'integrations/webhooks', label: '🪝 Webhooks' },
         { type: 'doc', id: 'integrations/email-notifications', label: '📧 Email Notifications' },
       ],

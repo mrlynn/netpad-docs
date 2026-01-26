@@ -8,6 +8,16 @@ description: Step-by-step guide to creating NetPad extensions
 
 This tutorial walks you through creating a NetPad extension from scratch. By the end, you'll have a fully functional extension with API routes, services, and React components.
 
+:::tip Quick Start with MCP Server
+If you're using an AI assistant with the [NetPad MCP Server](/docs/developer/mcp-server), you can generate complete extension packages automatically:
+
+```
+"Create a NetPad extension with a custom workflow node that logs messages"
+```
+
+The MCP Server's `generate_extension` tool creates all necessary files (package.json, tsconfig, source code, README) ready to build and install. This is the fastest way to get started!
+:::
+
 ## Prerequisites
 
 - Node.js 18+ and npm

@@ -1,19 +1,64 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+netpad:
+  label: NetPad
+  permalink: /netpad
+  description: NetPad platform features and updates
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+devlife:
+  label: DevLife
+  permalink: /devlife
+  description: DevLife weekly comic series
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+forms:
+  label: Forms
+  permalink: /forms
+  description: Form building and field types
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+workflows:
+  label: Workflows
+  permalink: /workflows
+  description: Workflow automation and integrations
+
+ai:
+  label: AI
+  permalink: /ai
+  description: AI features, agents, and MCP
+
+validation:
+  label: Validation
+  permalink: /validation
+  description: Form validation and data quality
+
+security:
+  label: Security
+  permalink: /security
+  description: Security, encryption, and compliance
+
+data:
+  label: Data
+  permalink: /data
+  description: Data management, import, and export
+
+mongodb:
+  label: MongoDB
+  permalink: /mongodb
+  description: MongoDB integration and features
+
+automation:
+  label: Automation
+  permalink: /automation
+  description: Automation and scheduled tasks
+
+ux:
+  label: UX
+  permalink: /ux
+  description: User experience and design
+
+compliance:
+  label: Compliance
+  permalink: /compliance
+  description: Compliance, audit, and regulations
+
+devops:
+  label: DevOps
+  permalink: /devops
+  description: DevOps, deployment, and operations

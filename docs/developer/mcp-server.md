@@ -1,6 +1,12 @@
 # MCP Server (@netpad/mcp-server)
 
-The `@netpad/mcp-server` package (v2.2.0) is a comprehensive Model Context Protocol (MCP) server that integrates with AI assistants like Claude Desktop and Cursor IDE. It provides **75 AI-powered tools** across **7 categories** for building forms, applications, workflows, conversational experiences, and MongoDB integrations.
+The `@netpad/mcp-server` package (v2.3.0) is a comprehensive Model Context Protocol (MCP) server that integrates with AI assistants like Claude Desktop and Cursor IDE. It provides **80+ AI-powered tools** across **8 categories** for building forms, applications, workflows, extensions, conversational experiences, and MongoDB integrations.
+
+## What's New in v2.3.0
+
+- **Extension Generation**: New `generate_extension` tool to create complete NetPad extensions with custom workflow nodes
+- **Extension Reference Tools**: New tools for listing node categories, config field types, icons, and colors
+- **Extension Prompts**: New prompts for creating workflow and integration extensions
 
 ## What's New in v2.2.0
 
@@ -68,9 +74,9 @@ Add to your `.cursor/mcp.json` file:
 
 Restart Cursor IDE after making changes.
 
-## Tool Categories (75 Tools)
+## Tool Categories (80+ Tools)
 
-The MCP server provides tools organized into 7 main categories:
+The MCP server provides tools organized into 8 main categories:
 
 ### 1. Form Building (6 tools)
 
@@ -146,7 +152,32 @@ MongoDB queries, aggregations, schema analysis:
 - **`generate_schema_analysis`** - Analyze collection schemas
 - **Additional tools** for data exploration
 
-### 8. Consolidated Reference Tools (New in v2.2.0)
+### 8. Extension Development (5 tools) - New in v2.3.0
+
+Create custom NetPad extensions with workflow nodes:
+
+- **`generate_extension`** - Generate complete extension packages with custom workflow nodes
+- **`list_node_categories`** - List available workflow node categories (triggers, logic, actions, etc.)
+- **`list_config_field_types`** - List configuration field types (text, select, boolean, etc.)
+- **`list_workflow_icons`** - List commonly used MUI icons for workflow nodes
+- **`list_workflow_colors`** - List suggested colors for workflow nodes
+
+**Example Usage**:
+```
+"Create a NetPad extension with a custom workflow node that sends SMS messages via Twilio"
+"Generate an extension with a node that validates data against an external API"
+```
+
+The `generate_extension` tool generates all files needed for a complete extension package:
+- `package.json` - NPM package configuration
+- `tsconfig.json` - TypeScript configuration
+- `tsup.config.ts` - Build configuration
+- `src/index.ts` - Main extension code with handlers
+- `README.md` - Documentation
+
+See the [Extensions documentation](/docs/extensions/overview) for more details on building extensions.
+
+### 9. Consolidated Reference Tools (New in v2.2.0)
 
 Two new consolidated tools provide unified access to reference data:
 
@@ -185,7 +216,7 @@ Browse all 40+ templates with filtering:
 "Browse workflow templates"
 ```
 
-### 9. Legacy Reference & Helper (16 tools)
+### 10. Legacy Reference & Helper (16 tools)
 
 Documentation, best practices, debugging (these are being consolidated into the new tools above):
 
@@ -229,7 +260,7 @@ The AI will:
 ### Example 3: Build a Search Interface
 
 ```
-"Create a search form for our support tickets collection that allows filtering 
+"Create a search form for our support tickets collection that allows filtering
 by status, priority, and date range."
 ```
 
@@ -239,12 +270,28 @@ The AI will:
 3. Set up result display options
 4. Configure pagination and sorting
 
-## Available Resources (16 resources)
+### Example 4: Create a Custom Extension
+
+```
+"Create a NetPad extension with a workflow node that sends SMS messages.
+The node should have fields for phone number, message text, and a provider
+selection (Twilio or AWS SNS)."
+```
+
+The AI will:
+1. Generate a complete extension package structure
+2. Create the workflow node definition with config fields
+3. Implement a handler with placeholder logic
+4. Generate package.json, tsconfig, and build configuration
+5. Create a README with installation instructions
+
+## Available Resources (17 resources)
 
 The MCP server provides access to documentation and reference materials:
 
 - **`netpad://docs/readme`** - Main documentation
 - **`netpad://docs/quick-start`** - Quick start guide
+- **`netpad://docs/extensions`** - Extensions documentation
 - **`netpad://reference/field-types`** - Field type reference
 - **`netpad://reference/application-templates`** - Application templates
 - **`netpad://reference/workflow-nodes`** - Workflow node types
@@ -253,6 +300,7 @@ The MCP server provides access to documentation and reference materials:
 - **`netpad://reference/search-operators`** - Search operators
 - **`netpad://reference/connection-types`** - MongoDB connection types
 - **`netpad://reference/query-templates`** - Query templates
+- **`netpad://reference/extensions`** - Extension development reference (node categories, icons, colors)
 - **Additional resources** for development reference
 
 ## Templates Available
@@ -368,7 +416,7 @@ npx tsx my-form.ts
 
 ## Version
 
-Current version: **2.2.0**
+Current version: **2.3.0**
 
 The MCP server is actively maintained and updated with new tools and capabilities. Check the npm package page for the latest version and changelog.
 
@@ -376,6 +424,7 @@ The MCP server is actively maintained and updated with new tools and capabilitie
 
 | Version | Changes |
 |---------|---------|
+| **2.3.0** | Extension generation tools (`generate_extension`, `list_node_categories`, etc.), extension reference resources, prompts for creating extensions |
 | **2.2.0** | Validated TypeScript output, consolidated tools (`get_reference`, `browse_templates`), auto-fix, 60+ skip patterns |
 | **2.1.0** | Additional templates, improved error handling |
 | **2.0.0** | 75 tools across 7 categories, comprehensive MCP implementation |

@@ -6,7 +6,7 @@
 
 > **Document Status**: Current State
 > **Last Updated**: January 2026
-> **Version**: 4.10.0
+> **Version**: 4.13.0
 
 ---
 
@@ -29,6 +29,7 @@ Since the December 2024 capabilities document, NetPad has undergone significant 
 - **Deployment Platform**: One-click deployment to Vercel with auto-provisioned databases
 - **Self-Hosted Deployment Mode**: Run NetPad privately with Atlas Local for RAG without M10 upgrade
 - **Enhanced AI Features**: 15+ AI agents for optimization, compliance, translation, insights, and RAG
+- **Multi-Provider Embedding Architecture**: Voyage AI (MongoDB's partner), Atlas AI Services, and OpenAI with auto-detection
 - **Vector Search Integration**: MongoDB Atlas Vector Search for semantic document retrieval
 - **Feature Gates**: Two-tier access control (subscription + infrastructure requirements)
 - **Applications-First Model**: Applications as first-class entities grouping forms, workflows, and connections
@@ -40,7 +41,9 @@ Since the December 2024 capabilities document, NetPad has undergone significant 
 - **Official vs Community**: Designation for NetPad-verified vs user-created applications
 - **npm Package Integration**: Publish and install applications from npm registry
 - **npm Registry Sync**: Automatic discovery and syncing of NetPad packages
-- **165+ API Endpoints**: Comprehensive programmatic access
+- **Referral Program**: Commission-based referral system with flexible benefits for referrers and referred users
+- **Form Reactions**: Real-time field-triggered workflows with field updates via new workflow nodes
+- **175+ API Endpoints**: Comprehensive programmatic access
 
 ---
 
@@ -66,7 +69,7 @@ Since the December 2024 capabilities document, NetPad has undergone significant 
 │                                      │                                   │
 │  ┌─────────────────────────────────────────────────────────────────────┐│
 │  │                    Platform Services                                 ││
-│  │  Organizations │ Projects │ Auth │ Billing │ Permissions │ API     ││
+│  │  Organizations │ Projects │ Auth │ Billing │ Permissions │ Referrals││
 │  └─────────────────────────────────────────────────────────────────────┘│
 │                                      │                                   │
 │  ┌─────────────────────────────────────────────────────────────────────┐│
@@ -276,6 +279,107 @@ Since the December 2024 capabilities document, NetPad has undergone significant 
 - **Execution Modes**: Sequential, parallel, auto-detected
 - **Job Queue**: MongoDB-based with priority support
 
+### Form Reactions
+
+**Purpose**: Trigger workflows in response to form field events and update form fields with workflow outputs in real-time.
+
+**Core Concept**: Form Reactions connect form field events (blur, change, focus) to workflows, enabling real-time field updates based on workflow outputs. When a user interacts with a field, the reaction executes a workflow and returns computed values to update other fields automatically.
+
+**Workflow Nodes**:
+
+| Node | Category | Description |
+|------|----------|-------------|
+| **Field Event Trigger** | Forms | Entry point for reaction workflows; receives field event data |
+| **Form Field Update** | Forms | Maps workflow outputs to form fields for real-time updates |
+
+**Field Event Trigger Configuration**:
+- **Form ID**: Optional - usually set automatically by the reaction system
+- **Trigger Mode**: `any` (fire on any specified field) or `all` (require all fields to have values)
+- **Debounce**: Delay in milliseconds to prevent rapid firing (0-30000ms)
+
+**Field Event Trigger Output**:
+- `triggerField`: Name of the field that triggered the event
+- `triggerEvent`: Event type (change, blur, focus, validate, clear)
+- `fieldValue`: Current value of the triggering field
+- `formData`: Complete form data object with all field values
+- `formId`: ID of the form
+- `reactionId`: ID of the reaction being executed
+
+**Form Field Update Configuration**:
+- **Feedback Mode**: How to notify users (silent, subtle, toast)
+- **Validate After Update**: Run form validation after applying updates
+- **Field Mappings**: Array of source-to-field mappings with null behavior handling
+
+**Reaction Configuration**:
+```typescript
+interface FormReaction {
+  id: string;
+  name: string;
+  description?: string;
+  workflowId: string;
+  trigger: {
+    fields?: string[];           // Fields that trigger this reaction
+    event?: FieldEvent;          // change, blur, focus, validate, clear
+    debounceMs?: number;         // Debounce delay (0-30000ms)
+    condition?: string;          // Optional trigger condition
+  };
+  execution: {
+    mode: 'sync';                // Synchronous execution (v1)
+    timeoutMs?: number;          // Max execution time (default: 10000ms)
+  };
+  feedback?: {
+    showLoading?: boolean;       // Show loading indicator
+    loadingText?: string;        // Custom loading message
+    showSuccess?: boolean;       // Show success feedback
+    showError?: boolean;         // Show error messages
+  };
+  enabled: boolean;
+}
+```
+
+**Example Use Cases**:
+- **Company Lookup**: Enter domain → fetch company info → auto-fill name, industry, size
+- **Address Validation**: Enter postal code → validate → auto-fill city, state
+- **Price Calculation**: Select products → calculate → update total price field
+- **AI Categorization**: Enter description → AI classifies → suggest category/tags
+- **Real-time Validation**: Enter email → check availability → show status
+
+**API Endpoints**:
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/forms/{formId}/reactions` | List all reactions for a form |
+| POST | `/api/forms/{formId}/reactions` | Create a new reaction |
+| GET | `/api/forms/{formId}/reactions/{reactionId}` | Get single reaction |
+| PUT | `/api/forms/{formId}/reactions/{reactionId}` | Update a reaction |
+| DELETE | `/api/forms/{formId}/reactions/{reactionId}` | Delete a reaction |
+| POST | `/api/forms/{formId}/reactions/execute` | Execute a reaction |
+
+**React Hook** (`useFormReactions`):
+```typescript
+const {
+  triggerReaction,        // Manual trigger with debounce
+  cancelReaction,         // Cancel pending reaction
+  hasReaction,            // Check if field has reactions
+  getFieldReactions,      // Get reactions for field
+  reactionStates,         // Map of reaction states
+  pendingFields,          // Fields with pending reactions
+  recentlyUpdatedFields,  // Recently updated fields
+} = useFormReactions({
+  formId,
+  orgId,
+  reactions,
+  onFieldUpdate,          // Callback for field updates
+  onReactionError,        // Callback for errors
+});
+```
+
+**Cascade Protection**: Maximum cascade depth of 3 to prevent infinite loops when field updates trigger other reactions.
+
+**Phase 1 Limitations**:
+- Synchronous execution only (async/job queue in Phase 5)
+- Manual trigger via `triggerReaction()` (auto-attachment in Phase 3)
+- Transform expressions accepted but not executed (requires sandboxing)
+
 ### Workflow Limits by Tier
 
 | Tier | Executions/Month | Active Workflows |
@@ -427,9 +531,62 @@ interface ConversationalFormConfig {
 - Upload documents (PDF, DOCX, TXT) up to 5MB
 - Automatic text extraction and intelligent chunking
 - Sentence-aware chunking preserves context
-- OpenAI embeddings (text-embedding-3-small) for semantic search
+- Multi-provider embedding support (see Embedding Provider Architecture below)
 - MongoDB Atlas Vector Search for efficient retrieval
 - Document metadata: title, description, source type, tags
+
+### Embedding Provider Architecture
+
+**Multi-Provider Support**: NetPad supports multiple embedding providers with intelligent auto-detection and fallback:
+
+| Provider | Models | Dimensions | Use Case |
+|----------|--------|------------|----------|
+| **Atlas AI Services** | voyage-3, voyage-3-lite, voyage-code-3 | 512-1536 | MongoDB-native integration (recommended) |
+| **Voyage AI Direct** | voyage-3, voyage-3-lite, voyage-code-3, voyage-3-large | 512-1536 | MongoDB's official embedding partner |
+| **OpenAI** | text-embedding-3-small, text-embedding-3-large, ada-002 | 1536-3072 | Fallback provider |
+
+**Priority Order** (Auto-Detection):
+1. **Atlas AI Services** - Native MongoDB integration using Voyage models
+2. **Voyage AI Direct** - MongoDB's recommended embedding partner
+3. **OpenAI** - Fallback for existing configurations
+
+**Voyage AI Models** (MongoDB's Official Partner):
+| Model | Dimensions | Price/1M Tokens | Best For |
+|-------|------------|-----------------|----------|
+| **voyage-3** | 1024 | $0.06 | General-purpose (default) |
+| **voyage-3-lite** | 512 | $0.02 | Cost-optimized |
+| **voyage-code-3** | 1536 | $0.06 | Code/technical content |
+| **voyage-3-large** | 1024 | $0.06 | High-accuracy |
+
+**Key Features**:
+- **Asymmetric Embeddings**: Separate optimization for documents (`input_type: document`) vs queries (`input_type: query`)
+- **Batch Processing**: Optimized batch sizes (64 for Voyage, 100 for OpenAI) with rate limit handling
+- **Cost Estimation**: Real-time cost estimation before embedding generation
+- **Provider Abstraction**: Unified interface (`EmbeddingProvider`) across all providers
+- **Automatic Retry**: Exponential backoff with rate limit detection
+
+**Configuration** (Environment Variables):
+```bash
+# Voyage AI (recommended for MongoDB)
+VOYAGE_API_KEY=your-voyage-api-key
+VOYAGE_MODEL=voyage-3  # Options: voyage-3, voyage-3-lite, voyage-code-3
+
+# Provider override (default: auto)
+EMBEDDING_PROVIDER=auto  # Options: auto, atlas-ai, voyage, openai
+
+# Disable Atlas AI wrapper (use direct Voyage)
+USE_ATLAS_AI=true  # Set to 'false' to bypass Atlas AI
+```
+
+**Provider Selection Logic**:
+```
+If EMBEDDING_PROVIDER is set explicitly → Use that provider
+Else if VOYAGE_API_KEY is set:
+  If USE_ATLAS_AI ≠ false → Use Atlas AI Services
+  Else → Use Voyage AI Direct
+Else if OPENAI_API_KEY is set → Use OpenAI (fallback)
+Else → No provider available
+```
 
 **Retrieval Configuration**:
 ```typescript
@@ -459,7 +616,7 @@ interface RAGConfig {
   - Infrastructure: Atlas Local (Docker) - no M10 upgrade needed
 - **Common Requirements**:
   - Documents: Stored in Vercel Blob with private access
-  - Embeddings: OpenAI API key required
+  - Embeddings: Voyage AI API key (recommended) or OpenAI API key required
 
 **Example Flow**:
 ```
@@ -553,6 +710,7 @@ Organization
 ├── Members (with roles)
 ├── Connection Vault
 ├── Templates
+├── Referrals (code, earnings, payouts)
 └── Billing/Subscription
 ```
 
@@ -773,6 +931,296 @@ Organize work by environment or initiative:
 - **Hybrid Search** - Combine keyword + semantic search for optimal results
 - **User Content Search** - Optional separate tab for searching user's forms/workflows/apps (via `CMD+K` command palette)
 
+### Referral Program
+
+**Purpose**: Enable organizations to earn commissions by referring new users to the platform, with flexible incentives for both referrers and referred users.
+
+:::info Cloud Feature
+The referral program is a **cloud-only** feature available on NetPad Cloud deployments.
+:::
+
+**Referral Code Types**:
+| Code Type | Year 1 | Year 2 | Year 3 | Year N | Use Case |
+|-----------|--------|--------|--------|--------|----------|
+| **Standard** | 20% | 15% | 10% | 10% | Auto-generated for organizations |
+| **Partner** | 30% | 25% | 20% | 15% | Strategic partnerships |
+| **Influencer** | 25% | 20% | 15% | 10% | Content creators and advocates |
+| **Campaign** | 20% | 15% | 10% | 10% | Marketing campaigns |
+
+**Commission Structure**:
+- Commissions calculated as percentage of invoice amounts paid by referred organizations
+- Qualification requires 2 payments from referred organization
+- 30-day hold period before commissions become available
+- Minimum payout threshold: $50 USD
+
+**Referred User Benefits** (Configurable per code):
+| Benefit | Description | Example |
+|---------|-------------|---------|
+| **Discount Percentage** | X% off first N payments | 10% off first 3 payments |
+| **Account Credit** | Flat dollar amount credited | $20 account credit |
+| **Trial Extension** | Extra days added to trial | +14 extra trial days |
+| **Feature Unlocks** | Temporary premium access | (Future enhancement) |
+
+**Referral Lifecycle**:
+```
+1. SHARE      → Referrer shares code URL (netpad.io/signup?ref=CODE)
+     ↓
+2. CLICK      → Prospect clicks link (code stored in 30-day cookie)
+     ↓
+3. SIGNUP     → Prospect creates account and organization
+     ↓
+4. ATTRIBUTED → Referral recorded with "pending" status
+     ↓
+5. PAYMENT 1  → First payment → status becomes "qualifying"
+     ↓
+6. PAYMENT 2  → Second payment → status becomes "qualified" ✓
+     ↓
+7. ONGOING    → Each subsequent payment generates commission
+     ↓
+8. HOLD       → Commissions held for 30 days
+     ↓
+9. AVAILABLE  → Commissions become available for payout
+     ↓
+10. PAYOUT    → Referrer requests payout → Admin approves
+```
+
+**Referral Statuses**:
+| Status | Description |
+|--------|-------------|
+| **Pending** | Attributed but no payments yet |
+| **Qualifying** | Has 1 payment, needs 1 more to qualify |
+| **Qualified** | Met qualification threshold, earning commissions |
+| **Active** | Qualified and actively generating commissions |
+| **Churned** | Referred organization cancelled subscription |
+
+**Payout Methods**:
+- PayPal
+- Wise
+- Bank Transfer
+- Other (with custom details)
+
+**Admin Management** (Platform Admin Only):
+- Create special referral codes (Partner, Influencer, Campaign)
+- Configure custom commission rates
+- Configure benefits for referred users
+- Assign codes to organizations
+- View all referrals and their status
+- Approve or reject payout requests
+
+**Organization Dashboard** (Referrer View):
+- View referral code and share URL
+- Track referral performance and earnings
+- View pending vs available earnings
+- Request payouts when earnings become available
+
+---
+
+## Pillar 6: Performance Instrumentation
+
+**Purpose**: Systematic measurement and optimization of platform performance through navigation timing, API latency tracking, database query profiling, and automated benchmarking.
+
+### Performance Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        Client (Browser)                         │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐  │
+│  │ NavigationTimer │  │ RenderProfiler  │  │ NetworkObserver │  │
+│  └────────┬────────┘  └────────┬────────┘  └────────┬────────┘  │
+│           │                    │                    │           │
+│           └────────────────────┼────────────────────┘           │
+│                                │                                │
+│                    ┌───────────▼───────────┐                    │
+│                    │  PerformanceCollector │                    │
+│                    └───────────┬───────────┘                    │
+└────────────────────────────────┼────────────────────────────────┘
+                                 │
+                    ┌────────────▼────────────┐
+                    │     /api/telemetry      │
+                    └────────────┬────────────┘
+                                 │
+┌────────────────────────────────┼────────────────────────────────┐
+│                         Server                                  │
+│                                │                                │
+│  ┌─────────────────┐  ┌───────▼───────┐  ┌─────────────────┐   │
+│  │  API Middleware │  │ TelemetryStore│  │  DB Query Timer │   │
+│  │   (withTiming)  │  │               │  │  (timedQuery)   │   │
+│  └────────┬────────┘  └───────┬───────┘  └────────┬────────┘   │
+│           │                   │                   │            │
+│           └───────────────────┼───────────────────┘            │
+│                               │                                │
+│                   ┌───────────▼───────────┐                    │
+│                   │   Performance Logs    │                    │
+│                   │   (structured JSON)   │                    │
+│                   └───────────────────────┘                    │
+└────────────────────────────────────────────────────────────────┘
+```
+
+### Performance Targets
+
+| Interaction | Target | Industry Benchmark |
+|-------------|--------|-------------------|
+| Initial page load (cold) | <2000ms | <3000ms (acceptable) |
+| Navigation between screens | <300ms | <500ms (feels instant) |
+| Form builder load | <1000ms | - |
+| Workflow editor load | <1500ms | - |
+| API response (simple CRUD) | <200ms | <500ms |
+| API response (complex query) | <500ms | <1000ms |
+
+### Instrumentation Components
+
+| Component | Purpose | Location |
+|-----------|---------|----------|
+| **NavigationTimer** | Track client-side route changes with Web Vitals | `src/lib/performance/NavigationTimer.tsx` |
+| **PerformanceCollector** | Batch and transmit client metrics | `src/lib/performance/PerformanceCollector.ts` |
+| **withTiming** | API route middleware for request timing | `src/lib/performance/withTiming.ts` |
+| **timedQuery** | Database query timing wrapper | `src/lib/performance/timedQuery.ts` |
+| **PerformanceLogger** | Server-side structured logging | `src/lib/performance/PerformanceLogger.ts` |
+
+### Client-Side Tracking
+
+**Navigation Metrics**:
+- Route change duration (from → to)
+- Time to First Byte (TTFB)
+- First Contentful Paint (FCP)
+- Largest Contentful Paint (LCP)
+- Hydration time
+- Data fetch time
+
+**Metric Collection**:
+- Batched transmission (configurable batch size, default 10)
+- Automatic flush on page visibility change
+- `sendBeacon` API for reliable transmission during unload
+- 5-second flush interval
+
+### Server-Side Tracking
+
+**API Request Metrics**:
+- Total request duration
+- Database query time (breakdown)
+- Server processing time
+- Query count per request
+- `X-Response-Time` and `Server-Timing` headers
+
+**Database Query Metrics**:
+- Operation type (find, insert, update, delete, aggregate)
+- Collection name
+- Query duration
+- Slow query detection (>100ms threshold)
+- Filter logging for debugging
+
+**Timed Collection Wrapper**:
+```typescript
+// Wrap collection for automatic timing
+const formsCollection = createTimedCollection(db, 'forms');
+const forms = await formsCollection.find({ organizationId });
+const form = await formsCollection.findOne({ _id: formId });
+```
+
+### Automated Benchmarking
+
+**Benchmark Script** (`scripts/benchmark.ts`):
+- Playwright-based browser automation
+- Configurable warmup and measurement runs
+- JSON output with statistical analysis (mean, p50, p95, min, max)
+
+**Benchmark Journeys** (7 Key User Flows):
+
+| Journey | Steps |
+|---------|-------|
+| Dashboard to Form Builder | Load Dashboard → Navigate to Forms → Open New Form |
+| Dashboard to Workflow Editor | Load Dashboard → Navigate to Workflows → Open New Workflow |
+| Application Navigation | Load Applications → Open Application → View Application Forms |
+| Form Submission Flow | Load Forms → Open Form → View Submissions |
+| Settings Navigation | Load Dashboard → Open Settings → Navigate to Connections |
+| Template Gallery | Load Templates → Filter by Category → Preview Template |
+| Initial Page Loads | Cold Dashboard → Cold Forms → Cold Workflows |
+
+**Running Benchmarks**:
+```bash
+npm run benchmark           # Local benchmarks
+npm run benchmark:ci        # CI/CD with staging URL
+```
+
+### Output Formats
+
+**Development Console**:
+```
+🟢 [NAV] /dashboard → /forms: 245ms
+🟢 [API] GET /api/forms: 156ms (server: 42ms, db: 114ms, queries: 2)
+🟡 [NAV] /forms → /forms/new: 612ms
+🔴 [SLOW QUERY] find (forms): 234ms
+```
+
+**Production JSON Logs**:
+```json
+{
+  "level": "info",
+  "type": "api_request",
+  "route": "/api/forms",
+  "method": "GET",
+  "duration": 156,
+  "dbTime": 114,
+  "serverTime": 42,
+  "queryCount": 2
+}
+```
+
+### Quick Diagnosis Checklist
+
+| Check | How | Red Flag |
+|-------|-----|----------|
+| Bundle size | `npm run build` → check output | Any page >500KB |
+| Unnecessary re-renders | React DevTools Profiler | Components rendering 5+ times |
+| N+1 queries | Check API logs | Multiple DB calls per page load |
+| Missing indexes | MongoDB Atlas Performance Advisor | Slow queries section |
+| Large payloads | Network tab | API responses >100KB |
+| Unoptimized images | Network tab | Images >500KB |
+| Client-side data fetching | Check useEffect calls | Data fetched after render |
+
+### Bundle Analysis
+
+```bash
+# Run bundle analysis
+ANALYZE=true npm run build
+```
+
+### File Structure
+
+```
+src/lib/performance/
+├── index.ts                    # Public exports
+├── NavigationTimer.tsx         # Client-side navigation tracking
+├── PerformanceCollector.ts     # Client-side metric batching
+├── PerformanceLogger.ts        # Server-side structured logging
+├── withTiming.ts               # API route middleware
+├── timedQuery.ts               # Database query wrapper
+└── types.ts                    # Shared TypeScript types
+
+src/app/api/telemetry/
+└── performance/
+    └── route.ts                # Telemetry ingestion endpoint
+
+scripts/
+└── benchmark.ts                # Playwright benchmark runner
+```
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/telemetry/performance` | Client metric ingestion |
+| GET | `/api/admin/performance/stats` | Performance statistics (admin) |
+
+### Future Enhancements (Planned)
+
+- Real-time performance dashboard
+- Alerting on performance regression
+- Core Web Vitals integration
+- APM integration (DataDog, New Relic)
+- Performance budgets in CI/CD
+- Geographic performance analysis
+
 ---
 
 ## Integration Ecosystem
@@ -891,7 +1339,7 @@ npx @netpad/cli
 
 ### API Overview
 
-**165+ Endpoints** across major categories:
+**175+ Endpoints** across major categories:
 
 | Category | Endpoints | Description |
 |----------|-----------|-------------|
@@ -909,6 +1357,8 @@ npx @netpad/cli
 | **/api/integrations** | 8+ | Integration credentials |
 | **/api/auth** | 10+ | Authentication flows |
 | **/api/billing** | 4 | Subscription management |
+| **/api/admin/referrals** | 8+ | Referral codes, payouts, admin management |
+| **/api/organizations/[orgId]/referrals** | 5+ | Org referral stats, earnings, payouts |
 | **/api/v1** | 5+ | Public API (external apps) |
 
 ### Public API (v1)
@@ -1036,6 +1486,79 @@ docker run -d -p 27017:27017 mongodb/mongodb-atlas-local
 - **RAG Features (Cloud)**: Require M10+ cluster for Vector Search (Team/Enterprise only)
 - **RAG Features (Self-Hosted)**: Use Atlas Local (Docker) - available to all tiers
 
+### Open Core Architecture
+
+NetPad uses an **open core model** that separates cloud-only features from the open source core, similar to GitLab, Supabase, and Cal.com.
+
+**Architecture Overview**:
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        NetPad Open Core Model                            │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                          │
+│  ┌─────────────────────────────────────────────────────────────────────┐│
+│  │                    PUBLIC: netpad-3 Repository                       ││
+│  │                      (MIT License - GitHub)                          ││
+│  ├─────────────────────────────────────────────────────────────────────┤│
+│  │  • Form Builder & 30+ Field Types                                   ││
+│  │  • Workflow Engine & 25+ Node Types                                 ││
+│  │  • Data Browser & Connection Vault                                  ││
+│  │  • Conversational Forms & RAG Integration                           ││
+│  │  • Projects, Applications, Templates                                ││
+│  │  • Extension System (src/lib/extensions/)                           ││
+│  │  • Built-in Billing Logic (usage, limits, tiers)                    ││
+│  └─────────────────────────────────────────────────────────────────────┘│
+│                              ▲                                           │
+│                              │ Dynamic Import                            │
+│                              │ (when NETPAD_DEPLOYMENT_MODE=cloud)       │
+│                              ▼                                           │
+│  ┌─────────────────────────────────────────────────────────────────────┐│
+│  │                 PRIVATE: @netpad/cloud-features                      ││
+│  │                   (npm private package)                              ││
+│  ├─────────────────────────────────────────────────────────────────────┤│
+│  │  • Stripe Billing Integration                                       ││
+│  │  • Atlas Cluster Provisioning                                       ││
+│  │  • Application Marketplace Services                                 ││
+│  │  • Waitlist Management                                              ││
+│  │  • Admin Dashboard Features                                         ││
+│  │  • Advanced Analytics                                               ││
+│  │  • Referral Program Services                                        ││
+│  └─────────────────────────────────────────────────────────────────────┘│
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+**Extension System Components**:
+| Component | Location | Description |
+|-----------|----------|-------------|
+| Registry | `src/lib/extensions/registry.ts` | Central registry for extension management |
+| Loader | `src/lib/extensions/loader.ts` | Dynamic loading of cloud extension |
+| Hooks | `src/lib/extensions/hooks.ts` | React hooks (`useExtensionFeature`, `useDeploymentMode`) |
+| Components | `src/lib/extensions/CloudFeature.tsx` | Conditional rendering (`<CloudOnly>`, `<SelfHostedOnly>`) |
+| Types | `src/lib/extensions/types.ts` | Extension and service interfaces |
+
+**Extension Features**:
+- `billing` - Stripe checkout and customer portal
+- `stripe_integration` - Full Stripe SDK integration
+- `subscription_management` - Plan upgrades and cancellations
+- `atlas_provisioning` - MongoDB Atlas cluster provisioning
+- `cluster_management` - Cluster monitoring and scaling
+- `application_marketplace` - Marketplace services
+- `admin_dashboard` - Platform admin features
+- `waitlist_management` - Beta waitlist handling
+- `advanced_analytics` - Usage and business analytics
+- `referral_program` - Commission-based referral system with benefits
+
+**API Endpoints for Extensions**:
+- `GET /api/extensions/status` - Extension registry status
+- `GET /api/extensions/features` - Available features list
+
+**How It Works**:
+1. **Self-Hosted Mode**: Extensions not loaded, uses built-in billing logic (usage-only)
+2. **Cloud Mode**: Dynamically imports `@netpad/cloud-features` at runtime
+3. **Fallback**: If private package unavailable, gracefully falls back to built-in modules
+4. **UI Adaptation**: Components use hooks to show appropriate UI per deployment mode
+
 ---
 
 ## Technology Stack
@@ -1055,7 +1578,9 @@ Backend:
 ├── MongoDB Atlas Vector Search (RAG)
 ├── MongoDB Client Encryption
 ├── Stripe SDK (billing)
-├── OpenAI API (AI features, embeddings)
+├── Voyage AI API (embeddings - MongoDB's partner)
+├── OpenAI API (AI features, fallback embeddings)
+├── Atlas AI Services (MongoDB-native embeddings)
 ├── Vercel Blob (document storage)
 └── Iron Session (auth)
 
@@ -1131,7 +1656,7 @@ Infrastructure:
 |-----------|--------|-------------|
 | Document Upload API | ✅ Complete | PDF, DOCX, TXT upload with chunking |
 | Text Extraction | ✅ Complete | Multi-format text extraction |
-| Embedding Generation | ✅ Complete | OpenAI text-embedding-3-small |
+| Embedding Generation | ✅ Complete | Multi-provider support (Voyage AI, OpenAI, Atlas AI) |
 | Vector Storage | ✅ Complete | MongoDB Atlas Vector Search |
 | Retrieval Engine | ✅ Complete | Semantic search with scoring |
 | Prompt Enhancement | ✅ Complete | Context injection with citations |
@@ -1141,6 +1666,31 @@ Infrastructure:
 | Config Editor UI | ✅ Complete | RAG toggle, retrieval settings |
 | Feature Gates | ✅ Complete | Two-tier gating (subscription + cluster) |
 | Integration Tests | ✅ Complete | 41 tests passing |
+
+### Multi-Provider Embedding Architecture - Phase 14 Complete
+
+| Component | Status | Description |
+|-----------|--------|-------------|
+| Embedding Provider Interface | ✅ Complete | Unified `EmbeddingProvider` interface for all providers |
+| Voyage AI Provider | ✅ Complete | Full implementation with voyage-3, voyage-3-lite, voyage-code-3 support |
+| Atlas AI Services Provider | ✅ Complete | MongoDB-native wrapper using Voyage AI under the hood |
+| OpenAI Provider | ✅ Complete | Fallback provider with text-embedding-3-small/large support |
+| Provider Factory | ✅ Complete | Auto-detection with priority-based fallback (Atlas AI → Voyage → OpenAI) |
+| Asymmetric Embeddings | ✅ Complete | Separate optimization for documents vs queries |
+| Batch Processing | ✅ Complete | Optimized batch sizes with rate limit handling |
+| Cost Estimation | ✅ Complete | Real-time cost estimation across all providers |
+| Error Handling | ✅ Complete | Retryable errors with exponential backoff |
+| Environment Configuration | ✅ Complete | VOYAGE_API_KEY, EMBEDDING_PROVIDER, USE_ATLAS_AI vars |
+
+**Implementation Status**: ✅ All Steps Complete.
+
+**Key Files Created**:
+- `src/lib/ai/embeddings/base.ts` - Provider interface and shared utilities
+- `src/lib/ai/embeddings/voyage.ts` - Voyage AI provider implementation
+- `src/lib/ai/embeddings/atlas-ai.ts` - Atlas AI Services provider
+- `src/lib/ai/embeddings/openai.ts` - OpenAI provider implementation
+- `src/lib/ai/embeddings/factory.ts` - Provider factory with auto-detection
+- `src/lib/ai/embeddings/index.ts` - Public API exports
 
 **Known Limitation (Cloud Mode)**: Users must upgrade Atlas cluster to M10+ separately via MongoDB Atlas Console.
 
@@ -1216,11 +1766,125 @@ Infrastructure:
 - `src/app/api/billing/features/route.ts` - Mode-aware feature access
 - `.env.example` - Deployment mode documentation
 
+### Open Core Architecture - Phase 12 Complete
+
+| Component | Status | Description |
+|-----------|--------|-------------|
+| Extension System Types | ✅ Complete | `NetPadExtension`, `BillingService`, `AtlasProvisioningService` interfaces |
+| Extension Registry | ✅ Complete | Central registry for extension management with event system |
+| Dynamic Loader | ✅ Complete | Runtime loading of `@netpad/cloud-features` package |
+| React Hooks | ✅ Complete | `useExtensionFeature`, `useDeploymentMode`, `useExtensionService` |
+| Conditional Components | ✅ Complete | `<CloudOnly>`, `<SelfHostedOnly>`, `<CloudFeature>`, `<RequireFeature>` |
+| API Route Integration | ✅ Complete | Billing checkout, portal, webhook routes support extension services |
+| UI Adaptation | ✅ Complete | BillingSettings shows full Stripe UI (cloud) or usage-only (self-hosted) |
+| Private Package | ✅ Complete | `@netpad/cloud-features@1.2.0` published to npm (private/restricted) |
+| Documentation | ✅ Complete | Architecture doc at `docs/architecture/open-core-separation.md` |
+
+**Implementation Status**: ✅ All Steps Complete.
+
+**Key Files Created**:
+- `src/lib/extensions/types.ts` - Extension type definitions
+- `src/lib/extensions/registry.ts` - Extension registry and service getters
+- `src/lib/extensions/loader.ts` - Dynamic extension loading
+- `src/lib/extensions/hooks.ts` - React hooks for feature detection
+- `src/lib/extensions/CloudFeature.tsx` - Conditional rendering components
+- `src/lib/extensions/index.ts` - Public API exports
+- `src/app/api/extensions/status/route.ts` - Extension status API
+- `src/app/api/extensions/features/route.ts` - Features list API
+
+**Private Repository**: `@netpad/cloud-features` at https://github.com/mrlynn/netpad-cloud
+
+### Performance Instrumentation - Phase 15 In Progress
+
+| Component | Status | Description |
+|-----------|--------|-------------|
+| Performance Architecture | ✅ Complete | Client/server instrumentation design with telemetry pipeline |
+| NavigationTimer | ✅ Complete | Client-side route change tracking with Web Vitals |
+| PerformanceCollector | ✅ Complete | Batched metric transmission with sendBeacon |
+| withTiming Middleware | ✅ Complete | API route wrapper with timing headers |
+| timedQuery Wrapper | ✅ Complete | Database query profiling with slow query detection |
+| PerformanceLogger | ✅ Complete | Structured JSON logging for production |
+| Telemetry API | ✅ Complete | `/api/telemetry/performance` endpoint |
+| Benchmark Script | ✅ Complete | Playwright-based automated benchmarks (7 journeys) |
+| data-testid Attributes | 🔄 In Progress | Test selectors for benchmark automation |
+| Baseline Documentation | ⏳ Pending | Initial performance baselines |
+| Admin Dashboard | ⏳ Pending | Performance statistics UI |
+
+**Implementation Status**: 🔄 In Progress (Core infrastructure complete, data-testid attributes and baseline documentation pending).
+
+**Key Files Created**:
+- `src/lib/performance/NavigationTimer.tsx` - Client navigation tracking
+- `src/lib/performance/PerformanceCollector.ts` - Client metric batching
+- `src/lib/performance/PerformanceLogger.ts` - Server-side logging
+- `src/lib/performance/withTiming.ts` - API middleware
+- `src/lib/performance/timedQuery.ts` - Database query timing
+- `src/app/api/telemetry/performance/route.ts` - Telemetry ingestion
+- `scripts/benchmark.ts` - Automated benchmark runner
+
+**Performance Targets**:
+- Initial page load (cold): <2000ms
+- Screen-to-screen navigation: <300ms
+- Form builder load: <1000ms
+- Workflow editor load: <1500ms
+- Simple API response: <200ms
+- Complex API response: <500ms
+
+### Referral Program - Phase 13 Complete
+
+| Component | Status | Description |
+|-----------|--------|-------------|
+| Referral Types System | ✅ Complete | `ReferralCode`, `ReferralCodeInfo`, `CommissionRates`, `ReferredUserBenefits` types |
+| Referral Service | ✅ Complete | Core service in `@netpad/cloud-features` with attribution, commission calculation, payout management |
+| Database Collections | ✅ Complete | `referral_codes`, `referrals`, `referral_earnings`, `referral_payouts`, `referral_events` |
+| Admin API Endpoints | ✅ Complete | `/api/admin/referrals/codes`, `/api/admin/referrals/payouts/[id]/approve|reject` |
+| Organization API Endpoints | ✅ Complete | `/api/organizations/[orgId]/referrals/code|stats|earnings|payouts` |
+| Public Validation API | ✅ Complete | `/api/referrals/validate` for code validation |
+| Admin UI | ✅ Complete | Referral codes tab, create code dialog with benefits, payout approval |
+| Benefits Configuration | ✅ Complete | Discount percentage, account credit, trial extension, feature unlocks |
+| Stripe Webhook Integration | ✅ Complete | Commission processing on `invoice.paid`, churn on `subscription.deleted` |
+| Referral Cookie Middleware | ✅ Complete | 30-day cookie capture from `?ref=` URL parameter |
+| In-App Help | ✅ Complete | `admin-referrals` help topic with comprehensive documentation |
+| Docusaurus Documentation | ✅ Complete | Platform referrals guide at `docs/platform/referrals.md` |
+
+**Implementation Status**: ✅ All Steps Complete.
+
+**Key Files Created/Modified**:
+- `src/types/referrals.ts` - Referral type definitions
+- `src/lib/extensions/types.ts` - ReferralService interface
+- `src/app/api/admin/referrals/` - Admin API routes
+- `src/app/admin/referrals/page.tsx` - Admin UI with benefits configuration
+- `src/lib/helpContent.ts` - `admin-referrals` help topic
+- `@netpad/cloud-features/src/referrals/index.ts` - Core referral service
+
 ---
 
 ## Changelog (Since Dec 2024)
 
 ### Added
+- **Performance Instrumentation System** - Comprehensive performance measurement and optimization infrastructure
+  - NavigationTimer for client-side route tracking with Web Vitals (TTFB, FCP, LCP)
+  - PerformanceCollector for batched metric transmission with sendBeacon support
+  - withTiming API middleware with X-Response-Time and Server-Timing headers
+  - timedQuery wrapper for database query profiling with slow query detection (>100ms)
+  - PerformanceLogger for structured JSON logging in production
+  - Telemetry API endpoint for client metric ingestion
+  - Automated Playwright benchmarks covering 7 key user journeys
+  - Performance targets: <300ms navigation, <2000ms cold load, <200ms simple API
+- **Multi-Provider Embedding Architecture** - Flexible embedding provider system with MongoDB-focused defaults
+  - Voyage AI integration (MongoDB's official embedding partner)
+  - Atlas AI Services provider (MongoDB-native, uses Voyage under the hood)
+  - OpenAI provider as fallback
+  - Priority-based auto-detection: Atlas AI → Voyage → OpenAI
+  - Asymmetric embeddings (document vs query optimization)
+  - Voyage models: voyage-3 (1024d), voyage-3-lite (512d), voyage-code-3 (1536d)
+  - Cost estimation and batch processing with rate limit handling
+- **Open Core Architecture** - Separation of cloud-only features from open source core
+  - Extension system at `src/lib/extensions/` with registry, loader, and hooks
+  - Private `@netpad/cloud-features` package for cloud-only services (Stripe, Atlas provisioning)
+  - React hooks for deployment mode detection (`useDeploymentMode`, `useExtensionFeature`)
+  - Conditional rendering components (`<CloudOnly>`, `<SelfHostedOnly>`, `<CloudFeature>`)
+  - API routes support extension services with built-in fallback
+  - BillingSettings adapts UI based on deployment mode (full Stripe in cloud, usage-only in self-hosted)
 - **@netpad/mcp-server v2.2.0** - Major update with validated TypeScript output and consolidated tools:
   - `get_reference` tool consolidates 6 reference tools (field types, operators, functions, validation, themes, docs)
   - `browse_templates` tool consolidates 11 template tools (forms, apps, workflows, conversational, queries)
@@ -1270,6 +1934,23 @@ Infrastructure:
   - Smart topic boosting and highlighting based on user's current page
   - Global help button in navbar for discoverability
   - ContextHelpButton and InlineHelpIcon components for feature-specific help
+- **Referral Program** - Commission-based referral system for cloud deployments
+  - Four referral code types: Standard, Partner, Influencer, Campaign
+  - Tiered commission rates decreasing over referral lifetime (Year 1 → Year N)
+  - Flexible benefits for referred users (discounts, credits, trial extensions)
+  - Admin UI for creating special codes and managing payouts
+  - Organization dashboard for tracking referral performance
+  - Stripe webhook integration for automatic commission calculation
+  - 30-day cookie-based attribution system
+  - Comprehensive in-app help and Docusaurus documentation
+- **Form Reactions** - Real-time field-triggered workflows with automatic field updates
+  - Field Event Trigger node: Entry point for reaction workflows with blur/change/focus events
+  - Form Field Update node: Maps workflow outputs to form fields with null handling
+  - Synchronous execution with configurable timeout (1-30 seconds)
+  - Cascade protection (max depth 3) to prevent infinite loops
+  - React hook `useFormReactions` for client integration
+  - Full CRUD API for managing reactions
+  - Debounce support to prevent rapid firing
 - Deployment platform with Vercel integration
 - 15+ AI agents (optimization, compliance, translation, insights, RAG)
 - Smart dropdowns with distinct value population
@@ -1278,7 +1959,7 @@ Infrastructure:
 - Connection vault with encrypted credential storage
 - Comprehensive audit logging
 - Feature gates with two-tier access control (subscription + cluster tier)
-- 80+ new API endpoints (including RAG, Applications, and npm integration endpoints)
+- 90+ new API endpoints (including RAG, Applications, npm integration, and referral endpoints)
 
 ### Enhanced
 - Workflow engine with additional node types
@@ -1298,5 +1979,5 @@ Infrastructure:
 
 ---
 
-*Last Updated: January 22, 2026*
-*Version: 4.10.0*
+*Last Updated: January 26, 2026*
+*Version: 4.14.0*

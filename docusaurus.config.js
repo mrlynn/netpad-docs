@@ -51,6 +51,11 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          // Hide posts with future dates until their publication date
+          // In production builds, future-dated posts won't appear
+          // Set to true to include them (useful for previewing)
+          // Note: Docusaurus automatically hides future posts in production
+          onUntruncatedBlogPosts: 'ignore',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:

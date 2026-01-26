@@ -133,7 +133,21 @@ Extensions are loaded during application startup.
 
 ## Creating Custom Extensions
 
-Ready to build your own extension? See the following guides:
+Ready to build your own extension? You have two options:
+
+### Option 1: Use the MCP Server (Recommended for Quick Start)
+
+If you're using an AI assistant like Claude Desktop or Cursor IDE with the NetPad MCP Server, you can generate complete extension packages with natural language:
+
+```
+"Create a NetPad extension with a custom workflow node that sends SMS messages"
+```
+
+The AI will generate all necessary files including package.json, TypeScript source, and documentation. See the [MCP Server documentation](/docs/developer/mcp-server) for setup instructions.
+
+### Option 2: Build Manually
+
+For more control, build your extension from scratch using these guides:
 
 - [Extension Architecture](./architecture) - Deep dive into extension internals
 - [Building Extensions](./building-extensions) - Step-by-step tutorial

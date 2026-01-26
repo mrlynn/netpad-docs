@@ -10,6 +10,7 @@ NetPad provides built-in integration support for:
 
 | Integration | Capabilities |
 |-------------|--------------|
+| **Google Forms** | Import forms with field mapping |
 | **Google Sheets** | Read/write spreadsheet data |
 | **Google Drive** | File access and storage |
 | **Google Calendar** | Event creation |
@@ -19,6 +20,14 @@ NetPad provides built-in integration support for:
 | **Webhooks** | Custom HTTP integrations |
 
 ### Built-in Integrations
+
+#### Google Forms Import
+Import existing Google Forms into NetPad:
+- URL-based import (no auth required)
+- OAuth import for private forms
+- Intelligent field type mapping
+- Preserves validation and structure
+- [Learn more →](./google-forms-import.md)
 
 #### Webhooks
 Send HTTP requests when forms are submitted:
@@ -254,6 +263,7 @@ NetPad provides secure credential management for all integrations:
 
 ## Next Steps
 
+- [Google Forms Import](./google-forms-import.md) - Import from Google Forms
 - [Webhooks](./webhooks.md) - HTTP integrations
 - [Email Notifications](./email-notifications.md) - Email automation
 - [API Reference](../api/overview.md) - API documentation
