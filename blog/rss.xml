@@ -4,31 +4,150 @@
         <title>NetPad Documentation Blog</title>
         <link>https://docs.netpad.io/blog</link>
         <description>NetPad Documentation Blog</description>
-        <lastBuildDate>Fri, 16 Jan 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 26 Jan 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Welcome]]></title>
-            <link>https://docs.netpad.io/blog/welcome</link>
-            <guid>https://docs.netpad.io/blog/welcome</guid>
-            <pubDate>Fri, 16 Jan 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></description>
-            <content:encoded><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer">blog plugin</a>.</p>
-<p>Here are a few tips you might find useful.</p>
-<p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p>
-<p>Regular blog authors can be added to <code>authors.yml</code>.</p>
-<p>The blog post date can be extracted from filenames, such as:</p>
+            <title><![CDATA[60% of Form Submissions Happen on Mobile. Is Your Form Ready?]]></title>
+            <link>https://docs.netpad.io/blog/mobile-layout-meltdown</link>
+            <guid>https://docs.netpad.io/blog/mobile-layout-meltdown</guid>
+            <pubDate>Mon, 26 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Mobile Layout Meltdown]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Mobile Layout Meltdown" src="https://docs.netpad.io/assets/images/comic-a5c1f3cdd93c6934eb156105e4e0b47d.webp" width="1024" height="1536" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-pain-is-real">The Pain Is Real<a href="https://docs.netpad.io/blog/mobile-layout-meltdown#the-pain-is-real" class="hash-link" aria-label="Direct link to The Pain Is Real" title="Direct link to The Pain Is Real">​</a></h2>
+<p>You built the form, tested it on your desktop, shipped it to production. Then the support tickets start rolling in: "I can't tap the submit button," "the dropdown is cut off," "I can't see what I'm typing." You open the form on your phone and watch in horror as fields overlap, buttons disappear, and your carefully designed layout crumbles.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-this-happens">Why This Happens<a href="https://docs.netpad.io/blog/mobile-layout-meltdown#why-this-happens" class="hash-link" aria-label="Direct link to Why This Happens" title="Direct link to Why This Happens">​</a></h2>
+<p>Mobile form design is harder than it looks. Desktop forms have generous space—fields can sit side by side, labels can be long, buttons can be anywhere. On mobile, everything changes:</p>
 <ul>
-<li><code>2019-05-30-welcome.md</code></li>
-<li><code>2019-05-30-welcome/index.md</code></li>
+<li><strong>Touch targets</strong> need to be at least 44x44 pixels</li>
+<li><strong>Labels</strong> must be visible when the keyboard opens</li>
+<li><strong>Dropdowns</strong> often need custom implementations</li>
+<li><strong>Multi-column layouts</strong> collapse unpredictably</li>
+<li><strong>Viewport height</strong> changes when keyboards appear</li>
 </ul>
-<p>A blog post folder can be convenient to co-locate blog post images:</p>
-<p><img decoding="async" loading="lazy" alt="Docusaurus Plushie" src="https://docs.netpad.io/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p>
-<p>The blog supports tags as well!</p>
-<p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content:encoded>
-            <category>mongodb</category>
-            <category>Hello</category>
+<p>Most developers test on one or two devices and call it done. But the mobile landscape is fragmented—different screen sizes, different browsers, different keyboard behaviors. What works on an iPhone 15 might break on a Samsung Galaxy, and both might fail on a tablet.</p>
+<p>The business impact is significant. Mobile form abandonment rates are substantially higher than desktop. If your form is frustrating on mobile, you're losing conversions.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-netpad-approach">The NetPad Approach<a href="https://docs.netpad.io/blog/mobile-layout-meltdown#the-netpad-approach" class="hash-link" aria-label="Direct link to The NetPad Approach" title="Direct link to The NetPad Approach">​</a></h2>
+<p>Every NetPad form is mobile-first by design. You don't add responsive behavior—it's built in:</p>
+<ul>
+<li><strong>Automatic layout adaptation</strong> - Multi-column desktop layouts stack properly on mobile</li>
+<li><strong>Touch-optimized fields</strong> - Appropriately sized tap targets and spacing</li>
+<li><strong>Keyboard-aware design</strong> - Forms scroll to keep active fields visible</li>
+<li><strong>Cross-device preview</strong> - See exactly how your form renders on phone, tablet, and desktop</li>
+</ul>
+<p>NetPad handles the CSS media queries, the viewport calculations, and the touch event handling. You focus on what fields you need, and the platform ensures they work everywhere.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="try-it-yourself">Try It Yourself<a href="https://docs.netpad.io/blog/mobile-layout-meltdown#try-it-yourself" class="hash-link" aria-label="Direct link to Try It Yourself" title="Direct link to Try It Yourself">​</a></h2>
+<p>See how your forms could look on every device. <a href="https://docs.netpad.io/docs/forms/form-builder">Preview NetPad's responsive forms</a> and stop losing mobile users to bad UX.</p>
+<hr>
+<p><em>This post is part of our weekly DevLife comic series. <a href="https://docs.netpad.io/blog">Subscribe to the blog</a> to get new comics every Monday.</em></p>]]></content:encoded>
+            <category>NetPad</category>
+            <category>DevLife</category>
+            <category>Forms</category>
+            <category>UX</category>
+        </item>
+        <item>
+            <title><![CDATA[Conditional Logic Shouldn't Require a PhD in Spaghetti Architecture]]></title>
+            <link>https://docs.netpad.io/blog/conditional-spaghetti</link>
+            <guid>https://docs.netpad.io/blog/conditional-spaghetti</guid>
+            <pubDate>Mon, 19 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Conditional Spaghetti]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Conditional Spaghetti" src="https://docs.netpad.io/assets/images/comic-59f9b7a6c182c9006108f97ac3c9ef6b.webp" width="1024" height="1536" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-pain-is-real">The Pain Is Real<a href="https://docs.netpad.io/blog/conditional-spaghetti#the-pain-is-real" class="hash-link" aria-label="Direct link to The Pain Is Real" title="Direct link to The Pain Is Real">​</a></h2>
+<p>"Show this field only if the user selects 'Other'." Simple requirement, right? Fast forward three months and your form has 47 conditional rules, nested five levels deep, and nobody remembers why field 23 disappears when you select "Business" in the account type dropdown.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-this-happens">Why This Happens<a href="https://docs.netpad.io/blog/conditional-spaghetti#why-this-happens" class="hash-link" aria-label="Direct link to Why This Happens" title="Direct link to Why This Happens">​</a></h2>
+<p>Show/hide logic seems simple when you have one or two conditions. But real-world forms grow organically. Insurance applications might have 50+ fields that appear or disappear based on user selections. Employee onboarding forms branch differently for contractors, full-time employees, and interns.</p>
+<p>The problem compounds when conditions depend on other conditions. If field B only appears when A is "Yes", and field C only appears when B is greater than 100, and field D appears when either C is checked OR A is "No"... you've created a dependency graph that belongs in a computer science textbook.</p>
+<p>Maintaining this in code becomes a nightmare. Developers are afraid to touch the logic because they don't know what might break. New requirements pile on top of existing complexity. Eventually, someone suggests "let's just rebuild the form from scratch"—and the cycle repeats.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-netpad-approach">The NetPad Approach<a href="https://docs.netpad.io/blog/conditional-spaghetti#the-netpad-approach" class="hash-link" aria-label="Direct link to The NetPad Approach" title="Direct link to The NetPad Approach">​</a></h2>
+<p>NetPad's Visual Conditional Logic turns spaghetti into flowcharts. Instead of nested if/else statements buried in code, you see your logic as a visual diagram:</p>
+<ul>
+<li><strong>Point and click</strong> - Select the field, choose the condition, pick the action</li>
+<li><strong>Visual overview</strong> - See all conditions at a glance</li>
+<li><strong>Dependency tracking</strong> - NetPad warns you about circular dependencies</li>
+<li><strong>Test mode</strong> - Walk through your form and watch conditions fire in real-time</li>
+</ul>
+<p>Complex conditions become manageable when you can see them. "Show shipping address when 'Different from billing' is checked" is one visual node, not fifteen lines of JavaScript.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="try-it-yourself">Try It Yourself<a href="https://docs.netpad.io/blog/conditional-spaghetti#try-it-yourself" class="hash-link" aria-label="Direct link to Try It Yourself" title="Direct link to Try It Yourself">​</a></h2>
+<p>Untangle your conditional logic. <a href="https://docs.netpad.io/docs/forms/conditional-logic">Learn about NetPad's conditional fields</a> and see how visual logic builders make complex forms maintainable.</p>
+<hr>
+<p><em>This post is part of our weekly DevLife comic series. <a href="https://docs.netpad.io/blog">Subscribe to the blog</a> to get new comics every Monday.</em></p>]]></content:encoded>
+            <category>NetPad</category>
+            <category>DevLife</category>
+            <category>Forms</category>
+            <category>UX</category>
+        </item>
+        <item>
+            <title><![CDATA[Stop Writing Regex: Modern Form Validation Should Be Declarative]]></title>
+            <link>https://docs.netpad.io/blog/validation-whack-a-mole</link>
+            <guid>https://docs.netpad.io/blog/validation-whack-a-mole</guid>
+            <pubDate>Mon, 12 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Validation Whack-a-Mole]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Validation Whack-a-Mole" src="https://docs.netpad.io/assets/images/comic-0c07eabe8b264b7923d3d671e6b34dd6.webp" width="1024" height="1536" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-pain-is-real">The Pain Is Real<a href="https://docs.netpad.io/blog/validation-whack-a-mole#the-pain-is-real" class="hash-link" aria-label="Direct link to The Pain Is Real" title="Direct link to The Pain Is Real">​</a></h2>
+<p>You fix one validation bug and two more pop up. The phone number format works for US numbers but breaks for international. The email regex rejects valid addresses. Max length validation conflicts with the paste handler. Welcome to validation whack-a-mole—the game nobody wins.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-this-happens">Why This Happens<a href="https://docs.netpad.io/blog/validation-whack-a-mole#why-this-happens" class="hash-link" aria-label="Direct link to Why This Happens" title="Direct link to Why This Happens">​</a></h2>
+<p>Form validation seems straightforward until you actually try to implement it. Consider email validation: the "official" regex for RFC 5322 compliant email addresses is over 6,000 characters long. Most developers use simplified versions that reject perfectly valid addresses (did you know <code>user+tag@domain.co.uk</code> is valid?).</p>
+<p>Phone numbers are worse. International formats vary wildly: <code>+1 (555) 123-4567</code>, <code>555.123.4567</code>, <code>+44 20 7946 0958</code>. Date formats differ by locale. Postal codes have different rules per country.</p>
+<p>The real cost of validation bugs isn't just developer time—it's lost users. Studies show that form abandonment increases dramatically when users encounter unexpected validation errors. Every false rejection is a potential customer walking away.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-netpad-approach">The NetPad Approach<a href="https://docs.netpad.io/blog/validation-whack-a-mole#the-netpad-approach" class="hash-link" aria-label="Direct link to The NetPad Approach" title="Direct link to The NetPad Approach">​</a></h2>
+<p>NetPad takes a declarative approach to validation. Instead of writing regex patterns, you check boxes:</p>
+<ul>
+<li><strong>Required</strong> - Field must have a value</li>
+<li><strong>Email</strong> - Validates against real-world email patterns</li>
+<li><strong>Phone</strong> - Handles international formats automatically</li>
+<li><strong>URL</strong> - Accepts valid web addresses</li>
+<li><strong>Number range</strong> - Min/max with proper error messages</li>
+<li><strong>Pattern</strong> - Custom regex when you actually need it</li>
+</ul>
+<p>NetPad offers 30+ field types, each with appropriate built-in validation. A phone field knows how to validate phone numbers. A date field handles date logic. You focus on what data you need, not how to validate it.</p>
+<p>When you do need custom validation, NetPad supports custom rules with clear error messages—but you'll find you need them far less often than you'd expect.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="try-it-yourself">Try It Yourself<a href="https://docs.netpad.io/blog/validation-whack-a-mole#try-it-yourself" class="hash-link" aria-label="Direct link to Try It Yourself" title="Direct link to Try It Yourself">​</a></h2>
+<p>Stop playing whack-a-mole with validation bugs. <a href="https://docs.netpad.io/docs/forms/field-types">Explore NetPad's field types</a> and see how built-in validation saves hours of regex debugging.</p>
+<hr>
+<p><em>This post is part of our weekly DevLife comic series. <a href="https://docs.netpad.io/blog">Subscribe to the blog</a> to get new comics every Monday.</em></p>]]></content:encoded>
+            <category>NetPad</category>
+            <category>DevLife</category>
+            <category>Forms</category>
+            <category>Validation</category>
+        </item>
+        <item>
+            <title><![CDATA[Why Building Forms from Scratch is a Boss Fight You Don't Need to Win]]></title>
+            <link>https://docs.netpad.io/blog/form-boss-fight</link>
+            <guid>https://docs.netpad.io/blog/form-boss-fight</guid>
+            <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[The Form Boss Fight]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="The Form Boss Fight" src="https://docs.netpad.io/assets/images/comic-13bbfb6415e200f412530a0bd941ee12.webp" width="1536" height="1024" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-pain-is-real">The Pain Is Real<a href="https://docs.netpad.io/blog/form-boss-fight#the-pain-is-real" class="hash-link" aria-label="Direct link to The Pain Is Real" title="Direct link to The Pain Is Real">​</a></h2>
+<p>Every developer knows the feeling: you need "just a simple form" and suddenly you're three days deep in HTML, CSS, JavaScript, accessibility requirements, and edge cases you never anticipated. Building forms from scratch has become an industry-wide boss fight that consumes far more resources than it should.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-this-happens">Why This Happens<a href="https://docs.netpad.io/blog/form-boss-fight#why-this-happens" class="hash-link" aria-label="Direct link to Why This Happens" title="Direct link to Why This Happens">​</a></h2>
+<p>Industry research suggests that complex forms can take anywhere from 20-40 hours of development time when built from scratch. That's not because developers are slow—it's because forms are deceptively complex. You need to handle:</p>
+<ul>
+<li>Field validation (and all the edge cases)</li>
+<li>Accessibility compliance (WCAG guidelines)</li>
+<li>Mobile responsiveness</li>
+<li>Error states and user feedback</li>
+<li>Data submission and error handling</li>
+<li>Cross-browser compatibility</li>
+</ul>
+<p>Each of these areas has its own rabbit holes. Email validation alone has spawned thousands of Stack Overflow questions and a regex pattern that's famously over 6,000 characters long.</p>
+<p>The hidden cost isn't just development time—it's maintenance. Every custom form becomes technical debt that someone has to maintain, update, and fix when browsers change or requirements evolve.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-netpad-approach">The NetPad Approach<a href="https://docs.netpad.io/blog/form-boss-fight#the-netpad-approach" class="hash-link" aria-label="Direct link to The NetPad Approach" title="Direct link to The NetPad Approach">​</a></h2>
+<p>NetPad's Visual Form Builder eliminates the boilerplate entirely. Instead of writing code, you drag and drop fields onto a canvas. Each field comes with:</p>
+<ul>
+<li><strong>Built-in validation</strong> - Email, phone, required fields, and custom rules</li>
+<li><strong>Automatic accessibility</strong> - ARIA labels and keyboard navigation</li>
+<li><strong>Mobile-first design</strong> - Every form is responsive by default</li>
+<li><strong>Instant preview</strong> - See exactly how your form looks before publishing</li>
+</ul>
+<p>What used to take days now takes minutes. A contact form? Five minutes. A multi-step registration flow? Maybe fifteen. And because it's all configuration rather than code, changes are instant and risk-free.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="try-it-yourself">Try It Yourself<a href="https://docs.netpad.io/blog/form-boss-fight#try-it-yourself" class="hash-link" aria-label="Direct link to Try It Yourself" title="Direct link to Try It Yourself">​</a></h2>
+<p>Ready to stop fighting the form boss? <a href="https://docs.netpad.io/docs/forms/form-builder">Try NetPad's Form Builder</a> and build your first form in under five minutes—no code required.</p>
+<hr>
+<p><em>This post is part of our weekly DevLife comic series. <a href="https://docs.netpad.io/blog">Subscribe to the blog</a> to get new comics every Monday.</em></p>]]></content:encoded>
+            <category>NetPad</category>
+            <category>DevLife</category>
+            <category>Forms</category>
         </item>
         <item>
             <title><![CDATA[MDX Blog Post]]></title>
@@ -42,7 +161,7 @@
 <p>For example, use JSX to create an interactive button:</p>
 <div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#9CDCFE"><span class="token operator" style="color:rgb(212, 212, 212)">&lt;</span><span class="token plain">button onClick</span><span class="token operator" style="color:rgb(212, 212, 212)">=</span><span class="token punctuation" style="color:rgb(212, 212, 212)">{</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:rgb(212, 212, 212)">=&gt;</span><span class="token plain"> </span><span class="token function" style="color:rgb(220, 220, 170)">alert</span><span class="token punctuation" style="color:rgb(212, 212, 212)">(</span><span class="token string" style="color:rgb(206, 145, 120)">'button clicked!'</span><span class="token punctuation" style="color:rgb(212, 212, 212)">)</span><span class="token punctuation" style="color:rgb(212, 212, 212)">}</span><span class="token operator" style="color:rgb(212, 212, 212)">&gt;</span><span class="token maybe-class-name">Click</span><span class="token plain"> me</span><span class="token operator" style="color:rgb(212, 212, 212)">!</span><span class="token operator" style="color:rgb(212, 212, 212)">&lt;</span><span class="token operator" style="color:rgb(212, 212, 212)">/</span><span class="token plain">button</span><span class="token operator" style="color:rgb(212, 212, 212)">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <button>Click me!</button>]]></content:encoded>
-            <category>Docusaurus</category>
+            <category>docusaurus</category>
         </item>
         <item>
             <title><![CDATA[Long Blog Post]]></title>
@@ -68,8 +187,8 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content:encoded>
-            <category>Hello</category>
-            <category>Docusaurus</category>
+            <category>hello</category>
+            <category>docusaurus</category>
         </item>
         <item>
             <title><![CDATA[First Blog Post]]></title>
@@ -79,8 +198,8 @@
             <description><![CDATA[Lorem ipsum dolor sit amet...]]></description>
             <content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet...</p>
 <p>...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content:encoded>
-            <category>Hola</category>
-            <category>Docusaurus</category>
+            <category>hola</category>
+            <category>docusaurus</category>
         </item>
     </channel>
 </rss>
