@@ -225,7 +225,7 @@ Warnings about unsupported features are shown in the preview and export summary.
 
 ## Support
 
-- **Documentation:** [docs.netpad.io/integrations/google-forms](https://docs.netpad.io/integrations/google-forms)
+- **Documentation:** [docs.netpad.io/integrations/google-forms](https://docs.netpad.io/integrations/google-forms-import)
 - **Issues:** [github.com/mrlynn/netpad/issues](https://github.com/mrlynn/netpad/issues)
 - **Email:** support@netpad.io
 

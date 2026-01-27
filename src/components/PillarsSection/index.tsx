@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import SpotlightCard from '@site/src/components/SpotlightCard';
+import SpotlightCard from '../SpotlightCard';
 import styles from './styles.module.css';
 
 interface Pillar {

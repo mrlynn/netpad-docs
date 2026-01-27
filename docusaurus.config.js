@@ -71,7 +71,7 @@ const config = {
   themes: [
     [
       '@easyops-cn/docusaurus-search-local',
-      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions & Record<string, unknown>} */
       ({
         // `hashed` is recommended for long-term caching
         hashed: true,
@@ -141,6 +141,11 @@ const config = {
             sidebarId: 'docs',
             position: 'left',
             label: 'Docs',
+          },
+          {
+            href: '/blog',
+            label: 'Blog',
+            position: 'left',
           },
           {
             href: 'https://github.com/mrlynn/netpad-v3',
