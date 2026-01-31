@@ -728,6 +728,109 @@ Organization
 - **Invitation Workflow**: 7-day expiration, email-based acceptance, automatic role assignment
 - **Multi-Organization Support**: Users can belong to multiple organizations with different roles
 
+### RBAC - Role-Based Access Control (NEW in 2026)
+
+NetPad now provides comprehensive RBAC capabilities for managing organization access:
+
+**Users, Groups & Roles**:
+```
+Organization RBAC
+├── Users (Members)
+│   ├── Direct Role Assignment (Owner, Admin, Member, Viewer)
+│   └── Effective Permissions (computed from all sources)
+├── Groups (Teams)
+│   ├── Engineering, Marketing, Contractors, etc.
+│   ├── Default Role (inherited by all members)
+│   └── Group Role Assignments
+└── Roles
+    ├── Built-in (Owner, Admin, Member, Viewer)
+    └── Custom Roles
+        ├── Base Role Inheritance
+        └── 40+ Granular Permissions
+```
+
+**Built-in Organization Roles**:
+| Role | Description | Key Capabilities |
+|------|-------------|------------------|
+| **Owner** | Full control | Delete org, manage billing, all permissions |
+| **Admin** | Management access | Manage members, settings, resources |
+| **Member** | Standard access | Create forms/workflows, edit own resources |
+| **Viewer** | Read-only | View resources, no editing |
+
+**Groups (Teams)**:
+- Create teams (Engineering, Marketing, Contractors)
+- Assign default role to groups (all members inherit)
+- Add/remove users from groups dynamically
+- Assign custom roles to entire groups
+
+**Custom Roles**:
+- Create organization-specific roles (e.g., "Billing Admin", "Form Reviewer")
+- Inherit from built-in roles and add/remove permissions
+- 40+ granular permissions across 11 categories
+
+**Permission Categories**:
+| Category | Permissions |
+|----------|-------------|
+| **org** | read, update, delete, manage_billing, manage_settings |
+| **members** | read, invite, remove, update_role |
+| **groups** | read, create, update, delete, manage_members |
+| **roles** | read, create, update, delete, assign |
+| **projects** | read, create, update, delete |
+| **forms** | read, create, update, delete, publish, manage_permissions |
+| **responses** | read, export, delete |
+| **connections** | read, create, update, delete, use, view_credentials |
+| **workflows** | read, create, update, delete, execute |
+| **integrations** | read, create, update, delete |
+| **audit** | read |
+
+**Role Assignments**:
+- Assign roles to users or groups
+- Optional scoping to project or form level
+- Time-limited assignments with expiration
+- Audit trail for all assignments
+
+**RBAC Management Interfaces**:
+1. **Web UI**: Organization Settings → Members/Groups/Roles tabs
+2. **CLI**: `netpad users|groups|roles|assign|permissions` commands
+3. **Terminal**: Same commands available in web terminal
+4. **API**: Full REST API for programmatic access
+
+**CLI/Terminal Commands**:
+```bash
+# Users
+netpad users list -o <orgId>
+netpad users add jane@example.com --role member
+netpad users update jane@example.com --role admin
+netpad users remove jane@example.com
+
+# Groups
+netpad groups create "Engineering" --role member
+netpad groups add-member engineering jane@example.com
+netpad groups remove-member engineering jane@example.com
+
+# Custom Roles
+netpad roles create "Billing Admin" --base viewer
+netpad roles grant billing-admin org:manage_billing
+netpad roles info billing-admin
+
+# Role Assignments
+netpad assign user jane@example.com editor
+netpad assign group engineering admin
+netpad unassign user jane@example.com editor
+
+# Permissions
+netpad permissions list
+netpad permissions check forms:create
+netpad whoami --effective
+```
+
+**API Endpoints**:
+- `GET/POST /api/platform/orgs/{orgId}/members` - Member management
+- `GET/POST /api/platform/orgs/{orgId}/groups` - Group CRUD
+- `GET/POST /api/platform/orgs/{orgId}/roles` - Role management
+- `GET/POST /api/platform/orgs/{orgId}/assignments` - Role assignments
+- `GET /api/platform/users/me/permissions` - Effective permissions
+
 ### Applications (Applications-First Model)
 
 **Core Concept**: Applications are first-class entities that group related forms, workflows, and connections together. They provide organization, versioning, and sharing capabilities.
