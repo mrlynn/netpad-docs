@@ -134,6 +134,7 @@ const sidebars = {
         { type: 'doc', id: 'platform/billing', label: '💳 Billing' },
         { type: 'doc', id: 'platform/pricing', label: '💰 Pricing' },
         { type: 'doc', id: 'platform/referrals', label: '🤝 Referral Program' },
+        { type: 'doc', id: 'platform/performance', label: '📊 Performance' },
       ],
     },
     {
@@ -187,6 +188,7 @@ const sidebars = {
         { type: 'doc', id: 'extensions/building-extensions', label: '🔨 Building Extensions' },
         { type: 'doc', id: 'extensions/workflow-nodes', label: '🧩 Workflow Nodes' },
         { type: 'doc', id: 'extensions/api-reference', label: '📡 API Reference' },
+        { type: 'doc', id: 'extensions/example-demo-node', label: '📝 Example: Demo Node' },
         { type: 'doc', id: 'extensions/example-collaborate', label: '🤝 Example: Collaborate' },
       ],
     },
