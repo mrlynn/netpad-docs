@@ -10,6 +10,7 @@ NetPad provides built-in integration support for:
 
 | Integration | Capabilities |
 |-------------|--------------|
+| **ChatGPT** | Build forms and workflows from natural language |
 | **Google Forms** | Import forms with field mapping |
 | **Google Sheets** | Read/write spreadsheet data |
 | **Google Drive** | File access and storage |
@@ -20,6 +21,15 @@ NetPad provides built-in integration support for:
 | **Webhooks** | Custom HTTP integrations |
 
 ### Built-in Integrations
+
+#### ChatGPT Integration
+Build forms and workflows through natural language in ChatGPT:
+- Connect NetPad as a ChatGPT connector
+- Create forms from descriptions ("Create a feedback form")
+- Build workflows conversationally
+- Interactive widgets for previewing creations
+- One-click import to NetPad Cloud
+- [Learn more →](./chatgpt.md)
 
 #### Google Forms Import
 Import existing Google Forms into NetPad:
@@ -270,6 +280,7 @@ NetPad provides secure credential management for all integrations:
 
 ## Next Steps
 
+- [ChatGPT Integration](./chatgpt.md) - Build forms and workflows from ChatGPT
 - [Google Forms Import](./google-forms-import.md) - Import from Google Forms in NetPad
 - [Google Forms Add-on](./google-forms.md) - Import from Google Drive sidebar
 - [Webhooks](./webhooks.md) - HTTP integrations

@@ -52,17 +52,16 @@ const pillars: Pillar[] = [
     description: 'Browse, search, import, and export MongoDB collections visually.',
   },
   {
-    title: 'AI',
+    title: 'Data',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={styles.pillarIcon}>
-        <path d="M12 2a4 4 0 014 4c0 1.5-.8 2.8-2 3.4V11h3a3 3 0 013 3v1h-2v4h2v2H4v-2h2v-4H4v-1a3 3 0 013-3h3V9.4A4 4 0 018 6a4 4 0 014-4z" />
-        <circle cx="9" cy="17" r="1" fill="currentColor" />
-        <circle cx="15" cy="17" r="1" fill="currentColor" />
+        <ellipse cx="12" cy="6" rx="8" ry="3" />
+        <path d="M4 6v6c0 1.657 3.582 3 8 3s8-1.343 8-3V6" />
+        <path d="M4 12v6c0 1.657 3.582 3 8 3s8-1.343 8-3v-6" />
       </svg>
     ),
-    link: '/docs/ai/overview',
-    description: 'RAG-powered forms, 15+ AI agents, and MongoDB Vector Search integration.',
-    highlight: true,
+    link: '/docs/data-explorer/overview',
+    description: 'Browse, search, import, and export MongoDB collections visually.',
   },
 ];
 

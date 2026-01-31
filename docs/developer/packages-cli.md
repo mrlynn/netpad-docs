@@ -444,7 +444,104 @@ Credentials and settings are stored in `~/.netpad/config.json`:
 }
 ```
 
+<<<<<<< Updated upstream
 ### Environment Variables
+=======
+---
+
+## RBAC Commands
+
+The CLI includes commands for managing users, groups, roles, and permissions.
+
+### Users
+
+```bash
+# List organization members
+netpad users list -o org_xxx
+
+# Add user to organization
+netpad users add user@example.com -o org_xxx --role member
+
+# Update user role
+netpad users update user@example.com -o org_xxx --role admin
+
+# Remove user from organization
+netpad users remove user@example.com -o org_xxx
+```
+
+### Groups
+
+```bash
+# List groups
+netpad groups list -o org_xxx
+
+# Create group
+netpad groups create "Engineering" -o org_xxx
+
+# Add user to group
+netpad groups add-member grp_xxx user@example.com -o org_xxx
+
+# Remove user from group
+netpad groups remove-member grp_xxx user@example.com -o org_xxx
+
+# Delete group
+netpad groups delete grp_xxx -o org_xxx
+```
+
+### Roles
+
+```bash
+# List roles (builtin + custom)
+netpad roles list -o org_xxx
+
+# Create custom role
+netpad roles create "Reviewer" -o org_xxx \
+  --base viewer \
+  --description "Can review submissions"
+
+# Delete custom role
+netpad roles delete role_xxx -o org_xxx
+```
+
+### Role Assignments
+
+```bash
+# Assign role to user
+netpad assign user user@example.com role_xxx -o org_xxx
+
+# Assign role to group
+netpad assign group grp_xxx role_xxx -o org_xxx
+
+# Assign with scope (project or form level)
+netpad assign user user@example.com project:editor -o org_xxx \
+  --scope project:proj_xxx
+
+# List all assignments
+netpad assign list -o org_xxx
+
+# Remove assignment
+netpad unassign user user@example.com role_xxx -o org_xxx
+```
+
+### Permissions
+
+```bash
+# List available permissions
+netpad permissions list -o org_xxx
+
+# Check user's effective permissions
+netpad permissions check user@example.com -o org_xxx
+
+# Check if user can perform action
+netpad permissions can user@example.com "forms:create" -o org_xxx
+```
+
+For detailed RBAC documentation, see [RBAC & Access Control](/docs/admin/rbac).
+
+---
+
+## Environment Variables
+>>>>>>> Stashed changes
 
 | Variable | Description |
 |----------|-------------|

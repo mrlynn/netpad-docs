@@ -23,9 +23,45 @@ Attach knowledge base documents to your conversational forms:
 Vector search across document content:
 
 - **MongoDB Atlas Vector Search**: Efficient semantic document retrieval
-- **OpenAI Embeddings**: Uses text-embedding-3-small for embeddings
+- **Multi-Provider Embeddings**: Voyage AI (recommended), Atlas AI Services, or OpenAI
 - **Intelligent Chunking**: Sentence-aware chunking preserves context
 - **Relevance Scoring**: Results ranked by semantic similarity
+- **Analytics Tracking**: All embedding operations tracked in AI dashboard
+
+### Embedding Provider Architecture
+
+NetPad supports multiple embedding providers with intelligent auto-detection:
+
+| Provider | Models | Dimensions | Use Case |
+|----------|--------|------------|----------|
+| **Voyage AI** | voyage-3, voyage-3-lite, voyage-code-3 | 512-1536 | MongoDB's official partner (recommended) |
+| **Atlas AI Services** | voyage-3 (via Atlas) | 1024 | MongoDB-native integration |
+| **OpenAI** | text-embedding-3-small, text-embedding-3-large | 1536-3072 | Fallback provider |
+
+**Priority Order** (Auto-Detection):
+1. **Atlas AI Services** - Native MongoDB integration
+2. **Voyage AI Direct** - MongoDB's recommended partner
+3. **OpenAI** - Fallback for existing configurations
+
+**Key Features**:
+- **Asymmetric Embeddings**: Separate optimization for documents vs queries
+- **Batch Processing**: Optimized batch sizes with rate limit handling
+- **Cost Estimation**: Real-time cost estimation before generation
+- **Automatic Retry**: Exponential backoff with rate limit detection
+- **Analytics Tracking**: All operations logged to AI dashboard
+
+**Configuration** (Environment Variables):
+```bash
+# Voyage AI (recommended)
+VOYAGE_API_KEY=your-voyage-api-key
+VOYAGE_MODEL=voyage-3  # Options: voyage-3, voyage-3-lite, voyage-code-3
+
+# Provider override
+EMBEDDING_PROVIDER=auto  # Options: auto, atlas-ai, voyage, openai
+
+# Disable Atlas AI wrapper
+USE_ATLAS_AI=true  # Set to 'false' to use Voyage directly
+```
 
 ### Source Citations
 
@@ -108,13 +144,115 @@ Guide users through multi-step processes with documentation:
 - **Research Proposals**: Use research protocol documents
 - **Regulatory Submissions**: Guide through regulatory requirements
 
+## Knowledge Types
+
+NetPad's RAG system supports two types of knowledge:
+
+### 1. Document Knowledge (Unstructured)
+
+Upload documents (PDF, DOCX, TXT) that are automatically:
+- Text extracted and intelligently chunked
+- Embedded using multi-provider support (Voyage AI, Atlas AI, OpenAI)
+- Indexed in MongoDB Atlas Vector Search
+- Retrieved via semantic search
+
+**Best for**: Policies, guidelines, manuals, procedures, long-form content
+
+### 2. FAQ Knowledge (Structured)
+
+Create structured question-answer pairs with hybrid search:
+- **Keyword Search**: Regex matching across question, answer, keywords
+- **Vector Search**: Semantic similarity using question embeddings
+- **Hybrid Scoring**: Combined relevance (70% vector, 30% keyword)
+- **Organization**: Categories, tags, priority, status management
+- **Analytics**: View counts, helpful ratings, click tracking
+
+**Best for**: Common questions, quick answers, curated Q&A, troubleshooting
+
+## FAQ Management
+
+### Creating FAQs
+
+1. **Navigate to Knowledge Tab**:
+   - Open your conversational form
+   - Go to **Knowledge** > **FAQs**
+
+2. **Create FAQ**:
+   - Click **"New FAQ"**
+   - Enter question and answer
+   - Add keywords for better matching
+   - Select category and tags
+   - Set priority and status
+   - Link related FAQs (optional)
+
+3. **Publishing**:
+   - Set status to "Published" when ready
+   - Drafts are saved but not searchable
+   - Archived FAQs are hidden from search
+
+### FAQ Categories
+
+Organize FAQs by category:
+
+- **General**: General information and overview
+- **Technical**: Technical implementation details
+- **Billing**: Pricing, payments, subscriptions
+- **Features**: Feature explanations and usage
+- **Troubleshooting**: Common issues and solutions
+
+### FAQ Analytics
+
+Track FAQ performance:
+
+- **View Count**: How many times FAQ was displayed
+- **Click Count**: How many times users clicked the FAQ
+- **Helpful Ratings**: User feedback (helpful/not helpful)
+- **Search Performance**: How well FAQ matches queries
+
+### Hybrid Search
+
+FAQs use sophisticated hybrid search combining:
+
+1. **Vector Search** (70% weight):
+   - Semantic similarity between query and question
+   - Uses MongoDB Atlas Vector Search
+   - 1024-dimension embeddings (Voyage-3)
+   - Handles paraphrased questions
+
+2. **Keyword Search** (30% weight):
+   - Regex matching in question, answer, keywords
+   - Exact phrase matching
+   - Case-insensitive
+   - Handles specific terminology
+
+3. **Combined Scoring**:
+   - Weighted average of both scores
+   - Minimum score threshold filtering
+   - Priority-based tiebreaking
+   - Result snippet generation
+
+**Example**:
+```
+Query: "How much does the pro plan cost?"
+
+Vector Match (0.85):
+  Q: "What is the pricing for professional tier?"
+  A: "The Pro plan is $29/month..."
+
+Keyword Match (0.9):
+  Q: "Pro plan pricing"
+  A: "Pro plan costs $29/month..."
+
+Combined Score: (0.85 × 0.7) + (0.9 × 0.3) = 0.865
+```
+
 ## Document Management
 
 ### Uploading Documents
 
 1. **Navigate to Form Settings**:
    - Open your conversational form
-   - Go to **Settings** > **Knowledge Base**
+   - Go to **Settings** > **Knowledge Base** or **Knowledge Tab**
 
 2. **Upload Documents**:
    - Click **"Upload Document"**
@@ -125,7 +263,7 @@ Guide users through multi-step processes with documentation:
 3. **Processing**:
    - Document is automatically processed
    - Text is extracted and chunked
-   - Embeddings are generated
+   - Embeddings are generated using tracked provider
    - Document is indexed for search
 
 ### Document Metadata
@@ -380,6 +518,82 @@ The form builder will show:
 - **Reduce Chunks**: Lower maxChunks
 - **Cluster Performance**: Check Atlas cluster performance
 - **Document Size**: Consider splitting large documents
+
+## AI Analytics & Monitoring
+
+All AI and embedding operations in NetPad are centralized through analytics tracking to ensure visibility, cost control, and usage monitoring.
+
+### AI Dashboard
+
+Access the AI Dashboard at **Settings > Admin > API Metrics** (`/admin/api-metrics`):
+
+**Tracked Metrics**:
+- Organization and user IDs
+- Feature name (e.g., 'rag_conversational_forms', 'rag_faq_search')
+- Model name and provider
+- Token usage (prompt, completion, total)
+- Latency in milliseconds
+- Success/error status
+- Cost estimation
+
+**Dashboard Features**:
+- Real-time visibility into all AI operations
+- Filter by organization, user, feature, model, provider
+- Cost breakdown and projections
+- Token usage analytics
+- Performance metrics (latency p50, p95, p99)
+- Error rates and debugging
+
+### Centralized Architecture
+
+All AI operations flow through centralized tracking:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                  APPLICATION CODE                        │
+├─────────────────────────────────────────────────────────┤
+│                                                          │
+│  ┌────────────────────┐    ┌─────────────────────┐     │
+│  │   aiService        │    │ TrackedEmbedding    │     │
+│  │   (LLM calls)      │    │ Provider            │     │
+│  └────────┬───────────┘    └──────────┬──────────┘     │
+│           │                           │                 │
+│           └───────────┬───────────────┘                 │
+│                       │                                  │
+│                       ▼                                  │
+│           ┌───────────────────────┐                     │
+│           │   logAIRequest()      │ ◄── SINGLE ENTRY   │
+│           │   (aiAnalytics.ts)    │     POINT          │
+│           └───────────┬───────────┘                     │
+│                       │                                  │
+│                       ▼                                  │
+│           ┌───────────────────────┐                     │
+│           │  AI Dashboard         │                     │
+│           │  /admin/api-metrics   │                     │
+│           └───────────────────────┘                     │
+└─────────────────────────────────────────────────────────┘
+```
+
+**Why This Matters**:
+- **Cost Control**: Monitor AI spending per organization and feature
+- **Performance Monitoring**: Track latency trends across providers
+- **Feature Analytics**: Understand which features consume the most tokens
+- **Debugging & Support**: Full audit trail of AI requests with error messages
+- **Budget Alerts**: Set and enforce usage limits per tier
+
+### Tracked Operations
+
+All RAG operations are automatically tracked:
+
+| Operation | Tracking Feature | Metrics |
+|-----------|-----------------|---------|
+| Document Upload | `rag_conversational_forms` | Embedding tokens, processing time |
+| FAQ Creation | `rag_conversational_forms` | Question embedding tokens |
+| FAQ Search | `rag_faq_search` | Query embedding tokens, search latency |
+| Conversational Chat | `rag_conversational_forms` | LLM tokens, response time |
+| Document Retrieval | `rag_conversational_forms` | Vector search operations |
+
+**No Action Required**: All tracking is automatic. Developers building on NetPad must use the centralized `aiService` and `TrackedEmbeddingProvider` wrappers to ensure tracking.
 
 ## Next Steps
 

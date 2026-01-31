@@ -100,6 +100,7 @@ const sidebars = {
       label: '🔗 Integrations',
       items: [
         { type: 'doc', id: 'integrations/overview', label: '📖 Overview' },
+        { type: 'doc', id: 'integrations/chatgpt', label: '🤖 ChatGPT' },
         { type: 'doc', id: 'integrations/google-forms-import', label: '📥 Google Forms Import' },
         { type: 'doc', id: 'integrations/webhooks', label: '🪝 Webhooks' },
         { type: 'doc', id: 'integrations/email-notifications', label: '📧 Email Notifications' },
@@ -139,11 +140,19 @@ const sidebars = {
       label: '📡 API Reference',
       items: [
         { type: 'doc', id: 'api/overview', label: '📖 Overview' },
+        { type: 'doc', id: 'api/public-api', label: '🌐 Public API (v1)' },
         { type: 'doc', id: 'api/authentication', label: '🔑 Authentication' },
         { type: 'doc', id: 'api/forms', label: '📝 Forms' },
         { type: 'doc', id: 'api/submissions', label: '📥 Submissions' },
         { type: 'doc', id: 'api/webhooks', label: '🪝 Webhooks' },
         { type: 'doc', id: 'api/vercel-integration', label: '▲ Vercel Integration' },
+      ],
+    },
+    {
+      type: 'category',
+      label: '🔐 Administration',
+      items: [
+        { type: 'doc', id: 'admin/rbac', label: '👥 RBAC & Access Control' },
       ],
     },
     {
