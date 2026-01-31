@@ -23,9 +23,75 @@ Attach knowledge base documents to your conversational forms:
 Vector search across document content:
 
 - **MongoDB Atlas Vector Search**: Efficient semantic document retrieval
-- **OpenAI Embeddings**: Uses text-embedding-3-small for embeddings
+- **Multi-Provider Embeddings**: Support for Voyage AI, Atlas AI Services, and OpenAI
 - **Intelligent Chunking**: Sentence-aware chunking preserves context
 - **Relevance Scoring**: Results ranked by semantic similarity
+
+## Embedding Provider Architecture
+
+NetPad supports multiple embedding providers with intelligent auto-detection and fallback. This flexibility allows you to choose the best provider for your needs.
+
+### Supported Providers
+
+| Provider | Models | Dimensions | Use Case |
+|----------|--------|------------|----------|
+| **Atlas AI Services** | voyage-3, voyage-3-lite, voyage-code-3 | 512-1536 | MongoDB-native integration (recommended) |
+| **Voyage AI Direct** | voyage-3, voyage-3-lite, voyage-code-3, voyage-3-large | 512-1536 | MongoDB's official embedding partner |
+| **OpenAI** | text-embedding-3-small, text-embedding-3-large, ada-002 | 1536-3072 | Fallback provider |
+
+### Priority Order (Auto-Detection)
+
+NetPad automatically selects the best available provider:
+
+1. **Atlas AI Services** - Native MongoDB integration using Voyage models
+2. **Voyage AI Direct** - MongoDB's recommended embedding partner
+3. **OpenAI** - Fallback for existing configurations
+
+### Voyage AI Models (MongoDB's Official Partner)
+
+Voyage AI is MongoDB's official embedding partner, offering optimized models for vector search:
+
+| Model | Dimensions | Price/1M Tokens | Best For |
+|-------|------------|-----------------|----------|
+| **voyage-3** | 1024 | $0.06 | General-purpose (default) |
+| **voyage-3-lite** | 512 | $0.02 | Cost-optimized |
+| **voyage-code-3** | 1536 | $0.06 | Code/technical content |
+| **voyage-3-large** | 1024 | $0.06 | High-accuracy |
+
+### Key Features
+
+- **Asymmetric Embeddings**: Separate optimization for documents (`input_type: document`) vs queries (`input_type: query`)
+- **Batch Processing**: Optimized batch sizes (64 for Voyage, 100 for OpenAI) with rate limit handling
+- **Cost Estimation**: Real-time cost estimation before embedding generation
+- **Provider Abstraction**: Unified interface across all providers
+- **Automatic Retry**: Exponential backoff with rate limit detection
+
+### Configuration
+
+Configure your embedding provider via environment variables:
+
+```bash
+# Voyage AI (recommended for MongoDB)
+VOYAGE_API_KEY=your-voyage-api-key
+VOYAGE_MODEL=voyage-3  # Options: voyage-3, voyage-3-lite, voyage-code-3
+
+# Provider override (default: auto)
+EMBEDDING_PROVIDER=auto  # Options: auto, atlas-ai, voyage, openai
+
+# Disable Atlas AI wrapper (use direct Voyage)
+USE_ATLAS_AI=true  # Set to 'false' to bypass Atlas AI
+```
+
+### Provider Selection Logic
+
+```
+If EMBEDDING_PROVIDER is set explicitly → Use that provider
+Else if VOYAGE_API_KEY is set:
+  If USE_ATLAS_AI ≠ false → Use Atlas AI Services
+  Else → Use Voyage AI Direct
+Else if OPENAI_API_KEY is set → Use OpenAI (fallback)
+Else → No provider available
+```
 
 ### Source Citations
 
@@ -293,9 +359,10 @@ This enables RAG features for **all subscription tiers** without requiring an M1
 
 ### API Keys
 
-Required API keys:
+Required API keys (one of the following):
 
-- **OpenAI API Key**: For generating embeddings (text-embedding-3-small)
+- **Voyage AI API Key** (Recommended): For generating embeddings using MongoDB's official partner
+- **OpenAI API Key**: For generating embeddings as fallback
 - **MongoDB Atlas**: For Vector Search (included with cluster or Atlas Local)
 
 ### Document Storage

@@ -1,3 +1,9 @@
+---
+sidebar_position: 1
+title: In-App Help System
+description: Comprehensive context-aware help system with 100+ topics
+---
+
 # In-App Help System
 
 NetPad includes a comprehensive, context-aware help system accessible from anywhere in the platform. With 100+ help topics covering all platform features, you can quickly find answers without leaving your current task.
@@ -34,20 +40,24 @@ The help system automatically detects where you are in the platform and tailors 
 
 ### Automatic Context Detection
 
-When you open help, the system detects your current page or feature:
-- Form Builder
-- Workflow Editor
-- Marketplace
-- Data Explorer
-- Settings
-- And more...
+When you open help, the system analyzes your current route:
+
+```typescript
+// Routes are mapped to help contexts
+'/forms/[id]/edit'     → 'form-builder'
+'/workflows/[id]/edit' → 'workflows'
+'/settings'            → 'settings'
+'/marketplace'         → 'marketplace'
+```
+
+Context-relevant topics are automatically boosted and highlighted in search results.
 
 ### Smart Topic Boosting
 
 Context-relevant help topics are automatically:
-- **Boosted in search results** - Appear higher in the list
-- **Visually highlighted** - Green border and background
-- **Marked as relevant** - "Relevant to: [Feature Name]" indicator
+- **Boosted in search results** - Appear higher in the list (+50 score boost)
+- **Visually highlighted** - Green left border and subtle background
+- **Marked as relevant** - "Relevant to: [Feature Name]" chip at the top
 
 ### No Search Required
 
@@ -61,28 +71,39 @@ Type to search across:
 - Topic titles
 - Topic descriptions
 - Keywords and tags
+- Topic IDs (converted from kebab-case)
 
 ### Relevance Scoring
 
-Results are ranked by:
-1. **Exact matches** - Highest priority
-2. **Title matches** - High priority
-3. **Keyword matches** - Medium priority
-4. **Context relevance** - Boosted when matching current page
+Results are ranked by multiple factors:
+
+| Match Type | Score |
+|------------|-------|
+| Exact title match | +100 |
+| Title starts with query | +50 |
+| Title contains query | +30 |
+| Exact keyword match | +40 |
+| Word in searchable text | +10 |
+| Word in title | +5 |
+| Word in keywords | +3 |
+| Context relevance (matching current page) | +50 |
 
 ### Category Filtering
 
 Results are organized by category with color-coded icons:
-- Form Builder (blue)
-- Workflows (purple)
-- MongoDB (green)
-- Templates (orange)
-- Conversational Forms (teal)
-- Projects (indigo)
-- Organizations (red)
-- Connections (cyan)
-- Deployment (pink)
-- Admin (gray)
+
+| Category | Color | Icon |
+|----------|-------|------|
+| Admin | Red | Shield |
+| Form Builder | Green | Document |
+| Pipeline | Blue | Widgets |
+| MongoDB | Green (#13AA52) | Storage |
+| Conversational | Purple | Document |
+| Templates | Orange | Document |
+| Projects | Deep Purple | Widgets |
+| Deployment | Pink | Play |
+| Organizations | Cyan | Storage |
+| Connections | Brown | Storage |
 
 ### Keyboard Navigation
 
@@ -91,79 +112,256 @@ Navigate search results efficiently:
 - `Enter` - Select highlighted topic
 - `Escape` - Close help dialog
 
-## Help Topics Coverage
+## Help Topics Structure
 
-The help system includes 100+ topics covering:
+Each help topic has a consistent structure:
+
+```typescript
+interface HelpTopic {
+  id: string;           // Unique identifier (e.g., 'form-builder')
+  title: string;        // Display title
+  description: string;  // Brief summary
+  content: HelpContent[];      // Topic content blocks
+  relatedTopics?: string[];    // Links to related topics
+  keywords?: string[];         // Search keywords
+  adminOnly?: boolean;         // Restrict to platform admins
+}
+```
+
+### Content Block Types
+
+Topics support multiple content block types:
+
+| Type | Purpose |
+|------|---------|
+| `heading` | Section headers |
+| `text` | Paragraphs of explanation |
+| `list` | Bulleted lists |
+| `code` | Code snippets with syntax highlighting |
+| `tip` | Helpful tips (green highlight) |
+| `warning` | Important warnings (orange highlight) |
+| `example` | Usage examples |
+
+### Example Topic
+
+```typescript
+{
+  id: 'form-builder',
+  title: 'Form Builder',
+  description: 'Create dynamic data entry forms...',
+  content: [
+    { type: 'heading', content: 'Getting Started' },
+    { type: 'text', content: 'Connect to your MongoDB...' },
+    { type: 'list', content: [
+      'Automatic schema detection',
+      'Configure field types and validation',
+      'Add conditional logic',
+    ]},
+    { type: 'tip', content: 'Use Document Preview to see...' },
+  ],
+  relatedTopics: ['field-configuration', 'conditional-logic'],
+  keywords: ['form', 'builder', 'create', 'schema'],
+}
+```
+
+## Help Topic Categories
+
+The 100+ help topics are organized into these categories:
 
 ### Getting Started
-- Platform overview
-- Quick start guides
-- Account setup
+- `getting-started` - Platform introduction
+- `mongodb-connection` - Database setup
+- `deployment-modes` - Cloud vs self-hosted
 
-### Form Builder
-- Creating forms
-- Field types and configuration
-- Validation rules
-- Conditional logic
-- Theming and branding
-- Publishing forms
+### Form Builder (25+ topics)
+- `form-builder` - Overview
+- `field-configuration` - Field settings
+- `conditional-logic` - Show/hide rules
+- `lookup-fields` - Cross-collection references
+- `computed-fields` - Calculated values
+- `repeater-fields` - Dynamic arrays
+- `form-variables` - Form-wide values
+- `form-versioning` - Version control
+- `form-lifecycle` - Form states
+- `multi-page-forms` - Multi-step forms
+- `form-library` - Saved forms
+- `document-preview` - Preview panel
+- `form-publishing` - Publishing options
+- `search-forms` - Search functionality
+- `smart-dropdowns` - Database-backed dropdowns
+- `theming` - Visual customization
 
-### Workflows
-- Creating workflows
-- Node types
-- Triggers and execution
-- Error handling
-
-### Data Management
-- MongoDB connections
-- Data browser
-- Import/export
+### Workflows (20+ topics)
+- `workflow-variables` - Workflow data
+- `workflow-nodes` - Available nodes
+- `node-form-trigger` - Form submission trigger
+- `node-webhook-trigger` - HTTP trigger
+- `node-schedule-trigger` - Cron trigger
+- `node-conditional` - If/else logic
+- `node-http-request` - HTTP calls
+- `node-mongodb-query` - Database queries
+- `node-email-send` - Email actions
+- `node-ai-prompt` - AI generation
+- And 15+ more node types...
 
 ### AI & Conversational
-- Conversational forms
-- RAG knowledge-guided forms
-- AI agents
-- Document management
+- `conversational-forms` - Chat-based forms
+- `conversational-templates` - Pre-built templates
+- `knowledge-guided-forms` - RAG integration
+- `rag-document-management` - Document ingestion
+- `node-ai-classify` - Classification
+- `node-ai-extract` - Data extraction
+- `node-ai-embed` - Embeddings
+- `node-vector-search` - Semantic search
 
 ### Platform Features
-- Organizations and teams
-- Projects and environments
-- Marketplace
-- Billing and subscriptions
+- `organizations` - Teams and workspaces
+- `projects-management` - Project organization
+- `applications` - App packaging
+- `application-releases` - Version releases
+- `application-contracts` - Component protection
+- `marketplace` - App marketplace
+- `connection-vault` - Secure credentials
 
-### Deployment
-- Cloud deployment
-- Self-hosted setup
-- Standalone apps
+### RBAC (Access Control)
+- `rbac-overview` - Access control overview
+- `rbac-users` - User management
+- `rbac-groups` - Group permissions
+- `rbac-roles` - Custom roles
+- `rbac-permissions` - Permission types
 
-### Troubleshooting
-- Common issues
-- Error messages
-- FAQs
+### API & Development
+- `api-overview` - API introduction
+- `api-authentication` - Auth methods
+- `api-endpoints` - Available endpoints
+- `api-rate-limiting` - Rate limits
+- `api-keys-management` - API keys
+- `mcp-server` - AI assistant integration
+- `npm-packages` - NetPad packages
 
-## Context-Sensitive Help Components
+### Admin (Admin-Only)
+- `admin-dashboard` - Admin overview
+- `admin-user-management` - User admin
+- `admin-waitlist` - Waitlist management
+- `admin-ai-analytics` - AI usage tracking
+- `admin-marketplace-review` - App review
+- `admin-referrals` - Referral program
+
+## Help Components
+
+### HelpSearchModal
+
+The main search dialog component:
+
+```tsx
+import { HelpSearchModal } from '@/components/Help/HelpSearchModal';
+
+function MyComponent() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <HelpSearchModal
+      open={open}
+      onClose={() => setOpen(false)}
+      onSelectTopic={(topicId) => {
+        // Handle topic selection
+      }}
+      onStartTour={() => {
+        // Start interactive tour
+      }}
+      showAdminTopics={isAdmin}  // Show admin-only topics
+    />
+  );
+}
+```
 
 ### ContextHelpButton
 
-A reusable help button component for complex features:
+Add help buttons near features:
 
-**Variants:**
-- **Subtle** - Low opacity (0.3), becomes visible on hover
-- **Visible** - More prominent, always visible
+```tsx
+import { ContextHelpButton } from '@/components/Help/ContextHelpButton';
 
-**Features:**
-- Opens specific help topics or general search
-- Customizable placement and size
-- Seamlessly integrates with any feature
+// Context-specific help
+<ContextHelpButton 
+  topicId="form-builder" 
+  placement="top-start" 
+/>
+
+// General help (opens search)
+<ContextHelpButton 
+  placement="top-start" 
+/>
+
+// Variants
+<ContextHelpButton 
+  topicId="conditional-logic"
+  variant="visible"  // More prominent
+  size="medium"      // Larger icon
+/>
+```
+
+Props:
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `topicId` | `HelpTopicId` | - | Specific topic to open |
+| `placement` | `string` | `'top-start'` | Tooltip position |
+| `size` | `'small' \| 'medium'` | `'small'` | Icon size |
+| `tooltip` | `string` | Auto | Custom tooltip text |
+| `variant` | `'subtle' \| 'visible'` | `'subtle'` | Visibility level |
 
 ### InlineHelpIcon
 
-A tiny inline help icon for use within text and labels:
+Tiny inline icons for labels:
 
-**Features:**
-- Very subtle (0.3 opacity) until hovered
-- Perfect for inline help within form labels
-- Non-intrusive design
+```tsx
+import { InlineHelpIcon } from '@/components/Help/ContextHelpButton';
+
+<Typography>
+  Conditional Logic
+  <InlineHelpIcon topicId="conditional-logic" />
+</Typography>
+```
+
+### HelpContext Provider
+
+Access help functions from anywhere:
+
+```tsx
+import { useHelp } from '@/contexts/HelpContext';
+
+function MyFeature() {
+  const { openHelp, openSearch } = useHelp();
+
+  return (
+    <Button onClick={() => openHelp('form-builder')}>
+      Learn More
+    </Button>
+  );
+}
+```
+
+## Integrating Help in Settings
+
+Settings sections and items support help integration:
+
+```tsx
+import { SettingsSection } from '@/components/Settings/SettingsSection';
+import { SettingsItem } from '@/components/Settings/SettingsItem';
+
+<SettingsSection
+  title="Form Versioning"
+  helpTopic="form-versioning"  // Adds help button
+>
+  <SettingsItem
+    label="Auto-save interval"
+    description="How often to save drafts"
+    helpTopic="form-versioning"
+  >
+    <Select ... />
+  </SettingsItem>
+</SettingsSection>
+```
 
 ## Tips for Using Help
 
@@ -182,8 +380,64 @@ A tiny inline help icon for use within text and labels:
 2. Follow "Related Topics" links
 3. Explore connected documentation
 
+### Finding Specific Topics
+1. Search by topic ID: `form-builder`, `conditional-logic`
+2. Search by keyword: `validation`, `trigger`, `mongodb`
+3. Search by feature: `dropdown`, `email`, `schedule`
+
+## Admin-Only Topics
+
+Some help topics are restricted to platform administrators:
+
+```typescript
+{
+  id: 'admin-ai-analytics',
+  title: 'AI Analytics Dashboard',
+  description: '...',
+  adminOnly: true,  // Only visible to admins
+}
+```
+
+These topics cover:
+- User management
+- Waitlist administration
+- AI usage and costs
+- Marketplace review
+- Referral program management
+
+## Adding New Help Topics
+
+To add a new help topic, edit `src/lib/helpContent.ts`:
+
+```typescript
+// 1. Add the topic ID to the type definition
+export type HelpTopicId =
+  | 'existing-topic'
+  | 'my-new-topic'  // Add here
+  | ...;
+
+// 2. Add the topic content
+export const helpTopics: Record<HelpTopicId, HelpTopic> = {
+  // ...existing topics...
+  
+  'my-new-topic': {
+    id: 'my-new-topic',
+    title: 'My New Feature',
+    description: 'Brief description for search results',
+    content: [
+      { type: 'heading', content: 'Overview' },
+      { type: 'text', content: 'Detailed explanation...' },
+      { type: 'list', content: ['Point 1', 'Point 2'] },
+      { type: 'tip', content: 'Pro tip for users' },
+    ],
+    relatedTopics: ['related-topic-1', 'related-topic-2'],
+    keywords: ['keyword1', 'keyword2', 'keyword3'],
+  },
+};
+```
+
 ## Related Documentation
 
 - [Keyboard Shortcuts](./keyboard-shortcuts.md) - All keyboard shortcuts
-- [Getting Started](../getting-started/introduction.md) - Platform introduction
-- [FAQ](../getting-started/faq.md) - Frequently asked questions
+- [Getting Started](/docs/getting-started/introduction) - Platform introduction
+- [FAQ](/docs/getting-started/faq) - Frequently asked questions

@@ -403,6 +403,68 @@ Extract structured data from text.
 **Output Data**:
 - `data`: Extracted structured data
 
+## Form Reaction Nodes
+
+Form Reaction nodes enable real-time field updates by connecting form field events to workflows.
+
+### Field Event Trigger
+
+Entry point for reaction workflows that respond to form field events.
+
+**Configuration**:
+- **Form ID**: Usually set automatically by the reaction system
+- **Trigger Mode**: `any` (fire on any specified field) or `all` (require all fields to have values)
+- **Debounce**: Delay in milliseconds to prevent rapid firing (0-30000ms)
+
+**Output Data**:
+```javascript
+{
+  triggerField: "companyDomain",  // Name of field that triggered
+  triggerEvent: "blur",           // Event type (change, blur, focus, validate, clear)
+  fieldValue: "mongodb.com",      // Current value of triggering field
+  formData: { ... },              // Complete form data object
+  formId: "form_abc123",
+  reactionId: "reaction_xyz789"
+}
+```
+
+**Use Cases**:
+- Company domain lookup
+- Address validation
+- Price calculations
+- Real-time validation
+
+### Form Field Update
+
+Maps workflow outputs to form fields for real-time updates.
+
+**Configuration**:
+- **Feedback Mode**: How to notify users (`silent`, `subtle`, `toast`)
+- **Validate After Update**: Run form validation after applying updates
+- **Field Mappings**: Array of source-to-field mappings with null behavior handling
+
+**Field Mapping Options**:
+| Option | Description |
+|--------|-------------|
+| Form Field Path | Target field (e.g., `companyName`, `address.city`) |
+| Source Data Path | Path in workflow data (e.g., `httpRequest.data.company.name`) |
+| Null Behavior | `skip` (default), `clear`, or `default` |
+
+**Output Data**:
+```javascript
+{
+  success: true,
+  updates: {
+    companyName: "MongoDB, Inc.",
+    industry: "Technology"
+  },
+  updatedFields: ["companyName", "industry"],
+  skippedFields: []
+}
+```
+
+See the [Form Reactions Guide](../forms/reactions.md) for complete documentation.
+
 ## Node Configuration Tips
 
 ### Data Mapping
