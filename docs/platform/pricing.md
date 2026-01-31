@@ -70,7 +70,8 @@ For large organizations with custom needs:
 | **Active Workflows** | 1 | 5 | 25 | Unlimited |
 | **Connections** | 1 | 5 | 20 | Unlimited |
 | **AI Generations/Month** | 10 | 100 | 500 | Unlimited |
-| **RAG Features** | ❌ | ❌ | ✅ | ✅ |
+| **RAG Features (Cloud)** | ❌ | ❌ | ✅ | ✅ |
+| **RAG Features (Self-Hosted)** | ✅ | ✅ | ✅ | ✅ |
 | **Data Retention** | 30 days | 1 year | Unlimited | Unlimited |
 | **Team Members** | 1 | 1 | 10 | Unlimited |
 | **Support** | Community | Email | Priority | Dedicated |
@@ -148,18 +149,47 @@ Total AI agent usage across all agents:
 
 ### RAG Features
 
-Knowledge-Guided Conversational Forms (RAG) requirements:
+Knowledge-Guided Conversational Forms (RAG) availability depends on your deployment mode:
 
-- **Free**: ❌ Not available
-- **Pro**: ❌ Not available
-- **Team**: ✅ Available (requires M10+ MongoDB Atlas cluster)
-- **Enterprise**: ✅ Available (requires M10+ MongoDB Atlas cluster)
+#### Cloud Deployment (netpad.io)
 
-**Feature Gates**: RAG requires both:
+| Tier | RAG Available | Requirements |
+|------|---------------|--------------|
+| **Free** | ❌ | - |
+| **Pro** | ❌ | - |
+| **Team** | ✅ | M10+ MongoDB Atlas cluster |
+| **Enterprise** | ✅ | M10+ MongoDB Atlas cluster |
+
+**Feature Gates (Cloud)**: RAG requires both:
 1. **Subscription Tier**: Team or Enterprise plan
 2. **Infrastructure Tier**: M10+ MongoDB Atlas cluster
 
 **Note**: Users must upgrade their Atlas cluster to M10+ separately via MongoDB Atlas Console.
+
+#### Self-Hosted Deployment
+
+| Tier | RAG Available | Requirements |
+|------|---------------|--------------|
+| **Free** | ✅ | Atlas Local (Docker) |
+| **Pro** | ✅ | Atlas Local (Docker) |
+| **Team** | ✅ | Atlas Local (Docker) |
+| **Enterprise** | ✅ | Atlas Local (Docker) |
+
+**Self-Hosted Advantage**: RAG features are available to **all subscription tiers** when running self-hosted with Atlas Local. No M10+ cluster upgrade required!
+
+**Quick Setup**:
+```bash
+# Option 1: Atlas CLI
+atlas deployments setup local --type local
+
+# Option 2: Docker
+docker run -d -p 27017:27017 mongodb/mongodb-atlas-local
+```
+
+Set the deployment mode:
+```bash
+NETPAD_DEPLOYMENT_MODE=self-hosted
+```
 
 ### Data Retention
 

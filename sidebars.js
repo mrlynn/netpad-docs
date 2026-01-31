@@ -59,6 +59,8 @@ const sidebars = {
         { type: 'doc', id: 'forms/document-preview', label: '👁️ Document Preview' },
         { type: 'doc', id: 'forms/publishing', label: '🚀 Publishing' },
         { type: 'doc', id: 'forms/reactions', label: '⚡ Form Reactions' },
+        { type: 'doc', id: 'forms/theming', label: '🎨 Theming & Branding' },
+        { type: 'doc', id: 'forms/search-forms', label: '🔍 Search Forms' },
         { type: 'doc', id: 'forms/code-generation', label: '💻 Code Generation' },
       ],
     },

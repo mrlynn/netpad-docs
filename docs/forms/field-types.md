@@ -311,6 +311,50 @@ Multiple selections from dropdown.
 
 **Use Cases**: Tags, categories, multiple choices
 
+### Tags
+
+Interactive tag input with autocomplete and custom tag creation.
+
+**Configuration**:
+- Predefined tag options
+- Allow custom tags
+- Min/max tags
+- Tag validation
+
+**Use Cases**: Keywords, categories, labels, skills
+
+### Smart Dropdown
+
+Auto-populate dropdown options from distinct database values.
+
+**Configuration**:
+- Source collection and connection
+- Field to get distinct values from
+- Filter query (optional)
+- Sort order
+- Maximum options
+- Refresh frequency
+
+**How It Works**:
+1. Queries your MongoDB collection
+2. Gets distinct values for the specified field
+3. Populates dropdown options automatically
+4. Can refresh on form load or on-demand
+
+**Use Cases**: Dynamic category lists, user selection, status values
+
+### Ranking
+
+Drag-and-drop ranking of items.
+
+**Configuration**:
+- Items to rank
+- Min/max items
+- Randomize order
+- Show numbers
+
+**Use Cases**: Preference ordering, priority lists, surveys
+
 ### Rating Scale
 
 Star or numeric rating.
@@ -371,6 +415,84 @@ Upload multiple files.
 - Total size limit
 
 **Use Cases**: Portfolios, document sets, galleries
+
+## Location Fields
+
+### Address
+
+Structured address input with autocomplete.
+
+**Configuration**:
+- Countries allowed
+- Autocomplete provider
+- Required components (street, city, state, zip, country)
+- Address format
+
+**Use Cases**: Shipping addresses, billing addresses, locations
+
+### Geolocation
+
+Capture user's geographic coordinates.
+
+**Configuration**:
+- Precision level
+- Fallback address input
+- Show map preview
+- Default location
+
+**Use Cases**: Check-in, delivery location, asset tracking
+
+### Map Picker
+
+Interactive map for selecting a location.
+
+**Configuration**:
+- Default center and zoom
+- Map provider (Google Maps, Mapbox, OpenStreetMap)
+- Allow search
+- Show coordinates
+- Marker customization
+
+**Use Cases**: Event location, property location, delivery point
+
+## Advanced Input Fields
+
+### OTP Input
+
+One-time password or verification code input.
+
+**Configuration**:
+- Number of digits (4, 6, 8)
+- Auto-submit on complete
+- Allow paste
+- Show/hide toggle
+
+**Use Cases**: Two-factor authentication, verification codes, PIN entry
+
+### Color Picker
+
+Visual color selection.
+
+**Configuration**:
+- Color format (hex, rgb, hsl)
+- Preset colors
+- Allow alpha/opacity
+- Default color
+
+**Use Cases**: Branding colors, theme customization, design tools
+
+### Slider
+
+Range selection with visual slider.
+
+**Configuration**:
+- Min/max values
+- Step increment
+- Show labels
+- Dual handles (range)
+- Default value
+
+**Use Cases**: Price ranges, ratings, quantity selection, filters
 
 ## Special Fields
 
@@ -496,6 +618,51 @@ Custom HTML content.
 - Styling options
 
 **Use Cases**: Instructions, images, custom content
+
+## Advanced Field Features
+
+### URL Pre-fill
+
+Auto-populate form fields from URL query parameters.
+
+**How It Works**:
+```
+https://yourform.netpad.io/form/abc123?name=John&email=john@example.com
+```
+
+When users access this URL, the `name` and `email` fields are automatically filled with the provided values.
+
+**Configuration**:
+1. Enable URL pre-fill on your form
+2. Map query parameter names to field IDs
+3. Optionally lock pre-filled fields to prevent editing
+
+**Use Cases**:
+- Personalized form links from email campaigns
+- Pre-filled referral information
+- Integration with external systems
+
+### Field Encryption
+
+Encrypt sensitive field data using MongoDB Queryable Encryption.
+
+**Configuration**:
+- Enable encryption per field
+- Select encryption algorithm
+- Configure key management
+
+**Supported Encryption**:
+- AES-256-GCM encryption
+- Queryable encryption for search
+- At-rest encryption
+
+**Use Cases**:
+- Social security numbers
+- Medical records (HIPAA)
+- Financial data (PCI-DSS)
+- Personal identifiable information (GDPR)
+
+**Note**: Encrypted fields require proper key management configuration. See [Encryption Guide](../security/encryption.md) for setup details.
 
 ## Field Properties
 

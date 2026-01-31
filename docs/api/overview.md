@@ -1,16 +1,16 @@
 # API Overview
 
-The NetPad API provides programmatic access to your forms, submissions, applications, workflows, and more. With **165+ endpoints** across major categories, you can fully integrate NetPad with your applications, automate workflows, or build custom dashboards.
+The NetPad API provides programmatic access to your forms, submissions, applications, workflows, and more. With **175+ endpoints** across major categories, you can fully integrate NetPad with your applications, automate workflows, or build custom dashboards.
 
 ## API Categories
 
 | Category | Endpoints | Description |
 |----------|-----------|-------------|
-| **/api/forms** | 40+ | Form CRUD, submissions, analytics |
+| **/api/forms** | 40+ | Form CRUD, submissions, analytics, reactions |
 | **/api/workflows** | 15+ | Workflow management, execution |
-| **/api/organizations** | 30+ | Org management, vault, templates |
+| **/api/organizations** | 30+ | Org management, vault, templates, RBAC |
 | **/api/projects** | 8 | Project management, bundles |
-| **/api/applications** | 10+ | Application management, releases |
+| **/api/applications** | 10+ | Application management, releases, permissions, contracts |
 | **/api/marketplace** | 12+ | Marketplace browsing, publishing, management |
 | **/api/marketplace/npm** | 3+ | npm package search, install, sync |
 | **/api/mongodb** | 10+ | Database operations |
@@ -20,6 +20,10 @@ The NetPad API provides programmatic access to your forms, submissions, applicat
 | **/api/integrations** | 8+ | Integration credentials |
 | **/api/auth** | 10+ | Authentication flows |
 | **/api/billing** | 4 | Subscription management |
+| **/api/admin/referrals** | 8+ | Referral codes, payouts, admin management |
+| **/api/organizations/[orgId]/referrals** | 5+ | Org referral stats, earnings, payouts |
+| **/api/telemetry** | 2+ | Performance telemetry |
+| **/api/extensions** | 2+ | Extension status and features |
 | **/api/v1** | 5+ | Public API (external apps) |
 
 ## Base URL
@@ -359,12 +363,62 @@ You can use this specification with:
 - [npm Integration](./marketplace-npm.md) - npm package management
 - [Vercel Integration](./vercel-integration.md) - Vercel deployment integration
 
+### Form Reactions Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| **GET** | `/api/forms/{formId}/reactions` | List all reactions for a form |
+| **POST** | `/api/forms/{formId}/reactions` | Create a new reaction |
+| **GET** | `/api/forms/{formId}/reactions/{reactionId}` | Get single reaction |
+| **PUT** | `/api/forms/{formId}/reactions/{reactionId}` | Update a reaction |
+| **DELETE** | `/api/forms/{formId}/reactions/{reactionId}` | Delete a reaction |
+| **POST** | `/api/forms/{formId}/reactions/execute` | Execute a reaction |
+
 ### AI & RAG Endpoints
-- **POST** `/api/ai/generate` - Generate content using AI
-- **POST** `/api/rag/documents` - Upload documents for RAG
-- **GET** `/api/rag/documents` - List RAG documents
-- **POST** `/api/rag/retrieve` - Retrieve relevant chunks
-- **DELETE** `/api/rag/documents/:id` - Delete RAG document
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| **POST** | `/api/ai/generate` | Generate content using AI |
+| **POST** | `/api/rag/documents` | Upload documents for RAG |
+| **GET** | `/api/rag/documents` | List RAG documents |
+| **POST** | `/api/rag/retrieve` | Retrieve relevant chunks |
+| **DELETE** | `/api/rag/documents/:id` | Delete RAG document |
+
+### RBAC Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| **GET/POST** | `/api/platform/orgs/{orgId}/members` | Member management |
+| **GET/POST** | `/api/platform/orgs/{orgId}/groups` | Group CRUD |
+| **GET/POST** | `/api/platform/orgs/{orgId}/roles` | Role management |
+| **GET/POST** | `/api/platform/orgs/{orgId}/assignments` | Role assignments |
+| **GET** | `/api/platform/users/me/permissions` | Effective permissions |
+
+### Referral Program Endpoints (Cloud Only)
+
+**Admin Endpoints:**
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| **GET** | `/api/admin/referrals/codes` | List all referral codes |
+| **POST** | `/api/admin/referrals/codes` | Create referral code |
+| **POST** | `/api/admin/referrals/payouts/{id}/approve` | Approve payout |
+| **POST** | `/api/admin/referrals/payouts/{id}/reject` | Reject payout |
+
+**Organization Endpoints:**
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| **GET** | `/api/organizations/{orgId}/referrals/code` | Get org's referral code |
+| **GET** | `/api/organizations/{orgId}/referrals/stats` | Referral statistics |
+| **GET** | `/api/organizations/{orgId}/referrals/earnings` | View earnings |
+| **POST** | `/api/organizations/{orgId}/referrals/payouts` | Request payout |
+
+**Public Endpoints:**
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| **GET** | `/api/referrals/validate` | Validate referral code |
 
 ### npm Package Endpoints
 
