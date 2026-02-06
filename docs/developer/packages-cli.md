@@ -444,9 +444,6 @@ Credentials and settings are stored in `~/.netpad/config.json`:
 }
 ```
 
-<<<<<<< Updated upstream
-### Environment Variables
-=======
 ---
 
 ## RBAC Commands
@@ -541,7 +538,6 @@ For detailed RBAC documentation, see [RBAC & Access Control](/docs/admin/rbac).
 ---
 
 ## Environment Variables
->>>>>>> Stashed changes
 
 | Variable | Description |
 |----------|-------------|
